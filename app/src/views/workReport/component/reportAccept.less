@@ -1,0 +1,334 @@
+.BasicModal {
+  font-family: Microsoft YaHei;
+  .ant-modal-body {
+    height: 100%;
+    padding: 0 !important;
+  }
+  .ant-modal-close-x {
+    margin-right: 12px;
+    font-size: 20px;
+    color: #70707a;
+  }
+}
+.BasicModal.ant-modal {
+  width: 100% !important;
+  height: 100%;
+  padding-left: 32px;
+  margin-right: 0;
+  padding-bottom: 0;
+  top: 0;
+  position: static !important;
+  .ant-modal-header {
+    border-bottom: 1px solid #e7e7e9;
+    padding: 16px 20px 16px 22px;
+    .ant-modal-title {
+      color: #191f25;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  .ant-modal-content {
+    height: 100%;
+    overflow: hidden;
+    .ant-modal-body {
+      padding: 0 !important;
+    }
+  }
+  .AcceptanceReportStat_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #fff;
+    border-bottom: 1px solid #e7e7e9;
+    .AcceptanceReportStat_content_left {
+      flex: 0 0 280px;
+      height: 100%;
+      border-right: 1px solid #e7e7e9;
+      .statis_list {
+        min-width: 280px;
+        height: 100%;
+        background: #fff;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+
+        .report_Left_list {
+          width: 100%;
+          border-right-width: 0px;
+          overflow-y: overlay;
+          flex: 1;
+          .ant-menu-item {
+            height: 40px;
+            line-height: 40px;
+            margin: 0px;
+            padding: 0px 21px;
+            .myMenu_Item {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              font-size: 14px;
+              color: #191f25;
+              .myMenu_img {
+                background: url(../../../../../assets/images/acceptanceReportStat/other-g.png) no-repeat;
+                width: 16px;
+                height: 16px;
+                background-size: 16px 16px;
+                display: inline-block;
+                margin-right: 6px;
+                vertical-align: -1px;
+                background-size: cover !important;
+              }
+            }
+            &:nth-child(1) .myMenu_img {
+              background: url(../../../../../assets/images/acceptanceReportStat/day-g.png) no-repeat;
+            }
+            &:nth-child(2) .myMenu_img {
+              background: url(../../../../../assets/images/acceptanceReportStat/week-g.png) no-repeat;
+            }
+            &:nth-child(3) .myMenu_img {
+              background: url(../../../../../assets/images/acceptanceReportStat/jibao-g.png) no-repeat;
+            }
+            &:nth-child(4) .myMenu_img {
+              background: url(../../../../../assets/images/acceptanceReportStat/month-g.png) no-repeat;
+            }
+            &:nth-child(5) .myMenu_img {
+              background: url(../../../../../assets/images/acceptanceReportStat/year-g.png) no-repeat;
+            }
+          }
+        }
+        .ant-menu:not(.ant-menu-horizontal) {
+          .ant-menu-item-active {
+            background: #f6faff;
+          }
+          .ant-menu-item-selected {
+            position: relative;
+            background: #f6faff;
+            .myMenu_Item {
+              color: #4285f4;
+              .myMenu_img {
+                background: url(../../../../../assets/images/acceptanceReportStat/otherHover.png) no-repeat;
+                background-size: cover !important;
+              }
+            }
+            &::before {
+              content: '';
+              width: 4px;
+              height: 100%;
+              background: #4285f4;
+              border-radius: 0px 4px 4px 0px;
+              position: absolute;
+              left: 0;
+            }
+          }
+          .ant-menu-item-selected:nth-child(1) .myMenu_img {
+            background: url(../../../../../assets/images/acceptanceReportStat/day.png) no-repeat;
+          }
+          .ant-menu-item-selected:nth-child(2) .myMenu_img {
+            background: url(../../../../../assets/images/acceptanceReportStat/weekHover.png) no-repeat;
+          }
+          .ant-menu-item-selected:nth-child(3) .myMenu_img {
+            background: url(../../../../../assets/images/acceptanceReportStat/jibaoHover.png) no-repeat;
+          }
+          .ant-menu-item-selected:nth-child(4) .myMenu_img {
+            background: url(../../../../../assets/images/acceptanceReportStat/monthHover.png) no-repeat;
+          }
+          .ant-menu-item-selected:nth-child(5) .myMenu_img {
+            background: url(../../../../../assets/images/acceptanceReportStat/yearHover.png) no-repeat;
+          }
+        }
+      }
+      .select_input {
+        height: 66px;
+        line-height: 66px;
+        justify-content: center;
+        background: #ffffff;
+        font-size: 12px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #191f25;
+        padding-left: 20px;
+      }
+      .ant-select {
+        width: 200px;
+        .ant-select-selector {
+          border: none;
+          background: #f7f8fa;
+          border-radius: 16px;
+        }
+        .ant-select-selection-search-input {
+          outline: none;
+        }
+      }
+    }
+    .AcceptanceReportStat_content_right {
+      display: flex;
+      padding: 20px;
+      height: 100%;
+      width: calc(100% - 280px);
+      flex: 1;
+      flex-direction: column;
+      .ant-table-thead {
+        tr {
+          th {
+            color: #70707a;
+            border-radius: 4px;
+            border: none;
+            padding: 5px 16px;
+            font-size: 14px;
+          }
+        }
+      }
+      .ant-table-body {
+        overflow: auto !important;
+        .ant-table-cell {
+          font-size: 14px;
+          border-bottom: 1px solid #e7e7e9;
+          color: #191f25;
+          cursor: pointer;
+        }
+      }
+      .AcceptanceReportStat_time {
+        margin-bottom: 20px;
+      }
+      .paginationCus {
+        margin-bottom: 10px;
+      }
+      .center_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // .error_img {
+        //   background: url(../../../../../assets/images/acceptanceReportStat/error_img.png) no-repeat;
+        // }
+        .center_text {
+          font-size: 14px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 19px;
+          color: #9a9aa2;
+          margin-top: 10px;
+        }
+      }
+      .tableContent {
+        flex: 1;
+        max-width: 100%;
+      }
+    }
+  }
+  .paginationCus {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+  }
+}
+
+.basic_modal_detail {
+  font-family: Microsoft YaHei;
+  .ant-radio-group {
+    margin-bottom: 16px;
+    .ant-radio-button-wrapper {
+      width: 100px;
+      color: #70707a;
+      text-align: center;
+    }
+    .ant-radio-button-wrapper:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+    .ant-radio-button-wrapper:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    .ant-radio-button-wrapper-checked {
+      color: #4285f4;
+    }
+  }
+  .ant-modal-body {
+    min-height: 512px;
+    padding: 16px 24px 24px 24px;
+    display: flex;
+    flex-flow: column;
+  }
+  .ant-modal-close-x {
+    font-size: 20px;
+    color: #70707a;
+  }
+  .ant-modal-title {
+    text-align: center;
+  }
+  .footer_wrap {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    .basic_modal_table {
+      flex: 1;
+    }
+    .ant-table-body {
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      .ant-table-row {
+        cursor: pointer;
+      }
+      .ant-table-cell {
+        font-size: 14px;
+        border-bottom: 1px solid #e7e7e9;
+        color: #191f25;
+        padding: 12px 16px;
+        .table_item {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .table_item_username {
+          width: 90px;
+          display: flex;
+          align-items: center;
+          .ant-avatar {
+            background-color: #4285f4;
+          }
+        }
+        .table_item_content {
+          width: 220px;
+        }
+        .table_item_deptName {
+          width: 106px;
+        }
+        .table_item_roleName {
+          width: 104px;
+        }
+        .table_item_createTime {
+          width: 118px;
+        }
+      }
+    }
+    .ant-table-thead {
+      th {
+        background: #f7f8fa;
+        color: #70707a;
+        border-radius: 4px;
+        border: none;
+        padding: 5px 16px;
+        font-size: 14px;
+      }
+    }
+    .pagination_tool {
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      .ant-pagination {
+        display: inline-block;
+      }
+    }
+
+    .notclick {
+      .ant-table-row {
+        cursor: no-drop !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "mainMenu": [
+    {
+      "key": "WorkDesk",
+      "href": "#/workDesk",
+      "title": "工作台",
+      "code": "WORKBENCH",
+      "baseAuth": true
+    },
+    {
+      "key": "WorkPlan",
+      "href": "#/workPlan",
+      "title": "工作规划",
+      "code": "WORK_PLAN",
+      "authCode": "planFind"
+    },
+    {
+      "key": "OKR",
+      "href": "#/OKR",
+      "title": "我的OKR",
+      "code": "OKR",
+      "authCode": "okrSet"
+    },
+    {
+      "key": "TaskManage",
+      "href": "#/taskManage",
+      "title": "任务管理",
+      "code": "TASK",
+      "authCode": "taskFind"
+    },
+    {
+      "key": "ApprovalManage",
+      "href": "#/approvalManage",
+      "title": "审批管理",
+      "code": "APPROVAL",
+      "baseAuth": true
+    },
+    {
+      "key": "Announce",
+      "href": "#/announce",
+      "title": "公告",
+      "code": "NOTICE",
+      "baseAuth": true
+    },
+    {
+      "key": "DataControl",
+      "href": "#/dataControl",
+      "title": "数据中心",
+      "code": "DATA_CENTER",
+      "baseAuth": true
+    },
+    {
+      "key": "MyApp",
+      "href": "#/myapp",
+      "title": "应用",
+      "code": "APPLICATION",
+      "baseAuth": true
+    }
+  ],
+  "menuBottom": [
+    {
+      "key": "EnterpriseClouddisk",
+      "href": "#/EnterpriseClouddisk",
+      "title": "云盘",
+      "code": "CLOUD",
+      "baseAuth": true
+    },
+    {
+      "key": "AddressBook",
+      "href": "#/AddressBook",
+      "title": "通讯录",
+      "code": "ADDRESS_LIST",
+      "baseAuth": true
+    },
+    {
+      "key": "SystemMsg",
+      "href": "#/SystemMsg",
+      "title": "系统消息",
+      "code": "SYSTEM_NOTIFICATION",
+      "baseAuth": true
+    }
+  ]
+}

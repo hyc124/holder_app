@@ -1,0 +1,195 @@
+@import '~@/src/styles/_var.less';
+.navContainer {
+  height: 56px;
+  &.taskManageHeader {
+    padding: 0 20px 0 24px;
+    background-color: #fff;
+
+    .content_left {
+      line-height: 56px;
+      .more_type_btn {
+        padding: 0 9px;
+        position: relative;
+        top: 1.5px;
+      }
+      .org_fold_icon {
+        position: absolute;
+        top: 20px;
+        left: 4px;
+      }
+    }
+    .marginTB24 {
+      margin: 0 24px;
+    }
+    .nav_subbt {
+      height: 32px;
+      line-height: 32px;
+    }
+    // 搜索框
+    .taskSearch {
+      border-radius: 4px;
+      border: 1px solid #b1b1b1;
+    }
+    // =====任务类型筛选菜单=======//
+    .taskTypeOutTag {
+      max-width: calc(100% - 45px);
+      // overflow: auto;
+      display: inline-block;
+      margin-bottom: 0;
+      // margin-top: 10px;
+      white-space: nowrap;
+    }
+
+    .table_settings_btn {
+      // margin-left: 24px;
+      margin-right: 8px;
+    }
+    // 创建任务
+    .createTaskBtn {
+      cursor: pointer;
+      display: inline-block;
+      width: 36px;
+      min-width: 36px;
+      height: 32px;
+      background-image: url(../../../../../assets/images/common/create_task.svg);
+    }
+
+    // 切换模式按钮
+    .change-mode {
+      width: 72px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      margin-right: 24px;
+      overflow: hidden;
+      border: none;
+
+      &.widtnMode {
+        .em_box;
+      }
+      .em_box {
+        // display: inline-block;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid #b1b1b1;
+
+        &.active {
+          border-color: #3949ab;
+          background: #f7f8fd;
+          .list-icon {
+            background-image: url(../../../../../assets/images/common/list_icon.svg);
+          }
+          .width-icon {
+            background-image: url(../../../../../assets/images/okrList/okr_hearder_detail_h.svg);
+          }
+        }
+        &:first-child {
+          border-radius: 4px 0 0 4px;
+          border-right: none;
+        }
+        &:last-child {
+          border-radius: 0 4px 4px 0;
+          border-left: 1px solid #3949ab;
+        }
+
+        .list-icon {
+          width: 14px;
+          height: 13px;
+          background-image: url(../../../../../assets/images/common/list_icon.svg);
+          &.active,
+          &:hover {
+            background-image: url(../../../../../assets/images/common/list_icon_h.svg);
+          }
+        }
+
+        .width-icon {
+          width: 14px;
+          height: 14px;
+          background-image: url(../../../../../assets/images/okrList/okr_hearder_detail.svg);
+          &.active,
+          &:hover {
+            background-image: url(../../../../../assets/images/okrList/okr_hearder_detail_h.svg);
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1500px) {
+      .taskSearch {
+        max-width: 156px !important;
+      }
+      .change-mode {
+        margin-right: 8px !important;
+      }
+      .table_settings_btn {
+        padding: 0 8px !important;
+        margin-left: 8px !important;
+      }
+      .marginTB24 {
+        margin: 0 16px !important;
+      }
+    }
+  }
+}
+// 任务筛选标签
+.taskTypeTagItem {
+  max-width: 98px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 62px;
+  padding: 0 8px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #b1b1b1;
+  border-radius: 4px;
+  color: @color_gray;
+  .item-name {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &.active {
+    background: #f2f4ff;
+    border: 1px solid #3949ab;
+    color: #3949ab;
+  }
+}
+// ===一类标签弹框样式====//
+.moreTypeTagPopover {
+  .more_tag_tit {
+    color: #232323;
+  }
+  .more_tag_header {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .more_tag_msg {
+    color: @color_gray;
+  }
+  .manage_tag_btn {
+    color: @color_primary;
+    cursor: pointer;
+  }
+  .taskTypeTagItem {
+    border: none;
+    color: #6b6b6b;
+    background: #f6f6f6;
+    &.active {
+      background: #f2f4ff;
+      border: 1px solid #3949ab;
+      color: #3949ab;
+    }
+  }
+}

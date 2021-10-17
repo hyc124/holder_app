@@ -1,0 +1,90 @@
+@import '~@/src/styles/_var.less';
+
+.approval-conatainer {
+  width: 100%;
+  height: 100%;
+  .approval-nav {
+    height: 100%;
+    overflow: hidden;
+    & > .approval-tab-header {
+      height: 48px;
+      margin: 0;
+      padding-left: 24px;
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+      z-index: 999;
+      .ant-tabs-nav::before {
+        border-bottom: 0;
+      }
+      .ant-tabs-tab {
+        font-size: 14px;
+        color: @color_gray;
+        width: 58px;
+        margin-right: 56px;
+        &.ant-tabs-tab-active {
+          color: @color_blue;
+        }
+      }
+    }
+    .ant-tabs-content,
+    .ant-tabs-content-holder {
+      flex: 1;
+      height: 100%;
+    }
+  }
+}
+
+//打印表格自适应
+.approval-print-table {
+  border-top: 1px solid @color_dark;
+  border-left: 1px solid @color_dark;
+  border-collapse: collapse;
+  width: 100%;
+  td {
+    border-right: 1px solid @color_dark;
+    border-bottom: 1px solid @color_dark;
+    color: @color_gray;
+    .table-row {
+      display: flex;
+      width: 100%;
+      padding: 0 5px;
+      min-height: 20px;
+      .left {
+        width: auto;
+        text-align: center;
+        &.hideName {
+          display: none;
+        }
+      }
+      .right {
+        flex: 1;
+        text-align: left;
+        background-color: #fff;
+        border: 0;
+        margin: 0;
+        padding: 2px;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+//审批流程信息
+.print-info-box {
+  margin-top: 10px;
+  & > p {
+    margin-bottom: 5px;
+  }
+  .table_print_content {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid @color_dark;
+    border-left: 1px solid @color_dark;
+    td {
+      padding: 2px 5px;
+      border-right: 1px solid @color_dark;
+      border-bottom: 1px solid @color_dark;
+    }
+  }
+}

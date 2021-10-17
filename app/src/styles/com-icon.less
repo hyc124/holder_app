@@ -1,0 +1,97 @@
+.img_icon {
+  cursor: pointer;
+  &.pointer {
+    cursor: pointer;
+  }
+  &.default {
+    cursor: default;
+  }
+  &.del_item_icon {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    display: none;
+    margin-left: 5px;
+    background-image: url(../../../assets/images/taskDetail/scale_jian.png);
+    // 横线风格
+    &.hor {
+      position: absolute;
+      right: -5px;
+      top: 0;
+      &:hover {
+        background-image: url(../../../assets/images/taskDetail/scale_jian_h.png);
+      }
+    }
+    // 交叉风格
+    &.cross {
+      position: static;
+      background-image: url(../../../assets/images/chatWin/delete_file.png);
+      &:not(.gradient):hover {
+        background-image: url(../../../assets/images/chatWin/delete_file_h.png);
+      }
+      // 背景渐变式
+      &.gradient {
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.7) 0%, #f7f8fa 100%);
+        text-align: right;
+        width: 24px;
+        line-height: 12px;
+        position: absolute;
+        right: 8px;
+        margin: 0;
+        &::before {
+          content: '';
+          width: 12px;
+          height: 12px;
+          display: inline-block;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          background-image: url(../../../assets/images/chatWin/delete_file.png);
+          &:hover {
+            background-image: url(../../../assets/images/chatWin/delete_file_h.png);
+          }
+        }
+      }
+    }
+    // 更改定位方式使用
+    &.absolute {
+      position: absolute;
+      margin: 0;
+    }
+    &.static {
+      position: static;
+    }
+  }
+  &.edit_icon {
+    width: 14px;
+    height: 14px;
+    // background-image: url(../images/home/custom_def.png);
+    // &:hover {
+    //   background-image: url(../images/home/custom_h.png);
+    // }
+  }
+  // 三角形下拉
+  &.tri_down {
+    width: 8px;
+    height: 6px;
+    background-image: url(../../../assets/images/workplan/tri_solid.svg);
+    &:not(.no_hover):hover {
+      background-image: url(../../../assets/images/workplan/tri_solid_h.svg);
+    }
+  }
+  // 箭头形状下拉
+  &.arrow_down {
+    width: 8px;
+    height: 8px;
+    background-image: url(../../../assets/images/workplan/tri_down.svg);
+    &:hover {
+      background-image: url(../../../assets/images/workplan/tri_down_h.svg);
+    }
+  }
+  // 十字形状图标
+  &.add_cross_icon {
+    width: 14px;
+    height: 14px;
+    background-image: url(../../../assets/images/taskDetail/add_cross.svg);
+  }
+}

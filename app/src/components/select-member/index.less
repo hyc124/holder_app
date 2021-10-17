@@ -1,0 +1,123 @@
+@import '../../styles/_var.less';
+
+.modalSelectMember {
+  color: #5c5c5c;
+  font-size: 12px;
+  .ant-tree,
+  label {
+    color: #5c5c5c;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+  .ant-tree-treenode {
+    margin-bottom: 0;
+    .ant-tree-node-content-wrapper {
+      line-height: 18px;
+    }
+  }
+  .ant-tree-list {
+    padding: 0;
+  }
+  .modalFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    button {
+      font-size: 12px;
+      float: left;
+      margin-left: 10px;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+  }
+
+  .roleTreeContent {
+    color: #5c5c5c;
+    font-size: 12px;
+    margin-bottom: 12px;
+    border: 1px solid @color_e7;
+    .ant-tabs-nav-wrap {
+      padding: 0 12px;
+    }
+    .ant-tabs-content-holder {
+      padding: 0 12px 12px;
+      height: 254px;
+      overflow: auto;
+    }
+    .ant-tree-title {
+      max-width: 277px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .memberList {
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+    .active {
+      color: #4285f4;
+    }
+    .memberList:hover {
+      color: #4285f4;
+    }
+  }
+  .deptDetails {
+    .ant-card-body {
+      min-height: 158px;
+      max-height: 158px;
+      overflow: auto;
+      .deptDetailsName {
+        max-width: 290px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+      margin-left: 0;
+      display: block;
+    }
+    .noDataText {
+      text-align: center;
+      color: #ccc;
+      margin-top: 55px;
+    }
+  }
+  .userChecked {
+    height: 481px;
+    .ant-card-body {
+      padding: 0;
+      overflow-y: scroll;
+    }
+    .checkedList {
+      .ant-list-item:hover {
+        background-color: #f5f5f5;
+      }
+      .ant-list-item-meta {
+        align-items: center;
+        .ant-list-item-meta-avatar {
+          margin-right: 10px;
+        }
+        h4 {
+          font-size: 12px;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .searchBox {
+    margin-bottom: 8px;
+    .ant-input-search {
+      width: 100%;
+      border-radius: 5px;
+      // border: 1px solid #e7e7e9;
+    }
+    svg {
+      color: rgba(0, 0, 0, 0.45);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>okr历史</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ICON库" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-478.000000, -985.000000)" stroke="#3949ab">
+            <g id="okr历史-2备份" transform="translate(478.000000, 985.000000)">
+                <g id="okr历史" transform="translate(0.000000, 1.000000)">
+                    <g id="编组-22" transform="translate(6.000000, 1.000000)" stroke-linecap="round">
+                        <line x1="0.42012658" y1="6.5" x2="9.42012658" y2="6.5" id="路径-6备份"></line>
+                        <line x1="0.42012658" y1="0.5" x2="9.42012658" y2="0.5" id="路径-6"></line>
+                        <line x1="0.42012658" y1="12.5" x2="9.42012658" y2="12.5" id="路径-6备份-2"></line>
+                    </g>
+                    <g id="编组-16">
+                        <line x1="2.5" y1="0.0293708336" x2="2.5" y2="14.0293708" id="路径-8"></line>
+                        <polyline id="路径-9" stroke-linecap="round" stroke-linejoin="round" points="0.566956992 2.17960685 2.56031233 0 4.55366767 2.17960685"></polyline>
+                        <polyline id="路径-9备份" stroke-linecap="round" stroke-linejoin="round" transform="translate(2.560312, 13.119174) scale(1, -1) translate(-2.560312, -13.119174) " points="0.566956992 14.2089777 2.56031233 12.0293708 4.55366767 14.2089777"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

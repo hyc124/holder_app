@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>关注</title>
+    <defs>
+        <linearGradient x1="28.458639%" y1="0%" x2="56.3512859%" y2="39.2977711%" id="linearGradient-1">
+            <stop stop-color="#FFC602" offset="0%"></stop>
+            <stop stop-color="#FF9F00" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="28" height="28" rx="10"></rect>
+        <filter x="-35.7%" y="-28.6%" width="171.4%" height="171.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.976470588   0 0 0 0 0.615686275   0 0 0 0 0.0392156863  0 0 0 0.291548295 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M20.845,10.661 C20.845,11.024 20.552,11.317 20.189,11.317 L8.811,11.317 C8.449,11.317 8.155,11.024 8.155,10.661 L8.155,10.474 C8.155,10.111 8.449,9.817 8.811,9.817 L20.189,9.817 C20.552,9.817 20.845,10.111 20.845,10.474 L20.845,10.661 Z M20.817,14.819 C20.817,14.998 20.671,15.144 20.491,15.144 L18.797,15.144 C18.617,15.144 18.473,14.998 18.473,14.819 L18.473,13.124 C18.473,12.945 18.617,12.8 18.797,12.8 L20.491,12.8 C20.671,12.8 20.817,12.945 20.817,13.124 L20.817,14.819 Z M20.817,18.327 C20.817,18.506 20.671,18.652 20.491,18.652 L18.797,18.652 C18.617,18.652 18.473,18.506 18.473,18.327 L18.473,16.632 C18.473,16.453 18.617,16.308 18.797,16.308 L20.491,16.308 C20.671,16.308 20.817,16.453 20.817,16.632 L20.817,18.327 Z M17.366,14.819 C17.366,14.998 17.222,15.144 17.042,15.144 L15.348,15.144 C15.168,15.144 15.023,14.998 15.023,14.819 L15.023,13.124 C15.023,12.945 15.168,12.8 15.348,12.8 L17.042,12.8 C17.222,12.8 17.366,12.945 17.366,13.124 L17.366,14.819 Z M17.366,18.327 C17.366,18.506 17.222,18.652 17.042,18.652 L15.348,18.652 C15.168,18.652 15.023,18.506 15.023,18.327 L15.023,16.632 C15.023,16.453 15.168,16.308 15.348,16.308 L17.042,16.308 C17.222,16.308 17.366,16.453 17.366,16.632 L17.366,18.327 Z M13.788,18.327 C13.788,18.506 13.643,18.652 13.464,18.652 L11.769,18.652 C11.589,18.652 11.445,18.506 11.445,18.327 L11.445,16.632 C11.445,16.453 11.589,16.308 11.769,16.308 L13.464,16.308 C13.643,16.308 13.788,16.453 13.788,16.632 L13.788,18.327 Z M20,8 L9,8 C7.896,8 7,8.895 7,10 L7,18.187 C7,19.292 7.896,20.187 9,20.187 L20,20.187 C21.105,20.187 22,19.292 22,18.187 L22,10 C22,8.895 21.105,8 20,8 L20,8 Z" id="path-4"></path>
+        <filter x="-46.7%" y="-41.0%" width="193.3%" height="214.9%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.839215686   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="----·工作台全局+项目V5.2.9（8.12）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1工作台-windows1920" transform="translate(-1782.000000, -30.000000)">
+            <g id="关注-2备份" transform="translate(1782.000000, 30.000000)">
+                <g id="关注" transform="translate(6.000000, 4.000000)">
+                    <g id="矩形备份-42">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <g id="Fill-1" opacity="0.92">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

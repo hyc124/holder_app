@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>登录轨迹</title>
+    <g id="PC端升级更新" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="正在检测" transform="translate(-265.000000, -338.000000)" stroke="#545454">
+            <g id="登录轨迹-2" transform="translate(265.000000, 338.000000)">
+                <g id="登录轨迹" transform="translate(1.000000, 2.000000)">
+                    <path d="M11.0994852,9.51028413 C11.669251,9.82248279 12.323314,10 13.0188383,10 C15.2279773,10 17.0188383,8.209139 17.0188383,6 C17.0188383,3.790861 15.2279773,2 13.0188383,2 C10.8096993,2 9.01883832,3.790861 9.01883832,6" id="路径" stroke-linecap="round" transform="translate(13.018838, 6.000000) rotate(-41.000000) translate(-13.018838, -6.000000) "></path>
+                    <path d="M4.81071454,7.9793065 C3.86405115,8.71083786 3.25440942,9.85737875 3.25440942,11.1463091 C3.25440942,13.3554481 5.04527042,15.1463091 7.25440942,15.1463091 C9.46354842,15.1463091 11.2544094,13.3554481 11.2544094,11.1463091" id="路径" transform="translate(7.254409, 11.562808) rotate(-41.000000) translate(-7.254409, -11.562808) "></path>
+                    <circle id="椭圆形" transform="translate(3.000000, 8.624236) rotate(-41.000000) translate(-3.000000, -8.624236) " cx="3" cy="8.62423612" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

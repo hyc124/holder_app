@@ -1,0 +1,853 @@
+@import '~@/src/styles/_var.less';
+
+// color
+@color_w: white;
+@color_b: #000000;
+@color_g: #e7e7e9;
+@color_A3: #a3a3a3;
+@color_E5: #e5f7e8;
+@color_F7: #f7f8fa;
+@color_43: #34a853;
+@color_70: #70707a;
+.work_okr_mind_content {
+  width: 100%;
+  height: 100%;
+
+  //没有权限
+  .mind_forbid {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  //   定位及操作按钮
+  .WorkPlanMindoperate {
+    .postil_resource {
+      position: absolute;
+      bottom: 40px;
+      z-index: 99;
+      width: 40px;
+      right: 45px;
+      text-align: right;
+      .OKR_map_log,
+      .OKR_map_operation {
+        width: 36px;
+        height: 36px;
+        display: inline-block;
+        z-index: 99;
+        background: @color_w;
+        box-shadow: 0px 2px 6px 0px rgba(131, 131, 131, 0.2);
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+      }
+      .OKR_map_operation {
+        margin-top: 25px;
+      }
+      .log_entry_icon {
+        width: 36px;
+        height: 36px;
+        background-size: inherit;
+        cursor: pointer;
+      }
+      .log_icon {
+        background-image: url(../../../../../assets/images/workplan/OKR/hostr.png);
+      }
+      & .log_icon:hover {
+        background-image: url(../../../../../assets/images/workplan/OKR/hostr-h.png);
+      }
+      .operation_icon {
+        background-image: url(../../../../../assets/images/workplan/OKR/eidt.png);
+      }
+      & .operation_icon:hover {
+        background-image: url(../../../../../assets/images/workplan/OKR/eidt-h.png);
+      }
+    }
+    .postil_scale {
+      position: absolute;
+      left: 25px;
+      bottom: 40px;
+      top: inherit;
+      width: 180px;
+      z-index: 999;
+      .scale-location {
+        float: left;
+        width: 36px;
+        height: 36px;
+        line-height: 42px;
+        text-align: center;
+        border-radius: 50%;
+        margin-top: inherit;
+        box-shadow: -1px 3px 11px 3px rgba(131, 131, 131, 0.2);
+        span {
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          background: url(../../../../../assets/images/workplan/OKR/centre.png);
+          background-size: contain;
+          cursor: pointer;
+        }
+        & span:hover {
+          background: url(../../../../../assets/images/workplan/OKR/centre-h.png);
+        }
+      }
+      .scale-zoom {
+        float: right;
+        width: 120px;
+        height: 36px;
+        background: @color_w;
+        box-shadow: -1px 3px 11px 3px rgba(131, 131, 131, 0.2);
+        border-radius: 6px;
+        text-align: center;
+        padding: 6px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        span {
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+        }
+        i {
+          color: @color_A3;
+          font-style: normal;
+          margin: 0px 10px;
+        }
+        .scale-zoom-plus {
+          background: url(../../../../../assets/images/workplan/OKR/jia.png);
+        }
+        & .scale-zoom-plus:hover {
+          background: url(../../../../../assets/images/workplan/OKR/jia-h.png);
+        }
+        .scale-zoom-minus {
+          background: url(../../../../../assets/images/workplan/OKR/jian.png);
+        }
+        & .scale-zoom-minus:hover {
+          background: url(../../../../../assets/images/workplan/OKR/jian-h.png);
+        }
+      }
+    }
+  }
+  //时间组件
+  .mindmap_datepickr {
+    position: fixed;
+    z-index: 99;
+  }
+  //选择派发
+  .choice_model {
+    position: absolute;
+    width: 140px;
+    height: 42px;
+    font-size: 16px;
+    background: rgba(58, 69, 94, 1);
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+    line-height: 42px;
+    top: 60px;
+    left: 50%;
+    margin-left: -70px;
+    z-index: 1;
+  }
+  //常用联系人
+  .portrait_okrMain {
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 14px 0px rgba(131, 131, 131, 0.2);
+    border-radius: 8px;
+    z-index: 99;
+    width: 176px;
+    top: 69px;
+    left: 0px;
+    .okr_linkman {
+      overflow: auto;
+      height: initial !important;
+      max-height: 185px;
+      line-height: initial;
+      background: initial;
+      padding-left: initial !important;
+    }
+    .okr_linkman ul li {
+      width: 100%;
+      padding-left: 18px;
+      float: left;
+      line-height: 18px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      text-align: left;
+    }
+    .okr_linkman ul li:hover {
+      background: #f5f7fb;
+    }
+    .okr_linkman ul li .left_box,
+    .more_linkman .left_box {
+      float: left;
+      margin-right: 5px;
+    }
+    .more_linkman .left_box span {
+      background-image: url(../../../../../assets/images/workplan/OKR/organization.png) !important;
+      background-repeat: no-repeat !important;
+      background-position: 8px 7px !important;
+    }
+    .okr_linkman ul li .right_box {
+      float: left;
+      color: #191f25;
+    }
+    .okr_linkman ul li .left_box span,
+    .more_linkman .left_box span {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #4788f4;
+      color: white;
+      text-align: center;
+      line-height: 34px;
+      font-size: 12px;
+    }
+    .okr_linkman ul li .right_box span:first-child {
+      display: block;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .okr_linkman ul li .right_box span:last-child {
+      color: #70707a;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100px;
+    }
+    .more_linkman {
+      padding-left: 18px;
+      height: 50px;
+      padding-top: 5px;
+      color: #70707a;
+      font-size: 12px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .more_linkman:hover {
+      background: #f5f7fb;
+    }
+    .more_linkman .right_box {
+      line-height: 40px;
+    }
+  }
+  .portrait_okrMain h5 {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 18px;
+    background: #f5f5f5;
+    color: #757575;
+    font-size: 12px;
+    margin: 0px;
+    text-align: left;
+  }
+  .portrait_okrMain h5:first-child {
+    border-radius: 8px 8px 0px 0px;
+  }
+}
+//   头部标签
+.WorkPlanMindTitle header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background: @color_w;
+  box-shadow: 2px -4px 6px 0px rgb(154, 154, 154);
+  position: relative;
+  .org_name {
+    font-size: @font-size-lg;
+    max-width: 184px;
+    margin: 0px 24px;
+    flex-shrink: 0;
+  }
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    color: #70707a;
+    margin-top: 10px;
+    height: 46px;
+    white-space: nowrap;
+    max-width: calc(100% - 128px);
+    overflow: hidden;
+    position: relative;
+    .planTabBox {
+      ul {
+        overflow: hidden;
+        flex: 1;
+        height: 46px;
+      }
+      .planTabItem {
+        float: left;
+        height: 100%;
+        width: 100%;
+        min-width: 100px;
+        max-width: 280px;
+        border-radius: 10px 10px 0px 0px;
+        padding-right: 10px;
+        padding-left: 22px;
+        text-align: center;
+        font-size: 14px;
+        background: white;
+        color: #70707a;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ffffff;
+        border-bottom: none !important;
+        &::before {
+          content: ' ';
+          border-left: 1px solid #9a9aa2;
+          display: inline-block;
+          height: 16px;
+          position: absolute;
+          top: 62%;
+          left: -1px;
+          margin-top: -13px;
+        }
+        .plan_name {
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-right: 5px;
+        }
+        .plan_tab_sign {
+          height: 18px;
+          line-height: 18px;
+          padding: 0 5px;
+          margin: 0;
+          border-radius: 4px;
+          background: @color_F7;
+          border: 1px solid #9a9aa2;
+          color: #70707a;
+          opacity: 0.5;
+          font-size: 11px;
+        }
+        .plan_tab_sign.yes_disb {
+          background: #e9f2ff;
+          color: #4285f4;
+          border: 1px solid #4285f4;
+        }
+        .plan_tab_sign.finish {
+          background: #e5f7e8;
+          border: 1px solid #34a853;
+          color: #34a853;
+        }
+        .plan_tab_type {
+          height: 22px;
+          line-height: 22px;
+          margin: 0;
+        }
+        // .plan_tab_type.yes_disb {
+        //   background: #e9f2ff;
+        //   color: #4285f4;
+        // }
+        .plan_tab_type.none {
+          display: none;
+        }
+        // .plan_tab_type.part_disb {
+        //   background: #fff6e1;
+        //   color: #ffaa00;
+        // }
+        .tab_del_icon {
+          width: 9px;
+          height: 14px;
+          background-image: url(../../../../../assets/images/workplan/del.png);
+          cursor: pointer;
+          visibility: hidden;
+          position: absolute;
+          right: 6px;
+        }
+      }
+      &:last-of-type {
+        .planTabItem {
+          &::after {
+            content: ' ';
+            border-left: 1px solid #9a9aa2;
+            display: inline-block;
+            height: 16px;
+            position: absolute;
+            top: 62%;
+            right: -1px;
+            margin-top: -13px;
+          }
+        }
+      }
+    }
+    .planTabBox.active,
+    .planTabBox:hover {
+      ul li {
+        border: 1px solid #d7d7d9;
+        .plan_tab_sign {
+          opacity: 1;
+        }
+        &::before {
+          height: 0px !important;
+        }
+        &::after {
+          height: 0px !important;
+        }
+      }
+    }
+    .planTabBox.active + nav,
+    .planTabBox:hover + nav {
+      ul li {
+        &::before {
+          height: 0px !important;
+        }
+        &::after {
+          height: 0px !important;
+        }
+      }
+    }
+    .planTabBox ul:hover {
+      .tab_del_icon {
+        visibility: visible;
+      }
+    }
+    .planTabBox.active {
+      ul li {
+        background: #f5f8ff;
+        color: #191f25;
+      }
+    }
+    .add_mind_map {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      background: url(../../../../../assets/images/workplan/add_plan.png) no-repeat center;
+      // position: absolute;
+      // right: 0px;
+      display: none;
+      &:hover {
+        background: url(../../../../../assets/images/workplan/add_plan_h.png) no-repeat center;
+      }
+    }
+  }
+  .headerRight {
+    display: flex;
+    align-items: center;
+    color: @color_gray;
+    margin-top: 9px;
+    max-width: 400px;
+    .breaking_distribute {
+      display: inline-block;
+      width: auto;
+      padding: 0 10px;
+      height: 32px;
+      line-height: 30px;
+      text-align: center;
+      border: 1px solid @color_primary;
+      border-radius: 4px;
+      color: @color_primary;
+      cursor: pointer;
+      transition: all 0.1s linear;
+      margin: auto;
+      margin-right: 15px;
+    }
+    .distribute_plan_mian {
+      align-items: center;
+      display: inline-block;
+      width: auto;
+      padding: 0 10px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background: @color_primary;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0px;
+      margin-right: 15px;
+    }
+    .pattern_type {
+      border: 1px solid @color_primary;
+      border-radius: 4px;
+      line-height: 41px;
+      height: 32px;
+      width: 66px;
+      cursor: pointer;
+      margin-right: 15px;
+      span {
+        display: inline-block;
+        width: 32px;
+        height: 31px;
+      }
+      .pattern_mind.active {
+        background: @color_primary;
+        border-radius: 0px 4px 4px 0px;
+      }
+      .pattern_card.active {
+        background: @color_primary;
+        border-radius: 4px 0px 0px 4px;
+      }
+      .pattern_mind::before {
+        content: '';
+        background: url(../../../../../assets/images/workplan/OKR/ms-card-h.png) no-repeat;
+        height: 18px;
+        width: 19px;
+        display: inline-block;
+        margin-left: 8px;
+      }
+      .pattern_mind.active::before {
+        content: '';
+        background: url(../../../../../assets/images/workplan/OKR/ms-card.png) no-repeat;
+      }
+      .pattern_card::before {
+        content: '';
+        background: url(../../../../../assets/images/workplan/OKR/ms-si-h.png) no-repeat;
+        height: 19px;
+        width: 19px;
+        display: inline-block;
+        margin-left: 7px;
+      }
+      .pattern_card.active::before {
+        content: '';
+        background: url(../../../../../assets/images/workplan/OKR/ms-si.png) no-repeat;
+      }
+    }
+  }
+}
+.WorkPlanMindTitle .distribute_tips {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  border: 1px solid #fbbc05;
+  background: #fcecc5;
+  border-radius: 2px;
+  color: #191f25;
+  padding: 1px 15px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  i {
+    background-image: url(../../../../../assets/images/workplan/OKR/new-Alerts.png);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: contain;
+    vertical-align: sub;
+    margin-right: 5px;
+  }
+  .distribute_tips_del {
+    color: #fbbc05;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+.planProgressRow {
+  align-items: center;
+  margin: 0 -20px 20px -20px;
+  padding: 12px 20px;
+  background: #fafafa;
+}
+
+//OKR详情
+.okrNewdetail {
+  width: 850px !important;
+  .ant-modal-title {
+    text-align: center;
+  }
+  .ant-modal-body {
+    padding: 0;
+    height: 512px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    .ant-spin-nested-loading {
+      width: 100%;
+    }
+    .okrdetail_row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 0 24px;
+      .newFileWrap {
+        width: 100%;
+      }
+      .file-container {
+        margin-left: 18px;
+        .file-item {
+          width: 264px;
+          margin-left: 16px;
+        }
+      }
+      .msg-handle-btn {
+        visibility: visible;
+        border: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 4px;
+        padding: 0;
+        color: #70707a;
+        font-size: 14px;
+        box-shadow: none;
+      }
+      .msg-handle-btn:hover {
+        color: #4285f4;
+      }
+      .file_icon {
+        background-image: url(../../../../../assets/images/chatWin/okr_file.png);
+        background-size: 13px;
+        padding: 0;
+        background-position-x: left;
+        background-position-y: 4px;
+        padding-left: 31px;
+        height: 22px;
+        &:hover {
+          background-image: url(../../../../../assets/images/chatWin/okr_file.png);
+          background-size: 13px;
+        }
+      }
+      .upload-list-inline {
+        .ant-upload-list {
+          & > div {
+            width: 200px;
+            margin-right: 10px;
+            float: left;
+          }
+        }
+      }
+      .okritem_left {
+        width: auto;
+        font-size: 14px;
+        color: #70707a;
+        .okritem_icon {
+          &::before {
+            content: '*';
+            display: inline-block;
+            color: #ea4335;
+            font-size: 14px;
+            position: absolute;
+            right: -9px;
+            top: -5px;
+          }
+          margin-right: 14px;
+          position: relative;
+          width: 14px;
+          height: 14px;
+          background: url('../../../../../assets/images/task/mingcheng.png') center no-repeat;
+        }
+        .fuzeren {
+          width: 14px;
+          height: 14px;
+          background: url('../../../../../assets/images/task/guishu.png') center no-repeat;
+        }
+        .xuanzeguishu {
+          width: 14px;
+          height: 14px;
+          display: inline-block;
+          vertical-align: -1px;
+          margin-right: 14px;
+          background: url('../../../../../assets/images/task/xuanzeguishu.png') center no-repeat;
+        }
+        .fujian {
+          background: url('../../../../../assets/images/task/tianjiafujian.png') center no-repeat;
+        }
+      }
+      .okritem_left.affiar {
+        cursor: pointer;
+        &:hover {
+          color: #4285f4;
+        }
+      }
+      .okritem_left_margin {
+        width: 14px;
+        margin-right: 16px;
+      }
+      .okritem_right {
+        flex: 1;
+        font-size: 14px;
+        .staff-icon {
+          cursor: pointer;
+          width: 22px;
+          height: 20px;
+          background: url('../../../../../assets/images/task/add_peo_def.png') center no-repeat;
+          vertical-align: bottom;
+          float: left;
+          &:hover {
+            background: url('../../../../../assets/images/task/add_peo_blue.png') center no-repeat;
+          }
+        }
+        .staff-object {
+          float: left;
+          font-size: 12px;
+          // margin-top: 2px;
+          margin-left: 34px;
+          margin-bottom: 0;
+          span {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: initial;
+            word-break: break-all;
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            background: #f7f8fa;
+            border-radius: 4px;
+            padding: 0 8px;
+            text-align: center;
+            vertical-align: text-top;
+            margin-right: 5px;
+            cursor: pointer;
+            position: relative;
+          }
+          span:hover .del_icon {
+            cursor: pointer;
+            display: inline-block;
+          }
+          .del_icon {
+            display: none;
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            background-image: url(../../../../../assets/images/workplan/OKR/jian.png);
+            position: absolute;
+            right: -5px;
+            top: -3px;
+          }
+        }
+        .process_sigo {
+          margin: 5px 3px;
+        }
+      }
+      .posRel {
+        // position: relative;
+        top: 10px;
+        color: #70707a;
+      }
+      .posRel .posRelgs {
+        margin-bottom: 12px;
+      }
+      .posRel .posRelgs:hover {
+        color: rgb(66, 133, 244);
+        cursor: pointer;
+      }
+      .progress_right {
+        flex: 1;
+        .task_start_time_box {
+          width: auto;
+          .ant-picker {
+            padding: 0 8px;
+          }
+        }
+        .task_end_time_box {
+          .ant-picker {
+            padding: 0 8px;
+          }
+        }
+        .progress_bot {
+          justify-content: space-between;
+          .task_start_time_box,
+          .task_end_time_box {
+            .ant-picker.ant-picker-borderless {
+              .ant-picker-input > input {
+                font-size: 14px;
+                &::-webkit-input-placeholder {
+                  color: #70707a;
+                }
+                &::-moz-placeholder {
+                  color: #70707a;
+                }
+              }
+            }
+          }
+        }
+      }
+      .progress_mid {
+        display: flex;
+        position: relative;
+        .impersonality_process {
+          width: 8px;
+          height: 8px;
+          background: #d1e2fa;
+          border-radius: 50%;
+          position: absolute;
+          z-index: 9;
+          top: 14px;
+          cursor: pointer;
+        }
+        .ant-slider {
+          width: 94%;
+          margin-right: 10px;
+          margin-left: 0px;
+          .ant-slider-rail {
+            height: 8px;
+            background: #e7e7e9 50% 50% repeat-x;
+          }
+          .ant-slider-track {
+            height: 8px;
+            background-color: #4285f1;
+          }
+          .ant-slider-handle {
+            background: #ffffff;
+            border: 2px solid #4285f4;
+            box-shadow: 0px 0px 3px rgba(12, 78, 188, 0.8);
+            margin-top: -3px;
+          }
+        }
+      }
+    }
+    .delalignItems {
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+    .upload-list-inline .ant-upload-list-item {
+      width: 200px;
+      height: 32px !important;
+    }
+    .upload-list-inline .ant-upload-list-item .ant-upload-list-item-thumbnail {
+      height: 90%;
+      width: 24px;
+      top: 2px;
+    }
+    .upload-list-inline .ant-upload-list-item .ant-upload-list-item-name {
+      height: 100%;
+      line-height: 30px;
+    }
+    .upload-list-inline .ant-upload-list-item .ant-upload-list-item-card-actions {
+      top: 5px;
+    }
+    .upload-list-inline
+      .ant-upload-list-item.ant-upload-list-item-done:hover
+      .ant-upload-list-item-thumbnail
+      img {
+      height: 100%;
+    }
+    .bg_g {
+      padding: 19px 24px;
+      height: 86px;
+      background: #f7f8fa;
+      color: #70707a;
+      margin-bottom: 19px;
+      .okritem_left {
+        margin-bottom: 18px;
+        margin-right: 15px;
+      }
+      .ant-input-number {
+        width: 35px !important;
+        height: 28px;
+        margin-top: 3px;
+        .ant-input-number-handler-wrap {
+          display: none;
+        }
+        .ant-input-number-input {
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
+    .content_t {
+      padding: 20px 24px;
+    }
+  }
+}

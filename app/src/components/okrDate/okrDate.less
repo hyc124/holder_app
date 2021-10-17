@@ -1,0 +1,121 @@
+@import '~@/src/styles/_var.less';
+.menu_time_list {
+  background: #ffffff !important;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16) !important;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 16px;
+  li {
+    padding-left: 16px;
+    font-size: 14px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    height: 35px !important;
+    cursor: pointer;
+    a {
+      color: #191f25;
+      .ant-tag {
+        color: #4285f4;
+        border: 1px solid #4285f4;
+        padding: 0 3px;
+        line-height: 11px;
+        height: 14px;
+        font-size: 9px;
+        margin-left: 4px;
+        &.invalid_tag {
+          color: #70707a;
+          border: 1px solid #9a9aa2;
+        }
+      }
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .ant-avatar {
+      margin-right: 3px;
+      margin-bottom: 2px;
+    }
+    &:hover {
+      background: #f6faff;
+    }
+  }
+  .small_time_show {
+    color: #70707a;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    height: auto !important;
+    align-items: center;
+    .ant-menu-title-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 278px;
+    }
+    .switch_date {
+      .ant-switch-handle {
+        margin-top: -6px;
+      }
+    }
+    // .ant-switch-small.okr_period_list {
+    //   min-width: 32px;
+    //   height: 5px;
+    //   line-height: 5px;
+    //   border-radius: 2px;
+
+    //   .ant-switch-handle {
+    //     width: 16px;
+    //     height: 16px;
+    //     top: -6px;
+    //     // left: 0;
+    //     &::before {
+    //       border: 1px solid #d8d8d8;
+    //       box-shadow: 0px 2px 4px 0px rgba(213, 213, 213, 0.5);
+    //     }
+    //   }
+    // }
+  }
+  .small_time_list {
+    padding-top: 15px;
+    font-size: 14px;
+    color: #191f25;
+    height: 43px;
+    // border-bottom: 1px solid #d7d7d9;
+    width: 100%;
+    padding-left: 16px;
+    .ant-dropdown-trigger {
+      margin-top: 18px;
+      color: #232323;
+      font-weight: 500;
+      & > span {
+        margin-left: 6px;
+      }
+      & > .period_date_down {
+        position: absolute;
+        top: 16px;
+        margin-left: 5px;
+        width: 12px;
+        height: 6px;
+        background-image: url(../../../../assets/images/common/period_date_down.svg);
+      }
+    }
+  }
+  .small_time_data {
+    max-height: 219px;
+    overflow-y: auto;
+    & > li {
+      padding: 0 18px;
+    }
+    .ant-menu-item.ant-menu-item-selected {
+      background-color: #ffff;
+    }
+    .ant-menu-item.active {
+      background-color: #f0f8ff;
+    }
+    .ant-menu-title-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 285px;
+    }
+  }
+}

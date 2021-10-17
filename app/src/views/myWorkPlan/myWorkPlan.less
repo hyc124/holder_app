@@ -1,0 +1,582 @@
+@import '~@/src/styles/_var.less';
+.NeworkPlanContainer {
+  width: calc(100% - 80px);
+  background: #f5f5f5;
+  padding: 16px;
+  display: flex;
+  .type-icon {
+    width: 16px;
+    height: 14px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &.home_icon {
+      background-image: url(../../../../assets/images/workplan/plan_home_d.png);
+    }
+    &.file_icon {
+      background-image: url(../../../../assets/images/workplan/file_icon.png);
+    }
+    &.plan_icon {
+      background-image: url(../../../../assets/images/workplan/plan_icon.png);
+    }
+  }
+  .planOrgContainer {
+    flex-shrink: 0;
+    width: 280px;
+    opacity: 1;
+    overflow: hidden;
+    transition: width 0.3s ease, -webkit-transform 0.5s ease;
+    height: 100%;
+    margin-right: 8px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 8px;
+    .pageLeftCon {
+      height: 100%;
+      .pageLeftListContainer {
+        position: relative;
+        width: 560px;
+        height: 100%;
+      }
+      .leftListContaier {
+        width: 280px;
+        height: 100%;
+        display: inline-block;
+      }
+      .searchContainer {
+        width: 280px;
+        height: 100%;
+        display: inline-block;
+        .search-title {
+          color: #191f25;
+          font-size: 16px;
+          margin: 20px 16px 16px;
+          .go-back-icon {
+            cursor: pointer;
+            display: inline-block;
+            width: 7px;
+            height: 12px;
+            background: url(../../../../assets/images/workplan/go_back.png) center center no-repeat;
+            background-size: contain;
+            margin-right: 6px;
+          }
+        }
+        .plan_menu_search {
+          margin: 0 16px;
+          width: calc(100% - 32px);
+          overflow: hidden;
+          &:focus {
+            border-color: @color_blue !important;
+            box-shadow: none !important;
+          }
+          .search-icon-t-box {
+            width: 32px;
+            height: 28px;
+            display: inline-block;
+            background-color: @color_primary;
+            line-height: 28px;
+            text-align: center;
+            margin-right: -11px;
+          }
+        }
+      }
+    }
+    .planLeftHeader {
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e7e7e9;
+      .header_tit {
+        font-size: 16px;
+        font-weight: bold;
+        color: #191f25;
+        margin: 19px 0;
+      }
+      .org_fold_icon.chose {
+        transform: rotate(180deg);
+        background-image: url(../../../../assets/images/workplan/org_fold.png);
+      }
+    }
+    .plan_menu_search {
+      width: calc(100% - 20px);
+      height: 28px;
+      margin: 14px 10px 0 10px;
+      border-radius: 16px;
+      background: #f5f5f5;
+      border: 0;
+      &.ant-input-affix-wrapper > input.ant-input {
+        font-size: 12px;
+        color: #a4a4a4;
+        background: #f5f5f5;
+      }
+    }
+  }
+  .planRightContainer {
+    background: #ffffff;
+    border-radius: 8px;
+    flex-direction: column;
+    width: calc(100% - 280px);
+    flex: auto;
+    .workPlanCon {
+      margin-right: 0px;
+      .workPlanCardTopsBox {
+        padding: 0px 0px 0px 24px;
+      }
+    }
+    .headercreate {
+      height: 64px;
+      width: 100%;
+      padding: 0 24px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #70707a;
+      .icon_show_hide {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        background-image: url(../../../../assets/images/workplan/org_fold.png);
+        background-size: 16px;
+        margin-right: 4px;
+      }
+
+      .creat_time_change {
+        color: #70707a;
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        height: 100%;
+        align-items: flex-end;
+        & > span {
+          cursor: pointer;
+          &:hover {
+            color: #4285f4;
+          }
+        }
+        .time_change {
+          background-image: url(../../../../assets/images/okrDetail/change-down.png);
+          width: 8px;
+          vertical-align: text-bottom;
+          height: 13px;
+          margin-left: 6px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          display: inline-block;
+        }
+        &.creat_time_hover {
+          .time_change {
+            background-image: url(../../../../assets/images/okrDetail/change-up.png);
+          }
+        }
+      }
+    }
+    .project_plan_data {
+      width: 284px;
+      height: 72px;
+      background: #ffffff;
+      border: 1px solid #d7d7d9;
+      opacity: 1;
+      border-radius: 4px;
+      margin-right: 23px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      .planDocImgBox {
+        width: 100%;
+        padding: 0px 16px 0px 12px;
+        height: 100%;
+        .plan_doc_txt {
+          display: flex;
+          flex: 1;
+          flex-flow: column;
+          align-items: flex-start;
+          line-height: 19px;
+          .my_ellipsis {
+            text-align: left;
+          }
+          span {
+            color: #9a9aa2;
+            height: 12px;
+            line-height: 12px;
+          }
+        }
+        &:hover {
+          border: 1px solid #4285f4;
+          box-shadow: 0px 3px 8px rgba(66, 133, 244, 0.3);
+        }
+        &:active {
+          background: #f6faff;
+          border: 1px dashed #4285f4;
+        }
+      }
+      .plan_new_icon {
+        width: 26px;
+        height: 25px;
+        background: url(../../../../assets/images/workplan/document_new.png) center center no-repeat;
+        background-size: cover;
+        margin-right: 9px;
+      }
+      .plan_paln_icon {
+        width: 22px;
+        height: 26px;
+        background: url(../../../../assets/images/workplan/new_workplan.png) center center no-repeat;
+        background-size: contain;
+        margin-right: 9px;
+      }
+      .plan_more_icon {
+        transform: rotate(90deg);
+        vertical-align: 35px;
+        padding: 0;
+      }
+      .planToped {
+        top: 3px;
+        left: -1px;
+      }
+    }
+    .project_plan_border {
+      border: none;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f7f8fa;
+    }
+    .workPlanCardPlansBox {
+      height: 100%;
+    }
+    .workPlanListNav_main {
+      .headLeft {
+        padding-left: 20px;
+        margin-bottom: 20px;
+        color: #70707a;
+      }
+    }
+  }
+  .addPlanMenu_plan {
+    display: inline-block;
+    width: 110px;
+    height: 28px;
+    margin: 0 16px;
+    line-height: 28px;
+    border-radius: 4px;
+    color: #4285f4;
+    padding: 0;
+    border: 1px solid #4285f4;
+    .add_mind_icon {
+      width: 17px;
+      height: 15px;
+      background: url(../../../../assets/images/workplan/document_new.png) center center no-repeat;
+      background-size: contain;
+      margin-right: 6px;
+      margin-left: 13px;
+      vertical-align: -2px;
+    }
+  }
+  .createProMenu {
+    width: 110px;
+    height: 28px;
+    line-height: 27px;
+    border-radius: 4px;
+    padding: 0;
+    color: white;
+    cursor: pointer;
+    background-color: #4285f4;
+    .add_dir_icon {
+      width: 13px;
+      height: 15px;
+      background: url(../../../../assets/images/workplan/new-plan.png) center center no-repeat;
+      background-size: contain;
+      margin-right: 6px;
+      margin-left: 20px;
+      vertical-align: -3px;
+    }
+  }
+  .planRightNone {
+    background: #ffffff;
+    border-radius: 8px;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 105px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // 左侧组织架构ui
+
+  .orgSearchList {
+    margin-top: 8px;
+    height: calc(100% - 110px);
+    overflow: auto;
+    .number-tip {
+      opacity: 0.7;
+      color: @color_9a;
+      font-size: 14px;
+      margin-top: 8px;
+      margin-left: 16px;
+    }
+    .search-item {
+      // height: 36px;
+      // line-height: 36px;
+      font-size: 14px;
+      color: #38383d;
+      margin-top: 20px;
+      cursor: pointer;
+      padding: 0 16px;
+      .type-icon {
+        vertical-align: text-bottom;
+        position: relative;
+        top: -2px;
+      }
+      .file_icon {
+        width: 20px;
+        height: 14px;
+        background-size: 100%;
+      }
+      .plan_icon {
+        width: 14px;
+        height: 15px;
+        background-size: 100%;
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+      .right-box {
+        margin-left: 11px;
+        width: calc(100% - 38px);
+        .text {
+          max-width: 100%;
+          font-size: 14px;
+          color: @color_dark;
+        }
+        .type {
+          display: block;
+          font-size: 12px;
+          color: @color_9a;
+        }
+      }
+
+      &.active,
+      &:hover {
+        color: #3949ab;
+        background: #f6faff;
+      }
+      .blod_blue {
+        color: #3949ab;
+      }
+    }
+  }
+  .orgBotScroll {
+    height: calc(100% - 60px);
+    .leftOrgTree {
+      overflow: auto;
+    }
+  }
+  .org_tree_row {
+    .row_left {
+      width: 100%;
+      .org_tree_text {
+        font-size: 14px;
+      }
+    }
+  }
+  .searchList_box {
+    height: auto;
+  }
+  .leftOrgTree {
+    .ant-tree-node-content-wrapper {
+      padding-right: 0;
+      .ant-tree-title {
+        width: 100%;
+      }
+    }
+    .plan-list-org {
+      margin-top: 16px;
+      .row_left {
+        .org_tree_text {
+          &.my-mind-title {
+            flex: initial;
+          }
+          max-width: calc(100% - 30px);
+          &.no_name {
+            color: #9a9aa2;
+          }
+        }
+        .type-icon {
+          margin-right: 6px;
+        }
+        .topedTriangle {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-top: 12px solid #3949ab;
+          border-right: 12px solid transparent;
+          position: absolute;
+          left: -59px;
+          top: 5px;
+        }
+      }
+      .row_right {
+        // .handle_more_icon {
+        margin-right: 16px;
+        // }
+      }
+      // 左侧列表重置新建文件夹输入框
+      .addChildFolderTr {
+        width: 85%;
+        height: auto;
+        padding-left: 0;
+        margin: 0 20px;
+        .taskNameTd {
+          width: 100%;
+          .boardTaskName {
+            position: relative;
+            .addChildFolderInp {
+              width: 100%;
+              height: 24px;
+              padding-left: 5px;
+              padding-right: 58px;
+              background: #ffffff;
+              border: 1px solid #3949ab;
+              opacity: 1;
+              border-radius: 6px;
+              box-shadow: 0px 3px 8px rgba(66, 133, 244, 0.3);
+              &:focus {
+                outline-color: transparent;
+              }
+            }
+            .create_task_btn_box {
+              width: 48px;
+              position: absolute;
+              padding-right: 8px;
+            }
+          }
+        }
+      }
+
+      .ant-tree-treenode {
+        box-sizing: border-box;
+        flex: 1;
+        &.drop-over-bg {
+          background: #f4f4f5;
+          opacity: 0.8;
+        }
+        &:hover {
+          background: #f6faff;
+        }
+        &.drag_hover {
+          // background: #f4f4f5;
+          // border: 1px dashed #4285f4;
+          opacity: 0.6;
+          .org_tree_row {
+            border: 1px dashed #3949ab;
+          }
+        }
+      }
+      .ant-tree-treenode-selected {
+        background: #f6faff;
+      }
+    }
+  }
+}
+
+//新移动修改弹窗
+.new_plan_model {
+  height: 300px;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 199px);
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 6px;
+  .ant-modal-header {
+    border-bottom: none;
+  }
+  .ant-modal-body {
+    height: 192px;
+    overflow: auto;
+    padding-top: 0px;
+    .ant-table-tbody > tr > td {
+      border-top: none;
+      border-bottom: none;
+    }
+    .cellCont .rowLeft,
+    .cellCont .row_content {
+      overflow: hidden;
+    }
+    .cellCont.active {
+      background: @color_bluelight;
+    }
+    tbody tr {
+      height: 37px;
+      cursor: pointer;
+      border: 0;
+      &.active {
+        background: @color_bluelight;
+      }
+      td {
+        border: 0;
+        padding: 0;
+        height: 37px;
+      }
+      .dir_name {
+        max-width: calc(100% - 30px);
+      }
+    }
+    .my_plan_icon {
+      width: 20px;
+      height: 15px;
+      margin-right: 8px;
+      vertical-align: sub;
+      background-image: url(../../../../assets/images/workplan/plan_home_h.png);
+    }
+    .myPlanRow {
+      height: 36px;
+      line-height: 36px;
+      cursor: pointer;
+      &:hover {
+        background: #fafafa;
+      }
+    }
+    .now_pos_msg {
+      display: inline-block;
+      width: 88px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background: #fbbc05;
+      color: white;
+      border-radius: 4px;
+    }
+    .myPlanRow.active {
+      background: @color_bluelight;
+    }
+    .row_content .dir_icon {
+      width: 20px;
+      height: 15px;
+      margin-right: 4px;
+      vertical-align: sub;
+      background-image: url(../../../../assets/images/workplan/document_new.png);
+    }
+  }
+  .ant-modal-footer {
+    border-bottom: none;
+  }
+}
+// 删除弹窗
+.delNewPlanModal {
+  height: 300px;
+  background: #ffffff;
+  border-radius: 6px;
+  .ant-modal-content {
+    height: 100%;
+    .ant-modal-body {
+      display: flex;
+      align-items: center;
+      height: calc(100% - 108px);
+    }
+  }
+}
+.newPlanBtnMenu {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16) !important;
+  border-radius: 4px;
+  .ant-menu-item-selected {
+    background-color: white !important;
+  }
+}

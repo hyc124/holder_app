@@ -1,0 +1,56 @@
+.chat-window-tip {
+  width: 1px;
+  height: 100%;
+  position: fixed;
+  right: 0px;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  margin: auto;
+  // text-align: center;
+  &.addWidth {
+    width: 100%;
+  }
+  .workDeskChatAside {
+    position: absolute;
+    right: 7px;
+    height: 100%;
+    margin-top: 0px;
+    box-shadow: 0px 2px 12px 0px rgba(206, 206, 206, 0.5);
+  }
+}
+.red-spot-icon {
+  cursor: pointer;
+  height: auto;
+  width: 36px;
+  position: absolute;
+  right: 16px;
+  margin-top: 4px;
+  span:first-child {
+    background: url(../../../../../assets/images/myWorkDesk/hearder_chat.svg) no-repeat center;
+    border-radius: 50%;
+    width: 36px;
+    cursor: pointer;
+    height: 36px;
+    background-color: #3949ab;
+    box-shadow: 0px 3px 8px 0px rgba(48, 23, 179, 0.33);
+    .red-spot {
+      font-style: normal;
+      color: #ffffff;
+      display: block;
+      position: absolute;
+      top: -3px;
+      right: -10px;
+      min-width: 16px;
+      padding: 0 2px;
+      height: 16px;
+      text-align: center;
+      line-height: 16px;
+      background: #f44236;
+      border-radius: 8px;
+    }
+  }
+}
+.red-spot-cont {
+  position: absolute;
+}

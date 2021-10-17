@@ -1,0 +1,645 @@
+.TaskReportDeatil {
+  width: calc(100% - 55px) !important;
+  height: 100%;
+  position: absolute;
+  top: 0 !important;
+  right: 0;
+  padding: 30px 0px !important;
+  .ant-spin-container {
+    .ant-comment-actions {
+      margin-top: 0px !important;
+    }
+  }
+  .ant-modal-header {
+    .top_title_box {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 20px;
+      .work-share {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../../../../../assets/images/workReport/share_btn.png) no-repeat center;
+        vertical-align: middle;
+        background-size: 16px;
+        cursor: pointer;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/share_hover.png) no-repeat center;
+          background-size: 16px;
+        }
+      }
+      .report_edit {
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin: 0 5px;
+        margin-right: 0;
+        cursor: pointer;
+        background-size: contain;
+        background-image: url(../../../../../assets/images/workReport/rep_edit.png);
+        &:hover {
+          background-image: url(../../../../../assets/images/workReport/report_blue.png);
+        }
+      }
+      .work-print {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../../../../../assets/images/workReport/work_print.png) no-repeat center;
+        vertical-align: middle;
+        background-size: 16px;
+        cursor: pointer;
+        margin: 0 5px;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/work-print-hover.png) no-repeat center;
+          background-size: 16px;
+        }
+      }
+      .work-derive {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../../../../../assets/images/workReport/work_drive.png) no-repeat center;
+        cursor: pointer;
+        vertical-align: middle;
+        background-size: 16px;
+        margin-right: 5px;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/work_derive_hover.png) no-repeat center;
+          background-size: 16px;
+        }
+      }
+    }
+  }
+  .ant-modal-content {
+    height: 100%;
+    .ant-modal-body {
+      height: calc(100% - 55px);
+      padding-bottom: 10px;
+      padding-left: 0px;
+      padding-right: 0px;
+      .ant-carousel {
+        .slick-dots li {
+          display: none;
+        }
+      }
+    }
+  }
+  .task_report_content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    .task_report_wrapper {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      .reportTaskDetailOpenCon {
+        color: #70707a;
+        flex: 1;
+        position: relative;
+        transition: all 0.2s linear;
+        height: calc(100% - 23px);
+        margin: 3px 24px 0;
+        background: #ffffff;
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        max-width: 570px;
+        min-width: 570px;
+        height: 98%;
+        overflow: auto;
+        padding: 15px;
+        .oneReportProgress {
+          margin-bottom: 20px;
+          .progress_right {
+            padding-left: 20px;
+            .ant-progress {
+              margin-top: 7px;
+            }
+            .progress_bot {
+              color: rgba(128, 128, 128, 1);
+              justify-content: space-between;
+              margin-top: 13px;
+            }
+          }
+          .ant-progress-text {
+            color: #4285f4;
+          }
+        }
+        .report_person {
+          .report_person_titile {
+            color: #5c5c5c;
+            font-size: 14px;
+            margin-left: 10px;
+            font-weight: bold;
+          }
+        }
+        .report_descrip {
+          background: #fafafa;
+          padding: 12px;
+          color: #757575;
+          margin-top: 20px;
+          img {
+            width: 100px !important;
+          }
+        }
+      }
+      .report_right_child_box {
+        flex: 1;
+        min-width: 1100px;
+        height: calc(100% - 10px);
+        padding: 3px 22px 0 0;
+        background: #ffffff;
+        & > .report_right_content {
+          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          position: relative;
+          .lines {
+            display: block;
+            width: 1px;
+            background: rgba(230, 230, 230, 1);
+            left: 50%;
+            height: 100%;
+            position: absolute;
+            margin-left: -1px;
+            top: 0;
+            border: 0;
+          }
+          .report_right_header {
+            height: 40px;
+            line-height: 40px;
+            background: #fafafa;
+            .ant-col-12 {
+              padding-left: 15px;
+            }
+            .ant-col-12:first-child {
+              border-right: 1px solid #e6e6e6;
+            }
+          }
+          .report_right_choose {
+            text-align: right;
+            .ant-col-12:first-child {
+              border-right: 1px solid #e6e6e6;
+              padding-top: 10px;
+            }
+            .ant-radio-group {
+              width: 120px;
+            }
+          }
+          .process_item_box {
+            height: auto;
+            .process_cont_box {
+              width: 50%;
+              height: auto;
+            }
+            .process_cont_box:first-child {
+              border-right: 1px solid #e6e6e6;
+            }
+            .process_date_title {
+              width: calc(100% - 40px);
+              height: 20px;
+              text-align: center;
+              line-height: 20px;
+              font-size: 12px;
+              color: #4d4d4d;
+              background-color: #ededed;
+              margin-top: 20px;
+              margin-left: 20px;
+            }
+            .process_date_conts_box {
+              padding: 0 10px;
+              margin: 20px;
+              margin-bottom: 0px;
+              border: 1px solid rgba(230, 230, 230, 1);
+
+              .process_normal_title {
+                color: #757575;
+                overflow: hidden;
+                height: auto;
+                line-height: 34px;
+                padding: 0 10px;
+                &:hover {
+                  .show_report_btn,
+                  .edit_report_btn {
+                    display: inline-block;
+                  }
+                }
+                .show_report_btn {
+                  width: 20px;
+                  text-align: right;
+                  height: 20px;
+                  margin: 0px 16px;
+                  display: none;
+                  vertical-align: middle;
+                  cursor: pointer;
+                  background: url(../../../../../assets/images/taskOpt/show_report.png) no-repeat center;
+                  &:hover {
+                    background: url(../../../../../assets/images/taskOpt/show_report_h.png) no-repeat center;
+                  }
+                }
+                .edit_report_btn {
+                  width: 20px;
+                  text-align: right;
+                  height: 17px;
+                  margin-right: 0px;
+                  display: none;
+                  cursor: pointer;
+                  background-size: 14px;
+                  background-image: url(../../../../../assets/images/taskOpt/report-black.png);
+                  background-repeat: no-repeat;
+                  vertical-align: middle;
+                  &:hover {
+                    background-size: 14px;
+                    background-image: url(../../../../../assets/images/taskOpt/report_blue.png);
+                  }
+                }
+                .submit_infos {
+                  display: inline-block;
+                  width: 100%;
+                  .getblue {
+                    color: #4285f4;
+                    margin: 0 2px;
+                  }
+                  i {
+                    display: inline-block;
+                    width: 30px;
+                    height: 8px;
+                    background: url(../../../../../assets/images/task/arrow_normal.png) no-repeat center;
+                    vertical-align: middle;
+                    margin-top: -4px;
+                  }
+                }
+              }
+              // 汇报内容
+              .process_normal_content {
+                padding: 12px 10px;
+                background-color: #fff;
+                color: #757575;
+                padding-right: 18px;
+                .problem_box {
+                  position: relative;
+                  margin-bottom: 15px;
+                  .problem_cont {
+                    img {
+                      max-width: 340px;
+                    }
+                  }
+                  .problem_title {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    user-select: none;
+                    color: #191f25;
+                  }
+                }
+                .report_view_btn {
+                  text-align: right;
+                  margin-top: 15px !important;
+                  .cancleBtn {
+                    width: 70px;
+                    border: 1px solid #4285f4;
+                    color: #4285f4;
+                  }
+                  .sendBtn {
+                    width: 70px;
+                    background: #4285f4;
+                    border: 1px solid #4285f4;
+                    margin-left: 12px;
+                    color: white;
+                  }
+                }
+                .report_view_list {
+                  .ant-list-items {
+                    background: #fafafa;
+                  }
+                  .commment_view_all {
+                    padding: 10px;
+                    border-radius: 4px;
+                    color: #757575;
+                    background-color: rgba(233, 242, 255, 0.5);
+                    color: #757575;
+                    img {
+                      max-width: 340px;
+                    }
+                    .callUser {
+                      cursor: pointer;
+                      span {
+                        color: #4285f4;
+                      }
+                      em {
+                        font-style: normal;
+                        color: #ccc;
+                        text-align: right;
+                        margin-left: 12px;
+                      }
+                    }
+                  }
+                  .opinion-area {
+                    .provide-edit-view {
+                      overflow: hidden;
+                    }
+                    .view_box_new {
+                      width: 98%;
+                      display: flex;
+                      margin-bottom: 16px;
+                      .view_time {
+                        margin-bottom: 0;
+                        color: #70707a;
+                      }
+                      .content_row {
+                        position: relative;
+                        margin-bottom: 2px;
+                      }
+                      .view_cont_box {
+                        flex: 1;
+                        width: 1%;
+                      }
+                      .view_cont {
+                        font-size: 12px;
+                        font-family: 'Microsoft YaHei';
+                        font-weight: 400;
+                        color: rgba(112, 112, 122, 1);
+                        line-height: 18px;
+                        flex: 1;
+                        width: 100%;
+                        position: relative;
+                        .chatAt {
+                          background: none;
+                        }
+                        .u_name {
+                          position: absolute;
+                          left: 0;
+                        }
+                        .times {
+                          font-style: normal;
+                          margin-left: 20px;
+                          color: rgba(112, 112, 122, 1);
+                        }
+                        .user-cont {
+                          white-space: normal;
+                          cursor: pointer;
+                          vertical-align: top;
+                          margin-top: 2px;
+                          p {
+                            margin-bottom: 4px;
+                            color: #191f25;
+                          }
+                        }
+                      }
+                      .view_child_cont {
+                        background: #fafafa;
+                        opacity: 0.81;
+                        border-radius: 4px;
+                        padding: 14px 16px;
+                        margin-top: 4px;
+                        .child_item {
+                          margin-bottom: 10px;
+                          .view_time {
+                            margin-bottom: 6px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                .opinion-textareas {
+                  border: none;
+                  border-top: solid 1px #d8d8d8;
+                  padding: 10px;
+                  height: 34px;
+                  margin: 10px 0px;
+                  .textarea_set {
+                    width: 100%;
+                    height: 32px;
+                    line-height: 32px;
+                    background: rgba(255, 255, 255, 1);
+                    border: 1px solid rgba(230, 230, 230, 1);
+                    border-radius: 0px 0px 4px 4px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: rgba(204, 204, 204, 1);
+                    padding: 0 17px;
+                  }
+                }
+
+                .problem_report_navs {
+                  padding-top: 15px;
+                  margin-top: 15px;
+                  border-top: 1px solid rgba(229, 229, 229, 1);
+                  min-height: 160px;
+                  .ant-tabs-nav {
+                    margin-bottom: 0px;
+                    &::before {
+                      border-bottom: 0px;
+                    }
+                    .ant-tabs-tab {
+                      border: none;
+                      background: white;
+                      border-radius: 0px;
+                      border: none;
+                      border-top: 2px solid transparent;
+                    }
+                    .ant-tabs-tab-active {
+                      background: #fafafa;
+                      font-weight: bold;
+                      border-top: 2px solid var(--baseColor, #4285f4) !important;
+                    }
+                  }
+                  li {
+                    width: 74px;
+                    height: 34px;
+                    text-align: center;
+                    line-height: 34px;
+                    color: #808080;
+                    float: left;
+                    cursor: pointer;
+                  }
+                  li.choice {
+                    color: var(--baseColor, #4285f4);
+                    background: #fafafa;
+                    font-weight: bold;
+                    border-top: 2px solid var(--baseColor, #4285f4);
+                  }
+                }
+                .report_list {
+                  min-height: 84px;
+                  background: #fafafa;
+                  justify-content: flex-start;
+                  width: 100%;
+                  padding: 10px 15px;
+                  .report_des_peo_box {
+                    margin-right: 15px;
+                    display: inline-block;
+                    width: 40px;
+                    text-align: center;
+                    .report_des_name {
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .editorBox {
+            width: 100%;
+            border: 1px solid #4285f4;
+            // position: relative;
+            border-radius: 4px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 历史汇报详情
+.reportDetailMask {
+  height: 620px;
+  .opinion-textareas {
+    height: 32px;
+    background: #ffffff;
+    border: 1px solid #d7d7d9;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    height: 34px;
+    margin: 10px 0px;
+    .textarea_set {
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      background: rgba(255, 255, 255, 1);
+      border: 1px solid #d7d7d9;
+      border-radius: 0px 0px 4px 4px;
+      font-weight: 400;
+      padding: 0 17px;
+      font-size: 12px;
+      color: #9a9aa2;
+    }
+  }
+  .editorBox {
+    margin-bottom: 20px;
+  }
+  .ant-modal-content {
+    min-height: 620px;
+  }
+  .ant-modal-body {
+    height: calc(100% - 55px);
+  }
+  .report-detail-header {
+    font-size: 14px;
+    text-align: left;
+    .submit_time {
+      margin-right: 10px;
+    }
+  }
+  .ant-carousel .slick-prev {
+    width: 23px;
+    height: 40px;
+    background: url(../../../../../assets/images/taskReport/img-before.png) no-repeat !important;
+    cursor: pointer;
+    &:hover {
+      background: url(../../../../../assets/images/taskReport/img-before.png) no-repeat !important;
+    }
+  }
+  .ant-carousel .slick-next {
+    width: 23px;
+    height: 40px;
+    background: url(../../../../../assets/images/taskReport/img-next.png) no-repeat !important;
+    cursor: pointer;
+    &:hover {
+      background: url(../../../../../assets/images/taskReport/img-next.png) no-repeat !important;
+    }
+  }
+  .ant-carousel .slick-initialized .slick-slide {
+    width: 802px;
+  }
+  .report-detail-body {
+    height: 518px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .report_text_one {
+      .progress_right {
+        margin: 20px 0px;
+        .ant-progress-outer {
+          width: 98%;
+        }
+        .ant-progress-text {
+          color: #4285f4;
+        }
+      }
+      .report_text_one_header {
+        justify-content: space-between;
+      }
+      .report_name {
+        color: #191f25;
+        margin-bottom: 14px;
+        padding-left: 5px;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-weight: 800;
+      }
+      .report_text_title_info {
+        background: #fafafa;
+        padding: 12px;
+        .row-no-margin {
+          margin-right: 0px;
+          margin-left: 0px;
+        }
+      }
+      .report_name_date {
+        color: #70707a;
+        overflow: hidden;
+        background: #fafafa;
+        padding: 10px 0px;
+        .planSpend {
+          float: right;
+          margin: 0;
+          & > span {
+            color: var(--baseColor, #4285f4);
+          }
+        }
+      }
+    }
+    .report-to-user-list {
+      min-height: 52px;
+      width: 100%;
+      margin-top: 10px;
+      & > p {
+        width: 50px;
+        float: left;
+      }
+      .file-container {
+        display: inline-block;
+        width: calc(100% - 90px);
+      }
+    }
+    .report-item-list {
+      padding: 12px;
+      background-color: #fafafa;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+    .ant-tabs-content-holder {
+      .report_des_peo_box {
+        margin-right: 10px;
+      }
+    }
+    .report-to-user {
+      color: #757575;
+      margin-top: 13px;
+      width: 100%;
+    }
+  }
+}

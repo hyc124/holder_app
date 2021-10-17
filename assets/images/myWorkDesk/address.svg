@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>通讯录高亮</title>
+    <desc>Created with Sketch.</desc>
+    <g id="----·侧边栏优化" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="侧边栏补充" transform="translate(-97.000000, -621.000000)">
+            <g id="通讯录备份" transform="translate(97.000000, 621.000000)">
+                <rect id="矩形" stroke="#FFFFFF" x="2.5" y="1.5" width="14" height="15" rx="3"></rect>
+                <path d="M2.5,5 C2.77614237,5 3,5.22385763 3,5.5 C3,5.74545989 2.82312484,5.94960837 2.58987563,5.99194433 L2.5,6 L0.5,6 C0.223857625,6 0,5.77614237 0,5.5 C0,5.25454011 0.176875161,5.05039163 0.410124368,5.00805567 L0.5,5 L2.5,5 Z" id="路径-2" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M2.5,12 C2.77614237,12 3,12.2238576 3,12.5 C3,12.7454599 2.82312484,12.9496084 2.58987563,12.9919443 L2.5,13 L0.5,13 C0.223857625,13 0,12.7761424 0,12.5 C0,12.2545401 0.176875161,12.0503916 0.410124368,12.0080557 L0.5,12 L2.5,12 Z" id="路径-2备份" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <path d="M13.5,6 C13.7454599,6 13.9496084,6.12485305 13.9919443,6.28949955 L14,6.35294118 L14,11.6470588 C14,11.8419829 13.7761424,12 13.5,12 C13.2545401,12 13.0503916,11.8751469 13.0080557,11.7105004 L13,11.6470588 L13,6.35294118 C13,6.15801715 13.2238576,6 13.5,6 Z" id="路径-4" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

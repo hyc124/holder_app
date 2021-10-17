@@ -1,0 +1,727 @@
+@import '~@/src/styles/_var.less';
+// ****************任务公用类*********************//
+.basePopoverMenu {
+  width: 400px;
+  height: 172px;
+  overflow: auto;
+  padding: 16px 20px;
+  color: @color_gray;
+  font-size: 12px;
+}
+.baseDropInBox {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 12px;
+  color: #757575;
+  background-color: white;
+}
+// 密...标签
+.boardTaskType {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.boardTaskType.finishedShow,
+.boardTaskType.lateShow,
+.boardTaskType.trialShow,
+.boardTaskType.privateShow,
+.boardTaskType.frozenShow,
+.boardTaskType.circleShow,
+.boardTaskType.changedShow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin: 0 3px;
+  line-height: 18px !important;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 2px !important;
+}
+.boardTaskType.finishedHide,
+.boardTaskType.lateHide,
+.boardTaskType.trialHide,
+.boardTaskType.privateHide,
+.boardTaskType.frozenHide,
+.boardTaskType.circleHide {
+  display: none;
+}
+.boardTaskType.privateShow {
+  background: #fad1ce;
+  color: #ea4335 !important;
+}
+.boardTaskType.lateShow {
+  background: #fad1ce;
+  color: #ea4335 !important;
+}
+.boardTaskType.trialShow {
+  background: #fcecc5;
+  color: #fbbc05 !important;
+}
+.boardTaskType.finishedShow {
+  background: #accaf7;
+  color: @color_primary !important;
+}
+.boardTaskType.frozenShow {
+  background: #cdcdcd;
+}
+.boardTaskType.circleShow {
+  background: @color_primary;
+}
+.boardTaskType.circleNum {
+  color: @color_primary;
+  height: 18px;
+  background: #e9f2ff;
+  width: initial;
+  border-radius: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  display: inline-block;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+.leftOrgTree.no_drag_hover .ant-tree {
+  .ant-tree-treenode.drag-over-gap-bottom > [draggable],
+  .ant-tree-treenode.drag-over-gap-top > [draggable] {
+    border: 0;
+  }
+}
+// ****************任务类/规划列表左侧组织架构*********************//
+.secondPageContainer {
+  width: calc(100% - 80px);
+  background: @color_f5;
+  padding: 16px;
+  .pageLeftHeader {
+    // height: 64px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid @color_e7;
+    .header_tit {
+      font-size: 16px;
+      font-weight: bold;
+      color: @color_dark;
+      margin: 19px 0;
+    }
+  }
+
+  // 组织架构展开折叠
+  .org_fold_icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .org_fold_icon.chose {
+    transform: rotate(180deg);
+    background-image: url(../../../assets/images/workplan/org_fold.svg);
+    &:hover {
+      transform: rotate(0deg);
+      background-image: url(../../../assets/images/annouce/arrow_close_h.svg);
+    }
+  }
+  .org_fold_icon.open {
+    margin-right: 25px;
+    background-image: url(../../../assets/images/workplan/org_fold_h.svg);
+  }
+  .orgBotScroll,
+  .org_tree_text,
+  .org_tree_count_text {
+    font-size: 14px;
+    // color: #191f25;
+  }
+  .org_tree_count_text {
+    max-width: 0;
+  }
+
+  .row_left {
+    width: 100%;
+    // .org_tree_text {
+    //   max-width: calc(100% - 52px);
+    // }
+  }
+
+  ::-webkit-scrollbar {
+    position: absolute;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #e7e7e9;
+    opacity: 0.3;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #e7e7e9;
+    opacity: 0.3;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #e7e7e9;
+    opacity: 0.3;
+  }
+  // ======组织架构搜索框=====//
+  // 搜索框
+  .org_menu_search {
+    width: calc(100% - 20px);
+    height: 28px;
+    margin: 14px 10px 0 10px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 0;
+  }
+  .org_menu_search .ant-input-search-icon {
+    color: #c4c4c4;
+  }
+  .org_menu_search .ant-input-search-icon::before {
+    border-left: 0;
+  }
+  .org_menu_search.ant-input-affix-wrapper > input.ant-input {
+    font-size: 12px;
+    color: #a4a4a4;
+    background: #ffffff;
+  }
+
+  .orgLeftCon,
+  .orgRightCon {
+    background: #ffffff;
+    border-radius: 8px;
+  }
+  .orgLeftCon {
+    width: 240px;
+    height: 100%;
+    padding-right: 0px;
+    margin-right: 8px;
+    position: relative;
+  }
+  .orgRightCon {
+    flex-direction: column;
+  }
+  .hidewidth {
+    width: 0px !important;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.5s ease, -webkit-transform 0.3s ease;
+  }
+  .showwidth {
+    width: 240px;
+    opacity: 1;
+    overflow: hidden;
+    transition: width 0.3s ease, -webkit-transform 0.5s ease;
+  }
+  .leftOrgTree {
+    width: auto;
+    // width: 280px;
+    margin-top: 12px;
+    overflow: auto;
+    color: @color_gray;
+    font-size: 12px;
+  }
+
+  // 我的
+  .org_my {
+    height: 48px;
+    line-height: 48px;
+    padding-left: 16px;
+    margin-top: 25px;
+    cursor: pointer;
+  }
+  .org_my:hover {
+    background: @color_f5;
+  }
+  .org_my.on {
+    font-weight: bold;
+    color: @color_primary;
+  }
+  // 下方滚动区域
+  .orgBotScroll {
+    overflow: hidden;
+    &:hover {
+      overflow: overlay;
+    }
+  }
+  .calcHeight {
+    height: calc(100% - 48px);
+  }
+  .clacHeight26 {
+    height: calc(100% - 26px);
+  }
+  .clacHeight58 {
+    height: calc(100% - 58px);
+  }
+  .clac100 {
+    height: 100%;
+    .calcHeight {
+      overflow: hidden;
+    }
+  }
+  // ====组织架构搜索====//
+  .orgSearchList {
+    height: calc(100% - 88px);
+    margin: 10px 0px 0;
+    font-size: 12px;
+    color: @color_gray;
+    border-radius: 4px;
+    background: inherit;
+    overflow: auto;
+    .total_data {
+      margin-left: 15px;
+      font-size: 14px;
+      color: #9a9aa2;
+      height: 22px;
+      line-height: 22px;
+    }
+  }
+  .orgSearchList ul li {
+    height: 28px;
+    line-height: 28px;
+    padding: 10px 15px;
+    overflow: hidden;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 4px;
+    max-width: 100%;
+    & > p {
+      margin-top: 5px;
+    }
+    &.total_data_list {
+      height: auto !important;
+      display: flex;
+      align-items: center;
+      margin: 12px 0px;
+      div {
+        margin: 0;
+        height: auto;
+        width: calc(100% - 40px);
+        margin-left: 6px;
+        display: flex;
+        flex-flow: column;
+        h3 {
+          font-size: 14px;
+          color: #191f25;
+          margin-bottom: 4px;
+        }
+        .blod_blue {
+          color: #3949ab;
+        }
+        span.text-ellipsis {
+          height: 12px;
+          line-height: 12px;
+          font-size: 12px;
+          color: #9a9aa2;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .orgSearchList ul li:hover,
+  .orgSearchList ul li.active {
+    color: @color_primary;
+    background: rgba(237, 247, 255, 1);
+  }
+  .task-tree-more {
+    font-size: 12px;
+    border: none;
+    color: @color_primary;
+    margin-left: 110px;
+    display: none;
+    cursor: pointer;
+    margin-top: 13px;
+  }
+
+  // **********右侧*************//
+  .secondPageHeader,
+  .secondPageMenuNav {
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: @color_gray;
+  }
+  .secondPageMenuNav {
+    height: 51px;
+  }
+  .secondPageHeader {
+    height: 64px;
+    border-bottom: 1px solid #e7e7e9;
+    .header_tit {
+      color: @color_gray;
+      font-size: 16px;
+    }
+  }
+
+  .menu_btn {
+    display: inline-block;
+    min-width: 80px;
+    padding: 0 12px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: @color_primary;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+
+  // =====导航菜单按钮=======//
+  .nav_subbt {
+    flex-shrink: 0;
+    height: 28px;
+    padding: 0 12px;
+    line-height: 28px;
+    color: @color_gray;
+    margin-left: 0px;
+    cursor: pointer;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #b1b1b1;
+  }
+  .nav_subbt:hover {
+    border-color: #3949ab;
+    color: #3949ab;
+  }
+  .nav_subbt .tri_down_icon {
+    width: 8px;
+    height: 8px;
+    margin-bottom: 2px;
+    background-image: url(../../../assets/images/workplan/tri_down.svg);
+    &.mleft {
+      margin-left: 10px;
+    }
+    &:not(.mleft) {
+      margin-right: 10px;
+    }
+  }
+
+  .nav_subbt:hover .tri_down_icon {
+    background-image: url(../../../assets/images/workplan/tri_down_h.svg);
+  }
+}
+
+/* 任务列表标签展示方式2 */
+.taskTagListBox.txtStyle {
+  margin-left: 5px;
+  color: #9a9aa2;
+  &.cell-content {
+    .taskTagTxt {
+      display: initial;
+    }
+  }
+}
+
+.taskTagListBox.txtStyle:not(.null)::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  margin-bottom: -3px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../../../assets/images/common/tag_list.png);
+}
+
+.taskMiddleLabel {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 8px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 4px;
+  background-color: #e7e7e9;
+  color: @color_gray;
+  font-size: 12px;
+}
+.taskMiddleLabel > i {
+  font-style: normal;
+  display: inline-block;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+// 关注的人标识
+.attentionFlag {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.attentionFlag .triangle_topleft {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 24px solid #e6e6e6;
+  border-right: 24px solid transparent;
+}
+.attentionIcon {
+  width: 12px;
+  height: 8px;
+  background-image: url(../../../assets/images/task/eye.png);
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+/* ===========倒计时============ */
+/* -----圆形进度---- */
+.percentCircleCon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  width: 32px;
+}
+.percent-circle {
+  width: 16px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.percentCircleIn {
+  width: 24px;
+  height: 24px;
+  /* border: 4px solid #4285F4; */
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  transform: rotate(45deg);
+  box-sizing: content-box !important;
+}
+.percent-circle-left {
+  left: 0;
+}
+.percent-circle-left .left-content {
+  border-bottom-color: #e9f2ff;
+  border-left-color: #e9f2ff;
+  border-top-color: @color_primary;
+  border-right-color: @color_primary;
+  left: 0;
+}
+.percent-circle-right {
+  right: 0;
+}
+.percent-circle-right .right-content {
+  border-bottom-color: @color_primary;
+  border-left-color: @color_primary;
+  border-top-color: #e9f2ff;
+  border-right-color: #e9f2ff;
+  right: 0;
+}
+.text-circle {
+  position: absolute;
+  line-height: 32px;
+  text-align: center;
+  width: 100%;
+  font-size: 11px;
+  color: var(--baseColor, #4285f4);
+}
+/* 进度颜色 */
+/* 已完成 */
+.percentCircleCon.finish_color .percent-circle-left .left-content {
+  border-bottom-color: #d7d7d9;
+  border-left-color: #d7d7d9;
+  border-top-color: #e7e7e9;
+  border-right-color: #e7e7e9;
+}
+.percentCircleCon.finish_color .percent-circle-right .right-content {
+  border-bottom-color: #e7e7e9;
+  border-left-color: #e7e7e9;
+  border-top-color: #d7d7d9;
+  border-right-color: #d7d7d9;
+}
+.percentCircleCon.finish_color .text-circle {
+  color: #9a9aa2;
+}
+/* 其他 */
+.percentCircleCon.process_color1 .percent-circle-left .left-content {
+  border-bottom-color: #e9f2ff;
+  border-left-color: #e9f2ff;
+  border-top-color: @color_primary;
+  border-right-color: @color_primary;
+}
+.percentCircleCon.process_color1 .percent-circle-right .right-content {
+  border-bottom-color: @color_primary;
+  border-left-color: @color_primary;
+  border-top-color: #e9f2ff;
+  border-right-color: #e9f2ff;
+}
+.percentCircleCon.process_color1 .text-circle {
+  color: #4285f4;
+}
+
+.percentCircleCon.process_color2 .percent-circle-left .left-content {
+  border-bottom-color: #cdead5;
+  border-left-color: #cdead5;
+  border-top-color: #34a853;
+  border-right-color: #34a853;
+}
+.percentCircleCon.process_color2 .percent-circle-right .right-content {
+  border-bottom-color: #34a853;
+  border-left-color: #34a853;
+  border-top-color: #cdead5;
+  border-right-color: #cdead5;
+}
+.percentCircleCon.process_color2 .text-circle {
+  color: #34a853;
+}
+
+.percentCircleCon.process_color3 .percent-circle-left .left-content {
+  border-bottom-color: #fcecc5;
+  border-left-color: #fcecc5;
+  border-top-color: #fbbc05;
+  border-right-color: #fbbc05;
+}
+.percentCircleCon.process_color3 .percent-circle-right .right-content {
+  border-bottom-color: #fbbc05;
+  border-left-color: #fbbc05;
+  border-top-color: #fcecc5;
+  border-right-color: #fcecc5;
+}
+.percentCircleCon.process_color3 .text-circle {
+  color: #fbbc05;
+}
+
+.percentCircleCon.process_color4 .percent-circle-left .left-content {
+  border-bottom-color: #fad1ce;
+  border-left-color: #fad1ce;
+  border-top-color: #ea4335;
+  border-right-color: #ea4335;
+}
+.percentCircleCon.process_color4 .percent-circle-right .right-content {
+  border-bottom-color: #ea4335;
+  border-left-color: #ea4335;
+  border-top-color: #fad1ce;
+  border-right-color: #fad1ce;
+}
+.percentCircleCon.process_color4 .text-circle {
+  color: #ea4335;
+}
+/* -----右侧文本---- */
+.countdownRig {
+  display: inline-block;
+  vertical-align: middle;
+  /* width: 60px; */
+  margin-left: 6px;
+  color: #191f25;
+  text-align: left;
+}
+.nostart_percent {
+  display: inline-block;
+  min-width: 34px;
+  text-align: center;
+}
+
+// ======任务链===========//
+// 树形表格展开折叠按钮
+.treeTableIcon,
+.treeTableIcon.img_icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+  background-size: 10px 5px;
+  display: inline-flex;
+  float: left;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+// 三角形样式
+.treeTableIcon.expanded {
+  background-image: url(../../../assets/images/workplan/tri_down.svg);
+}
+.treeTableIcon.collapsed {
+  background-image: url(../../../assets/images/workplan/tri_down_h.svg);
+  transform: rotate(-90deg);
+}
+
+// 加减图标样式(去除，换成小三角)
+.treeTableIcon.square {
+  background-size: 13px 13px;
+}
+.treeTableIcon.square.collapsed {
+  transform: rotate(0deg);
+  background-image: url(../../../assets/images/workdesk/tree_node_icon_open.svg);
+  background-size: 6px 8px;
+  &:hover {
+    background-image: url(../../../assets/images/workdesk/tree_node_icon_open_h.svg);
+  }
+}
+.treeTableIcon.square.expanded {
+  transform: rotate(90deg);
+  background-image: url(../../../assets/images/workdesk/tree_node_icon_open.svg);
+  background-size: 6px 8px;
+  &:hover {
+    background-image: url(../../../assets/images/workdesk/tree_node_icon_open_h.svg);
+  }
+}
+// 展开折叠按钮前都加弯曲箭头图标样式
+.treeTableChild .treeTableIcon {
+  &.arrow_leaf {
+    // width: 30px;
+    // background-image: url(../../../assets/images/workplan/tree_child.png);
+    background-size: 13px 13px;
+    // background-size: 8px 7px;
+    // background-position: left;
+    background-repeat: no-repeat;
+    &.expanded {
+      background-image: url(../../../assets/images/workdesk/tree_node_icon_open.svg);
+      // url(../../../assets/images/workplan/tree_child.png), url(../../../assets/images/workdesk/tree_node_icon_down.svg);
+      // background-size: 8px 7px, 13px 13px;
+      background-size: 6px 8px;
+      // background-position: 0 center, 12px center;
+      &:hover {
+        background-image: url(../../../assets/images/workdesk/tree_node_icon_open_h.svg);
+      }
+    }
+    &.collapsed {
+      background-image: url(../../../assets/images/workdesk/tree_node_icon_open.svg);
+      // url(../../../assets/images/workplan/tree_child.png), url(../../../assets/images/workdesk/tree_node_icon_open.svg);
+      // background-size: 8px 7px, 13px 13px;
+      background-size: 6px 8px;
+      // background-position: 0 center, 12px center;
+      &:hover {
+        background-image: url(../../../assets/images/workdesk/tree_node_icon_open_h.svg);
+      }
+    }
+  }
+}
+.commonRetract {
+  .treeTableIcon.square.expanded {
+    background: url(../../../assets/images/workdesk/tree_node_icon_close.svg) no-repeat;
+    transform: rotate(-30deg);
+    width: 10px;
+    height: 10px;
+    margin-top: 7px;
+  }
+  .treeTableIcon.square.collapsed {
+    background: url(../../../assets/images/workdesk/tree_node_icon_close.svg) no-repeat;
+    width: 10px;
+    height: 10px;
+    margin-top: 7px;
+  }
+  .arrow_leaf {
+    width: 10px;
+    height: 10px;
+  }
+}
+// 媒体查询器
+@media screen and (max-width: 1350px) {
+  // .secondPageContainer {
+  //   .orgLeftCon {
+  //     width: 220px;
+  //   }
+  // }
+}

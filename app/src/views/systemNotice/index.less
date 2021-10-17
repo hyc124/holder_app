@@ -1,0 +1,282 @@
+@import '../../styles/_var.less';
+body {
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
+}
+.app-layout {
+  .app-content {
+    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.noticeWinContent {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  animation: bounceInRight 0.5s 0.65s linear forwards;
+  opacity: 0;
+  border-bottom: 4px;
+  border-left: 5px solid @color_blue;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+.systemNotice {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: @color_black;
+  padding: 12px 16px 12px;
+  width: 100%;
+  margin-left: 5px;
+  .contentTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .oa-avatar {
+      position: absolute;
+      left: 0;
+    }
+    .userInfo {
+      width: 100%;
+      padding-left: 40px;
+      .mgsInfo {
+        align-items: center;
+        display: flex;
+        color: @color_gray;
+        .teamName {
+          max-width: 190px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      .title {
+        max-width: 230px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .ignore {
+        color: #9a9aa2;
+        font-size: 14px;
+        cursor: pointer;
+        float: right;
+      }
+      //汇报设置操作tip
+      .report-set-box-title {
+        .user-name {
+          color: #727272;
+        }
+        .report-notice-content {
+          color: #000000;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .waitTime {
+      color: #ffaa00;
+    }
+  }
+  .mainContent {
+    margin-top: 8px;
+    // background-color: @color_f5;
+    padding: 8px;
+    position: relative;
+    .greetMsg {
+      font-size: 14px;
+      text-overflow: -o-ellipsis-lastline;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      // align-items: center;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      height: 40px;
+    }
+    .mgsInfo {
+      background: rgba(255, 255, 255, 1);
+      opacity: 0.5;
+      color: @color_gray;
+      padding: 0 6px;
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 0;
+        line-height: 20px;
+      }
+      .levelWrap {
+        display: flex;
+        width: 100%;
+        padding: 14px 0 14px 4px;
+        background: #ffffff;
+        .lSpan {
+          margin-right: 42px;
+          color: #9a9aa2;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+        }
+        i {
+          margin-left: 2px;
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+        }
+        .priority-1 {
+          background: url('../../../../assets/images/common/priority-1.svg') no-repeat center;
+        }
+        .priority-2 {
+          background: url('../../../../assets/images/common/priority-2.svg') no-repeat center;
+        }
+        .priority-3 {
+          background: url('../../../../assets/images/common/priority-3.svg') no-repeat center;
+        }
+        .priority-4 {
+          background: url('../../../../assets/images/common/priority-4.svg') no-repeat center;
+        }
+        .severity-1 {
+          background: url('../../../../assets/images/common/severity-1.svg') no-repeat center;
+        }
+        .severity-2 {
+          background: url('../../../../assets/images/common/severity-2.svg') no-repeat center;
+        }
+        .severity-3 {
+          background: url('../../../../assets/images/common/severity-3.svg') no-repeat center;
+        }
+        .severity-4 {
+          background: url('../../../../assets/images/common/severity-4.svg') no-repeat center;
+        }
+      }
+    }
+    .noticeType {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      color: @color_blue;
+    }
+  }
+  .contentBottom {
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .close_icon {
+    position: absolute;
+    right: 18px;
+    color: #70707a;
+    top: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: #4285f4;
+    }
+    z-index: 99;
+  }
+  .ignore {
+    color: #9a9aa2;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    &:hover {
+      color: #4285f4;
+    }
+  }
+}
+// 汇报重置样式
+.systemNotice.report-set-notice-content {
+  position: relative;
+  .closeWindows {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -12px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 500;
+    .close-icon {
+      font-size: 18px;
+      color: #000000;
+      opacity: 0.6;
+
+      &:hover {
+        color: @color_blue;
+      }
+    }
+  }
+  .oa-avatar {
+    min-width: 18px !important;
+  }
+
+  .mainContent {
+    cursor: pointer;
+    .mgsInfo {
+      background-color: inherit !important;
+      .task-status {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .contentTop {
+    .oa-avatar {
+      top: -1px;
+    }
+    .userInfo {
+      padding-left: 0;
+      .title {
+        max-width: initial;
+        white-space: pre-wrap;
+        .report-set-box-title {
+          .user-name,
+          .report-notice-content {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+  .contentBottom {
+    justify-content: flex-end;
+    color: #989898;
+    .ignore {
+      cursor: pointer;
+      &:hover {
+        color: #4285f4;
+      }
+    }
+  }
+}
+
+@keyframes bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: linear;
+  }
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  60% {
+    transform: translateX(50px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

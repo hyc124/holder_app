@@ -1,0 +1,58 @@
+// 协同邀请联系人
+.coordianaInviteModal {
+  .flex_auto {
+    flex: 1;
+  }
+  .flex {
+    display: flex;
+  }
+  .inviteTit {
+    margin: 10px 0 20px 0;
+    color: #191f25;
+  }
+  .baseDarkGrayColor {
+    color: #191f25;
+    width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .joinCmyItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    height: 46px;
+    background: #e7e7e9;
+    border-radius: 4px;
+    margin-right: 20px;
+    position: relative;
+    .flex.ver_center {
+      align-items: center;
+
+      .cmy_logo_icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+    }
+    .task_name {
+      width: 100%;
+      margin-bottom: 4px;
+      max-width: 250px;
+    }
+    .task_time,
+    .task_status_txt {
+      margin-right: 12px;
+      color: #70707a;
+    }
+  }
+  .footer-btn {
+    text-align: right;
+    margin-top: 20px;
+    .ant-btn {
+      margin-left: 20px;
+    }
+  }
+}

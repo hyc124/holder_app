@@ -1,0 +1,1193 @@
+@import '~@/src/styles/_var.less';
+
+// 详情
+.taskDetailCont {
+  border-left: 1px solid #e8eaec;
+  overflow: auto;
+
+  .divider {
+    margin: 0 6px;
+    width: 1px;
+    height: 12px;
+    border-right: 1px solid #d7d7d9;
+  }
+
+  .pad_hor {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .margin_20 {
+    margin: 0 20px;
+  }
+  .pad_top_47 {
+    padding-top: 0px;
+  }
+
+  // ********************顶部基础信息区**********************//
+  .taskDetailHeader {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: white;
+    z-index: 10;
+    border: 1px solid #e7e7e9;
+    border-top: none;
+    border-left: none;
+    .right_con {
+      .close_btn {
+        margin-left: 24px;
+        display: inline-block;
+        position: relative;
+        bottom: 7px;
+      }
+    }
+
+    .support_users {
+      color: @color_gray;
+      cursor: pointer;
+    }
+
+    .create_user_box {
+      color: @color_9a;
+    }
+
+    .header-content {
+      padding-left: 22px;
+      margin-bottom: -5px;
+    }
+
+    //   任务名
+    .taskNameBox {
+      // margin-top: 12px;
+      flex: 1;
+      max-height: 88px;
+      font-size: 20px;
+      line-height: 21px;
+      color: #29304b;
+      font-weight: bold;
+      opacity: 1;
+      position: relative;
+      .create_user {
+        color: #6b6b6b;
+        font-size: 12px;
+      }
+      .support-icon {
+        width: 22px;
+        height: 22px;
+        background-image: url(../../../../../assets/images/task/support-icon.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        position: absolute;
+        top: -20px;
+      }
+    }
+
+    .taskNameInp {
+      max-height: 85px;
+      padding: 3px 0px;
+      overflow: auto;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      outline: none;
+
+      &:hover {
+        border-color: #a2c3fa;
+      }
+
+      &:focus {
+        border-color: #6eaaff;
+        box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+      }
+    }
+    .taskNameShow {
+      max-width: 1000px;
+      line-height: 26px;
+    }
+    .taskNameShow:hover {
+      color: @color_primary;
+      cursor: pointer;
+    }
+
+    // ====任务描述====//
+    .taskDescriptionShow {
+      max-height: 44px;
+      margin-top: 10px;
+      overflow: hidden;
+      color: #70707a;
+      cursor: pointer;
+      border-radius: 4px;
+      > p {
+        margin: 0;
+      }
+      &:hover:not(.no_des) {
+        color: @color_primary;
+      }
+      &.no_des {
+        height: 44px;
+        padding: 10px;
+        font-size: 14px;
+        color: #b1b1b1;
+        border: 1px solid #e7e7e9;
+        .des_placeholder {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url(../../../../../assets/images/taskDetail/new_edit.svg);
+          }
+        }
+      }
+    }
+    // ====顶部操作按钮====//
+    .headerOptBox {
+      // padding: 12px 27px 0 24px;
+      // margin: 12px -27px 0 -24px;
+      // border-top: 1px solid #e7e7e9;
+      margin-top: 20px;
+      .opt_btn {
+        width: auto;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 8px;
+        &:hover {
+          background: #f2f4ff !important;
+        }
+        // &:not(.noIcon):before {
+        //   content: ' ';
+        //   display: inline-block;
+        //   width: 16px;
+        //   height: 16px;
+        //   background-repeat: no-repeat;
+        //   background-position: center;
+        //   background-size: contain;
+        // }
+      }
+
+      .left_con {
+        white-space: nowrap;
+
+        .opt_btn {
+          height: 24px;
+          line-height: 24px;
+          padding: 0 8px;
+          border-radius: 4px;
+          text-align: center;
+          margin-right: 12px;
+          font-size: 12px;
+          color: #29304b;
+          background-color: #f7f8fd;
+          &::before {
+            margin-right: 2px;
+            width: 14px;
+            height: 14px;
+          }
+          .opt_txt {
+            margin-right: 7px;
+          }
+          &.support_btn {
+            border: 1px solid @color_primary;
+            color: @color_primary;
+
+            &::before {
+              background-image: url(../../../../../assets/images/taskDetail/support.png);
+            }
+          }
+
+          // 设置优先级按钮
+          // &.set_pri_btn {
+          //   color: #ffaa00;
+          //   &::before {
+          //     background-image: url(../../../../../assets/images/taskDetail/pri_star_cir.png);
+          //   }
+          // }
+
+          // 设置循环按钮
+          &.set_loop_btn {
+            position: relative;
+
+            .del_item_icon {
+              right: -10px;
+            }
+
+            // &::before {
+            //   background-image: url(../../../../../assets/images/taskDetail/set_loop.png);
+            // }
+
+            &:hover {
+              ::before,
+              .del_item_icon {
+                display: inline-block;
+              }
+            }
+          }
+
+          // 设置公开私密按钮
+          // &.set_private_btn {
+          //   &::before {
+          //     background-image: url(../../../../../assets/images/taskDetail/public_eye.png);
+          //   }
+
+          //   &.private::before {
+          //     background-image: url(../../../../../assets/images/taskDetail/private_eye.png);
+          //   }
+          // }
+          // 设置归属级别按钮
+          // &.taskRankMenuShow {
+          //   &::before {
+          //     background-image: url(../../../../../assets/images/taskDetail/task_rank.png);
+          //   }
+          // }
+        }
+      }
+
+      .right_con {
+        .opt_btn {
+          display: inline-flex;
+          align-items: center;
+          height: 28px;
+          line-height: 28px;
+          text-align: center;
+          font-size: 12px;
+          border-radius: 4px;
+          background-color: white;
+          color: @color_gray;
+          // 图标类型按钮
+          &::before,
+          &.opt_btn_icon {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-repeat: no-repeat;
+            // background-size: contain;
+            background-position: center;
+            background-size: contain;
+          }
+          &::before {
+            margin-right: 6px;
+          }
+          &.start_status_btn {
+            margin-left: 4px;
+            padding: 0 12px;
+            color: white;
+            &:hover {
+              background-color: #3949ab !important;
+            }
+            &.nofinish_btn {
+              &:hover {
+                background-color: #f7f8fd !important;
+              }
+            }
+            &::before {
+              display: none;
+            }
+            &.start_btn {
+              width: 72px;
+              padding: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid @color_primary;
+              background-color: @color_primary;
+              // &::before {
+              //   background-image: url(../../../../../assets/images/taskDetail/start_icon.png);
+              // }
+            }
+
+            &.nofinish_btn {
+              border: 1px solid #34a853;
+              color: #34a853;
+              // &::before {
+              //   background-image: url(../../../../../assets/images/taskDetail/nofinish_green.png);
+              // }
+            }
+
+            // &.nofinish_btn:hover {
+            //   background-color: #2471f1;
+            //   border: 1px solid @color_primary;;
+            // }
+            &.finish_btn {
+              border: 1px solid @color_primary;
+              color: white;
+              background-color: @color_primary;
+              &::before {
+                background-image: url(../../../../../assets/images/taskDetail/finish_blue.png);
+              }
+            }
+            &.disable {
+              // background-color: #e7e7e9;
+              // color: #9a9aa2;
+              // border: 1px solid #d7d7d9;
+              // pointer-events: none;
+              opacity: 0.4;
+            }
+          }
+
+          // 备注
+          &.remark_btn {
+            &::before {
+              background-image: url(../../../../../assets/images/taskDetail/detail_remark.svg);
+            }
+            &:hover,
+            &:active {
+              color: #3949ab;
+              &::before {
+                background-image: url(../../../../../assets/images/taskDetail/detail_remark_h.svg);
+              }
+            }
+          }
+
+          &.addchild_btn,
+          &.review_btn {
+            // margin: 0 4px 0 0;
+            // padding: 0 12px;
+            // border-radius: 6px;
+            // border: 1px solid @color_primary;
+            // color: @color_primary;
+            margin-right: 4px;
+            &:hover {
+              color: #3949ab;
+            }
+          }
+          // 新增子任务
+          &.addchild_btn {
+            &::before {
+              background-image: url(../../../../../assets/images/workdesk/work_icon_xzzre.svg);
+            }
+            &:hover {
+              color: #3949ab;
+              &::before {
+                background-image: url(../../../../../assets/images/workdesk/work_icon_xzzre_h.svg);
+              }
+            }
+          }
+          // 新增复盘
+          &.review_btn {
+            color: #3949ab;
+            &::before {
+              background-image: url(../../../../../assets/images/taskDetail/add_cross_blue.png);
+            }
+          }
+          &.addchild_btn_icon {
+            margin: 0 16px;
+            background-image: url(../../../../../assets/images/workdesk/work_icon_xzzre.svg);
+          }
+
+          &.add_task_btn {
+            &::before {
+              display: none;
+            }
+          }
+          // 关联任务
+          &.relateTask {
+            margin: 0;
+            padding: 0 12px;
+            color: @color_gray;
+            &::before {
+              width: 13px;
+              height: 14px;
+              background-image: url(../../../../../assets/images/workplan/OKR/new_relate.png);
+            }
+            &:hover {
+              color: @color_primary;
+            }
+            &:hover::before {
+              background-image: url(../../../../../assets/images/workplan/OKR/new_relate_h.png);
+            }
+          }
+          // 汇报按钮
+          &.report_btn_icon {
+            background-image: url(../../../../../assets/images/workdesk/work_icon_hb.svg);
+          }
+          // 更多按钮
+          &.more_opt_btn {
+            &::before {
+              margin-right: 0;
+              background-position: 4px center;
+              background-image: url(../../../../../assets/images/taskOpt/more-vert-grey.svg);
+            }
+            &:hover,
+            &:active {
+              &::before {
+                background-image: url(../../../../../assets/images/taskOpt/more-vert-h.svg);
+              }
+            }
+          }
+
+          // 汇报
+          &.report_btn {
+            margin-right: 4px;
+            &::before {
+              background-image: url(../../../../../assets/images/workdesk/work_icon_hb.svg);
+            }
+            &:hover {
+              &::before {
+                background-image: url(../../../../../assets/images/workdesk/work_icon_hb_active.svg);
+              }
+            }
+          }
+        }
+      }
+
+      .taskTypeLabel.boardMb::before {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    // 任务类型
+    .detailTaskType {
+      &::before {
+        width: 14px;
+        height: 14px;
+      }
+
+      margin-right: 12px;
+      padding: 0;
+
+      &.taskTypeLabel.boardMb::before {
+        background-image: url(../../../../../assets/images/taskDetail/target_l.png);
+      }
+
+      &.taskTypeLabel.boardLs::before {
+        background-image: url(../../../../../assets/images/taskDetail/temp_l.png);
+      }
+
+      &.taskTypeLabel.boardZn::before {
+        background-image: url(../../../../../assets/images/taskDetail/fun_l.png);
+      }
+
+      &.taskTypeLabel.boardXm::before {
+        background-image: url(../../../../../assets/images/taskDetail/project_l.png);
+      }
+      &.taskTypeLabel.boardRw::before {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-rw.svg);
+      }
+    }
+
+    // 任务级别
+    .taskRankMenuShow {
+      margin-right: 12px;
+      color: #70707a;
+      cursor: pointer;
+      .selected_txt {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // ********************详情中间区域**********************//
+  .taskDetailMid {
+    // padding: 0;
+    // overflow: auto;
+    background: #f5f7fb;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 238px;
+      display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #d3d9f8;
+    }
+    // ======左侧======//
+    .processCont {
+      width: calc(100% - 280px);
+      min-height: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-self: baseline;
+
+      // 内部滚动
+      height: 100%;
+
+      .detail_tabs {
+        overflow: visible;
+        // height: calc(100% - 81px);
+        height: 100%;
+        &::-webkit-scrollbar {
+          width: 4px;
+          height: 238px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #d3d9f8;
+        }
+        .task-synergy-header {
+          // 备注 ui重置
+          &.task-synergy-header {
+            .opt_btn {
+              margin-top: 0 !important;
+            }
+          }
+        }
+        .ant-tabs-content-holder {
+          flex: 1;
+
+          .ant-tabs-content {
+            height: 100%;
+          }
+        }
+
+        .taskSupervise {
+          position: relative;
+          height: 100%;
+          overflow-y: auto;
+          overflow-x: hidden;
+          .detailCheck {
+            padding: 0 16px;
+          }
+
+          .send_theme_chat_box {
+            height: 210px;
+          }
+
+          .theme-msg-send {
+            height: calc(100% - 135px);
+          }
+
+          .task_theme_answer_file {
+            .fileItem {
+              width: 116px;
+              height: 28px;
+              padding: 0 4px;
+              margin-right: 2px;
+              margin-bottom: 2px;
+
+              .ant-image,
+              .ant-image-img {
+                height: 24px !important;
+              }
+            }
+          }
+        }
+
+        .ant-tabs-top > .ant-tabs-nav::before {
+          border-bottom: 0px;
+        }
+
+        .ant-tabs-tab .ant-tabs-tab-btn {
+          font-size: 14px;
+          color: #6b6b6b;
+        }
+
+        .ant-tabs-nav {
+          // padding: 0 20px;
+          margin: 0 20px;
+        }
+
+        .ant-tabs-nav .ant-tabs-tab {
+          // padding-bottom: 8px;
+
+          &.ant-tabs-tab-active {
+            .ant-tabs-tab-btn {
+              color: #232323;
+              font-weight: bold;
+            }
+          }
+        }
+
+        // 添加备注
+        .opt_btn {
+          width: auto;
+          display: inline-flex;
+          align-items: center;
+          text-align: center;
+          font-size: 14px;
+          // color: @color_gray;
+          color: #7d8087;
+          cursor: pointer;
+
+          .img_icon {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
+      // 外部滚动效果
+      // .detail_tabs {
+      //   overflow: visible;
+      //   .ant-tabs-tab .ant-tabs-tab-btn {
+      //     font-size: 14px;
+      //     color: @color_9a;
+      //   }
+      //   .ant-tabs-nav .ant-tabs-tab {
+      //     padding-bottom: 8px;
+      //   }
+      // }
+    }
+
+    //   进展呈现区域
+    .taskProgressSec {
+      // margin: 0 -24px;
+      padding: 0 24px;
+      min-height: 81px;
+      height: 84px;
+      align-items: center;
+      background: #fafafa;
+
+      .detailTopUser {
+        width: 100%;
+        text-align: right;
+
+        .create_user {
+          color: @color_gray;
+        }
+      }
+
+      .task_status_box {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: -8px;
+
+        .status_icon {
+          width: 32px;
+          height: 32px;
+          background-image: url(../../../../../assets/images/task/task_nostart.png);
+          margin-right: 8px;
+        }
+
+        .status_txt {
+          color: #9a9aa2;
+          font-size: 16px;
+        }
+      }
+
+      .ant-picker-input > input {
+        cursor: pointer;
+      }
+
+      /* 未开始 */
+      .task_status_box.nostart .status_icon {
+        background-image: url(../../../../../assets/images/task/task_nostart.png);
+      }
+
+      .task_status_box.nostart .status_txt {
+        color: #9a9aa2;
+      }
+
+      /* 进行中 */
+      .task_status_box.going .status_icon {
+        background-image: url(../../../../../assets/images/task/task_going.png);
+      }
+
+      .task_status_box.going .status_txt {
+        color: @color_primary;
+      }
+
+      /* 延迟 */
+      .task_status_box.late .status_icon {
+        background-image: url(../../../../../assets/images/task/task_late.png);
+      }
+
+      .task_status_box.late .status_txt {
+        color: #ea4335;
+      }
+
+      /* 完成 */
+      .task_status_box.finish .status_icon {
+        background-image: url(../../../../../assets/images/task/task_finish.png);
+      }
+
+      .task_status_box.finish .status_txt {
+        color: #34a853;
+      }
+
+      /* 审批 */
+      .task_status_box.approval .status_icon {
+        background-image: url(../../../../../assets/images/task/task_approval.png);
+      }
+
+      .task_status_box.approval .status_txt {
+        color: #fbbc05;
+      }
+
+      /* 冻结、归档 */
+      .task_status_box.freeze .status_icon {
+        background-image: url(../../../../../assets/images/task/task_freeze.png);
+      }
+
+      //进度
+      .progress_right {
+        flex: 1;
+        margin-left: 28px;
+
+        .progress_mid {
+          display: flex;
+          position: relative;
+
+          .ant-input-number-input {
+            padding: 0px;
+            text-align: center;
+          }
+
+          .ant-input-number {
+            top: 5px;
+          }
+
+          .ant-progress-text {
+            color: #70707a;
+          }
+
+          .ant-slider {
+            width: 100%;
+            margin: 10px 29px 10px 0;
+          }
+
+          .ant-input-number-handler-wrap {
+            display: none;
+          }
+
+          .ant-slider-rail {
+            height: 8px;
+            background: #e7e7e9 50% 50% repeat-x;
+          }
+
+          .ant-slider-track {
+            height: 8px;
+            background-color: #4285f1;
+          }
+
+          .ant-slider-handle {
+            width: 16px;
+            height: 16px;
+            background: #ffffff;
+            border: 2px solid @color_primary;
+            box-shadow: 0px 0px 3px rgba(12, 78, 188, 0.8);
+            margin-top: -4px;
+            z-index: 9;
+          }
+
+          .percentbai {
+            color: @color_primary;
+            line-height: 30px;
+            margin-left: 5px;
+            margin-top: 5px;
+          }
+
+          .objectiveDotBox {
+            width: calc(100% - 68px);
+            position: absolute;
+            left: 0;
+            height: 1px;
+          }
+
+          .impersonality_process {
+            width: 8px;
+            height: 8px;
+            background: #d1e2fa;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 9;
+            top: 14px;
+            cursor: pointer;
+          }
+        }
+
+        .progress_bot {
+          .task_start_time_box,
+          .task_end_time_box {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  // .test_svg {
+  //   width: 30px;
+  //   height: 30px;
+  //   background-image: url(../../../../../assets/images/taskDetail/msg.svg);
+  // }
+
+  // *********支撑**********//
+  .supportMain {
+    font-size: 12px;
+    color: @color_gray;
+
+    .support_btn {
+      color: @color_primary;
+      margin-right: 8px;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+        vertical-align: sub;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../../../../../assets/images/taskDetail/add_cross_blue.png);
+      }
+    }
+
+    .ind_support_btn {
+      cursor: pointer;
+    }
+  }
+}
+
+// ===========下方内容===============//
+.detailBotContainer {
+  background: #f5f7fb;
+  max-height: calc(100% - 156px);
+  > div,
+  > section {
+    height: 100%;
+  }
+
+  .fourQuadrant {
+    height: 100%;
+    padding: 0px;
+
+    .part-okr-quadrant {
+      padding-top: 8px;
+    }
+
+    .add_okr_dif {
+      display: inline-block;
+    }
+
+    .taskTagListBox {
+      display: none;
+    }
+
+    .okr_text_content .node_portrait_chose {
+      display: none;
+    }
+  }
+}
+
+// *********支撑下拉框**********//
+.supportsDrop {
+  width: 400px;
+  max-height: 300px;
+  padding: 10px 16px;
+  overflow: auto;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+
+  .support_tit {
+    margin-bottom: 6px;
+    color: @color_gray;
+    font-size: 14px;
+  }
+
+  .supportsTable {
+    width: 100%;
+    table-layout: fixed;
+
+    td {
+      padding: 6px 10px;
+      min-height: 32px;
+      color: @color_dark;
+      font-size: 14px;
+
+      &:nth-of-type(1) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &:nth-of-type(2) {
+        padding-left: 20px;
+        padding-right: 24px;
+      }
+
+      .cellCont {
+        display: flex;
+        align-items: center;
+      }
+
+      &:nth-of-type(3) {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: right;
+        width: 68px;
+
+        .cellCont {
+          justify-content: flex-end;
+        }
+      }
+
+      .oa-avatar {
+        margin-right: 6px;
+      }
+
+      .name_type {
+        width: 25px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        margin-right: 4px;
+        background: #f3f5fa;
+        color: @color_9a;
+        border-radius: 6px;
+        font-size: 12px;
+      }
+
+      .goal_name {
+        cursor: pointer;
+
+        &.disable {
+          opacity: 0.6;
+          pointer-events: none;
+        }
+      }
+
+      .support_act {
+        color: @color_primary;
+        cursor: pointer;
+
+        &.disable {
+          opacity: 0.6;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .nameTd {
+      width: 102px;
+    }
+  }
+}
+
+// 自定义表格
+.customTable {
+  display: table;
+
+  .tableRow {
+    display: table-row;
+
+    .tableCol {
+      display: table-cell;
+    }
+  }
+}
+
+// 返回顶部
+.back_top_btn {
+  position: fixed;
+  right: 24px;
+  bottom: 76px;
+  z-index: 6;
+  width: 54px;
+  height: 54px;
+  background-image: url(../../../../../assets/images/taskDetail/toTop.png);
+  cursor: pointer;
+  display: none;
+  &:hover {
+    background-image: url(../../../../../assets/images/taskDetail/toTop_h.png);
+  }
+}
+
+//参与企业
+.takeCompanyBox {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+
+    .joinCmyItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      width: 100%;
+      height: 46px;
+      background: #f5f7fb;
+      border-radius: 4px;
+      margin-right: 6px;
+      margin-top: 10px !important;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      .ant-avatar.noPortrait {
+        background: url('../../../../../assets//images/task/cmy-normal.png');
+      }
+
+      .ant-avatar {
+        background-color: @color_primary;
+      }
+
+      .more_opt_icon {
+        width: 18px;
+        height: 18px;
+        padding: 14px 0;
+        background-size: 3px 16px;
+        background-position: 15px;
+        background-image: url(../../../../../assets/images/task/eidt.png);
+        cursor: pointer;
+      }
+
+      .more_opt_icon:hover {
+        background-image: url(../../../../../assets/images/task/eidt-h.png);
+      }
+
+      .joinCmyLeft {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        overflow: hidden;
+
+        .avatars {
+          margin-right: 5px;
+        }
+
+        .text {
+          flex: 1;
+          overflow: hidden;
+        }
+
+        p {
+          margin-bottom: 0px;
+        }
+
+        .cmy_info_name {
+          flex: 1;
+
+          span {
+            display: inline-block;
+          }
+
+          .liaison_name {
+            width: 57px;
+          }
+        }
+
+        .cmy_info_name_box {
+          flex: 1;
+          display: flex;
+        }
+
+        /* 状态 */
+        /* 待确认 */
+        .join_cmy_status.wait {
+          color: #fbbc05;
+        }
+
+        /* 已拒绝 */
+        .join_cmy_status.refuse {
+          color: #ea4335;
+        }
+
+        /* 已加入 */
+        .join_cmy_status.joined {
+          color: #34a853;
+        }
+      }
+
+      .joinCmyRig {
+        display: flex;
+
+        .del_cmy_icon {
+          display: none;
+          width: 14px;
+          height: 14px;
+          background-image: url(../../../../../assets/images/workReport/del.png);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .joinCmyItem:hover {
+      background: #e9f2ff;
+      cursor: pointer;
+    }
+
+    .joinCmyItem:hover .del_cmy_icon {
+      display: block;
+    }
+  }
+}
+
+// okr详情
+.okrDetailModal {
+  &.ant-modal& .okr_detail_main {
+    height: calc(100% - 80px) !important;
+  }
+  .taskDetailContainer {
+    background-color: #f5f7fb;
+    .taskDetailCont.OKRDetailContent .detailBotContainer .fourQuadrant {
+      width: 100%;
+    }
+  }
+  .okrOrgContainer {
+    min-width: 300px;
+    max-width: 384px;
+    flex: 0.23;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-right: 4px !important;
+    .chidlOrgTable {
+      overflow: auto;
+    }
+  }
+}
+// 媒体查询器
+@media screen and (max-width: 1350px) {
+  .pad_hor {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .taskDetailCont .taskDetailHeader .taskNameShow {
+    max-width: 700px;
+  }
+
+  .taskDetailContainer {
+    .headerOptBox {
+      .left_con {
+        .detailTaskType,
+        .set_pri_btn,
+        .set_loop_btn {
+          margin-right: 6px;
+        }
+      }
+
+      .right_con {
+        .addchild_btn {
+          margin: 0 8px !important;
+        }
+
+        .report_btn {
+          margin-right: 8px !important;
+        }
+
+        .more_opt_btn {
+          margin-left: 2px !important;
+          // padding-left: 0 !important;
+        }
+        // .more_opt_btn ant-dropdown-trigger {
+        //   padding-left: 0 !important;
+        // }
+      }
+    }
+
+    .taskDetailMid {
+      padding-right: 8px;
+      // .taskProgressSec {
+      //   margin: 0 -16px;
+      //   padding: 0 16px;
+      // }
+      // .detail_tabs {
+      //   .opt_txt {
+      //     display: none;
+      //   }
+      // }
+    }
+  }
+}

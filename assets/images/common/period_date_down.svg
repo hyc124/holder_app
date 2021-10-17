@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="6px" viewBox="0 0 11 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>名字箭头</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1440" height="480" rx="8"></rect>
+        <path d="M274,0 L284,8 L312,8 C316.418278,8 320,11.581722 320,16 L320,312 C320,316.418278 316.418278,320 312,320 L8,320 C3.581722,320 5.41083001e-16,316.418278 0,312 L0,16 C-5.41083001e-16,11.581722 3.581722,8 8,8 L264,8 L274,0 Z" id="path-3"></path>
+        <filter x="-5.0%" y="-4.4%" width="110.0%" height="110.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.36633282   0 0 0 0 0.441466752   0 0 0 0 0.701596467  0 0 0 0.21 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="----·工作台全局+项目V5.2.9（8.12）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2工作台-说明" transform="translate(-868.000000, -508.000000)">
+            <rect fill="#F7F8FD" x="0" y="0" width="1920" height="1080"></rect>
+            <g id="o" transform="translate(104.000000, 80.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="蒙版" fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+            <rect id="矩形" stroke="#34C95C" fill="#F7F7F7" x="283" y="214" width="1103" height="633" rx="13"></rect>
+            <g id="编组-10" transform="translate(804.000000, 468.000000)">
+                <g id="形状结合">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <g id="编组-29" transform="translate(64.000000, 40.000000)" stroke="#545454" stroke-linecap="round" stroke-linejoin="round">
+                    <g id="编组-28">
+                        <polyline id="名字箭头" points="1 1 5.5 5 10 1"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

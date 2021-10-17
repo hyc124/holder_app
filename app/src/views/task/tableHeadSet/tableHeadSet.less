@@ -1,0 +1,85 @@
+.reset-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.ant-modal {
+  width: 850px;
+}
+.none {
+  display: none !important;
+}
+.table_head_set_modal {
+  width: 850px !important;
+  .setting-container {
+    height: 480px;
+    display: flex;
+    .header-title {
+      color: #70707a;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .optional-contaier {
+      width: 557px;
+      overflow: hidden;
+      overflow-y: auto;
+      .ant-col {
+        &:hover .editor-icon {
+          display: inline-block;
+        }
+      }
+      .ant-checkbox-group {
+        background: #f5f7fb;
+        padding: 18px;
+        padding-bottom: 0;
+        .ant-checkbox-wrapper {
+          margin-bottom: 20px;
+        }
+        .ant-checkbox-disabled + span {
+          color: #212224;
+        }
+      }
+
+      .editor-input {
+        border: none;
+        width: 94px;
+        height: 24px;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 6px 0px rgba(9, 9, 9, 0.2);
+        border-radius: 4px;
+      }
+
+      .editor-icon {
+        display: none;
+        width: 12px;
+        height: 12px;
+        background-image: url(../../../../../assets/images/common/edit-blue.png);
+        cursor: pointer;
+      }
+    }
+    .selects-contaier {
+      width: 250px;
+      height: 100%;
+      padding-left: 20px;
+      overflow: hidden;
+      overflow-y: auto;
+      .group-item {
+        color: #bbbbc1;
+        height: 32px;
+        line-height: 32px;
+        padding-left: 26px;
+        background-image: url(../../../../../assets/images/task/drag_hand.png);
+        background-repeat: no-repeat;
+        background-size: 14px 7px;
+        background-position: 5px 12px;
+      }
+      .isDragItem {
+        color: #191f25;
+        &:hover {
+          background-color: #edf7ff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

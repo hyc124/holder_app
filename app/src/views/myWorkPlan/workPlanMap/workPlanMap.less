@@ -1,0 +1,304 @@
+// *****************************头部*****************************//
+.workPlanMapHeader {
+  height: 104px;
+  padding: 16px 24px;
+  background-color: white;
+  .headerNameRow {
+    margin-bottom: 16px;
+    .plan_name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #171a1d;
+      &.no_name {
+        color: #9a9aa2;
+      }
+    }
+    .create_user {
+      font-weight: 400;
+      color: #9a9aa2;
+      font-size: 12px;
+    }
+  }
+  .headerOptRow {
+    .mindNodeHandleBox {
+      margin-left: 130px;
+      > .img_icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 13px;
+        background-color: #f5f5f6;
+        border-radius: 4px;
+        background-size: 16px 16px;
+        &:hover {
+          background-color: #e9f2ff;
+        }
+      }
+      .add_brother {
+        background-size: 17px 13px;
+        background-image: url(../../../../../assets/images/workPlanMap/add_brother.png);
+        &:hover {
+          background-image: url(../../../../../assets/images/workPlanMap/add_brother_h.png);
+        }
+      }
+      .add_child {
+        background-size: 19px 7px;
+        background-image: url(../../../../../assets/images/workPlanMap/add_child.png);
+        &:hover {
+          background-image: url(../../../../../assets/images/workPlanMap/add_child_h.png);
+        }
+      }
+    }
+  }
+}
+// *****************************脑图*****************************//
+.planMapContainer {
+  background-color: #f7f8fa;
+}
+.planJsmind {
+  min-height: 100%;
+  height: 100%;
+  cursor: default;
+  overflow: visible;
+  .jsmind-inner {
+    height: 100%;
+  }
+  .okrTextContent {
+    height: 100%;
+    // height: auto;
+    padding: 18px 20px;
+    .okr_names {
+      width: 100%;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-size: 14px;
+      color: #191f25;
+      font-weight: 400;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+    .okr_else {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-weight: 400;
+      font-size: 12px;
+      align-items: baseline;
+    }
+    // ----文本展示---//
+    .okr_text_show {
+      z-index: 2;
+    }
+    // ----添加节点按钮-----//
+    .addNodeBox {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      > em {
+        position: absolute;
+        width: 30px;
+        height: 13px;
+        background-image: url(../../../../../assets/images/workplan/OKR/add_task.png);
+      }
+      .add_node_top {
+        top: -15px;
+        left: 50%;
+        margin-left: -15px;
+      }
+      .add_node_bottom {
+        transform: rotateX(180deg);
+        bottom: -15px;
+        left: 50%;
+        margin-left: -15px;
+      }
+      .add_node_right {
+        transform: rotate(90deg);
+        top: 50%;
+        right: -23px;
+        margin-top: -6.5px;
+      }
+      .add_node_left {
+        transform: rotate(270deg);
+        left: -23px;
+        top: 50%;
+        margin-top: -6.5px;
+      }
+    }
+
+    // 编辑框
+    .name_editor {
+      width: 100%;
+      height: 24px;
+      padding-left: 5px;
+      border: none;
+      background: #d1e2fa;
+      color: #4788f4;
+      outline: none;
+    }
+    // 节点名字展示输入框
+    .name_inp_show {
+      width: 100%;
+      min-height: 24px;
+      padding-left: 5px;
+      outline: none;
+      border: none;
+      background: transparent;
+      color: #171a1d;
+      font-size: 14px;
+      z-index: 6;
+      &:focus {
+        background: #d1e2fa;
+        color: #4788f4;
+      }
+    }
+    // textarea.name_inp_show {
+    //   max-height: 9.0072e15px;
+    // }
+    // 输入框配套的pre，用于自动撑开高度
+    .name_inp_pre {
+      width: 1px;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    // =====简略模式====//
+    .briefModeShow {
+      .text_name_show {
+        width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 2;
+        // -webkit-box-orient: vertical;
+        line-height: 16px;
+        color: #171a1d;
+        font-size: 14px;
+        &.type_o {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &.type_kr {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        &.no_name {
+          color: #9a9aa2;
+        }
+      }
+      .name_flag {
+        margin-right: 12px;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 32px;
+        font-style: normal;
+        border-radius: 21px;
+        background-image: url(../../../../../assets/images/okrDetail/name_flag.png);
+        &.flag_kr {
+          background-image: none;
+          color: #4285f4;
+          background-color: #e9f2ff;
+          font-size: 14px;
+          border-radius: 50%;
+        }
+        &.flag_task {
+          height: 18px;
+          line-height: 18px;
+          background-image: none;
+          color: #70707a;
+          background-color: #e7e7e9;
+          font-size: 12px;
+          border-radius: 9px;
+        }
+        &.flag_no {
+          display: none;
+        }
+      }
+    }
+  }
+  .jmNode {
+    min-height: 60px;
+    // max-height: 80px;
+    min-width: auto;
+    max-width: 264px;
+    z-index: 9;
+    border-radius: 4px;
+    box-shadow: none;
+    // display: flex;
+    // align-items: center;
+    // padding: 18px 20px;
+    // 线性节点
+    &:not(.root) {
+      border: 2px solid transparent;
+      border-bottom: 2px solid #d7d7d9;
+      background-color: #f7f8fa;
+    }
+    // 跟节点文本
+    &.root {
+      .briefModeShow {
+        .text_name_show,
+        .name_inp_show {
+          font-size: 16px;
+          line-height: 18px;
+          font-weight: bold;
+        }
+      }
+      &:hover {
+        background-color: white;
+        box-shadow: none;
+      }
+    }
+    // 第二层文本
+    &[level='1'] {
+      .briefModeShow {
+        .text_name_show {
+          font-weight: bold;
+        }
+      }
+    }
+    &.selected {
+      border: 2px solid #4285f4;
+      border-radius: 4px;
+      z-index: 99;
+      // box-shadow: 0px 0px 8px 0px #b5b5b5;
+      .addNodeBox {
+        display: inline-block;
+      }
+    }
+    // 自动撑高高度
+    &.authHeight {
+      height: auto !important;
+      max-height: inherit !important;
+    }
+  }
+  // 脑图节点文本缓存的节点样式
+  .mindTextNameTmp {
+    width: 100%;
+    min-height: 60px;
+    min-width: auto;
+    max-width: 264px;
+    line-height: 16px;
+    padding: 18px 20px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 14px;
+    // 固定高度
+    // max-height: 80px;
+    // text-overflow: ellipsis;
+    // display: -webkit-box;
+
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    opacity: 1;
+  }
+}

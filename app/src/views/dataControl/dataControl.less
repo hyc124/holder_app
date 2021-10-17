@@ -1,0 +1,175 @@
+@import '~@/src/styles/_var.less';
+.dataControlContainer {
+  padding: 0 !important;
+  .orgLeftCon {
+    margin-right: 0;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+    .content_list {
+      height: 100%;
+    }
+  }
+  .org_menu_search.ant-input-affix-wrapper > input.ant-input {
+    width: 164px;
+  }
+  .org_menu_search .anticon-close-circle {
+    right: 6px;
+  }
+  .org_tree_text {
+    max-width: 150px;
+  }
+  .search_navigation_box .sn_title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .search_navigation_box > div {
+    padding-left: 16px;
+  }
+  .searchList_box .org_menu_search {
+    border: 1px solid #b1b1b1;
+  }
+  .control-box_tree {
+    flex: 1;
+    overflow: hidden;
+    &:hover {
+      overflow: overlay;
+    }
+  }
+  .control-tree {
+    font-size: 14px;
+    .no-select {
+      -moz-user-select: -moz-none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .header {
+      height: 48px;
+      padding-left: 16px;
+    }
+    .ant-collapse-content-box {
+      padding: 0 !important;
+    }
+    .title {
+      .ant-collapse-header,
+      .text-header {
+        padding: 0;
+        font-size: 14px;
+        &:hover {
+          background-color: rgba(245, 246, 255, 1);
+        }
+        .ant-collapse-arrow {
+          top: 6px;
+        }
+      }
+      &-header {
+        color: rgba(35, 35, 35);
+        .teamName {
+          width: 140px;
+          margin-left: 7px;
+        }
+      }
+      .type {
+        .ant-collapse-arrow {
+          left: 28px;
+        }
+        .type-header {
+          padding-left: 44px;
+          .text {
+            font-size: 14px;
+            line-height: 14px;
+          }
+        }
+        .dash-header {
+          padding-left: 44px;
+          cursor: pointer;
+          &.active {
+            background-color: rgba(245, 246, 255, 1);
+            color: #3949ab;
+          }
+        }
+      }
+    }
+    .ant-collapse-item-disabled {
+      .ant-collapse-header {
+        color: rgba(35, 35, 35);
+        cursor: default;
+      }
+    }
+  }
+  //   搜索模式下样式
+  .searchList_box {
+    .orgSearchList {
+      & > ul > li {
+        height: auto;
+        padding: 18px 10px 18px 30px;
+        .dashbordName {
+          font-size: 14px;
+          line-height: 14px;
+          color: #232323;
+          font-weight: 400;
+          margin-bottom: 8px;
+        }
+        .blod_blue {
+          color: #3949ab;
+        }
+        .typeTeam {
+          color: #b1b1b1;
+          line-height: 12px;
+          .line {
+            height: 10px;
+            width: 1px;
+            margin: 0 5px;
+            border-right: 1px solid #b1b1b1;
+          }
+        }
+      }
+    }
+  }
+  // 右侧仪表盘详情
+  .dataCtrolIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  // 仪表盘头部
+  .dashboar_hearder {
+    height: 48px;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    color: #232323;
+    font-weight: 600;
+    background-color: #ffffff;
+    padding: 0 32px;
+  }
+}
+//mac和部分电脑上为展示这部分样式强制加上
+.control-box_tree .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: 3.429px;
+  left: 16px;
+  display: inline-block;
+  padding: 12px 16px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  font-size: 12px;
+  transform: translateY(0);
+  top: 6px;
+}
+.control-box_tree .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow.tree_company {
+  left: auto;
+}

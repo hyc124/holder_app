@@ -1,0 +1,167 @@
+.metting-modal-content-box.ant-modal {
+  height: 100%;
+  top: 0;
+  // padding: 0 80px;
+  padding-left: 80px;
+  height: 100%;
+  overflow-y: hidden;
+  padding-bottom: 0;
+  margin-right: 0;
+  .ant-modal-content {
+    height: 100%;
+  }
+  .ant-pagination-item-container {
+    width: 30px;
+  }
+  .ant-modal-body {
+    height: calc(100% - 57px);
+    .mettingBox,
+    .list_box {
+      height: 100%;
+      .tableContent {
+        height: calc(100% - 157px);
+        .ant-table {
+          height: 100%;
+        }
+        .ant-table-empty {
+          margin-top: 25%;
+          td {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  .menu_tab {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 32px;
+    .mettingListTypeBox {
+      text-align: left;
+    }
+    .active {
+      color: #4285f4;
+    }
+    .mettingListSetBox {
+      text-align: right;
+      .meetBtn {
+        width: 76px;
+        height: 32px;
+        background: rgba(66, 133, 244, 1);
+        color: #fff;
+        border-radius: 16px;
+      }
+      .filterBtn {
+        // padding: 6px 17px;
+        opacity: 1;
+        margin-right: 16px;
+        color: #70707a;
+        background: url(../../../../assets/images/mettingManage/filter.png) no-repeat 14px center
+          rgba(247, 248, 250, 1);
+        background-size: 14px 15px;
+        padding-left: 30px;
+      }
+    }
+  }
+  .list_box {
+    .tableContent {
+      tr {
+        cursor: pointer;
+      }
+    }
+  }
+  .ant-table-container {
+    .ant-table-tbody {
+      .meetingName_box {
+        // display: flex;
+        // align-items: center;
+
+        // width: calc(100% - 550px);
+        overflow: hidden;
+        vertical-align: middle;
+        .meeting_room_box {
+          width: 108px;
+          height: 28px;
+          line-height: 28px;
+          border-radius: 6px;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding: 0 7px;
+          color: rgba(66, 133, 244, 1);
+          border: 1px solid rgba(66, 133, 244, 1);
+          float: left;
+        }
+      }
+      .meeting_cont_box {
+        display: flex;
+        // width: calc(100% - 200px);
+        margin-top: 4px;
+        p {
+          margin: 0;
+        }
+        .meeting_name {
+          display: inline-block;
+          vertical-align: middle;
+          max-width: calc(100% - 200px);
+          margin: 0 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 300px;
+        }
+        span.span_icon {
+          display: inline-block;
+          vertical-align: middle;
+          min-width: 60px;
+          padding: 0 8px;
+          height: 18px;
+          text-align: center;
+          line-height: 18px;
+          border-radius: 9px;
+          // color: rgba(154, 154, 162, 1);
+          // margin: 0 2px;
+        }
+        span.span_tit {
+          background: url(../../../../assets/images/mettingManage/icon.svg) no-repeat 14px center;
+          padding-left: 36px;
+        }
+        span.gray_status {
+          border: 1px solid rgba(154, 154, 162, 1);
+          border-radius: 4px;
+          line-height: 16px;
+        }
+        span.yellow_status {
+          border: 1px solid rgba(251, 188, 5, 1);
+          color: rgba(251, 188, 5, 1);
+          border-radius: 4px;
+          line-height: 16px;
+        }
+        span.red_status {
+          border: 1px solid #fe5d5d;
+          color: #fe5d5d;
+          border-radius: 4px;
+          line-height: 16px;
+        }
+      }
+    }
+    .meetingTime {
+      color: #999;
+    }
+    .meetingOrganization {
+      display: flex;
+      align-items: center;
+      .meeting_belong_org {
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .ant-table-pagination {
+    padding: 24px;
+  }
+}

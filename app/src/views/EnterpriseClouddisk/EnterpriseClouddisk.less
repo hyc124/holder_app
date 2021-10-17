@@ -1,0 +1,891 @@
+// 主div
+.clouddiskMainDiv {
+  flex: 1;
+  width: calc(100% - 64px);
+  background-color: #f5f7fb;
+  font-size: 12px;
+  height: 100%;
+  padding: 16px 16px;
+  display: flex;
+  justify-content: space-between;
+
+  .ant-btn:empty {
+    visibility: visible;
+  }
+
+  /***左边div***/
+  .cloud_wrap_l {
+    color: #232323;
+    width: 240px;
+    height: 100%;
+    background: #ffffff;
+    font-size: 14px;
+    border-radius: 4px;
+
+    .cloud_seach_input {
+      width: 200px;
+      background: #f5f7fb;
+      border-radius: 16px;
+      border: none;
+      margin: 20px;
+      .ant-input {
+        background: #f5f7fb;
+        border: none;
+      }
+
+      .search_clear {
+        width: 14px;
+        height: 14px;
+        // transition: all ease 0.05s;
+        // transform: translateX(20px);
+        background: url(../../../../assets/images/common/clear_icon_active.svg) no-repeat center;
+        &:hover {
+          background: url(../../../../assets/images/common/clear_icon.svg) no-repeat center;
+        }
+      }
+    }
+
+    .ant-input-prefix {
+      background: #f5f7fb;
+      top: 0px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .search-icon-t-btn {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background: url(../../../../assets/images/common/search.png) no-repeat;
+      }
+    }
+
+    .anticon-close-circle.ant-input-clear-icon {
+      display: none;
+    }
+
+    .option {
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+
+      padding-left: 20px;
+      width: 240px;
+      height: 42px;
+      .spn {
+        display: inline-block;
+        margin-right: 9px;
+        width: 14px;
+        height: 14px;
+      }
+
+      &:hover {
+        color: #3949ab;
+      }
+    }
+
+    .cloud_wrap_l_nav {
+      .recentBrowse {
+        & > span {
+          background: url(../../../../assets/images/etpCloudDisk/recent.png) no-repeat;
+          background-size: 14px 14px;
+        }
+
+        &:hover {
+          background-color: #f2f4ff;
+          & > span {
+            background: url(../../../../assets/images/etpCloudDisk/recent_hover.png) no-repeat;
+            background-size: 14px 14px;
+          }
+        }
+      }
+
+      .navCollect {
+        & > span {
+          background: url(../../../../assets/images/etpCloudDisk/collect.png) no-repeat;
+          background-size: 14px 14px;
+        }
+
+        &:hover {
+          background-color: #f2f4ff;
+          & > span {
+            background: url(../../../../assets/images/etpCloudDisk/collect_hover.png) no-repeat;
+            background-size: 14px 14px;
+          }
+        }
+      }
+
+      .navRecentBrowseClick {
+        color: #3949ab;
+        background-color: #f2f4ff;
+        & > span {
+          background: url(../../../../assets/images/etpCloudDisk/recent_hover.png) no-repeat;
+          background-size: 14px 14px;
+        }
+      }
+
+      .navCollectClick {
+        color: #3949ab;
+        background-color: #f2f4ff;
+
+        & > span {
+          background: url(../../../../assets/images/etpCloudDisk/collect_hover.png) no-repeat;
+
+          background-size: 14px 14px;
+        }
+      }
+    }
+
+    .enter_prise_list {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: calc(100% - 200px);
+    }
+
+    .leftNavClick {
+      color: #3949ab;
+      background: #f2f4ff;
+    }
+
+    /*公司*/
+    .company_item {
+      & > span.ant-avatar {
+        margin-right: 9px;
+      }
+
+      & > span.company_item_name {
+        line-height: 19px;
+        max-width: 150px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+      }
+      &:hover {
+        background: #f2f4ff;
+      }
+    }
+
+    .navCompanyClick {
+      color: #3949ab;
+      background: #f2f4ff;
+    }
+  }
+
+  /***右边div***/
+  .cloud_wrap_r {
+    padding: 20px 24px 20px 36px;
+    width: calc(100% - 248px);
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    height: 100%;
+    margin-left: 8px;
+    background: #ffffff;
+    border-radius: 4px;
+
+    .cloud_wrap_r_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 32px;
+
+      // 下载按钮
+      .downloadBtnIcon {
+        width: 68px;
+        height: 32px;
+        opacity: 1;
+        border-radius: 4px;
+        background: url(../../../../assets/images/etpCloudDisk/downloadBtnIcon.png) #d7d7d9 no-repeat;
+        background-position: 10px;
+        padding-left: 30px;
+        font-size: 12px;
+      }
+
+      //下载按钮
+      .ant-btn-primary {
+        // background: #d7d7d9;
+        border-color: #d7d7d9;
+        pointer-events: none;
+      }
+
+      //下载按钮可点击样式
+      .downLoadBtnClick {
+        height: 32px;
+        opacity: 1;
+        border-radius: 4px;
+        line-height: 14px;
+        pointer-events: auto;
+        background: url(../../../../assets/images/etpCloudDisk/downloadBtnIcon.png) #3949ab no-repeat;
+        background-position: 10px;
+        border-color: #3949ab;
+      }
+
+      .filterDiv {
+        /**文件来源*/
+        display: flex;
+        align-items: center;
+
+        //刷新按钮样式
+        .refreshBtn {
+          background: url(../../../../assets/images/etpCloudDisk/refresh.png) #f5f7fb no-repeat;
+          background-position: left;
+          border: none;
+          background-color: white;
+
+          font-size: 12px;
+          font-family: MicrosoftYaHei;
+          line-height: 14px;
+          color: #70707a;
+
+          margin-right: 2px;
+          span {
+            padding-left: 2px;
+          }
+
+          &:hover {
+            background: url(../../../../assets/images/etpCloudDisk/refresh_hover.png) #f5f7fb no-repeat;
+            background-position: left;
+            color: #3949ab;
+            background-color: white;
+          }
+        }
+        .sourceSelect {
+          width: 160px;
+          height: 32px;
+          background: #f5f7fb;
+          opacity: 1;
+          border-radius: 16px;
+        }
+
+        /**文件类型***/
+        .fileTypeSelect {
+          width: 160px;
+          height: 32px;
+          background: #f5f7fb;
+          opacity: 1;
+          border-radius: 16px;
+        }
+
+        //切换模式
+        .ToggleMode {
+          width: 32px;
+          height: 32px;
+          opacity: 1;
+          border-radius: 8px;
+          background: url(../../../../assets/images/etpCloudDisk/thumbnail.png) #f5f7fb no-repeat;
+          background-position: center;
+          visibility: inherit;
+          border: none;
+
+          &:hover {
+            background: url(../../../../assets/images/etpCloudDisk/thumbnail_hover.png) #f5f7fb no-repeat;
+            background-position: center;
+          }
+        }
+
+        .ToggleModeClick {
+          background: url(../../../../assets/images/etpCloudDisk/list.png) #f5f7fb no-repeat;
+          background-position: 8px;
+
+          &:hover {
+            background: url(../../../../assets/images/etpCloudDisk/list_hover.png) #f5f7fb no-repeat;
+            background-position: 8px;
+          }
+        }
+
+        .search-icon-boxs {
+          background: #f5f7fb;
+          height: 28px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          .search-icon-t-btn {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            background: url(../../../../assets/images/common/search.png) no-repeat;
+          }
+        }
+
+        .cloud_seach_input {
+          width: 195px;
+          background: #f5f7fb;
+          border-radius: 16px;
+          border: none;
+          margin: 20px;
+          .ant-input {
+            background: #f5f7fb;
+            border: none;
+          }
+        }
+
+        .ant-input-affix-wrapper-focused,
+        .ant-select-focused:not(.ant-select-disabled) {
+          box-shadow: 0 0 0 1px #6eaaff;
+        }
+
+        .ant-select-selector {
+          background-color: #f5f7fb;
+          border: none;
+          border-radius: 16px;
+          padding-left: 56px;
+          font-size: 12px;
+        }
+
+        .filterWrap {
+          position: relative;
+
+          .lab_name {
+            position: absolute;
+            z-index: 1;
+            top: 5.8px;
+            left: 16px;
+            font-size: 12px;
+            color: #bfc1c5;
+          }
+
+          .select_name {
+            font-size: 12px;
+            font-family: MicrosoftYaHei;
+            line-height: 14px;
+            color: #191f25;
+            position: relative;
+            left: 55px;
+            top: 7px;
+          }
+
+          //降序
+          .descSort {
+            background: url(../../../../assets/images/etpCloudDisk/desc.png) no-repeat;
+            background-position: 62px;
+            width: 100px;
+          }
+
+          //升序
+          .ascSort {
+            background: url(../../../../assets/images/etpCloudDisk/asc.png) no-repeat;
+            background-position: 62px;
+            width: 100px;
+          }
+        }
+      }
+
+      .margin16 {
+        margin-right: 8px;
+      }
+    }
+
+    .cloud_wrap_r_main {
+      flex: 1;
+      overflow: hidden;
+
+      .title {
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: bold;
+        line-height: 14px;
+        color: #191f25;
+        opacity: 1;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        float: left;
+      }
+
+      .useSpaceSize {
+        float: right;
+        font-size: 12px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        line-height: 14px;
+        color: #9a9aa2;
+        padding-top: 15px;
+      }
+
+      /*表格部分*/
+
+      .tableContainer {
+        width: 100%;
+        height: calc(100% - 44px);
+        display: flex;
+        flex-flow: column;
+        margin-top: 10px;
+
+        margin-left: -7px;
+
+        //表头筛选
+        .ant-table-thead {
+          th {
+            background: none;
+          }
+
+          .ant-table-column-has-sorters {
+            background: none;
+          }
+        }
+
+        .ant-table-body {
+          max-height: calc(100vh - 246px) !important;
+          overflow-y: auto !important;
+
+          tr {
+            cursor: pointer;
+            height: 51px;
+            // background: #FFFFFF;
+            // background: #f5f6ff !important;
+
+            &:hover {
+              // background-color: red;
+              .operateBtn {
+                display: block;
+              }
+
+              td.ant-table-column-sort {
+                background: #fafafa !important;
+              }
+            }
+
+            td.ant-table-column-sort {
+              background: none !important;
+            }
+
+            .fileImage {
+              width: 20px;
+              height: 24px;
+              margin-right: 12px;
+            }
+
+            .fileName {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              width: 210px;
+              vertical-align: middle;
+              font-size: 14px;
+            }
+
+            .description {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              width: 200px;
+              vertical-align: middle;
+            }
+
+            // 列表操作按钮
+            .operateBtn {
+              display: none;
+              width: 66px;
+              height: 33px;
+
+              //下载按钮
+              .downBtn {
+                display: block;
+                background: url('../../../../assets/images/etpCloudDisk/file_download1.png') no-repeat center;
+                padding-left: 15px;
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                line-height: 19px;
+                color: #70707a;
+                opacity: 1;
+                visibility: visible;
+                border: none;
+                float: left;
+
+                &:hover {
+                  background: url('../../../../assets/images/etpCloudDisk/file_download_hover.png') no-repeat
+                    center;
+                  color: #4285f4;
+                }
+              }
+
+              //收藏按钮
+              .collectBtn {
+                display: block;
+                background: url('../../../../assets/images/etpCloudDisk/notcollectbtn.png') no-repeat center;
+                // padding-left: 15px;
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                line-height: 19px;
+                color: #70707a;
+                opacity: 1;
+                visibility: visible;
+                border: none;
+                float: right;
+
+                &:hover {
+                  background: url('../../../../assets/images/etpCloudDisk/notcollectbtn_hover.png') no-repeat
+                    center;
+                  color: #4285f4;
+                }
+              }
+
+              //已收藏按钮
+              .cancelCollectBtn {
+                display: block;
+                background: url('../../../../assets/images/etpCloudDisk/collectbtn.png') no-repeat center;
+                padding-left: 15px;
+                font-size: 14px;
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                line-height: 19px;
+                color: #70707a;
+                opacity: 1;
+                visibility: visible;
+                border: none;
+                float: right;
+              }
+            }
+
+            //来源禁用
+            .sourceDisable {
+              color: gray;
+              pointer-events: none;
+            }
+          }
+
+          //选中tr的不需要背景色
+          .ant-table-row-selected {
+            td {
+              background: #f5f6ff !important;
+            }
+
+            td.ant-table-column-sort {
+              background: #f5f6ff !important;
+            }
+
+            &:hover {
+              td.ant-table-column-sort {
+                background: #f5f6ff !important;
+              }
+            }
+          }
+        }
+
+        //翻页
+        .paginationCus {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          bottom: 24px;
+          height: 32px;
+        }
+
+        //没有数据
+        .nodataDiv {
+          font-size: 14px;
+          font-family: MicrosoftYaHei;
+          color: #70707a;
+          height: 100%;
+          text-align: center;
+          padding-top: 300px;
+        }
+
+        // 缩略图
+        .thumbnailList {
+          width: 100%;
+          height: calc(100% - 32px);
+
+          .ant-list-items {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            width: 100%;
+          }
+
+          //缩略图 li
+          .ant-list-item {
+            border-bottom: none;
+            display: inherit;
+            margin-right: 16px;
+          }
+
+          .thumbnailDiv {
+            width: 117px;
+            height: 122px;
+            opacity: 1;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 10px;
+
+            //鼠标悬浮 头部的checkbox 和显示morebtn显示
+            &:hover {
+              background-color: #e9f2ff;
+
+              .topDiv {
+                visibility: visible;
+
+                .moreBtn {
+                  visibility: visible;
+                }
+              }
+            }
+
+            //默认隐藏
+            .topDiv {
+              padding-top: 5px;
+              padding-left: 5px;
+              padding-right: 5px;
+              visibility: hidden;
+
+              //更多按钮
+              .moreBtn {
+                background: url('../../../../assets/images/etpCloudDisk/moreBtn.png') no-repeat center;
+                width: 14px;
+                height: 14px;
+                float: right;
+                border: none;
+                margin-top: 4px;
+                visibility: hidden;
+              }
+            }
+
+            //内容部分
+            .contentDiv {
+              text-align: center;
+              margin-top: -10px;
+
+              //图标
+              .icon {
+                width: 42px;
+                height: 50px;
+                margin-left: 20px;
+              }
+
+              //名称
+              .fileName {
+                font-size: 12px;
+                font-family: MicrosoftYaHei;
+                line-height: 14px;
+                color: #191f25;
+                opacity: 1;
+                margin-top: 12px;
+
+                width: 100px;
+                margin-left: 5px;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+
+                height: 30px;
+              }
+            }
+
+            //更多
+            .moreUL {
+              position: relative;
+              top: 13px;
+              left: -10px;
+              background: #ffffff;
+              box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+              opacity: 1;
+              border-radius: 4px;
+              width: 160px;
+              height: 110px;
+              font-size: 12px;
+              color: #212224;
+              display: none;
+
+              padding-top: 6px;
+
+              li {
+                padding: 6px 0px 4px 16px;
+                width: 160px;
+                height: 32px;
+
+                margin-top: 1px;
+                &:hover {
+                  background: #f5f6ff;
+                  color: #3949ab;
+                }
+              }
+            }
+          }
+
+          .selectThumbnailDiv {
+            border: 1px solid #3949ab;
+            background: #e9f2ff;
+
+            .topDiv {
+              visibility: visible;
+
+              .moreBtn {
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-dropdown {
+  .sortBox {
+    width: 160px;
+    height: 200px;
+    background: #ffffff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    opacity: 1;
+    border-radius: 4px;
+    padding-top: 5px;
+    cursor: pointer;
+
+    .item {
+      width: 160px;
+      height: 36px;
+
+      padding-top: 9px;
+      padding-bottom: 7px;
+      padding-left: 15px;
+      color: #212224;
+      font-size: 12px;
+
+      &:hover {
+        // color: #3949AB;
+        // background: #F6FAFF;
+        background-color: #f5f6ff;
+      }
+    }
+
+    .itemCheck {
+      color: #3949ab;
+      background: url(../../../../assets/images/etpCloudDisk/select.png) no-repeat;
+      background-position: 120px;
+
+      &:hover {
+        color: #3949ab;
+        background: url(../../../../assets/images/etpCloudDisk/select.png) no-repeat;
+        background-position: 120px;
+      }
+    }
+
+    .sortBox_btm {
+      border-top: 1px solid #d7d7d9;
+      margin-top: 10px;
+    }
+  }
+}
+
+//模态框
+.fileDetailModal {
+  width: 400px !important;
+  height: 500px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 6px;
+
+  .ant-modal-content {
+    height: 500px;
+
+    .ant-modal-header {
+      border: none;
+
+      //标题
+      .ant-modal-title {
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        line-height: 21px;
+        color: #70707a;
+        /* letter-spacing: 18.200000762939453px; */
+        opacity: 1;
+      }
+    }
+
+    .ant-modal-body {
+      //详情显示
+      .fileDetailUL {
+        margin-top: -20px;
+
+        li {
+          margin-bottom: 25px;
+        }
+
+        .title {
+          font-size: 14px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 19px;
+          color: #70707a;
+          vertical-align: top;
+        }
+
+        .text {
+          font-size: 14px;
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: 19px;
+          color: #191f25;
+          opacity: 1;
+          width: 278px;
+        }
+
+        a.text {
+          color: #3949ab;
+        }
+        //来源禁用
+        .sourceDisable {
+          color: gray !important;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .ant-modal-footer {
+      border: none;
+    }
+  }
+}
+
+.ant-select-dropdown {
+  .rc-virtual-list-holder-inner {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    line-height: 17px;
+    color: #70707a;
+    max-height: 256px;
+    overflow-y: auto;
+
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      background-color: #f5f6ff;
+      color: #3949ab;
+      font-weight: 0 !important;
+      background: url(../../../../assets/images/etpCloudDisk/select.png) no-repeat;
+      background-position: 120px;
+      transition: 0s;
+    }
+
+    .sourceSelectItem {
+      height: 36px;
+
+      &:hover {
+        // background: #F6FAFF;
+        background-color: #f5f6ff;
+        // color:#3949AB;
+        // color: #4285F4;
+      }
+    }
+
+    .sourceSelected {
+      background: url(../../../../assets/images/etpCloudDisk/select.png) no-repeat;
+      background-position: 120px;
+    }
+    .rc-virtual-list-holder-inner::-webkit-scrollbar-thumb {
+      background-color: #d9dbe2;
+    }
+  }
+
+  .fileTypeItem {
+    min-height: 36px;
+  }
+}

@@ -1,0 +1,190 @@
+.OkrsettingModal {
+  &.enUS {
+    .ant-modal-content .ant-tabs-nav {
+      width: 180px;
+    }
+    .score-box .score-content .ant-radio-wrapper > span:last-child .radio-label .sub-label {
+      width: 587px !important;
+    }
+  }
+  &.nofooter {
+    .ant-tabs {
+      height: calc(100% + 55px) !important;
+    }
+    .ant-modal-footer {
+      visibility: hidden;
+    }
+  }
+  .ant-modal-content {
+    width: 850px !important;
+    height: 620px;
+    .ant-modal-body {
+      padding: 0 24px 0 0;
+      height: calc(100% - 110px);
+      .ant-tabs-tab {
+        font-size: 16px;
+        padding: 0;
+        margin: 24px 24px 0;
+      }
+      .ant-form {
+        margin-top: 20px;
+        .rest-radio .ant-form-item-control-input {
+          min-height: auto;
+        }
+
+        .ant-radio-wrapper,
+        .row-label {
+          font-size: 14px;
+        }
+        .ant-radio-wrapper {
+          margin-right: 54px;
+        }
+
+        .ant-switch {
+          margin-left: 24px;
+        }
+        .ant-form-item-label {
+          padding-bottom: 0;
+          label {
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+      .ant-input-number-handler-wrap,
+      .ant-input-number-handler-wrap:hover {
+        display: none;
+      }
+      .icon-btn {
+        width: 13px;
+        height: 13px;
+        margin: 0 4px 2px 0;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+      }
+      .add-icon {
+        background-image: url(../../../../../assets/images/workplan/OKR/set_add.png);
+      }
+
+      .editor-icon {
+        background-image: url(../../../../../assets/images/workplan/OKR/set_editor.png);
+      }
+      .delete-icon {
+        background-image: url(../../../../../assets/images/workplan/OKR/set_delete.png);
+      }
+      .add-btn {
+        text-align: right;
+        font-size: 14px;
+        cursor: pointer;
+        color: #4285f4;
+        margin: 19px 0 16px 0;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .editor-btn {
+        cursor: pointer;
+        margin-right: 19px;
+        &:hover {
+          color: #4285f4;
+          .editor-icon {
+            background-image: url(../../../../../assets/images/workplan/OKR/set_editor_h.png);
+          }
+        }
+      }
+
+      .delete-btn {
+        cursor: pointer;
+        &:hover {
+          color: #4285f4;
+          .delete-icon {
+            background-image: url(../../../../../assets/images/workplan/OKR/set_delete_h.png);
+          }
+        }
+      }
+      .score-box {
+        .score-title {
+          font-size: 14px;
+          font-weight: bold;
+          color: #191f25;
+          margin: 24px 0 14px 0;
+        }
+        .score-content {
+          .ant-radio-wrapper {
+            display: flex;
+            .ant-radio {
+              height: 16px;
+            }
+            & > span:last-child {
+              height: 16px;
+              margin-top: -4px;
+              margin-bottom: 90px;
+              position: relative;
+              .radio-label {
+                position: absolute;
+                .label-title {
+                  white-space: nowrap;
+                }
+                .sub-label {
+                  position: absolute;
+                  top: 24px;
+                  color: #70707a;
+                  width: 618px;
+                  white-space: pre-wrap;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ant-tabs-nav {
+      width: 160px;
+      margin-top: 14px;
+      .ant-tabs-tab {
+        margin-left: 0;
+        margin-right: 0;
+        width: calc(100% - 1px);
+        padding: 10px 0 10px 24px;
+        margin-top: 0;
+        &.ant-tabs-tab-active {
+          background-color: #f6faff;
+        }
+      }
+    }
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-ink-bar,
+    .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-ink-bar {
+      left: 0;
+    }
+  }
+  .ant-tabs-content-holder {
+    .ant-tabs-content {
+      height: 100%;
+    }
+  }
+  // 返回按钮
+  .back_btn {
+    display: inline-flex;
+    align-items: center;
+    margin: 20px 0 0;
+    cursor: pointer;
+    color: #70707a;
+    .back_icon {
+      width: 5px;
+      height: 10px;
+      margin-right: 5px;
+      margin-top: 1px;
+      background-image: url('../../../../../assets/images/clouddisk/back.png');
+      cursor: pointer;
+    }
+    &:hover {
+      color: #4285f4;
+      .back_icon {
+        background-image: url('../../../../../assets/images/clouddisk/backHover.png');
+      }
+    }
+  }
+}

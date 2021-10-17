@@ -1,0 +1,239 @@
+// 任务管理汇报详情1
+.reprtMangeModel {
+  height: 620px;
+  padding: 0;
+  .ant-modal-content {
+    height: 100%;
+    background-color: rgba(250, 250, 250, 1);
+    .ant-modal-body {
+      height: calc(100% - 55px);
+      overflow: auto;
+    }
+  }
+  .nametotal_live {
+    height: 101px;
+    overflow-y: auto;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+    border-radius: 1px;
+    background-color: #fff;
+    .tupiao_namelist {
+      width: 95px;
+      height: 22px;
+      margin: 15px 0px 15px 12px;
+      background: rgba(237, 247, 255, 1);
+      border-radius: 4px;
+      line-height: 22px;
+      font-weight: 400;
+      color: rgba(117, 117, 117, 1);
+      & > span {
+        width: 100%;
+        padding-left: 15px;
+        height: 22px;
+        text-align: center;
+        display: inline-block;
+        background: url(../../../../../assets/images/taskReport/gallery.png) no-repeat 6px center;
+      }
+    }
+    .tupiao_namelist.tupiao_native {
+      background: white;
+    }
+    .nameclickList {
+      width: 100%;
+      overflow: hidden;
+      padding: 0 20px;
+      background-color: #fff;
+      & > li {
+        margin-right: 20px;
+        line-height: 23px;
+        color: rgba(117, 117, 117, 1);
+        font-weight: 400;
+        background-color: white;
+        padding: 5px;
+        float: left;
+        cursor: pointer;
+      }
+      & > li.active {
+        background-color: rgba(237, 247, 255, 1);
+        font-weight: bold;
+        color: var(--baseColor, #4285f4);
+      }
+    }
+  }
+  .ant-spin-nested-loading {
+    overflow: auto;
+    background-color: #fafafa;
+    .process_content_all {
+      width: 100%;
+      .process_normal_title {
+        background-color: #fff;
+        color: #757575;
+        overflow: hidden;
+        height: auto;
+        line-height: 34px;
+        padding: 0 10px;
+        .submit_infos {
+          display: inline-block;
+          width: 100%;
+          .getblue {
+            color: #4285f4;
+            margin: 0 2px;
+          }
+        }
+      }
+      // 汇报内容
+      .process_normal_content {
+        padding: 12px 10px;
+        background-color: #fff;
+        color: #757575;
+        padding-right: 18px;
+        .problem_box {
+          position: relative;
+          margin-bottom: 15px;
+          .problem_cont {
+            img {
+              max-width: 340px;
+            }
+          }
+          .problem_title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            user-select: none;
+            color: #191f25;
+          }
+        }
+        .problem_report_navs {
+          padding-top: 15px;
+          margin-top: 15px;
+          border-top: 1px solid rgba(229, 229, 229, 1);
+          min-height: 160px;
+          .problem_report_tit {
+            padding: 6px 16px;
+          }
+          .ant-tabs-nav {
+            margin-bottom: 0px;
+            &::before {
+              border-bottom: 0px;
+            }
+            .ant-tabs-tab {
+              border: none;
+              background: white;
+              border-radius: 0px;
+              border: none;
+              border-top: 2px solid transparent;
+            }
+            .ant-tabs-tab-active {
+              background: #fafafa;
+              font-weight: bold;
+              border-top: 2px solid var(--baseColor, #4285f4) !important;
+            }
+          }
+        }
+        .report_list {
+          min-height: 84px;
+          background: #fafafa;
+          justify-content: flex-start;
+          width: 100%;
+          padding: 0px 15px;
+          .report_des_peo_box {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+    .process_normal_content:hover {
+      cursor: pointer;
+      background-color: #e9f5ff;
+      .report_list,
+      .ant-spin-nested-loading,
+      .problem_report_navs .ant-tabs-tab {
+        background: #e9f5ff !important;
+      }
+    }
+  }
+}
+
+.report_view_btn {
+  text-align: right;
+  .cancleBtn {
+    width: 70px;
+    border: 1px solid #4285f4;
+    color: #4285f4;
+  }
+  .sendBtn {
+    width: 70px;
+    background: #4285f4;
+    border: 1px solid #4285f4;
+    margin-left: 12px;
+    color: white;
+  }
+}
+.report_view_list {
+  .commment_view_all {
+    padding: 10px;
+    border-radius: 4px;
+    color: #757575;
+    background-color: rgba(233, 242, 255, 0.5);
+    color: #757575;
+    img {
+      max-width: 340px;
+    }
+    .callUser {
+      cursor: pointer;
+      span {
+        color: #4285f4;
+      }
+      & > p,
+      & > div {
+        display: inline-block;
+      }
+      em {
+        font-style: normal;
+        color: #ccc;
+        text-align: right;
+        margin-left: 12px;
+      }
+    }
+  }
+}
+.report-to-user-list {
+  .file_normal_box_list {
+    width: 100%;
+    overflow: hidden;
+    margin: 0px;
+    li {
+      &:hover {
+        .download_icon {
+          display: inline-block;
+        }
+      }
+      width: 40px;
+      height: 44px;
+      line-height: 40px;
+      text-align: center;
+      margin: 0 3px;
+      border: 1px solid #ccc;
+      float: left;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      img.img_file {
+        width: 36px;
+        height: 36px;
+        vertical-align: middle;
+      }
+      .download_icon {
+        display: none;
+        width: 18px;
+        height: 18px;
+        background: #fff url(../../../../../assets/images/workReport/work_drive.png) no-repeat center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        &:hover {
+          background: #fff url(../../../../../assets/images/workReport/work_derive_hover.png) no-repeat center;
+        }
+      }
+    }
+  }
+}

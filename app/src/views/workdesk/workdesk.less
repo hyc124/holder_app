@@ -1,0 +1,2442 @@
+@import '~@/src/styles/_var.less';
+
+.workdesk-container,
+.workDeskContainer {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  .workdesk-header {
+    height: 60px;
+    padding: 0 16px;
+    margin-bottom: 24px;
+    background-color: @color_white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: @font-size-lg;
+    color: @color_gray;
+    box-shadow: 0px 4px 8px 0px rgba(218, 220, 230, 0.21);
+    .follow_org {
+      display: flex;
+      align-items: center;
+      .orgName {
+        max-width: 200px;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #191f25;
+        font-size: 14px;
+      }
+      .org_d_icon {
+        font-size: 14px;
+      }
+    }
+    .work-desk-title {
+      font-weight: bold;
+      margin-right: 30px;
+    }
+    .workdesk-header-left {
+      font-size: 12px;
+      color: #000000;
+      display: flex;
+      .red-span > i {
+        position: relative;
+        &::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+          background-color: red;
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-radius: 50%;
+        }
+      }
+      .handler-icon {
+        &:hover {
+          color: @color_primary !important;
+        }
+      }
+      & > span {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      & > span > i {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      & > span:first-child {
+        margin-right: 32px;
+        position: relative;
+        & > i {
+          background: url(../../../../assets/images/workdesk/work_desk_hb.svg) no-repeat center;
+        }
+      }
+      & > span:nth-child(2) {
+        margin-right: 32px;
+        & > i {
+          background: url(../../../../assets/images/workdesk/work_desk_hy.svg) no-repeat center;
+        }
+      }
+      & > span:nth-child(3) {
+        margin-right: 32px;
+        position: relative;
+        & > i {
+          background: url(../../../../assets/images/workdesk/work-okr.svg) no-repeat center;
+        }
+        .menu_button_spin {
+          position: absolute;
+          top: 0;
+          left: -1px;
+          width: 81px;
+          height: 24px;
+          border-radius: 7px;
+          display: flex;
+          padding-left: 4px;
+          justify-content: flex-start;
+          align-items: center;
+        }
+      }
+      & > span:nth-child(4) {
+        & > i {
+          background: url(../../../../assets/images/workdesk/work-form.svg) no-repeat center;
+        }
+        & > .ant-btn {
+          margin: 0;
+          padding: 0;
+          color: #000000;
+        }
+      }
+      & > span {
+        & > i.wt_icon {
+          background: url(../../../../assets/images/workdesk/wt.svg) no-repeat center;
+        }
+        & > .ant-btn {
+          margin: 0;
+          padding: 0;
+          color: #000000;
+        }
+      }
+    }
+    .workdesk-header-right {
+      display: flex;
+      align-items: center;
+      & > button {
+        width: 88px;
+        border: none;
+        box-shadow: 0px 1px 6px rgba(26, 70, 216, 0.16);
+        border-radius: 4px;
+        font-size: 12px !important;
+      }
+      .release_cont_btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0px 1px 6px rgba(26, 70, 216, 0.16);
+        margin: 0 0 0 16px;
+
+        .add_icon {
+          background: url(../../../../assets/images/workdesk/pushlishCon.png) no-repeat center;
+          width: 14px;
+          height: 14px;
+          display: inline-block;
+          cursor: pointer;
+          position: relative;
+          top: 15%;
+          left: 50%;
+          transform: translate(-50%, 0);
+        }
+        &:hover .add_icon {
+          background: url(../../../../assets/images/workdesk/pushlishCon_h.png) no-repeat center;
+        }
+        &:hover {
+          background: #e9f2ff;
+        }
+      }
+      .p_create_task_btn:hover {
+        background-color: #e9f2ff !important;
+      }
+    }
+    .header-right {
+      display: flex;
+      margin-right: 20px;
+      & > div {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        height: 32px;
+        padding: 0 14px;
+        border-radius: 16px;
+        &:hover {
+          cursor: pointer;
+          background-color: @color_bluelight;
+        }
+        & > .icon {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin-right: 7px;
+        }
+      }
+      .work-metting_manage > .icon {
+        background: url(../../../../assets/images/workdesk/meeting-icon.png) no-repeat center;
+      }
+      .work-report > .icon {
+        background: url(../../../../assets/images/workdesk/report-icon.png) no-repeat center;
+      }
+      .hold_handle_task > .icon {
+        background: url(../../../../assets/images/workdesk/hold_hanlde_task_icon.png.png) no-repeat center;
+      }
+      .hold_handle_fabulous > .icon {
+        width: 18px;
+        height: 18px;
+        background: url('../../../../assets/images/workdesk/hold_hanlde_fabulous_icon.png') no-repeat center;
+      }
+    }
+  }
+  .workdesk-containe-left {
+    background: #f5f7fb;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+  }
+  .workdesk-containe-right {
+    width: 385px;
+    padding: 20px 30px 0 30px;
+    .desk_user_header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      .head_title {
+        display: flex;
+        flex-direction: column;
+        padding-left: 6px;
+        .head_title_name {
+          color: @color_dark;
+          font-size: @font-size-lg;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          img {
+            margin-left: 3px;
+          }
+        }
+        .head_title_info {
+          color: #70707a;
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+      .ant-avatar {
+        box-shadow: none !important;
+      }
+      .set_module_btn {
+        display: flex;
+        .edit_modal {
+          width: 20px;
+          height: 19px;
+          display: inline-block;
+          cursor: pointer;
+          background: url(../../../../assets/images/workdesk/work_desk_set_icon.svg) no-repeat center;
+          &:hover {
+            background: url(../../../../assets/images/workdesk/work_desk_set_icon_active.svg) no-repeat center;
+          }
+        }
+      }
+    }
+    .desk_statistics_module {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+      position: relative;
+      .desk_statistics_module_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: @color_black;
+        .statistics_title {
+          color: #9a9aa2;
+          font-weight: 400;
+          margin-bottom: 6px;
+        }
+        .statistics_num {
+          font-size: @font-size-md;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        .ant-dropdown-link {
+          font-size: 14px;
+          font-weight: bold;
+          cursor: pointer;
+          color: black;
+        }
+        svg {
+          display: none;
+        }
+      }
+      .l_line {
+        display: inline-block;
+        width: 1px;
+        height: 34px;
+        margin: 0 @font-size-lg;
+        background: #d7d7d9;
+      }
+      i {
+        display: inline-block;
+        color: #ea4335;
+        font-size: 12px;
+        position: absolute;
+        font-family: auto;
+        font-weight: 400;
+        font-style: inherit;
+        top: -3px;
+        right: -16px;
+      }
+    }
+
+    .wait_task_modal {
+      // 全屏按钮
+      // &:hover {
+      //   .enlarge-btn,
+      //   .screen-enlarge-larg {
+      //     display: block;
+      //   }
+      // }
+      .wait_task {
+        .wait_task_nav {
+          display: flex;
+          position: relative;
+          align-items: center;
+
+          .wait_lab {
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 12px;
+          }
+
+          .lab-item {
+            position: relative;
+            font-size: 12px;
+            margin-right: 26px;
+            cursor: pointer;
+            color: #70707a;
+            .red-dot {
+              width: 18px;
+              height: 18px;
+              background: #ea4335;
+              border-radius: 50%;
+              border: 1px solid #ffffff;
+              font-size: 10px;
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              right: -11px;
+              top: -8px;
+            }
+            .red-larg-dot {
+              width: 28px !important;
+              border-radius: 9px !important;
+              right: -19px !important;
+            }
+          }
+          .ant-tabs-tab {
+            padding: 0;
+            margin: 0 3px 0 0;
+          }
+          .ant-tabs-nav {
+            margin: 0;
+          }
+          .ant-tabs-nav::before {
+            border-bottom: none;
+          }
+          .ant-tabs-ink-bar {
+            height: 3px !important;
+            width: 27px !important;
+            bottom: 2px;
+          }
+          .nav-active {
+            font-size: 14px;
+            color: #191f25 !important;
+            font-weight: 400;
+            font-family: Microsoft YaHei;
+          }
+        }
+        .ant-tabs,
+        .ant-tabs-nav-wrap {
+          overflow: inherit;
+        }
+      }
+    }
+    .wait_checkbox {
+      .ant-checkbox-group-item {
+        font-size: 14px;
+        margin-right: 19px;
+      }
+      .ant-checkbox-checked .ant-checkbox-inner {
+        background-color: rgba(78, 222, 242, 1);
+        border-color: rgba(78, 222, 242, 1);
+      }
+      .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+      .ant-checkbox:hover .ant-checkbox-inner,
+      .ant-checkbox-input:focus + .ant-checkbox-inner {
+        border-color: rgba(78, 222, 242, 1);
+      }
+    }
+    .week_navbar {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      .week_navbar_item {
+        width: 56px;
+        height: 44px;
+        border-radius: 10px;
+        background-color: rgba(247, 248, 253, 1);
+        text-align: center;
+        position: relative;
+        // padding-top: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &.week_navbar_item_left,
+        &.week_navbar_item_right {
+          align-items: center;
+          justify-content: center;
+          .icon {
+            display: inline-block;
+            width: 6px;
+            height: 8px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            &.left {
+              background-image: url(../../../../assets/images/workdesk/btn-lf.png);
+            }
+            &.right {
+              background-image: url(../../../../assets/images/workdesk/btn-rg.png);
+            }
+          }
+          &:hover {
+            background-color: rgba(57, 73, 171, 0.3);
+          }
+        }
+        &.now_year_month {
+          width: 76px;
+          background-color: rgba(77, 208, 226, 1);
+          border-radius: 0px 8px 8px 0px;
+          .w_n_d,
+          .w_n_k {
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+        .w_n_k {
+          color: #9a9aa2;
+          font-size: 10px;
+        }
+        .w-n-k-active {
+          color: #e4e4e4;
+        }
+        .w_n_d {
+          color: #191f25;
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: bold;
+        }
+        .w-n-d-active {
+          color: white;
+        }
+        .w_active_spot {
+          width: 19px;
+          height: 16px;
+          background-image: url(../../../../assets/images/workdesk/today.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 0;
+          right: 0px;
+        }
+      }
+
+      .week-navbar-item-active {
+        background: rgba(57, 73, 171, 1);
+        box-shadow: 0px 3px 6px rgba(26, 70, 216, 0.16);
+        color: white;
+      }
+    }
+
+    .wait_task_list_wrap {
+      overflow: hidden;
+      // padding-right: 14px;
+      height: calc(100% - 130px);
+      &:hover {
+        overflow: overlay;
+        .wait_task_list::-webkit-scrollbar {
+          /*滚动条整体样式*/
+          width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+          height: 1px;
+        }
+        .wait_task_list::-webkit-scrollbar-thumb {
+          display: block;
+          /*滚动条里面小方块*/
+          border-radius: 6px;
+          // -webkit-box-shadow: inset 0 0 5px #cccccc;
+          background: #cccccc;
+        }
+        .wait_task_list::-webkit-scrollbar-track {
+          /*滚动条里面轨道*/
+          // -webkit-box-shadow: inset 0 0 5px #cccccc;
+          border-radius: 6px;
+          background: #f5f5f5;
+          box-shadow: inherit;
+        }
+      }
+    }
+    @media screen and (min-width: 1350px) {
+      .wait_task_list {
+        max-height: 395px !important;
+      }
+    }
+    @media screen and (max-width: 1350px) {
+      .wait_task_list {
+        max-height: 283px !important;
+      }
+    }
+
+    .wait_task_list::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+      height: 1px;
+    }
+    .wait_task_list::-webkit-scrollbar-thumb {
+      display: none;
+      /*滚动条里面小方块*/
+      border-radius: 6px;
+      // -webkit-box-shadow: inset 0 0 5px #cccccc;
+      background: #cccccc;
+    }
+    .wait_task_list::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      // -webkit-box-shadow: inset 0 0 5px #cccccc;
+      border-radius: 6px;
+      background: #ffffff00;
+      box-shadow: none;
+    }
+    // 代办列表ui
+    .wait_task_list {
+      max-height: 283px;
+      min-height: 190px;
+      margin-top: 12px;
+      position: relative;
+      overflow: auto;
+      padding-right: 1px;
+      &:hover {
+        overflow: auto;
+      }
+      .disableMaskIcon {
+        width: 16px;
+        height: 13px;
+        display: block;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        z-index: 2;
+        background: url(../../../../assets/images/workdesk/task-icon-complete.svg) no-repeat center !important;
+      }
+      .demo-loading-container {
+        position: absolute;
+        bottom: 40px;
+        width: 100%;
+        text-align: center;
+      }
+      .itemComplete {
+        cursor: default !important;
+        // opacity: 0.6;
+        position: relative;
+        &:hover {
+          background: #f5f7fb !important;
+          .task-item-tip {
+            color: inherit !important;
+          }
+          .itemWrap {
+            white-space: inherit !important;
+          }
+
+          .task-icon-sp {
+            background: url(../../../../assets/images/workdesk/task-icon-sp.png) no-repeat center !important;
+          }
+          .task-icon-gz {
+            background: url(../../../../assets/images/workdesk/task-icon-gz.png) no-repeat center !important;
+          }
+          .task-icon-cb {
+            background: url(../../../../assets/images/workdesk/task-icon-cb.png) no-repeat center !important;
+          }
+          .task-icon-yq {
+            background: url(../../../../assets/images/workdesk/task-icon-yq.png) no-repeat center !important;
+          }
+          .task-icon-cd {
+            background: url(../../../../assets/images/workdesk/task-icon-cd.svg) no-repeat center !important;
+          }
+          .task-icon-task {
+            background: url(../../../../assets/images/workdesk/task-icon-task.svg) no-repeat center !important;
+          }
+        }
+      }
+      .hasMsg {
+        position: relative;
+        &::before {
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #ea4335;
+          position: absolute;
+          top: 23px;
+          left: 8px;
+        }
+      }
+      .task-item {
+        color: rgba(65, 65, 65, 1);
+        margin-bottom: 15px;
+        background: rgba(247, 248, 253, 1);
+        min-height: 74px;
+        border-radius: 8px;
+        display: flex;
+        padding: 16px 16px 14px 18px;
+        -webkit-transition-duration: 0.2s; /* Safari */
+        transition-duration: 0.2s;
+        cursor: pointer;
+        position: relative;
+
+        &.notHover:hover {
+          cursor: no-drop;
+          background: #f5f7fb;
+          cursor: text;
+          .task-item-tip {
+            color: #212224;
+            .atUser {
+              color: #212224;
+            }
+          }
+          .task-icon-sp {
+            background: url(../../../../assets/images/workdesk/task-icon-sp.png) no-repeat center;
+          }
+          .task-icon-task {
+            background: url(../../../../assets/images/workdesk/task-icon-task-active.svg) no-repeat center !important;
+          }
+        }
+        &.isGreyBg {
+          background: #f5f7fb;
+        }
+
+        &.isLightHeighBg {
+          background: #4285f4;
+          color: #fff;
+          .waitTime {
+            color: #accaf7;
+          }
+        }
+        .com-tag-d {
+          padding: 0;
+          line-height: 18px;
+          text-align: center;
+        }
+        .waitTime {
+          font-size: 10px;
+          color: #232323;
+          opacity: 0.5;
+        }
+        &:hover {
+          background: rgba(255, 255, 255, 1);
+          box-shadow: 0px 2px 12px 0px #f0f2ff;
+          border-radius: 10px;
+          // .task-item-tip {
+          //   color: white;
+          //   .atUser,
+          //   .chatAt {
+          //     color: white !important;
+          //   }
+          // }
+          .task-item-time {
+            // color: #8db6f8 !important;
+            display: flex;
+            justify-content: space-between;
+            .cuiban-y {
+              font-size: 12px;
+              color: #ffaa00 !important;
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-top: 0;
+              .task-icon-cby {
+                width: 14px;
+                height: 13px;
+                background-size: contain;
+                background: url(../../../../assets/images/workdesk/cuiban_y.png) no-repeat center;
+              }
+            }
+          }
+          .task-option {
+            display: block;
+          }
+          // .aterMe {
+          //   color: white;
+          // }
+          .task-icon-sp {
+            background: url(../../../../assets/images/workdesk/task-icon-sp-active.png) no-repeat center;
+          }
+          .task-icon-gz {
+            background: url(../../../../assets/images/workdesk/task-icon-gz-active.png) no-repeat center;
+          }
+          .task-icon-cb {
+            background: url(../../../../assets/images/workdesk/task-icon-cb-active.png) no-repeat center;
+          }
+          .task-icon-yq {
+            background: url(../../../../assets/images/workdesk/task-icon-yq-active.png) no-repeat center;
+          }
+          .task-icon-cd {
+            background: url(../../../../assets/images/workdesk/task-icon-cd.svg) no-repeat center;
+          }
+          .task-icon-task {
+            background: url(../../../../assets/images/workdesk/task-icon-task.svg) no-repeat center;
+          }
+        }
+        .task-item-icon {
+          width: 16px;
+          height: 16px;
+          margin-top: 3px;
+          margin-right: 4px;
+          background: url(../../../../assets/images/workdesk/all_org_background.png) no-repeat center;
+          background-size: 100% 100%;
+        }
+        .aterMe {
+          padding-right: 8px;
+          font-weight: bold;
+          color: #4285f4;
+        }
+        .disableMask {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.6;
+          background: #f5f7fb;
+          z-index: 1;
+        }
+        .task-icon-sp {
+          background: url(../../../../assets/images/workdesk/task-icon-sp.png) no-repeat center;
+        }
+        .task-icon-gz {
+          background: url(../../../../assets/images/workdesk/task-icon-gz.png) no-repeat center;
+        }
+        .task-icon-cb {
+          background: url(../../../../assets/images/workdesk/task-icon-cb.png) no-repeat center;
+        }
+        .task-icon-yq {
+          background: url(../../../../assets/images/workdesk/task-icon-yq.png) no-repeat center;
+        }
+        .task-icon-cd {
+          background: url(../../../../assets/images/workdesk/task-icon-cd.svg) no-repeat center;
+        }
+        .task-icon-task {
+          background: url(../../../../assets/images/workdesk/task-icon-task-active.svg) no-repeat center;
+        }
+        .task-item-top-header {
+          width: calc(100% - 120px);
+          .task-item-tip {
+            line-height: 18px;
+            max-height: 51px;
+            font-size: 14px;
+            // white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            .emoji_icon {
+              width: 20px;
+              height: 20px;
+            }
+          }
+          .itemWrap {
+            // white-space: inherit !important;
+            max-height: inherit;
+          }
+          .task-item-time {
+            color: #939496;
+            line-height: 10px;
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            .cuiban-y {
+              font-size: 12px;
+              color: #ffaa00 !important;
+              display: flex;
+              align-items: center;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin-top: 0;
+              // width: 240px;
+              .task-icon-cby {
+                width: 14px;
+                height: 13px;
+                background-size: contain !important;
+                background: url(../../../../assets/images/workdesk/cuiban_y.png) no-repeat center;
+              }
+            }
+          }
+        }
+        .width32 {
+          width: calc(100% - 32px) !important;
+        }
+        .task-option {
+          // position: absolute;
+          // right: 0;
+          // bottom: 0;
+
+          display: none;
+          .options-btn {
+            height: 100%;
+            justify-content: flex-end;
+          }
+          .task-option-btn {
+            width: 54px;
+            height: 22px;
+            color: #6b6b6b;
+            text-align: center;
+            line-height: 22px;
+            &:hover {
+              background: #edeeff;
+              border-radius: 3px;
+              color: #3949ab;
+            }
+          }
+          // .task-option-btn:last-child {
+          //   // background: #edeeff;
+          //   // border-radius: 3px;
+          //   // color: #3949ab;
+          //   // &:hover {
+          //   //   color: rgba(66, 133, 244, 0.8) !important;
+          //   // }
+          // }
+        }
+      }
+      .notHover {
+        cursor: no-drop !important;
+        opacity: 0.6;
+      }
+    }
+    .follow_user_modal {
+      margin-top: 30px;
+      &:hover {
+        .enlarge-btn,
+        .screen-enlarge-larg {
+          display: block;
+        }
+        .follow_add_btn {
+          display: block;
+        }
+      }
+      .is-full-follow-list {
+        height: 100%;
+        max-height: initial;
+      }
+    }
+    .follow_navbar {
+      margin-top: 10px;
+      margin-bottom: 12px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      .span {
+        cursor: pointer;
+      }
+      .followNavActive {
+        font-size: 14px;
+        font-weight: bold !important;
+      }
+      .follow_add_btn {
+        display: none;
+        width: 16px;
+        height: 16px;
+        background: url('../../../../assets/images/workdesk/add_follow_icon.svg') no-repeat center;
+        // position: absolute;
+        // right: 0;
+        &:hover {
+          background: url('../../../../assets/images/workdesk/follow_add.png') no-repeat center;
+        }
+        cursor: pointer;
+      }
+    }
+    .follow_list {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      max-height: 300px; //暂时处理
+      overflow: hidden; //暂时处理
+      &:hover {
+        overflow: overlay;
+      }
+      .fp-item {
+        width: 42px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-right: 20px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        position: relative;
+        &:hover {
+          .del-item-icon {
+            display: block;
+          }
+        }
+      }
+      .noneClick {
+        cursor: default;
+        opacity: 0.4;
+      }
+      .del-item-icon {
+        display: none;
+        width: 12px;
+        height: 12px;
+        background: url(../../../../assets/images/common/del-item-icon-normal.png) no-repeat center;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 99;
+        cursor: pointer;
+      }
+    }
+    .enlarge-btn,
+    .screen-enlarge-larg {
+      display: none;
+      width: 16px;
+      height: 16px;
+      background: url('../../../../assets/images/common/enlarge-icon.svg') no-repeat center;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+    }
+    .enlarge-btn:hover {
+      background: url('../../../../assets/images/common/enlarge-active-icon.svg') no-repeat center;
+    }
+    .screen-enlarge-larg {
+      background: url('../../../../assets/images/common//enlarge-screen-s.svg') no-repeat center;
+    }
+    .screen-enlarge-larg:hover {
+      background: url('../../../../assets/images/common//enlarge-screen-s-h.svg') no-repeat center;
+    }
+  }
+
+  .work_desk_right_zoom {
+    width: initial;
+    height: calc(100% - 80px);
+    top: 64px;
+    padding: 0px 24px 17px 16px;
+    background: #f5f7fb;
+    flex: 1;
+    & > div {
+      height: 100%;
+      box-shadow: 0px 1px 10px rgba(0, 14, 203, 0.04);
+      border-radius: 8px;
+      background: white;
+      padding: 16px 5px 0 16px;
+    }
+    .wait_task_list {
+      max-height: 759px !important;
+      height: 100%;
+    }
+    .week_navbar {
+      justify-content: flex-start;
+      .week_navbar_item {
+        margin-right: 62px;
+      }
+    }
+    .enlarge-btn {
+      right: 10px;
+      position: absolute;
+    }
+    .follow_navbar {
+      margin-top: 0;
+    }
+  }
+  .workdesk-main {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    .workdesk-menu {
+      height: 44px;
+      padding: 10px 24px 0;
+      display: flex;
+      align-items: center;
+      .notice {
+        flex: 1;
+        height: 32px;
+        background: #d1e2fa87;
+        border: 1px solid #4285f480;
+        border-radius: 4px;
+        color: @color_dark;
+        margin-right: 28px;
+        display: flex;
+        align-items: center;
+        padding-left: 9px;
+        .tips {
+          display: inline-block;
+          width: 51px;
+          height: 20px;
+          line-height: 20px;
+          background-color: @color_blue;
+          color: @color_white;
+          border-radius: 10px;
+          text-align: center;
+          margin-right: 12px;
+        }
+        .icon {
+          display: inline-block;
+          width: 12px;
+          height: 20px;
+          background: url(../../../../assets/images/common/lb2.png) no-repeat center;
+          margin-right: 8px;
+        }
+        .show_title > i {
+          font-style: normal;
+          color: @color_red;
+          font-weight: bold;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .create-task {
+        border-radius: 4px;
+        margin-right: 28px;
+      }
+      .add-btn {
+        width: 88px;
+        border-radius: 4px;
+        border: 0;
+        margin-right: 28px;
+        & > span {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background: url(../../../../assets/images/common/add-normal.png) no-repeat center;
+        }
+        &:hover {
+          border: 1px solid @color_blue;
+          span {
+            background: url(../../../../assets/images/common/add-hover.png) no-repeat center;
+          }
+        }
+      }
+      .set-desk {
+        width: 32px;
+        padding: 0;
+        border: 1px solid transparent;
+        &:hover {
+          border: 1px solid @color_blue;
+        }
+      }
+    }
+    .desk-container {
+      flex: 1;
+      overflow: hidden;
+      padding: 0 16px 16px 16px;
+      background: #f5f7fb;
+      // &:hover {
+      //   overflow: overlay;
+      // }
+      .module-container-box {
+        height: 100%;
+        .left-paine {
+          flex: 1;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .modelscreen {
+            width: calc(50% - 7px) !important;
+            .ant-tabs-top {
+              min-width: calc(50% - 7px);
+              margin-bottom: 16px;
+            }
+          }
+          .fullScreen {
+            width: 100%;
+          }
+          .screenPanel {
+            height: 100%;
+          }
+        }
+        .right-paine {
+          min-width: 630px;
+          max-width: 630px;
+          width: 630px;
+        }
+
+        @media only screen and (max-width: 1600px) {
+          & {
+            flex-flow: column;
+          }
+          .right-paine {
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            flex: 1;
+            .target_kanban_box .left_pane_list {
+              width: 314px;
+            }
+          }
+          .left-paine {
+            margin-right: 0;
+            min-width: 630px;
+            flex: none;
+            height: 100%;
+            .target_kanban_box .left_pane_list {
+              width: 314px;
+            }
+            .screenPanel {
+              height: 100%;
+            }
+          }
+        }
+      }
+      .module-full-screen {
+        position: absolute;
+        width: 100%;
+        height: 600px;
+        top: 0;
+        left: 0;
+        .close-full-screen {
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          background: url(../../../../assets/images/workdesk//close_full_icon.svg) no-repeat center;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+        .left-paine {
+          height: 100% !important;
+          .screenPanel {
+            height: 100%;
+          }
+        }
+        .module-content {
+          height: 100% !important;
+          padding-right: 0;
+          .task-wrap-container {
+            height: calc(100% - 60px);
+            overflow: hidden;
+            padding-right: 16px;
+            &:hover {
+              overflow: overlay;
+            }
+          }
+        }
+        .module-pane {
+          height: 100% !important;
+        }
+        .modelscreen {
+          height: 100% !important;
+        }
+        .fullScreen {
+          height: 100% !important;
+        }
+        &:hover {
+          // .workdesk-container .workdesk-main .desk-container {
+          //   &:hover {
+          //     overflow: hidden;
+          //   }
+          // }
+        }
+        .search_box {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 32px;
+          position: absolute;
+          background: #ffffff;
+          width: 100%;
+          padding-right: 22px;
+          top: 0px;
+          z-index: 9;
+          .seach_icon {
+            width: 68px;
+            height: 32px;
+            border: 1px solid #d7d7d9;
+            line-height: 32px;
+            margin-right: 10px;
+            display: flex;
+            text-align: center;
+            border-radius: 6px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            & > i {
+              width: 14px;
+              height: 14px;
+              margin-right: 3px;
+              display: inline-block;
+              background: url(../../../../assets/images/workdesk/shaixuan_icon.svg) no-repeat center;
+              &:hover {
+                background: url(../../../../assets/images/workdesk/shaixuan_icon_active.svg) no-repeat center;
+              }
+            }
+          }
+          .file_btn {
+            display: flex;
+            span {
+              color: #999999;
+              cursor: pointer;
+              margin-right: 20px;
+              display: flex;
+              align-items: center;
+              & > i {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                margin-right: 5px;
+              }
+              &:first-child i {
+                background: url(../../../../assets/images/task/schtasks/on_file_normal.png) no-repeat center;
+              }
+              &:last-child i {
+                background: url(../../../../assets/images/task/schtasks/freeze.png) no-repeat center;
+              }
+              &:nth-child(2) i {
+                background: url(../../../../assets/images/task/schtasks/under.png) no-repeat center;
+              }
+              &:hover {
+                color: #4285f4;
+                &:first-child i {
+                  background: url(../../../../assets/images/task/file_blue.png) no-repeat center;
+                }
+                &:nth-child(2) i {
+                  background: url(../../../../assets/images/task/schtasks/under-h.png) no-repeat center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.module-pane {
+  border-radius: 8px;
+  background-color: @color_white;
+  margin-bottom: 16px !important;
+  box-shadow: 0px 0px 6px 0px rgba(2, 52, 134, 0.2);
+  .desk-module-header {
+    height: 45px;
+    min-height: 45px;
+    cursor: all-scroll;
+    outline: none;
+    position: relative;
+    // 0311版 记录
+    .desk-tab-title {
+      position: absolute;
+      top: 0;
+      left: 16px;
+      line-height: 14px;
+      padding: 0px 18px;
+      font-size: 10px;
+      color: #4285f4;
+      background: url(../../../../assets/images/workdesk/tag_left.png) no-repeat 0px 0px;
+      & > i {
+        display: none;
+      }
+      & > .desk-tab-text {
+        background-color: #dfe4ff;
+        line-height: 20px;
+        vertical-align: top;
+        color: #3949ab;
+      }
+      .desk-tab-iconL {
+        width: 16px;
+        height: 20px;
+        background: url(../../../../assets/images/workdesk/tag_right.png) no-repeat 0px center;
+      }
+    }
+    .desk-tab-nav {
+      flex: 1;
+      color: #70707a;
+      margin-left: 16px !important;
+      margin-top: 4px !important;
+      // border-bottom: 1px solid #e7e7e9 !important;
+      .ant-tabs-nav-list {
+        cursor: pointer;
+      }
+      .ant-tabs-nav-list > .ant-tabs-ink-bar {
+        width: 24px !important;
+        height: 3px;
+        bottom: 13px;
+      }
+      .ant-tabs-nav-list > button {
+        height: 24px;
+        padding: 0 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        color: @color_gray;
+        background-color: @color_f5;
+      }
+      .ant-tabs-nav-list > button.ant-tabs-tab-active {
+        color: #4285f4;
+        background-color: #e9f2ff;
+        font-size: 14px;
+      }
+      .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+        color: #191f25 !important;
+      }
+      .ant-tabs-tab.ant-tabs-tab-active {
+        // font-size: 14px;
+        color: #191f25 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      // .ant-tabs-tab.ant-tabs-tab-active::after {
+      //   content: '';
+      //   display: block;
+      //   width: 29px;
+      //   height: 3px;
+      //   background: #4285f4;
+      //   position: absolute;
+      //   top: 27px;
+      //   z-index: -1;
+      // }
+
+      .set-tag-icon {
+        width: 14px;
+        height: 13px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 20px;
+        right: 2px;
+        display: none;
+        background-image: url(../../../../assets/images/myWorkDesk/hearder_seting.svg);
+        &:hover {
+          background-image: url(../../../../assets/images/myWorkDesk/hearder_seting_active.svg);
+        }
+      }
+      .ant-tabs-tab:hover .set-tag-icon {
+        display: inline-block;
+      }
+    }
+    .desk-tab-nav::before {
+      border-bottom: 0;
+    }
+    .module-handle-group {
+      display: flex;
+      cursor: default;
+      height: 100%;
+      align-items: center;
+      .import_btn,
+      .screen-enlarge-btn,
+      .screen_option_btn {
+        margin-top: 4px;
+      }
+    }
+    .module-handle-group > button {
+      border: 0;
+    }
+    .module-handle-group > button[ant-click-animating-without-extra-node]:after {
+      border: 0 none;
+      opacity: 0;
+      animation: none 0 ease 0 1 normal;
+    }
+    .screen-enlarge-btn,
+    .screen-enlarge-larg {
+      margin-right: 16px;
+      display: none;
+      width: 16px;
+      height: 16px;
+      background: url('../../../../assets/images/common/enlarge-icon.svg') no-repeat center;
+      cursor: pointer;
+    }
+    .screen-enlarge-larg {
+      background: url('../../../../assets/images/common/enlarge-screen-s.svg') no-repeat center;
+    }
+    .screen-enlarge-larg:hover {
+      background: url('../../../../assets/images/common/enlarge-screen-s-h.svg') no-repeat center;
+    }
+    .screen-enlarge-btn:hover {
+      background: url('../../../../assets/images/common/enlarge-active-icon.svg') no-repeat center;
+    }
+    .screen_option_btn {
+      margin-right: 16px;
+      // display: none;
+      width: 3px;
+      height: 16px;
+      background: url('../../../../assets/images/workdesk/modal_item_option.svg') no-repeat center;
+      cursor: pointer;
+    }
+    .screen_option_btn:hover {
+      background: url('../../../../assets/images/workdesk/modal_item_option_active.svg') no-repeat center;
+    }
+    .import_btn {
+      margin-right: 16px;
+      display: none;
+      width: 16px;
+      height: 16px;
+      background: url('../../../../assets/images/workdesk/import.png') no-repeat center;
+      cursor: pointer;
+      background-size: cover;
+      &:hover {
+        background: url('../../../../assets/images/workdesk/import_h.png') no-repeat center;
+        background-size: cover;
+      }
+    }
+    .select_btn {
+      margin-right: 16px;
+      // display: none;
+      width: 15px;
+      height: 18px;
+      background: url('../../../../assets/images/workdesk/select_mu.png') no-repeat center;
+      cursor: pointer;
+      background-size: cover;
+      &:hover {
+        background: url('../../../../assets/images/workdesk/select_mu_h.png') no-repeat center;
+        background-size: cover;
+      }
+    }
+    .ant-tabs-nav .ant-tabs-nav-wrap::before {
+      box-shadow: none !important;
+    }
+    .ant-tabs-nav .ant-tabs-nav-wrap::after {
+      box-shadow: none !important;
+    }
+    .ant-tabs-tab {
+      margin: 0;
+      padding-top: 17px;
+      padding-right: 18px;
+      .ant-tabs-tab-btn {
+        &:focus {
+          color: #70707a;
+        }
+        &:active {
+          color: #70707a;
+        }
+      }
+    }
+    .ant-tabs-nav-more {
+      display: none;
+      padding: 0 8px !important;
+    }
+    .module_select_icon {
+      width: 14px;
+      height: 14px;
+      display: block;
+      cursor: pointer;
+      margin: 0 8px;
+    }
+    .m_left {
+      margin: 5px 0 0 12px;
+      background: url('../../../../assets/images/workdesk/modal_change_left.svg') no-repeat center;
+      &:hover {
+        background: url('../../../../assets/images/workdesk/modal_change_left_active.svg') no-repeat center;
+      }
+    }
+    .m_right {
+      margin-top: 4px;
+      background: url('../../../../assets/images/workdesk/modal_change_right.svg') no-repeat center;
+      &:hover {
+        background: url('../../../../assets/images/workdesk/modal_change_right_active.svg') no-repeat center;
+      }
+    }
+  }
+  .desk-module-header-before {
+    position: relative;
+  }
+  // .desk-module-header-before::after {
+  //   content: '';
+  //   width: calc(100% - 32px);
+  //   height: 1px;
+  //   border-bottom: 1px solid #e7e7e9;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 16px;
+  // }
+  .ant-tabs-content-holder {
+    .reportContent {
+      padding: 0 !important;
+    }
+    .module-content {
+      // height: 414px;
+      // height: 269px;
+      overflow: hidden;
+      .ant-table-tbody {
+        .ant-table-cell {
+          border-bottom: none;
+          height: 0;
+          padding-right: 16px;
+        }
+      }
+      .taskWrapPad {
+        padding-top: 33px;
+      }
+      .task-wrap-container {
+        height: 100%;
+        padding: 0px 24px 0px 10px;
+      }
+      &:hover {
+        overflow: overlay;
+      }
+      .report_table {
+        height: 100%;
+        overflow: auto;
+        padding: 12px 0;
+        .report_class_name {
+          display: inline-block;
+          padding-right: 16px;
+          height: 28px;
+          font-size: 12px;
+          color: #70707a;
+          background: rgba(231, 231, 233, 0.5);
+          line-height: 28px;
+          padding-left: 14px;
+          margin-bottom: 6px;
+          font-weight: 400;
+          position: relative;
+          overflow: hidden;
+          white-space: normal;
+          text-overflow: ellipsis;
+          cursor: default;
+          &::before,
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            right: -10px;
+            border-width: 0 10px 14px;
+            border-style: solid;
+            border-color: transparent transparent #ffffff;
+          }
+          &::before {
+            top: 0;
+          }
+          &::after {
+            transform: rotate(180deg);
+            top: 14px;
+          }
+        }
+        .report_item_icon {
+          width: 36px;
+          height: 36px;
+          position: relative;
+          > img {
+            width: 100%;
+          }
+          .report_label {
+            width: 28px;
+            height: 20px;
+            text-align: center;
+            border-radius: 10px;
+            position: absolute;
+            top: -9px;
+            right: -16px;
+          }
+          .color_yellow {
+            color: #ffaa00;
+            background: #fff6e1;
+            border: 1px solid #ffaa00;
+          }
+          .color_blue {
+            color: #4285f4;
+            background: #e9f2ff;
+            border: 1px solid #4285f4;
+          }
+        }
+        .report_class_content {
+          overflow: hidden;
+          padding: 0 10px;
+          .report_table_ul_item {
+            float: left;
+            width: 95px;
+            height: 102px;
+            border-radius: 8px;
+            margin-right: 25px;
+            margin-bottom: 6px;
+            padding: 10px 12px;
+            cursor: pointer;
+            .report_item_icon_3,
+            .report_item_icon_2,
+            .report_item_icon_1,
+            .report_item_icon_0 {
+              width: 42px;
+              height: 50px;
+              min-height: 50px;
+              margin-bottom: 8px;
+              margin-top: 12px;
+            }
+            .report_item_icon_3 {
+              background: url('../../../../assets/images/workdesk/report/report_table_icon_3.png') no-repeat
+                center;
+            }
+            .report_item_icon_2 {
+              background: url('../../../../assets/images/workdesk/report/report_table_icon_2.png') no-repeat
+                center;
+            }
+            .report_item_icon_1 {
+              background: url('../../../../assets/images/workdesk/report/report_table_icon_1.png') no-repeat
+                center;
+            }
+            .report_item_icon_0 {
+              background: url('../../../../assets/images/workdesk/report/report_table_icon_0.png') no-repeat
+                center;
+            }
+            &:hover {
+              background-color: @color_bluelight;
+            }
+            .report_table_ul_item_loading > .ant-spin-container {
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+            }
+            .report_item_name {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              word-break: break-all;
+            }
+          }
+        }
+        .follow_add {
+          float: left;
+          width: 95px;
+          padding: 10px 0;
+          text-align: center;
+          .report_add_icon {
+            background: url(../../../../assets/images/workdesk/pushlishCon_h.png) no-repeat center;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            background-color: #f5f5f5;
+            padding: 18px;
+            border-radius: 50%;
+            background-color: #f5f7fb;
+          }
+          .report_add_text {
+            position: relative;
+            top: -5px;
+            color: #4285f4;
+          }
+        }
+      }
+      .search_box {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 32px;
+        position: absolute;
+        right: 0;
+        .seach_icon {
+          width: 68px;
+          height: 32px;
+          border: 1px solid #d7d7d9;
+          line-height: 32px;
+          margin-right: 10px;
+          display: flex;
+          text-align: center;
+          border-radius: 6px;
+          cursor: pointer;
+          justify-content: center;
+          align-items: center;
+          & > i {
+            width: 14px;
+            height: 14px;
+            margin-right: 3px;
+            display: inline-block;
+            background: url(../../../../assets/images/workdesk/shaixuan_icon.svg) no-repeat center;
+            &:hover {
+              background: url(../../../../assets/images/workdesk/shaixuan_icon_active.svg) no-repeat center;
+            }
+          }
+        }
+        .file_btn {
+          display: flex;
+          span {
+            color: #999999;
+            cursor: pointer;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            & > i {
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+              margin-right: 5px;
+            }
+            &:first-child i {
+              background: url(../../../../assets/images/task/schtasks/on_file_normal.png) no-repeat center;
+            }
+            &:last-child i {
+              background: url(../../../../assets/images/task/schtasks/freeze.png) no-repeat center;
+            }
+            &:nth-child(2) i {
+              background: url(../../../../assets/images/task/schtasks/under.png) no-repeat center;
+            }
+            &:hover {
+              color: #4285f4;
+              &:first-child i {
+                background: url(../../../../assets/images/task/file_blue.png) no-repeat center;
+              }
+              &:nth-child(2) i {
+                background: url(../../../../assets/images/task/schtasks/under-h.png) no-repeat center;
+              }
+            }
+          }
+        }
+      }
+      .columnProgress {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        // min-width: 0 !important;
+        height: 100% !important;
+      }
+    }
+    .module-content.waitReceive {
+      height: 100%;
+      padding: 0 0 0 16px;
+    }
+    .module-none-padding .module-content {
+      padding: 0;
+    }
+    .list-item {
+      padding: 0;
+      .ant-list-item-meta {
+        padding: 10px 0;
+      }
+      .ant-list-item-meta-title {
+        margin: 0;
+      }
+      .list-title {
+        margin-left: -2px;
+        color: @color_dark;
+        margin-bottom: 0;
+      }
+      .list-source {
+        margin: 0;
+        .receviTime {
+          margin: 0 8px;
+        }
+        .waitTime {
+          color: @color_yellow;
+        }
+        .task-item-time {
+          display: flex;
+          justify-content: space-between;
+          color: #939496 !important;
+          .cuiban-y {
+            font-size: 12px;
+            color: #ffaa00 !important;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-top: 0;
+            .task-icon-cby {
+              width: 14px;
+              height: 13px;
+              background-size: contain;
+              background: url(../../../../assets/images/workdesk/cuiban_y.png) no-repeat center;
+            }
+          }
+        }
+      }
+      .ant-list-item-meta-description {
+        color: @color_gray;
+        font-size: 12px;
+      }
+    }
+    .ant-tabs-content,
+    .spin-container,
+    .ant-spin-nested-loading,
+    .ant-spin-container,
+    .ant-list-empty-text,
+    .ant-list {
+      height: 100%;
+    }
+    .ant-list-empty-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ant-list-item:hover {
+      cursor: pointer;
+      background-color: @color_bluelight;
+    }
+  }
+  &:hover {
+    .screen-enlarge-btn,
+    .screen_option_btn,
+    .screen-enlarge-larg,
+    .select_btn,
+    .import_btn {
+      transition: all ease 0.3s;
+      display: block;
+    }
+  }
+}
+.addTaskModel {
+  width: 318px !important;
+  height: 202px;
+  .ant-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .ant-checkbox-wrapper {
+      margin: 0 0 18px 0;
+    }
+  }
+  .ant-modal-header {
+    padding: 20px 24px;
+  }
+  .ant-modal-header,
+  .ant-modal-footer {
+    border: none !important;
+  }
+}
+.module-move {
+  flex: initial !important;
+  .module-pane {
+    height: auto;
+  }
+  .ant-tabs-content-holder {
+    display: none !important;
+  }
+  .desk-tab-nav {
+    visibility: hidden !important;
+  }
+  .module-handle-group {
+    visibility: hidden !important;
+  }
+}
+.select-level.ant-dropdown {
+  left: 700 !important;
+  width: 137px !important;
+  height: 149px !important;
+  .ant-dropdown-menu {
+    padding: 18px 0 6px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .ant-dropdown-menu-item {
+      width: 94px;
+      height: 30px;
+      background: rgba(231, 231, 233, 1);
+      opacity: 1;
+      border-radius: 30px;
+      text-align: center;
+      margin-bottom: 12px;
+      color: rgba(112, 112, 122, 1);
+      &.item-active {
+        background: rgba(233, 242, 255, 1);
+        color: rgba(66, 133, 244, 1);
+      }
+    }
+  }
+}
+.check_task_tips {
+  background-color: @color_yellowlight;
+  border: 1px solid @color_yellow;
+  line-height: 14px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  .ant-alert-icon {
+    top: 9.3px;
+  }
+  .ant-alert-close-icon {
+    top: 9.3px;
+    .anticon-close {
+      color: @color_dark;
+    }
+  }
+}
+.check_task_wrap {
+  height: 100%;
+  overflow: hidden;
+  &:hover {
+    overflow: overlay;
+  }
+  .check_task_container {
+    height: 100%;
+    overflow: hidden;
+    &:hover {
+      overflow: overlay;
+    }
+    .small_list_item {
+      position: relative;
+      padding-left: 18px !important;
+      margin-bottom: 10px;
+      .status_icon {
+        position: absolute;
+        left: -2px;
+        top: 2px;
+        height: 20px !important;
+      }
+    }
+    .ant-list-item {
+      height: 48px;
+      padding: 0;
+      padding-right: 10px;
+      font-size: 14px;
+      border-bottom: 0;
+      .status_icon {
+        display: inline-block;
+        width: 16px;
+        height: 100%;
+        &.finish-icon {
+          background: url(../../../../assets/images/common/finish_icon.png) no-repeat center;
+          margin: 0 2px;
+        }
+      }
+      .check_item_content {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        color: @color_dark;
+        // max-width: 100%;
+        max-width: 90%;
+        .check_item {
+          font-size: 12px;
+          color: #9a9aa2;
+          padding-right: 24px;
+          em {
+            font-style: normal;
+            color: @color_blue;
+          }
+        }
+        .checklist_tit {
+          max-width: 90%;
+        }
+      }
+      .avatar_name {
+        font-size: 12px;
+        display: inline-block;
+        width: 49px;
+        padding-left: 5px;
+        // white-space: nowrap;
+        // overflow: hidden;
+      }
+    }
+    .finish {
+      color: #9a9aa2 !important;
+      // text-decoration: line-through;
+    }
+    .myTaskRoleBox {
+      display: inline-block;
+      margin-right: 20px;
+      color: #9a9aa2;
+      font-size: 12px;
+      flex-shrink: 0;
+      padding-left: 5px;
+    }
+    .myTaskRoleBox::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      vertical-align: sub;
+    }
+
+    .myTaskRoleBox.my_execute::before {
+      background-image: url(../../../../assets/images/task/my_execute.png);
+    }
+
+    .myTaskRoleBox.my_assign::before {
+      background-image: url(../../../../assets/images/task/my_assign.png);
+    }
+
+    .myTaskRoleBox.my_leader::before {
+      background-image: url(../../../../assets/images/task/my_leader.png);
+    }
+
+    .myTaskRoleBox.my_supervise::before {
+      background-image: url(../../../../assets/images/task/my_supervise.png);
+    }
+    .check_footer {
+      position: absolute;
+      bottom: 0;
+      background: #fff;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+}
+.isFullScreen .receviReport-container {
+  height: calc(100% - 55px);
+}
+.receviReport-container {
+  // height: calc(100% - 55px);
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 20px;
+  overflow: hidden;
+  &:hover {
+    overflow: overlay;
+  }
+  .collecting_text {
+    font-size: 14px;
+    color: #9a9aa2;
+    width: calc(100% - 55px);
+  }
+  .hasreportText {
+    .collecting_text {
+      color: #191f25 !important;
+    }
+    .report-time {
+      text-decoration: inherit !important;
+    }
+    .report_avatar {
+      opacity: 1 !important;
+    }
+    .delay {
+      text-decoration: inherit !important;
+    }
+  }
+  .collectingHint {
+    position: relative;
+    &::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #ea4335;
+      border-radius: 50%;
+      display: inline-block;
+      position: absolute;
+      left: -8px;
+      top: 8px;
+    }
+  }
+  .cyx {
+    position: relative;
+    // &:hover {
+    //   .report_head_img,
+    //   .report_head_name {
+    //     display: none;
+    //   }
+    // }
+  }
+  .ant_list_smll {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start !important;
+    .delay {
+      text-decoration: inherit !important;
+    }
+  }
+  .ant_list_item.ant_list_smll .urge-btn2 {
+    bottom: 4px;
+  }
+  .ant_list_item {
+    // height: 48px;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background: #f6faff;
+      cursor: pointer;
+      // border: 1px solid red;
+      .colle_right_info {
+        .colle_dft_btn {
+          visibility: visible;
+        }
+      }
+    }
+    .report-time {
+      padding-left: 5px;
+    }
+    .urge-btn {
+      width: 68px;
+      height: 32px;
+      border: 1px solid #4285f4;
+      color: #4285f4;
+      border-radius: 16px;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 8px;
+      &:hover {
+        background-color: rgb(232, 241, 254);
+      }
+    }
+    &:hover .urge-btn {
+      display: inline-block;
+    }
+    .urge-btn1 {
+      color: #4285f4;
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 4px;
+      .urge-icon {
+        width: 14px;
+        height: 14px;
+        background: url(../../../../assets/images/workdesk/urge-icon.png) no-repeat center;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      &:hover {
+      }
+    }
+    &:hover .urge-btn1 {
+      display: inline-block;
+    }
+    .urge-btn2 {
+      color: #70707a;
+      // display: none;
+      position: absolute;
+      right: 0;
+      bottom: 0px;
+      &:hover {
+        color: #4285f4;
+      }
+    }
+    .urge-position {
+      position: relative;
+    }
+    // &:hover .urge-btn2 {
+    //   display: inline-block;
+    // }
+    .colle_right_info {
+      // width: 207px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .delay {
+        color: #ea4335;
+        width: 126px;
+        // text-decoration: line-through;
+      }
+      .report-time {
+        color: #9a9aa2;
+        width: 131px;
+        text-align: left;
+      }
+    }
+    .report_head_img {
+      margin-right: 5px;
+    }
+    .report_head_name {
+      color: #191f25;
+    }
+    .report_avatar {
+      opacity: 0.6;
+    }
+    .colle_dft_btn {
+      visibility: hidden;
+      color: #4285f4;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      .urge-icon {
+        width: 14px;
+        height: 14px;
+        background: url(../../../../assets/images/workdesk/urge-icon.png) no-repeat center;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
+  .marginBtn {
+    margin-bottom: 16px;
+    position: relative;
+  }
+}
+
+.thumbsUp_small_wrap {
+  width: 300px;
+  height: 380px;
+  position: relative;
+  li {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 14px;
+    border-bottom: 1px solid #e7e7e9;
+    cursor: pointer;
+    &:hover {
+      background: #e9f2ff;
+    }
+  }
+  .handle_title {
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    border-bottom: 1px solid #e7e7e9;
+    padding-left: 14px;
+    color: #70707a;
+    font-weight: bold;
+    .closeModal {
+      position: absolute;
+      right: 12px;
+      top: 2px;
+      font-size: 16px;
+      &:hover {
+        color: #4285f4;
+      }
+    }
+  }
+  .handle_footer {
+    height: 48px;
+    width: 100%;
+    line-height: 48px;
+    text-align: right;
+    padding: 0 14px;
+    color: #4285f4;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    .spn {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+  }
+  .headImg {
+    margin-right: 8px;
+    position: relative;
+  }
+  .supTime {
+    margin-top: 3px;
+    color: #70707a;
+  }
+  .supIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background: url(../../../../assets/images/workdesk/hold_hanlde_fabulous2_icon.png) no-repeat center;
+  }
+  .tips {
+    color: #191f25;
+    display: flex;
+    align-items: center;
+  }
+}
+.example {
+  text-align: center;
+  // background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.workfelxFlow {
+  flex-flow: column;
+}
+.flexinitial {
+  flex: initial !important;
+}
+.right_btn_box {
+  ul {
+    border-right: none;
+  }
+  .ant-menu-item {
+    margin: 0 !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    color: #70707a;
+    padding: 0 12px;
+    &:hover {
+      background: #f6faff;
+    }
+  }
+  .ant-menu-item-disabled {
+    &:hover {
+      background: #ffffff;
+    }
+  }
+  .ant-menu-submenu-title {
+    // padding: 0 !important;
+    color: #70707a;
+  }
+  // .edit_opt_icon_div {
+  //   border-bottom: 1px solid #e7e7e9;
+  // }
+  .ant-menu-submenu-arrow {
+    right: 0;
+  }
+}
+.transfer-content {
+  .selectUser {
+    display: inline-block;
+    cursor: pointer;
+    width: 22px;
+    height: 20px;
+    background: url('../../../../assets/images/task/add_peo_def.png') center no-repeat;
+    &:hover {
+      background: url('../../../../assets/images/task/add_peo_blue.png') center no-repeat;
+    }
+  }
+  .select_user_list {
+    height: 48px;
+    max-width: 335px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    .item_user {
+      display: inline-block;
+      font-size: 12px;
+      color: rgba(117, 117, 117, 1);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+      margin: 0 auto;
+      margin-left: 10px;
+      cursor: default;
+    }
+  }
+}
+.fileTip {
+  .title {
+    font-size: 14px;
+    color: #757575;
+  }
+  .title_span {
+    font-size: 12px;
+    color: #cccccc;
+    span {
+      color: #4285f4;
+    }
+  }
+}
+
+/*工作视窗*/
+.desk_module_window {
+  .desk_module_header_title {
+    color: #525252;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .desk_module_option {
+    .ant-radio-group {
+      display: flex;
+      justify-content: center;
+      .ant-radio-wrapper {
+        display: flex;
+        align-items: center;
+      }
+      .ant-radio-wrapper:nth-child(2) {
+        margin: 0 86px;
+      }
+    }
+  }
+  .desk_module_footer_btn {
+    margin-top: 65px;
+    display: flex;
+    justify-content: space-between;
+    .module_tips {
+      font-size: 12px;
+      color: #70707a;
+      & > span {
+        color: #4285f4;
+      }
+    }
+    button {
+      width: 70px;
+      background-color: #4285f4;
+    }
+  }
+  .optSpan {
+    font-size: 14px;
+  }
+  .optionActive {
+    font-size: 16px;
+    color: #4285f4;
+    font-weight: bold;
+  }
+  .jyz-window,
+  .glz-window,
+  .yg-window {
+    width: 800px;
+    height: 348px;
+    margin-top: 43px;
+  }
+  .jyz-window {
+    background: url(../../../../assets/images/index/jyz_w.png) no-repeat center;
+  }
+  .glz-window {
+    background: url(../../../../assets/images/index/glz_w.png) no-repeat center;
+  }
+  .yg-window {
+    background: url(../../../../assets/images/index/yg_w.png) no-repeat center;
+  }
+}
+
+.publishMenu {
+  border-radius: 10px;
+  .menu_button_i {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .ant-dropdown-menu-item {
+    position: relative;
+    .menu_button_spin {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding-right: 34px;
+      text-align: right;
+      top: 15px;
+      z-index: 1;
+    }
+    &:hover {
+      .ant-btn {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+  .ant-btn:hover {
+    background: none;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .check_task_wrap .check_task_container .ant-list-item .check_item_content .checklist_tit {
+    max-width: 80%;
+  }
+}

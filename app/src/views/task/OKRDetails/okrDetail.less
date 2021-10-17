@@ -1,0 +1,192 @@
+.taskDetailCont.OKRDetailContent {
+  overflow: auto;
+  .detailBotContainer {
+    overflow: auto;
+    // padding: 8px;
+    .fourQuadrant {
+      width: calc(100% - 16px);
+      // margin: 0 auto;
+      .quadrant-part.maxpage {
+        height: 99.5%;
+        left: 0;
+      }
+      .getnowName {
+        margin-right: 0;
+      }
+      // .icon_part_page {
+      //   display: none !important;//宽详情暂时不要全屏
+      // }
+    }
+  }
+}
+.fourQuadrant.hasMaxPage {
+  overflow: hidden !important;
+}
+@media only screen and (max-width: 1800px) {
+  .OKRDetailContent {
+    .fourQuadrant {
+      position: relative;
+      overflow: auto;
+      .name_Colum {
+        display: flex;
+      }
+      .okr_column_title {
+        display: flex !important;
+        width: 341px;
+        justify-content: flex-end;
+      }
+      .part-person-kr {
+        .okr_message {
+          display: none;
+        }
+      }
+      // .row_progress {
+      //   display: none;
+      // }
+      // .name_percent,
+      // .table_text_right .okr_message {
+      //   display: none;
+      // }
+    }
+    .part-now-status {
+      width: 100% !important;
+      position: absolute;
+      top: 11px;
+      left: 0;
+      margin: 0 !important;
+    }
+
+    .part-next-status {
+      width: 100% !important;
+      position: absolute;
+      // top: calc(50% + 2px);
+      top: 445px;
+      left: 0;
+      margin: 0 !important;
+    }
+    .part-now-week {
+      width: 100% !important;
+      position: absolute;
+      // top: calc(100% - 8px);
+      top: 878px;
+      left: 0;
+      margin: 0 !important;
+    }
+
+    .part-next-week {
+      width: 100% !important;
+      position: absolute;
+      // top: calc(150% - 16px);
+      top: 1310px;
+      left: 0;
+      margin: 0 !important;
+    }
+    .part_relate_task {
+      .node_portrait_chose {
+        display: none;
+      }
+      .part_relate_line {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1800px) {
+  // 表格数据内容
+  .OKRDetailContent {
+    .quadrant-part:not(.maxpage) {
+      .name_Colum {
+        display: none;
+      }
+      .part_okr_content {
+        flex-flow: column;
+        align-items: flex-start !important;
+        .task-part-text {
+          min-width: 100% !important;
+          display: flex;
+          margin-bottom: 2px;
+        }
+        .part-person-kr {
+          & > div {
+            float: left !important;
+            margin-left: 0px;
+          }
+          .node_portrait_main {
+            margin-left: 0;
+            margin-right: 0px;
+          }
+          .okr_affiliation {
+            max-width: 53px;
+            margin-right: 0;
+            text-align: left;
+            width: auto;
+          }
+          .okr_message {
+            display: flex;
+            // width: 100%;
+          }
+        }
+      }
+      .name_percent {
+        display: inherit;
+        position: relative;
+        .ant-input {
+          width: 100%;
+          max-width: 100px;
+          height: 28px;
+          border: 1px solid #4285f4;
+          opacity: 1;
+          border-radius: 4px;
+          position: absolute;
+          left: 0px;
+          top: -6px;
+        }
+      }
+      .table_text_right .okr_message {
+        display: inline-block;
+      }
+      .okrOptBtnGroup {
+        right: 262px !important;
+      }
+      .table_text_right {
+        height: 78px !important;
+        .row_progress {
+          display: flex;
+          margin-left: 12px;
+        }
+      }
+      .add_object_kr {
+        .table_text_right {
+          height: auto !important;
+        }
+      }
+      .okr_text_Box {
+        .late_task_sum {
+          display: none;
+        }
+        .okr_task_name {
+          max-width: calc(100% - 60px);
+        }
+        .row_progress {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+// 英文版本
+.app-layout.enUS {
+  .okrQuadrantModal .okr_list_detail {
+    width: 290px;
+  }
+  .list_detail_main {
+    width: calc(100% - 290px);
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .okr_list_detail {
+    width: 280px !important;
+  }
+}

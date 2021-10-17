@@ -1,0 +1,227 @@
+.forceReportModal {
+  //
+  width: 100%;
+  .force_list_report {
+    max-width: 400px;
+    width: 26%;
+    min-width: 250px;
+    border-right: 1px solid #e7e7e9;
+    border-top: 1px solid #e7e7e9;
+    padding-bottom: 20px;
+    overflow: auto;
+    .force_list_add {
+      padding: 15px 0px;
+      color: #4285f4;
+      text-align: center;
+      cursor: pointer;
+      i {
+        width: 16px;
+        height: 16px;
+        vertical-align: -3px;
+        display: inline-block;
+        background: url(../../../../assets/images/taskReport/add_report.png) center no-repeat;
+      }
+    }
+    .ant-card {
+      color: #9a9aa2;
+      padding: 8px 6px;
+      cursor: pointer;
+      font-size: 12px;
+      border-radius: 8px;
+      &:hover {
+        background-color: #f5f7fb;
+      }
+      .ant-card-head {
+        padding: 0;
+        min-height: 12px;
+        color: #191f25;
+        font-size: 14px;
+        margin-bottom: 5px;
+        border-bottom: 0px;
+        .ant-card-head-title {
+          padding: 0;
+          .report-list-title {
+            width: 100%;
+            white-space: normal;
+          }
+        }
+      }
+      .ant-card-body {
+        padding: 0;
+        .getRed {
+          color: #fd7777;
+          margin-left: 5px;
+        }
+        .ant-statistic-content {
+          font-size: 12px;
+          color: #4285f4;
+          margin-left: 5px;
+        }
+        div {
+          display: inline-block;
+        }
+      }
+    }
+    .ant-card.actives {
+      background-color: #f5f7fb;
+    }
+    .report-list-title {
+      i {
+        vertical-align: -3px;
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background: url(../../../../assets/images/taskReport/underway.png) center no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      .report-list-title-span {
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+    }
+    .cancel_force_delete {
+      background: url(../../../../assets/images/common/delete-chat.png) center no-repeat;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: none !important;
+    }
+    .ant-card:hover .cancel_force_delete {
+      display: inline-block !important;
+    }
+  }
+  .writeTaskReportModal {
+    max-width: calc(100% - 270px);
+    .report_text_top {
+      border-left: 0;
+      .ant-typography {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 100px;
+        .taskdetailshow {
+          font-size: 12px;
+          font-weight: 500;
+          color: #4285f4;
+        }
+      }
+    }
+  }
+}
+.taskRelationModel {
+  height: 768px;
+  border-radius: 8px;
+  .ant-modal-content {
+    height: 100%;
+    .taskRelationType {
+      display: inline-block;
+      .ant-radio-button-wrapper {
+        color: #4285f4;
+        border: 1px solid #4285f4;
+      }
+      .ant-radio-button-wrapper.active {
+        background: #4285f4;
+        color: white;
+      }
+    }
+    .taskRelationSelect {
+      .ant-input-search {
+        width: 100%;
+        height: 32px;
+        border: 1px solid #e5e5e5;
+        font-size: 12px;
+        padding: 6px 8px;
+        background: #fff;
+        border-radius: 0;
+        input {
+          background: #fff;
+        }
+      }
+    }
+    .ant-modal-body {
+      height: calc(100% - 54px);
+      .force_list_box {
+        position: relative;
+        height: calc(100% - 52px);
+        margin-top: 20px;
+        .ant-table-tbody > tr > td {
+          padding: 12px 0px;
+        }
+        .force_tit {
+          color: #191f25;
+        }
+        .force_tip {
+          .notStart {
+            color: #32b16c;
+            margin-right: 6px;
+            display: inline-block;
+            text-align: center;
+            min-width: 52px;
+            height: 20px;
+            line-height: 20px;
+            background: rgba(231, 231, 233, 1);
+            border-radius: 10px;
+          }
+          .time {
+            color: #757575;
+          }
+        }
+        .ant-table {
+          height: 540px;
+          overflow: auto;
+        }
+        .ant-table-row {
+          .toRelation {
+            background: url(../../../../assets/images/taskReport/addH.png) no-repeat 9px center;
+            background-size: 12px 12px;
+            width: 60px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 0 9px;
+            text-align: right;
+            border: 1px solid rgba(215, 215, 217, 1);
+            &:hover {
+              background: url(../../../../assets/images/taskReport/add_report.png) no-repeat 9px center
+                rgba(233, 242, 255, 1);
+              color: rgba(66, 133, 244, 1) !important;
+              border: 1px solid #4285f4;
+            }
+          }
+          .toRelation_red {
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+            width: 70px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 12px;
+            border-radius: 4px;
+            padding: 0 9px;
+            border: 1px solid rgba(215, 215, 217, 1);
+            background: #fd9292;
+          }
+        }
+        .ant-table-pagination {
+          margin-top: 20px;
+          text-align: center;
+          width: 1024px;
+          vertical-align: 10px;
+        }
+        .ant-pagination-jump-next .ant-pagination-item-ellipsis {
+          display: flex;
+        }
+      }
+    }
+  }
+}

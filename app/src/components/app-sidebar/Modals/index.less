@@ -1,0 +1,366 @@
+@import '../../../styles/_var.less';
+
+.userCenterContent {
+  .ant-modal-body {
+    padding: 0;
+  }
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    width: 128px;
+    text-align: center;
+    font-size: 16px;
+    color: @color_dark;
+    padding-top: 20px;
+
+    > div {
+      padding-left: 8px;
+      margin-bottom: 24px;
+      cursor: pointer;
+      &.active {
+        color: #4285f4;
+        border-right: 2px solid #4285f4;
+        font-weight: bold;
+      }
+    }
+  }
+  .ant-spin-nested-loading {
+    flex: 1;
+    border-left: 1px solid #e7e7e9;
+    input {
+      width: 180px;
+    }
+  }
+  .tableContent {
+    .ant-spin-nested-loading {
+      border-left: none;
+    }
+  }
+  // 个人中心样式
+  .userHead {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: @color_9a;
+    background-color: #f5f7fb;
+    .user-avatar {
+      .ant-avatar-string {
+        opacity: 1 !important;
+        transform: scale(1) translateX(-50%) !important;
+      }
+    }
+    .noProfile {
+      width: 64px;
+      height: 64px;
+      line-height: 64px;
+      text-align: center;
+      border-radius: 50%;
+      color: #fff;
+      background-color: @color_blue;
+    }
+    .btns {
+      // padding-left: 100px;
+      margin-left: 20px;
+      .ant-btn {
+        color: @color_9a;
+        &:hover {
+          color: @color_blue;
+        }
+      }
+    }
+  }
+  .infoContent {
+    overflow-y: scroll;
+    .infoDetail {
+      padding: 24px 24px 14px 24px;
+      > div {
+        display: flex;
+        align-items: center;
+        color: @color_dark;
+        font-size: 12px;
+        margin-bottom: 20px;
+        &.companyName {
+          font-size: 14px;
+        }
+        span:first-child {
+          min-width: 160px;
+          color: @color_gray;
+        }
+        em {
+          width: 20px;
+          height: 20px;
+          background: rgba(66, 133, 244, 1);
+          border-radius: 4px;
+          display: inline-block;
+          text-align: center;
+          line-height: 20px;
+          font-style: normal;
+          margin-right: 6px;
+          color: #fff;
+        }
+      }
+      .ant-radio-group {
+        .ant-radio {
+          min-width: auto !important;
+        }
+      }
+    }
+  }
+
+  // 登录轨迹
+  .loginPath {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid @color_e7;
+    // width: 1%;
+    .formArea {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      .ant-picker {
+        margin-left: 0;
+        width: 270px;
+      }
+      .deleteAll {
+        cursor: pointer;
+        color: @color_75;
+      }
+    }
+    input {
+      width: 50px;
+    }
+
+    .tableContent,
+    .ant-spin-nested-loading,
+    .ant-spin-container {
+      display: flex;
+      flex-flow: column;
+      flex: 1;
+    }
+    .ant-table {
+      flex: 1;
+      font-size: 14px;
+      font-size: 12px;
+      color: @color_dark;
+      .ant-table-content {
+        height: 100%;
+      }
+      tr {
+        th:nth-child(2) {
+          text-align: center;
+        }
+        td {
+          color: @color_75;
+        }
+      }
+    }
+    .ant-table-empty {
+      .ant-table-body,
+      .ant-table-container,
+      table {
+        height: 100%;
+        overflow: hidden !important;
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .tableContent {
+    height: calc(100% - 54px);
+    .ant-spin-nested-loading,
+    .ant-spin-container,
+    .ant-table-container {
+      height: 100%;
+    }
+    .ant-table {
+      height: calc(100% - 83px);
+    }
+  }
+  // 账号设置
+  .accountSet-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-left: 1px solid #e7e7e9;
+    flex: 1;
+    .content-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      .img-box {
+        display: block;
+        width: 260px;
+        height: 150px;
+        background: url(../../../../../assets/images/workdesk/account-bg.png) no-repeat center;
+        background-size: cover;
+        margin-bottom: 24px;
+      }
+      .item-list {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        // &:last-child {
+        //   margin-bottom: 0;
+        // }
+        span {
+          font-size: 14px;
+          color: #191f25;
+        }
+        .title {
+          width: 60px;
+          margin-right: 56px;
+        }
+        .cont {
+          flex: 1;
+        }
+      }
+      .password-set,
+      .account-bind {
+        .cont {
+          cursor: pointer;
+          color: #4285f4;
+          padding-left: 32px;
+        }
+        .bindcont {
+          padding-left: 32px;
+        }
+        .name-tit {
+          margin: 12px 16px;
+          color: #9a9aa2;
+        }
+      }
+      .password-set {
+        .cont {
+          background: url(../../../../../assets/images/workdesk/write.png) no-repeat left center;
+          background-size: 16px 16px;
+        }
+      }
+      .account-bind {
+        .cont,
+        .bindcont {
+          background: url(../../../../../assets/images/workdesk/wechat.png) no-repeat left center;
+          background-size: 20px 16px;
+        }
+        .unbindWechat {
+          color: #4285f4;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// 修改密码
+.change-password-modal {
+  .ant-modal-header {
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+  }
+  .ant-modal-body {
+    padding-top: 0;
+  }
+  .ant-modal-footer {
+    border-top: none;
+    padding: 0 24px 24px 0;
+  }
+  .verifycode-btnCode {
+    .ant-input,
+    .ant-btn,
+    .ant-input-affix-wrapper {
+      height: 32px;
+      font-size: 12px;
+    }
+    .ant-input-affix-wrapper {
+      padding: 0;
+      input {
+        background: none;
+        padding: 0 12px;
+        font-size: 12px;
+      }
+      .ant-input-suffix {
+        margin-right: 12px;
+      }
+    }
+  }
+  .ant-form-item {
+    label {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+    .ant-input,
+    .ant-btn,
+    .ant-input-affix-wrapper {
+      height: 32px;
+      font-size: 12px;
+    }
+    .ant-input-affix-wrapper input {
+      height: 30px;
+    }
+    .ant-input-affix-wrapper {
+      padding: 0;
+
+      input {
+        // background: none;
+        padding: 0 12px;
+        font-size: 12px;
+      }
+      .ant-input-suffix {
+        margin-right: 12px;
+      }
+    }
+    .submit-button {
+      margin-left: 12px;
+    }
+  }
+  .verifycode-btnCode {
+    .ant-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: none;
+      border: none;
+      color: #4285f4;
+    }
+  }
+  .formbtn-box {
+    margin-bottom: 0;
+    // padding-top: 24px;
+  }
+  .change-form {
+    .title {
+      margin-bottom: 0;
+      .ant-form-item-control-input {
+        min-height: 18px;
+        margin-bottom: 12px;
+      }
+    }
+    .change-form-titles {
+      margin-bottom: 0;
+      .ant-form-item-control {
+        min-height: 18px;
+      }
+      .ant-form-item-control-input {
+        min-height: 18px;
+        margin-bottom: 12px;
+      }
+      span {
+        color: #4285f4;
+      }
+    }
+  }
+  .tips {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .ant-modal-content {
+    border-radius: 6px;
+  }
+}

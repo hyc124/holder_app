@@ -1,0 +1,166 @@
+@import '~@/src/styles/_var.less';
+
+@media all {
+  .page-break {
+    display: none;
+  }
+}
+@page {
+  size: auto;
+  margin: 0;
+}
+@media print {
+  html,
+  body {
+    height: initial !important;
+    overflow: initial !important;
+    -webkit-print-color-adjust: exact;
+  }
+  .page-break {
+    margin-top: 2px;
+    display: block;
+    page-break-before: always;
+    page-break-inside: always;
+    page-break-after: always;
+  }
+  * {
+    font-size: 12px !important;
+    pointer-events: none;
+  }
+}
+
+.print-modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  transition: ease-in;
+  z-index: 999;
+  .close-print {
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: url(../../../../assets/images/common/close_print.png) no-repeat center;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .print-modal-content {
+    width: 900px;
+    height: 100%;
+    background-color: @color_white;
+    transition: ease-in 0.5s;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    padding: 20px 10px;
+    overflow: auto;
+    .okr-modal-cont {
+      width: max-content;
+      margin: 0 auto;
+    }
+    .print-header-box {
+      height: 50px;
+      width: 100%;
+      display: flex;
+      // flex-flow: row-reverse;
+      align-items: center;
+      padding-right: 16px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 99;
+      justify-content: flex-end;
+      .ant-btn-default {
+        margin-right: 16px;
+      }
+      .gray_btn {
+        background: #ffffff;
+        border: 1px solid #d7d7d9;
+        opacity: 1;
+        border-radius: 6px;
+        color: #d7d7d9;
+      }
+      .bule_btn {
+        background: #ffffff;
+        border: 1px solid #4285f4;
+        color: #4285f4;
+        opacity: 1;
+        border-radius: 6px;
+      }
+    }
+    .print-body-container {
+      padding: 50px 30px 40px;
+      overflow: auto;
+      flex: 1;
+      background-color: @color_white;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .form-info {
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .approval-flow-list {
+      padding: 0 10px;
+    }
+  }
+  .table_print_content {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 1px;
+    border: 1px solid @color_dark;
+    table-layout: fixed;
+    .print_tr {
+      line-height: 24px;
+      & > td {
+        border-right: 1px solid @color_dark;
+        border-top: 1px solid @color_dark;
+        &.print_title {
+          text-align: center;
+          max-width: 150px;
+          min-width: 150px;
+        }
+        &.print_value {
+          padding: 0 16px;
+          text-align: left;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// 打印时间线
+.printTimeLine {
+  height: 100%;
+  overflow: auto;
+  width: 100%;
+  padding: 24px;
+  .printInfoBox {
+    .ant-timeline-item-content {
+      display: flex;
+      flex-direction: column;
+      .printTime {
+        color: #70707a;
+      }
+      .printUser {
+        color: #191f25;
+        margin-top: 4px;
+      }
+    }
+  }
+}

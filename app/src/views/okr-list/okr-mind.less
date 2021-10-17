@@ -1,0 +1,394 @@
+// color
+@color_w: white;
+@color_b: #000000;
+@color_g: #e7e7e9;
+@color_A3: #a3a3a3;
+@color_E5: #e5f7e8;
+@color_F7: #f7f8fa;
+@color_43: #34a853;
+@color_70: #70707a;
+.okr_view_mind {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  .postil_scale {
+    position: absolute;
+    right: 25px;
+    bottom: 32px;
+    top: inherit;
+    width: 180px;
+    z-index: 999;
+    .scale-location {
+      float: left;
+      width: 36px;
+      height: 36px;
+      line-height: 42px;
+      text-align: center;
+      border-radius: 50%;
+      margin-top: inherit;
+      box-shadow: -1px 3px 11px 3px rgba(131, 131, 131, 0.2);
+      span {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        background: url(../../../../assets/images/workplan/OKR/centre.png);
+        background-size: contain;
+        cursor: pointer;
+      }
+      & span:hover {
+        background: url(../../../../assets/images/workplan/OKR/centre-h.png);
+      }
+    }
+    .scale-zoom {
+      float: right;
+      width: 120px;
+      height: 36px;
+      background: @color_w;
+      box-shadow: -1px 3px 11px 3px rgba(131, 131, 131, 0.2);
+      border-radius: 6px;
+      text-align: center;
+      padding: 6px;
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+      span {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      i {
+        color: @color_A3;
+        font-style: normal;
+        margin: 0px 10px;
+      }
+      .scale-zoom-plus {
+        background: url(../../../../assets/images/workplan/OKR/jia.png);
+      }
+      & .scale-zoom-plus:hover {
+        background: url(../../../../assets/images/workplan/OKR/jia-h.png);
+      }
+      .scale-zoom-minus {
+        background: url(../../../../assets/images/workplan/OKR/jian.png);
+      }
+      & .scale-zoom-minus:hover {
+        background: url(../../../../assets/images/workplan/OKR/jian-h.png);
+      }
+    }
+  }
+  // ====关键结果是否展示的模式选择===//
+  .modeSelectShow {
+    position: absolute;
+    right: 25px; //调整移动到右上
+    top: 32px;
+    z-index: 999;
+    width: 168px;
+    padding: 0 12px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #70707a;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    .selected_txt {
+      color: #191f25;
+    }
+    .tri_down {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+    }
+  }
+}
+.OKRjsmind {
+  cursor: grab;
+  overflow: visible;
+  jmnode.root {
+    height: auto;
+    border: none;
+    padding: 0px;
+    background: #ffffff;
+  }
+  jmnode {
+    position: absolute;
+    cursor: default;
+    width: 280px;
+    height: 110px;
+    height: auto;
+    white-space: inherit !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #808080;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 0px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    border: none;
+    font: 13px/1 Verdana, Arial, Helvetica, sans-serif;
+    &:hover {
+      background-color: #e9f2ff;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.16);
+      color: #808080;
+    }
+  }
+  jmnode.selected {
+    background-color: #e9f2ff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.16);
+    color: #808080;
+  }
+  jmnode,
+  .mindTextNameTmp {
+    .okr_text_content {
+      padding: 0px 16px;
+      border-top: 6px solid #e9f2ff;
+      padding-top: 0px;
+      min-height: 60px;
+      min-width: 280px;
+      max-width: 280px;
+      padding-bottom: 2px;
+      &.cmy_rank {
+        border-top: 6px solid #fff6e1;
+      }
+      &.dept_rank {
+        border-top: 6px solid #e9f2ff;
+      }
+      &.user_rank {
+        border-top: 6px solid #e5f7e8;
+      }
+      .okr_types {
+        position: relative;
+        height: 16px;
+        margin-bottom: 12px;
+
+        span {
+          // width: 53px;
+          line-height: 18px;
+          height: 18px;
+          opacity: 1;
+          border-radius: 0px 0px 8px 8px;
+          font-size: 12px;
+          font-weight: 300;
+          position: absolute;
+          left: 0px;
+          margin-bottom: 7px;
+          text-align: center;
+        }
+        span.bm {
+          padding: 0 8px;
+          color: #4285f4;
+          background: #e9f2ff;
+          border-radius: 0px 0px 8px 8px;
+          &.cmy_rank {
+            color: #ffaa00;
+            background: #fff6e1;
+          }
+          &.dept_rank {
+            color: #4285f4;
+            background: #e9f2ff;
+          }
+          &.user_rank {
+            color: #34a853;
+            background: #e5f7e8;
+          }
+        }
+        span.qy {
+          color: #ffaa00;
+          background: #fff6e1;
+        }
+        span.gr {
+          color: #34a853;
+          background: #e5f7e8;
+        }
+      }
+      .okr_names {
+        width: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        font-size: 14px;
+        color: #191f25;
+        font-weight: 400;
+        margin-bottom: 8px;
+        margin-top: 12px;
+        text-align: left;
+        padding-left: 24px;
+        line-height: 22px;
+      }
+      .okr_else {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 12px;
+        align-items: baseline;
+      }
+      .okr_avatar {
+        color: #70707a;
+      }
+      .okr_schedule {
+        color: #70707a;
+        // 进度占位符
+        .progress_place {
+          width: 14px;
+          height: 14px;
+          margin-right: 2px;
+        }
+        .okr_schedule_progress {
+          margin-right: 2px;
+        }
+        // 自定义进度
+        .percentCircleCon {
+          height: 14px;
+          width: 14px;
+        }
+      }
+      .blue {
+        color: #4285f4;
+      }
+      // .okr_part {
+      //   margin-left: 5px;
+      // }
+      // =======================关键结果KR展示====================//
+      .krResUl {
+        padding-left: 24px;
+        .krResItem {
+          padding: 12px 0;
+          min-height: 32px;
+          line-height: 18px;
+          text-align: left;
+          border-top: 1px solid #e7e7e9;
+          font-size: 12px;
+          font-weight: normal;
+          .kr_res_dot {
+            display: inline-block;
+            margin-top: 3px;
+            width: 4px;
+            height: 4px;
+            margin-right: 8px;
+            background: #4285f4;
+            border-radius: 50%;
+          }
+          .kr_res_name {
+            // 换行
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            overflow: hidden;
+            color: #70707a;
+          }
+          .kr_res_process {
+            width: 36px;
+            text-align: right;
+            color: #4285f4;
+          }
+        }
+      }
+    }
+  }
+  jmexpander.jia {
+    background: url(../../../../assets/images/workplan/OKR/expanders.png) no-repeat;
+    background-size: cover;
+    color: transparent !important;
+    width: 14px;
+    height: 14px;
+    border: 0px;
+    &:hover {
+      background: url(../../../../assets/images/workplan/OKR/expanders-h.png) no-repeat;
+      background-size: cover;
+      color: transparent !important;
+      width: 14px;
+      height: 14px;
+      border: 0px;
+    }
+  }
+  jmexpander.jian {
+    background: url(../../../../assets/images/workplan/OKR/expandersjian.png) no-repeat;
+    background-size: cover;
+    color: transparent !important;
+    width: 14px;
+    height: 14px;
+    border: 0px;
+    &:hover {
+      background: url(../../../../assets/images/workplan/OKR/expandersjian-h.png) no-repeat;
+      background-size: cover;
+      color: transparent !important;
+      width: 14px;
+      height: 14px;
+      border: 0px;
+    }
+  }
+  .jsmind-inner {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    height: 98%;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .oa-avatar {
+    min-width: 16px;
+    margin-right: 6px;
+  }
+
+  /*box-shadow:0 0 2px #000;*/
+
+  jmnodes {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    top: 0;
+    left: 0;
+  }
+
+  // 脑图节点文本缓存的节点样式
+  .mindTextNameTmp {
+    width: 100%;
+    min-height: 60px;
+    min-width: auto;
+    max-width: 280px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    opacity: 1;
+
+    white-space: inherit !important;
+    text-overflow: ellipsis;
+    color: #808080;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 0px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    border: none;
+  }
+}
+
+.modeSelDropMenu {
+  .ant-dropdown-menu-item {
+    position: relative;
+    color: #191f25;
+    &:hover,
+    &.active {
+      background-color: #f6faff;
+    }
+    &.active {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 10px;
+        position: absolute;
+        right: 12px;
+        top: 11px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../../../../assets/images/workplan/OKR/get_sure_h.png);
+      }
+    }
+  }
+}

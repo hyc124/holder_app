@@ -1,0 +1,57 @@
+.metting-modal-details-box {
+  height: 784px;
+  input:disabled {
+    background-color: #f9f9f9;
+  }
+  .content_box {
+    height: 100%;
+    .meet_details_content_box {
+      height: 100%;
+      overflow: hidden;
+      .meet_details_content {
+        height: calc(100% - 60px);
+        overflow: auto;
+        padding: 0 24px;
+      }
+      .meet_details_footer_box {
+        margin-top: 24px;
+        padding: 0 24px;
+        .meetDetailFooter {
+          height: 60px;
+          display: flex;
+          justify-content: space-between;
+          .zone_remind_box {
+            display: flex;
+          }
+          .zone_remind_type {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+  .ant-modal-header {
+    padding-bottom: 0;
+  }
+  .ant-modal-body {
+    height: calc(100% - 57px);
+    padding: 24px 0;
+  }
+  .ant-modal-content {
+    height: 100%;
+  }
+  .metting_type {
+    display: flex;
+    align-items: center;
+    .meet_details_menu {
+      padding: 0 8px 16px;
+      cursor: pointer;
+      margin-right: 60px;
+      border-bottom: 2px solid transparent;
+      &.active {
+        border-bottom: 2px solid #4285f4;
+        color: #4285f4;
+      }
+    }
+  }
+}

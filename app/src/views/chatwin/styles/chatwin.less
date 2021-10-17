@@ -1,0 +1,233 @@
+@import '~@/src/styles/_var.less';
+.left_top_btn {
+  padding: 13px 10px 0;
+  margin-bottom: 7px;
+  text-align: left;
+  span {
+    width: 64px;
+    height: 24px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #414141;
+    text-align: center;
+    line-height: 24px;
+    background: #f7f8fd;
+    border-radius: 3px;
+    margin-right: 10px;
+    &:hover {
+      color: #3949ab;
+      background: #f5f6ff;
+    }
+    &.btn-position {
+      position: relative;
+    }
+  }
+  i {
+    display: block;
+    position: absolute;
+    right: -4px;
+    top: -2px;
+    width: 8px;
+    height: 8px;
+    background: #f44236;
+    border-radius: 50%;
+  }
+  .btn-position {
+    i {
+      width: 14px;
+      font-size: 10px;
+      height: 14px;
+      color: white;
+      line-height: 14px;
+      font-style: normal;
+    }
+    .largeIcon {
+      width: 22px;
+      border-radius: 7px;
+    }
+  }
+}
+
+.chat-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  border-top: 1px solid @color_e5;
+  .ant-tabs-top > .ant-tabs-nav,
+  .ant-tabs-bottom > .ant-tabs-nav,
+  .ant-tabs-top > div > .ant-tabs-nav,
+  .ant-tabs-bottom > div > .ant-tabs-nav {
+    margin: 0;
+  }
+  .left_chat_list {
+    width: 281px;
+    // border-right: 1px solid #e7e7e9;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    // padding-bottom: 40px;
+    //   .tabText {
+    //     position: relative;
+    //     .unReadCount {
+    //       font-style: normal;
+    //       color: #fff;
+    //       text-align: center;
+    //       width: 14px;
+    //       line-height: 14px;
+    //       background-color: #ea4335;
+    //       border-radius: 50%;
+    //       position: absolute;
+    //       top: -5px;
+    //       right: -12px;
+    //     }
+    //     .red_dot_long {
+    //       width: 20px;
+    //       border-radius: 7px;
+    //       right: -20px;
+    //     }
+    //   }
+
+    //   .chat-tab-list {
+    //     flex: 1;
+    //     overflow: hidden;
+    //     .ant-tabs-nav-list {
+    //       justify-content: space-around;
+    //       width: 100%;
+    //     }
+    //     .ant-tabs-nav {
+    //       margin: 0 0 4px 0;
+    //     }
+    //     .ant-tabs-tab {
+    //       font-size: 12px;
+    //     }
+    //     .ant-tabs-content-holder {
+    //       overflow: hidden;
+    //       padding: 0 6px 0 0;
+    //       &:hover {
+    //         overflow-x: hidden;
+    //         overflow-y: overlay;
+    //       }
+    //     }
+    //   }
+    .btn-positon {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 42px;
+      height: 42px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+      border-radius: 42px;
+      background-color: #f6faff;
+      text-align: center;
+      cursor: pointer;
+      img {
+        margin-top: 13px;
+      }
+    }
+    .ant-input-affix-wrapper:focus,
+    .ant-input-affix-wrapper-focused {
+      border-color: #4285f4 !important;
+      box-shadow: none;
+      caret-color: #4285f4;
+    }
+  }
+  .main_content {
+    flex: 1;
+    overflow: hidden;
+    border-left: 2px solid #f7f8fd;
+    .chat_headers {
+      height: 64px;
+      // height: 63.5px;//请勿删除
+      height: 94.5px; //沟通优化 暂时用这个高度
+      z-index: 801;
+      background-color: #fff;
+      align-items: center;
+      font-size: 16px;
+      color: @color_5c;
+      font-weight: bold;
+      -webkit-user-select: none;
+      user-select: none;
+      .compnay_group {
+        background-color: #fff;
+      }
+      .online_icon {
+        font-size: 12px;
+        color: #70707a;
+        font-weight: normal;
+        &.light {
+          color: #4de2ca;
+          span {
+            vertical-align: -1px;
+            border: 1px solid #4de2ca;
+            background: #b1fff2;
+          }
+        }
+        span {
+          width: 10px;
+          height: 10px;
+          background: #efefef;
+          border: 1px solid #b1b1b1;
+          border-radius: 50%;
+          margin-right: 5px;
+        }
+      }
+      & > img {
+        margin-right: 8px;
+      }
+      .groupUsers {
+        font-size: 12px;
+        color: #b1b1b1;
+        font-weight: normal;
+        &:hover {
+          background: #f5f7fb;
+        }
+        .group_icon {
+          width: 13px;
+          height: 12px;
+          background-image: url(../../../../../assets/images/chatWin//group.png);
+          background-repeat: no-repeat;
+          margin-right: 5px;
+          vertical-align: -1px;
+        }
+        .go_right {
+          width: 10px;
+          height: 12px;
+          cursor: pointer;
+          vertical-align: -3px;
+          background-image: url(../../../../../assets/images/okrList/go_left.png);
+          background-size: 10px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .ant-tabs-nav {
+      z-index: 801;
+      background-color: #fff;
+      -webkit-user-select: none;
+      user-select: none;
+      display: none; //沟通优化暂时注释...
+    }
+    .ant-tabs-nav::before {
+      border-bottom: none;
+    }
+    .ant-tabs-tabpane {
+      background-color: @color_f5;
+    }
+  }
+  .main_content_bg {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    color: #adadad;
+    font-size: 13px;
+    border-left: 1px solid #e7e7e9;
+    div {
+      padding-right: 15px;
+      margin-top: 20px;
+    }
+  }
+}

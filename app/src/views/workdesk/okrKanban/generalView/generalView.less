@@ -1,0 +1,25 @@
+.generalViewContaier {
+  width: 100%;
+  // height: 230px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  .tabs-container {
+    .ant-tabs-nav-wrap {
+      border-color: #e7e7e9 !important;
+      padding: 0 24px;
+    }
+    .ant-tabs-tab.ant-tabs-tab-active {
+      .ant-tabs-tab-btn {
+        color: #191f25;
+        font-weight: bold;
+      }
+    }
+    .ant-tabs-ink-bar {
+      display: none;
+    }
+    // 没有概览，加空tab后样式不对，暂时去除导航
+    .ant-tabs-nav {
+      display: none;
+    }
+  }
+}

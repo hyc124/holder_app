@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>基础设置</title>
+    <g id="PC端升级更新" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="正在检测" transform="translate(-265.000000, -182.000000)" stroke="#3949AB">
+            <g id="基础设置-2" transform="translate(265.000000, 182.000000)">
+                <g id="基础设置" transform="translate(3.000000, 3.000000)">
+                    <polygon id="路径-2" points="6.96929854 6.66133815e-15 2.66453526e-15 3.86949939 6.96929854 7.7393895 13.9385971 3.86969475"></polygon>
+                    <polyline id="路径" points="0 7.03238095 6.96929854 10.9022711 13.9385971 7.03257631"></polyline>
+                    <polyline id="路径" points="0 10.032381 6.96929854 13.9022711 13.9385971 10.0325763"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

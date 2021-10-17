@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #4285f4;
+      }
+
+      .cls-4, .cls-6 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #4285f4;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_1908" data-name="矩形 1908" class="cls-1" width="22" height="22" transform="translate(20 389)"/>
+    </clipPath>
+  </defs>
+  <g id="蒙版组_21" data-name="蒙版组 21" class="cls-2" transform="translate(-20 -389)">
+    <g id="组_5164" data-name="组 5164" transform="translate(-167.816 379.533)">
+      <rect id="矩形_1902" data-name="矩形 1902" class="cls-3" width="2" height="4" rx="1" transform="translate(199.816 26.467)"/>
+      <rect id="矩形_1903" data-name="矩形 1903" class="cls-3" width="2" height="9" rx="1" transform="translate(206.816 21.467)"/>
+      <rect id="矩形_1904" data-name="矩形 1904" class="cls-3" width="2" height="6" rx="1" transform="translate(203.316 24.467)"/>
+      <g id="矩形_1905" data-name="矩形 1905" class="cls-4" transform="translate(188.816 10.467)">
+        <rect class="cls-5" width="9" height="9" rx="3"/>
+        <rect class="cls-6" x="1" y="1" width="7" height="7" rx="2"/>
+      </g>
+      <g id="矩形_1906" data-name="矩形 1906" class="cls-4" transform="translate(208.816 19.467) rotate(-180)">
+        <rect class="cls-5" width="9" height="9" rx="3"/>
+        <rect class="cls-6" x="1" y="1" width="7" height="7" rx="2"/>
+      </g>
+      <g id="矩形_1907" data-name="矩形 1907" class="cls-4" transform="translate(188.816 21.467)">
+        <rect class="cls-5" width="9" height="9" rx="3"/>
+        <rect class="cls-6" x="1" y="1" width="7" height="7" rx="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

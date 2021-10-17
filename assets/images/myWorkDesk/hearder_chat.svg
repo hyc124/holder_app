@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>沟通</title>
+    <desc>Created with Sketch.</desc>
+    <g id="4.数据中心/沟通全局" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="6任务沟通收起" transform="translate(-1292.000000, -790.000000)" stroke="#FFFFFF">
+            <g id="沟通悬浮" transform="translate(1282.000000, 780.000000)">
+                <g id="沟通-2" transform="translate(10.000000, 10.000000)">
+                    <g id="沟通" transform="translate(1.000000, 1.000000)">
+                        <path d="M7.13269998,14.1177533 C11.0311806,14.1177533 14.1915235,10.9573041 14.1915235,7.05882353 C14.1915235,3.16034294 11.0311806,-2.30926389e-14 7.13269998,-2.30926389e-14 C3.2342194,-2.30926389e-14 0.0738764528,3.16034294 0.0738764528,7.05882353 C0.0738764528,9.25408136 -0.420966967,11.6873999 1.1507537,12.9820527 C2.37019607,13.9865279 5.42947722,14.1177533 7.13269998,14.1177533 Z" id="椭圆形"></path>
+                        <line x1="3.41483127" y1="5.91164052" x2="8.70894892" y2="5.91164052" id="路径-12" stroke-linecap="round"></line>
+                        <line x1="3.41483127" y1="8.82352941" x2="10.4736548" y2="8.82352941" id="路径-12备份" stroke-linecap="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

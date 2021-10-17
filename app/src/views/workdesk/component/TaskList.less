@@ -1,0 +1,642 @@
+@import '~@/src/styles/_var.less';
+.check_task_container .myTaskRoleBox {
+  margin-right: 8px;
+}
+
+.task-list .task_list_table.table_cus {
+  // width: calc (100% - 10px);
+  // width: 99%;
+  // margin-top: -6.5px;
+
+  .taskOptBtnGroup {
+    top: 0px;
+    right: 8px;
+  }
+  .ant-col {
+    min-width: 0 !important;
+  }
+  .ant_item_progress_line_option {
+    margin-left: 0px;
+  }
+  .ant-slider {
+    width: 86%;
+  }
+  .isFullPress.ant-slider {
+    padding: 4px 0 0 0;
+  }
+  .noFullPress.ant-slider {
+    padding: 3px 0 0 0;
+  }
+  .ant-progress-line {
+    width: 98.5%;
+    max-width: 280px;
+  }
+  .ant_item_liableUser {
+    line-height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    // padding-left: 8px;
+  }
+  .ant_item_time_box {
+    // text-align: right;
+    white-space: nowrap;
+    margin-right: 16px;
+    padding-left: 10px;
+  }
+  .noProgress {
+    height: 100%;
+    line-height: 48px;
+  }
+}
+.task-list.executeTask {
+  padding-top: 32px;
+}
+.task-list {
+  height: 100%;
+  .task_list_table {
+    height: 100%;
+    &.isFullScreen {
+      table {
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .secondScreen.noProgress {
+    height: 100%;
+    line-height: 62px;
+  }
+  .ant-progress-status-success .ant-progress-text,
+  .finishedTaskColor span {
+    color: #d7d7d9 !important;
+  }
+  .ant-progress-text {
+    margin-right: 0;
+    color: #191f25;
+  }
+  .ant-progress-status-success
+    .ant-progress-inner:not(.ant-progress-circle-gradient)
+    .ant-progress-circle-path {
+    stroke: #f1f1f1 !important;
+  }
+  .finishedTaskColor .com-tag-x {
+    border-color: #d7d7d9 !important;
+  }
+  .taskOptBtnGroup {
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 99;
+    min-width: 130px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    background-color: #f7f8fd;
+    & > span {
+      display: inline-block;
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      padding: 0 2px;
+      border-radius: 15px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin: 0 3px;
+      &:hover {
+        cursor: pointer;
+        background-color: #f7f8fd;
+      }
+    }
+    & > span.more_icon {
+      width: 14px;
+      background-size: 18px 18px;
+      background-image: url(../../../../../assets/images/taskOpt/more-vert-grey.svg);
+      &:hover {
+        cursor: pointer;
+        background-color: inherit;
+        background-image: url(../../../../../assets/images/taskOpt/more-vert-h.svg);
+      }
+    }
+    & > span.start_task {
+      background-size: 11px 14px;
+      background-image: url(../../../../../assets/images/taskOpt/start.png);
+      &:hover {
+        background-image: url(../../../../../assets/images/taskOpt/start_blue.png);
+      }
+    }
+    & > span.report_icon {
+      background-size: 14px 14px;
+      background-image: url(../../../../../assets/images/workdesk/work_icon_hb.svg);
+      &:hover {
+        background-image: url(../../../../../assets/images/workdesk/work_icon_hb_active.svg);
+      }
+    }
+    // 关联任务
+    & > span.relate_child_icon {
+      background-size: 16px 16px;
+      background-image: url(../../../../../assets/images/workplan/OKR/new_relate.png);
+      &:hover {
+        background-image: url(../../../../../assets/images/workplan/OKR/new_relate_h.png);
+      }
+    }
+    & > span.add_child_icon {
+      background-size: 14px 14px;
+      background-image: url(../../../../../assets/images/workdesk/work_icon_xzzre.svg);
+      &:hover {
+        background-image: url(../../../../../assets/images/workdesk/work_icon_xzzre_h.svg);
+      }
+    }
+    & > span.relate_child_icon_disable {
+      background-size: 16px 16px;
+      background-image: url(../../../../../assets/images/workplan/OKR/new_relate.png);
+    }
+    & > span.add_child_icon_disable {
+      opacity: 0.4;
+      background-size: 14px 14px;
+      background-image: url(../../../../../assets/images/workdesk/work_icon_xzzre.svg);
+    }
+    & > span.collect_icon {
+      background-size: 16px 16px;
+      background-image: url(../../../../../assets/images/workdesk/work_icon_gz.svg);
+      &:hover {
+        background-image: url(../../../../../assets/images/workdesk/work_icon_gz_h.svg);
+      }
+    }
+    & > span.add_evolve {
+      background-size: 14px 14px;
+      background-image: url(../../../../../assets/images/workdesk/work_icon_hb.svg);
+      &:hover {
+        background-image: url(../../../../../assets/images/workdesk/work_icon_hb_h.svg);
+      }
+    }
+    & > span.nofollowIcon {
+      background-size: 16px 16px;
+      background-image: url(../../../../../assets/images/taskOpt/heart-red.svg) !important;
+      &:hover {
+        background-image: url(../../../../../assets/images/taskOpt/heart-red.svg);
+      }
+    }
+  }
+  &:not(.noTrHover) .ant-table-row:hover .taskOptBtnGroup,
+  &:not(.noTrHover) .ant-table-row.active .taskOptBtnGroup {
+    opacity: 1;
+    transition: all 0.3s;
+    background-color: #f7f8fd;
+  }
+  .ant-table-tbody .ant-table-row {
+    position: relative;
+    // .task_content_all {
+    // padding-left: 16px;
+    // border-radius: 8px;
+    // }
+    &:hover,
+    &.active {
+      border-radius: 8px;
+      .ant-table-row-expand-icon {
+        background-color: #f7f8fd;
+      }
+    }
+    &:hover > td,
+    &.active > td {
+      background-color: #f7f8fd;
+      border-radius: 8px 0px 0px 8px;
+      &.columnProgress {
+        border-radius: 0px 8px 8px 0px;
+      }
+      // .task_content_all,
+      // &.columnProgress {
+      //   background: #f7f8fd;
+      // }
+    }
+
+    // &:hover .ant_item_liableUser,
+    // &:hover .ant_item_time {
+    // opacity: 0;
+    // }
+
+    .ant_item_liableUser {
+      opacity: 1;
+    }
+    .liableUserfinished {
+      color: #d7d7d9;
+    }
+    .ant_item_time {
+      opacity: 1;
+    }
+    &:hover .ant-table-row-expand-icon {
+      background-color: inherit;
+    }
+    .ant-table-row-expand-icon {
+      &:hover {
+        background-color: #c6ceff;
+        &::before {
+          background: url(../../../../../assets/images/workdesk/tree_node_icon_active.svg) no-repeat;
+        }
+      }
+    }
+  }
+  .ant-table-cell {
+    padding: 0;
+    color: @color_dark;
+    height: 48px;
+    border-bottom: 0;
+    cursor: pointer;
+    .ant-table-row-expand-icon {
+      border: none;
+      &:hover {
+        background-color: #e9f2ff;
+      }
+    }
+    .ant-table-row-expand-icon::after {
+      width: 0;
+    }
+    .ant-table-row-expand-icon::before {
+      width: 7px;
+      height: 8px;
+      left: 5px;
+      top: 5px;
+      left: 5px;
+      display: inline-block;
+      background: url(../../../../../assets/images/workdesk/tree_node_icon_open.svg) no-repeat;
+      transform: rotate(90deg);
+    }
+    .ant-table-row-expand-icon-collapsed {
+      background-color: #e4e4e4;
+      &::before {
+        transform: rotate(0deg);
+        left: 7px;
+      }
+    }
+  }
+  .noExpandable .ant-table-row-expand-icon {
+    visibility: hidden;
+  }
+  .ant-table-row-indent + .ant-table-row-expand-icon {
+    margin-top: 14px;
+  }
+  .task-list-content {
+    height: 48px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 100%;
+    & > div {
+      height: 24px;
+    }
+  }
+  .task-list-item {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin-right: 20px;
+    .task-title {
+      margin-right: 8px;
+      font-size: 14px;
+      color: #121317;
+      min-width: 10px;
+    }
+    &.finishedTask {
+      // .task-title {
+      //   color: #d7d7d9;
+      //   text-decoration: line-through;
+      // }
+      opacity: 0.4;
+    }
+    .import_icon {
+      margin-right: 16px;
+      width: 16px;
+      height: 16px;
+      background: url('../../../../../assets/images/workdesk/import_icon.png') no-repeat center;
+      cursor: pointer;
+      background-size: cover;
+      vertical-align: middle;
+    }
+    /* ======工作台任务类型标签======= */
+    .com-tag-content {
+      margin-left: 8px;
+      overflow: hidden;
+    }
+    .myTaskRoleBox::before {
+      margin-right: 4px;
+    }
+    .taskTypeLabel {
+      display: flex;
+      align-items: center;
+      min-width: 54px;
+      height: 18px;
+      line-height: 18px;
+      padding: 0;
+      margin-left: 0px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: @color_9a;
+    }
+    .taglarg {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+    }
+    .tagboardMb {
+      background-image: url(../../../../../assets/images/task/task-list-icon/tag-mb.svg);
+    }
+    .tagboardLs {
+      background-image: url(../../../../../assets/images/task/task-list-icon/tag-ls.svg);
+    }
+    .tagboardZn {
+      background-image: url(../../../../../assets/images/task/task-list-icon/tag-zn.svg);
+    }
+    .tagboardXm {
+      background-image: url(../../../../../assets/images/task/task-list-icon/tag-xm.svg);
+    }
+    .tagboardRw {
+      background-image: url(../../../../../assets/images/task/task-list-icon/tag-rw.svg);
+    }
+    .taskTypeLabel::before {
+      content: '';
+      display: flex;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 16px;
+      height: 16px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 4px;
+    }
+    // .taskTypeLabel.boardMb::before {
+    //   background-image: url(../../../../../assets/images/task/task-list-icon/tag-mb.svg);
+    // }
+    // .taskTypeLabel.boardLs::before {
+    //   background-image: url(../../../../../assets/images/task/task-list-icon/tag-ls.svg);
+    // }
+    // .taskTypeLabel.boardZn::before {
+    //   background-image: url(../../../../../assets/images/task/task-list-icon/tag-zn.svg);
+    // }
+    // .taskTypeLabel.boardXm::before {
+    //   background-image: url(../../../../../assets/images/task/task-list-icon/tag-xm.svg);
+    // }
+    // .taskTypeLabel.boardRw::before {
+    //   background-image: url(../../../../../assets/images/task/task-list-icon/tag-rw.svg);
+    // }
+    .tag-list {
+      display: flex;
+      align-items: center;
+      .ant-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        margin-right: 9px;
+        padding: 0;
+        border: 0;
+        border-radius: 4px;
+        &.long-tag {
+          width: auto;
+          border-radius: 4px;
+          padding: 0 8px;
+          color: @color_gray;
+        }
+      }
+    }
+    .boardTaskLabel {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  }
+  .ant-progress-inner {
+    height: 6px;
+    .ant-progress-bg {
+      height: 8px !important;
+      text-align: initial !important;
+    }
+  }
+  .ant-progress-outer {
+    text-align: initial !important;
+  }
+  .ant_item_progress_line_option {
+    display: none;
+  }
+
+  .ant_item_progress {
+    position: relative;
+    text-align: start;
+    max-width: 280px;
+    .show_progress {
+      border-radius: 50%;
+      display: none;
+      width: 32px;
+      height: 32px;
+      background: url(../../../../../assets/images/workplan/process_edit.png) no-repeat center
+        rgba(0, 0, 0, 0.5);
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 3px;
+    }
+    &:hover {
+      .show_progress {
+        display: block;
+      }
+    }
+  }
+
+  .ant_item_progress_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px 0px;
+    justify-content: space-between;
+    .time {
+      margin: 0 20px;
+    }
+  }
+  .ant_progress_none {
+    .ant-progress-text {
+      font-size: 14px;
+      color: #ececec;
+    }
+  }
+  .ant-line-none {
+    .ant-progress-text {
+      color: #ffffff;
+    }
+  }
+  .task_list_table {
+    .taskOptBtnGroup {
+      top: 6px;
+    }
+    .ant-table-row {
+      .ant_item_progress_wrap {
+        &:hover {
+          .ant_item_progress.line {
+            height: 18px;
+            display: flex;
+            align-items: center;
+          }
+          .ant-item-progress-line-defalt {
+            display: none;
+          }
+          .ant_item_progress_line_option {
+            display: block;
+          }
+        }
+      }
+      &:hover {
+        background-color: #f6faff;
+      }
+    }
+  }
+  .need-select .ant-table-row:nth-child(1) {
+    background-color: #f5f7fb;
+  }
+  .task_tableNode_open,
+  .task_tableNode_close {
+    width: 7px;
+    height: 8px;
+    display: inline-block;
+    background: url(../../../../../assets/images/workdesk/tree_node_icon_open.svg) no-repeat;
+  }
+  .task_tableNode_close {
+    background: url(../../../../../assets/images/workdesk/tree_node_icon_close.svg) no-repeat;
+  }
+  .ant-slider {
+    padding: 3px 0 0 0;
+    margin-left: 5px;
+    .ant-slider-rail,
+    .ant-slider-track {
+      height: 8px;
+    }
+    .ant-slider-track {
+      background: #4285f4;
+    }
+    .ant-slider-handle {
+      background: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(66, 133, 244, 1);
+      box-shadow: 0px 0px 3px rgba(12, 78, 188, 0.8);
+      margin-top: -3px;
+    }
+  }
+  .larg {
+    .item_top {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-right: 5px;
+    }
+  }
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .progress_input {
+    -webkit-appearance: none;
+    width: 26px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    top: 0px;
+    outline: none;
+    left: 0px;
+    text-align: center;
+    .Increase {
+      display: none;
+    }
+  }
+  .progress_input .ant-input-number-handler-wrap,
+  .progress_input .ant-input-number-handler-wrap:hover {
+    display: none;
+  }
+  .sml {
+    flex-flow: column;
+    .item_top,
+    .item_tag {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      .time {
+        color: #9a9aa2;
+        margin-right: 8px;
+        span {
+          padding-right: 2px;
+        }
+      }
+    }
+    .item_top {
+      padding-bottom: 4px;
+    }
+    .item_tag {
+      width: 100%;
+    }
+  }
+
+  /* ==============新增子任务=========== */
+  .addChildTaskTr {
+    .taskNameTd {
+      // position: relative;
+      // background: #e9f5ff;
+      border: none;
+      .boardTaskName {
+        width: calc(100% + 150px);
+        height: 32px;
+        position: relative;
+      }
+      .addChildTaskInp {
+        width: 100%;
+        padding-left: 8px;
+        background: white;
+        height: 32px;
+        border: 1px solid #4285f4;
+        box-shadow: 0 0 1px black;
+        border-radius: 6px;
+        outline: none;
+      }
+      .create_task_btn_box {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        width: 58px;
+        padding-right: 15px;
+        top: 0;
+        line-height: 48px;
+        justify-content: space-between;
+      }
+
+      .create_task_btn_box > div {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      .create_task_btn_box > .sure_create_btn {
+        background: url(../../../../../assets/images/workdesk/crate_task_ok.svg) no-repeat;
+      }
+      .create_task_btn_box > .cancel_create_btn {
+        background: url(../../../../../assets/images/workdesk/crate_task_no.svg) no-repeat;
+      }
+    }
+  }
+  .ant-input-number-input {
+    padding: 0;
+    text-align: center;
+  }
+  .ant-input-number-handler-wrap,
+  .ant-input-number-handler-wrap:hover {
+    display: none;
+  }
+}
+//归档下属冻结任务box
+.drawer_task_module {
+  .ant-drawer-header {
+    display: none;
+  }
+}

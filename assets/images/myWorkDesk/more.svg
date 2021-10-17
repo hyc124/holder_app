@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="4px" viewBox="0 0 24 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>更多</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ICON库" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.600000024">
+        <g id="画板" transform="translate(-1112.000000, -506.000000)" fill="#FFFFFF">
+            <g id="下" transform="translate(1101.000000, 404.000000)">
+                <g id="更多" transform="translate(23.000000, 104.000000) rotate(-270.000000) translate(-23.000000, -104.000000) translate(21.000000, 92.000000)">
+                    <path d="M2,20 C3.1045695,20 4,20.8954305 4,22 C4,23.1045695 3.1045695,24 2,24 C0.8954305,24 2.27373675e-13,23.1045695 2.27373675e-13,22 C2.27373675e-13,20.8954305 0.8954305,20 2,20 Z M2,10 C3.1045695,10 4,10.8954305 4,12 C4,13.1045695 3.1045695,14 2,14 C0.8954305,14 2.27373675e-13,13.1045695 2.27373675e-13,12 C2.27373675e-13,10.8954305 0.8954305,10 2,10 Z M2,2.26485497e-13 C3.1045695,2.26485497e-13 4,0.8954305 4,2 C4,3.1045695 3.1045695,4 2,4 C0.8954305,4 2.27373675e-13,3.1045695 2.27373675e-13,2 C2.27373675e-13,0.8954305 0.8954305,2.26485497e-13 2,2.26485497e-13 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,391 @@
+{
+  "emojiMain": [
+    {
+      "key": "b001",
+      "title": "/b001"
+    },
+    {
+      "key": "b002",
+      "title": "/b002"
+    },
+    {
+      "key": "b003",
+      "title": "/b003"
+    },
+    {
+      "key": "b005",
+      "title": "/b005"
+    },
+    {
+      "key": "b006",
+      "title": "/b006"
+    },
+    {
+      "key": "b007",
+      "title": "/b007"
+    },
+    {
+      "key": "b008",
+      "title": "/b008"
+    },
+    {
+      "key": "b009",
+      "title": "/b009"
+    },
+    {
+      "key": "b010",
+      "title": "/b010"
+    },
+    {
+      "key": "b011",
+      "title": "/b011"
+    },
+    {
+      "key": "b012",
+      "title": "/b012"
+    },
+    {
+      "key": "b013",
+      "title": "/b013"
+    },
+    {
+      "key": "b014",
+      "title": "/b014"
+    },
+    {
+      "key": "b015",
+      "title": "/b015"
+    },
+    {
+      "key": "b016",
+      "title": "/b016"
+    },
+    {
+      "key": "b017",
+      "title": "/b017"
+    },
+    {
+      "key": "b018",
+      "title": "/b018"
+    },
+    {
+      "key": "b019",
+      "title": "/b019"
+    },
+    {
+      "key": "b020",
+      "title": "/b020"
+    },
+    {
+      "key": "b021",
+      "title": "/b021"
+    },
+    {
+      "key": "b022",
+      "title": "/b022"
+    },
+    {
+      "key": "b023",
+      "title": "/b023"
+    },
+    {
+      "key": "b024",
+      "title": "/b024"
+    },
+    {
+      "key": "b025",
+      "title": "/b025"
+    },
+    {
+      "key": "b026",
+      "title": "/b026"
+    },
+    {
+      "key": "b027",
+      "title": "/b027"
+    },
+    {
+      "key": "b028",
+      "title": "/b028"
+    },
+    {
+      "key": "b029",
+      "title": "/b029"
+    },
+    {
+      "key": "b030",
+      "title": "/b030"
+    },
+    {
+      "key": "b031",
+      "title": "/b031"
+    },
+    {
+      "key": "b032",
+      "title": "/b032"
+    },
+    {
+      "key": "b033",
+      "title": "/b033"
+    },
+    {
+      "key": "b034",
+      "title": "/b034"
+    },
+    {
+      "key": "b035",
+      "title": "/b035"
+    },
+    {
+      "key": "b036",
+      "title": "/b036"
+    },
+    {
+      "key": "b037",
+      "title": "/b037"
+    },
+    {
+      "key": "b038",
+      "title": "/b038"
+    },
+    {
+      "key": "b039",
+      "title": "/b039"
+    },
+    {
+      "key": "b040",
+      "title": "/b040"
+    },
+    {
+      "key": "b041",
+      "title": "/b041"
+    },
+    {
+      "key": "b042",
+      "title": "/b042"
+    },
+    {
+      "key": "b043",
+      "title": "/b043"
+    },
+    {
+      "key": "b044",
+      "title": "/b044"
+    },
+    {
+      "key": "b045",
+      "title": "/b045"
+    },
+    {
+      "key": "b046",
+      "title": "/b046"
+    },
+    {
+      "key": "b047",
+      "title": "/b047"
+    },
+    {
+      "key": "b048",
+      "title": "/b048"
+    },
+    {
+      "key": "b049",
+      "title": "/b049"
+    },
+    {
+      "key": "b050",
+      "title": "/b050"
+    },
+    {
+      "key": "b051",
+      "title": "/b051"
+    },
+    {
+      "key": "b052",
+      "title": "/b052"
+    },
+    {
+      "key": "b053",
+      "title": "/b053"
+    },
+    {
+      "key": "b054",
+      "title": "/b054"
+    },
+    {
+      "key": "b055",
+      "title": "/b055"
+    },
+    {
+      "key": "b056",
+      "title": "/b056"
+    },
+
+    {
+      "key": "b057",
+      "title": "/b057"
+    },
+    {
+      "key": "b058",
+      "title": "/b058"
+    },
+    {
+      "key": "b059",
+      "title": "/b059"
+    },
+    {
+      "key": "b060",
+      "title": "/b060"
+    },
+    {
+      "key": "b061",
+      "title": "/b061"
+    },
+    {
+      "key": "b062",
+      "title": "/b062"
+    },
+    {
+      "key": "b063",
+      "title": "/b063"
+    },
+    {
+      "key": "b064",
+      "title": "/b064"
+    },
+    {
+      "key": "b065",
+      "title": "/b065"
+    },
+    {
+      "key": "b066",
+      "title": "/b066"
+    },
+    {
+      "key": "b067",
+      "title": "/b067"
+    },
+    {
+      "key": "b068",
+      "title": "/b068"
+    },
+    {
+      "key": "b069",
+      "title": "/b069"
+    },
+    {
+      "key": "b070",
+      "title": "/b070"
+    },
+    {
+      "key": "b071",
+      "title": "/b071"
+    },
+    {
+      "key": "b072",
+      "title": "/b072"
+    },
+    {
+      "key": "b073",
+      "title": "/b073"
+    },
+    {
+      "key": "b074",
+      "title": "/b074"
+    },
+    {
+      "key": "b075",
+      "title": "/b075"
+    },
+    {
+      "key": "b076",
+      "title": "/b076"
+    },
+    {
+      "key": "b077",
+      "title": "/b077"
+    },
+    {
+      "key": "b078",
+      "title": "/b078"
+    },
+    {
+      "key": "b079",
+      "title": "/b079"
+    },
+    {
+      "key": "b080",
+      "title": "/b080"
+    },
+    {
+      "key": "b081",
+      "title": "/b081"
+    },
+    {
+      "key": "b082",
+      "title": "/b082"
+    },
+    {
+      "key": "b083",
+      "title": "/b083"
+    },
+    {
+      "key": "b084",
+      "title": "/b084"
+    },
+    {
+      "key": "b085",
+      "title": "/b085"
+    },
+    {
+      "key": "b086",
+      "title": "/b086"
+    },
+    {
+      "key": "b087",
+      "title": "/b087"
+    }
+  ],
+  "emojiLike": [
+    {
+      "key": "top01",
+      "title": "/top01"
+    },
+    {
+      "key": "top02",
+      "title": "/top02"
+    },
+    {
+      "key": "topThumb",
+      "title": "/topThumb"
+    },
+    {
+      "key": "top04",
+      "title": "/top04"
+    },
+    {
+      "key": "top05",
+      "title": "/top05"
+    },
+    {
+      "key": "open001",
+      "title": "/open001"
+    },
+    {
+      "key": "open002",
+      "title": "/open002"
+    },
+    {
+      "key": "open003",
+      "title": "/open003"
+    },
+    {
+      "key": "open004",
+      "title": "/open004"
+    },
+    {
+      "key": "open005",
+      "title": "/open005"
+    }
+  ]
+}

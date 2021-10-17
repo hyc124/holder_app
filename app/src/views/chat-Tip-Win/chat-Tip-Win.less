@@ -1,0 +1,120 @@
+html,
+body,
+#app {
+  background-color: transparent !important;
+}
+.chat_tips_conatainer {
+  width: 260px;
+  height: auto;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  background-color: #ffffff;
+  position: absolute;
+  // left: 8px;
+  bottom: 0;
+  overflow: hidden;
+}
+.tips_title {
+  width: 100%;
+  height: 40px;
+  background-color: #4285f4;
+  color: #ffffff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.tips_title > span {
+  font-size: 14px;
+}
+.tips_list {
+  padding: 10px 0;
+  max-height: 305px;
+  overflow: auto;
+}
+.tips_list .list_data {
+  display: flex;
+  width: 100%;
+  height: 57px;
+  padding: 0 12px;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  .red_unread {
+    font-style: normal;
+    background: #ea4335;
+    line-height: 13px;
+    font-size: 10px;
+    position: absolute;
+    text-align: center;
+    padding: 0px 3px;
+    left: 31px;
+    top: 6px;
+    z-index: 999;
+    height: 14px;
+    color: white;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+  }
+}
+.tips_list .list_data:hover {
+  background-color: #e9f2ff;
+}
+.show_content .show_title {
+  font-size: 14px;
+  color: #191f25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.show_content {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  padding-left: 10px;
+  .show_message_content {
+    display: inline-block;
+    font-size: 12px;
+    color: #9a9aa2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.show_symbol {
+  width: 32px;
+  height: 34px;
+}
+.show_symbol > span {
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  border-radius: 4px;
+  vertical-align: top;
+}
+.show_symbol > span.group_green {
+  background-color: #cdead5;
+  color: #34a853;
+}
+.show_symbol > span.group_blue {
+  background-color: #e9f2ff;
+  color: #4285f4;
+}
+.tips_footer {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: 14px;
+  color: #4285f4;
+  border-top: 1px solid #e7e7e9;
+}
+.tips_footer > span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

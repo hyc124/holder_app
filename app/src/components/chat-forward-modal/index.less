@@ -1,0 +1,250 @@
+@import '~@/src/styles/_var.less';
+
+.chat-forward-modal {
+  height: 620px;
+  padding: 0;
+  .orgBodyLeft {
+    width: 100% !important;
+  }
+  .ant-modal-content {
+    width: 100%;
+    height: 100%;
+    .ant-modal-body {
+      height: 512px;
+      padding: 0 24px;
+      .modal-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        box-shadow: none;
+        border: 0;
+        .ant-tabs-content {
+          height: 100%;
+        }
+        .modal-left {
+          display: flex;
+          flex-flow: column;
+          width: 422px;
+          // padding-right: 16px;
+          // padding-top: 12px;
+          // padding-bottom: 12px;
+          border-right: 1px solid @color_e5;
+          .user-modal-tabs {
+            flex: 1;
+            .ant-tabs-content-holder {
+              overflow: overlay;
+              // padding-right: 20px;
+            }
+          }
+          .mb10 {
+            margin-bottom: 10px;
+          }
+          .concats-list {
+            overflow: auto;
+            .ant-list-item {
+              border: 0;
+              height: 48px;
+              display: flex;
+              align-items: center;
+              // padding: 0 10px;
+              &:hover {
+                background-color: #f5f5f5;
+              }
+              .ant-checkbox-wrapper,
+              .ant-radio-wrapper {
+                display: flex;
+                flex-flow: row-reverse;
+                flex: 1;
+                align-items: center;
+                & > span {
+                  padding: 0;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  flex: 1;
+                  display: flex;
+                  align-items: center;
+                }
+                & > span.ant-checkbox {
+                  flex: none;
+                  .ant-checkbox-input {
+                    margin: 0;
+                  }
+                }
+                & > span.ant-radio {
+                  flex: none;
+                  .ant-radio-input {
+                    margin: 0;
+                  }
+                }
+              }
+              .oa-avatar > span {
+                opacity: 1 !important;
+                transform: scale(1) translateX(-50%);
+              }
+              .user-icon {
+                display: block;
+                width: 16px;
+                height: 20px;
+                background: url(../../../../assets/images/common/member-icon.png) no-repeat center;
+                margin-right: 10px;
+              }
+              .user-name {
+                flex: 1;
+                padding-right: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+            }
+          }
+          .chat-forward-modal-tree {
+            &.selRadio {
+              //显示单选样式
+              .ant-tree-checkbox {
+                .ant-tree-checkbox-inner {
+                  border-radius: 8px;
+                  &::after {
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    display: table;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #4285f4;
+                    border-top: 0;
+                    border-left: 0;
+                    border-radius: 8px;
+                    transform: scale(0);
+                    opacity: 0;
+                    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+                    content: ' ';
+                    border: 0;
+                  }
+                }
+                &.ant-tree-checkbox-checked {
+                  .ant-tree-checkbox-inner {
+                    border-color: @color_blue;
+                    background-color: @color_white;
+                    &::after {
+                      transform: scale(1);
+                      opacity: 1;
+                      transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+                    }
+                  }
+                }
+              }
+            }
+            .ant-tree-checkbox-disabled {
+              display: none;
+            }
+          }
+        }
+        .modal-right {
+          flex: 1;
+          padding-top: 24px;
+          padding-left: 10px;
+          padding-bottom: 12px;
+          display: flex;
+          flex-flow: column;
+          overflow: hidden;
+          .select-title {
+            font-size: 14px;
+            color: @color_gray;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-left: 10px;
+          }
+          .select-list-ul {
+            flex: 1;
+            overflow: overlay;
+            & > li {
+              height: 50px;
+              display: flex;
+              align-items: center;
+              padding-left: 10px;
+              padding-right: 10px;
+              .oa-avatar > span {
+                opacity: 1 !important;
+                transform: scale(1) translateX(-50%);
+              }
+              .user-name {
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+              .del-member {
+                display: none;
+                width: 16px;
+                height: 16px;
+                background: url(../../../../assets/images/common/del_member_icon.png) no-repeat center;
+              }
+              &:hover {
+                background-color: #f5f5f5;
+                .del-member {
+                  display: block;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========搜索============//
+.selMemberOrgSearch {
+  background-color: white;
+  width: 364px;
+  height: 190px;
+  // 选择人组件搜索样式有更改，如此出不一样，请更改名字
+  // box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 12px;
+  color: #757575;
+  display: flex;
+  flex-direction: column;
+  .searchHeader {
+    height: 34px;
+    width: 383px;
+    justify-content: center;
+    border-bottom: 1px solid @color_e7;
+  }
+  .searchHeader li {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 8px;
+    margin: 0 75px;
+    cursor: pointer;
+  }
+  .searchHeader li.active {
+    border-bottom: 2px solid @color_primary;
+    color: @color_primary;
+  }
+  .searchList {
+    padding: 10px;
+    height: calc(100% - 44px);
+    // flex: 1;
+    overflow: auto;
+    .searchItem {
+      margin: 5px 0;
+      .right_cont {
+        margin-left: 5px;
+        overflow: hidden;
+        .user_info,
+        .belong_info {
+          margin-bottom: 0;
+        }
+        .belong_info {
+          width: 100%;
+        }
+      }
+    }
+    .searchItem:hover {
+      background-color: #f5f7fb;
+    }
+  }
+}

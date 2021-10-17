@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11.846" viewBox="0 0 14 11.846">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #70707a;
+      }
+    </style>
+  </defs>
+  <g id="组_10798" data-name="组 10798" transform="translate(-56 -57.077)">
+    <path id="路径_4066" data-name="路径 4066" class="cls-1" d="M68.385,68.923H57.615A1.617,1.617,0,0,1,56,67.308V58.692a1.617,1.617,0,0,1,1.615-1.615h10.77A1.617,1.617,0,0,1,70,58.692v8.616A1.617,1.617,0,0,1,68.385,68.923ZM57.615,58.154a.538.538,0,0,0-.538.538v8.616a.538.538,0,0,0,.538.538h10.77a.538.538,0,0,0,.538-.538V58.692a.538.538,0,0,0-.538-.538Z"/>
+    <rect id="矩形_8323" data-name="矩形 8323" class="cls-1" width="2.692" height="1.077" rx="0.538" transform="translate(63.538 60.846)"/>
+    <rect id="矩形_8324" data-name="矩形 8324" class="cls-1" width="4.308" height="1.077" rx="0.538" transform="translate(63.538 64.077)"/>
+    <g id="组_10797" data-name="组 10797">
+      <rect id="矩形_8325" data-name="矩形 8325" class="cls-1" width="4.308" height="1.077" rx="0.538" transform="translate(58.154 60.308)"/>
+      <rect id="矩形_8326" data-name="矩形 8326" class="cls-1" width="5.385" height="1.077" rx="0.538" transform="translate(60.846 60.308) rotate(90)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1188 @@
+@import '~@/src/styles/_var.less';
+@import '~@/src/styles/org-tree.less';
+@import '~@/src/styles/task-com.less';
+// color
+@color_w: white;
+@color_b: #000000;
+@color_g: #e7e7e9;
+@color_A3: #a3a3a3;
+.O_okr {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: 2px;
+  line-height: 18px;
+  text-align: center;
+  background: url(../../../../../assets/images/workplan/OKR/aim_new.png) no-repeat left center;
+  background-size: 32px;
+  margin-right: 6px;
+  & + .taskName {
+    position: relative;
+    top: -10px;
+  }
+}
+.okrQuadrantModal,
+.okrOrgContainer {
+  height: 100%;
+
+  .workPlanCon {
+    margin-right: 0px;
+    overflow: hidden;
+    .okrModuleContainer {
+      overflow-y: scroll;
+      height: 100%;
+
+      .okrKanban {
+        &.max_okrKanban {
+          overflow: initial;
+          padding-top: 10px;
+        }
+        .ant-table-body {
+          padding: 0 16px;
+          table {
+            padding-bottom: 20px;
+          }
+        }
+        .okrKanbanTable_table {
+          .ant-table-body {
+            padding-bottom: 100px;
+          }
+        }
+      }
+      .show_none_data_container {
+        top: 30% !important;
+      }
+    }
+    .part-okr-quadrant .okr_task_name {
+      max-width: none;
+      .isokr_nameClen {
+        -webkit-line-clamp: 1;
+      }
+    }
+  }
+  // .ant-modal-content {
+  //   border-radius: 0px;
+  //   height: 100%;
+  //   overflow: hidden;
+  // .ant-modal-close {
+  //   right: 5px;
+  //   margin-top: 2px;
+  // }
+  // .ant-modal-body {
+  //   padding: 0px;
+  //   height: 100%;
+  // .secondPageContainer {
+  //   width: 100%;
+  //   background: white;
+  //   padding: 0px;
+  //   height: 100%;
+  .pageLeftHeader {
+    padding-left: 24px;
+  }
+  .orgLeftCon {
+    margin-right: 11px;
+    .orgBotScroll {
+      position: relative;
+      width: auto;
+      padding-left: 7px;
+    }
+  }
+  .workPlanRightCon {
+    & > .ant-spin-nested-loading {
+      padding: 8px;
+      background: #f7f8fd;
+      height: 100%;
+      .ant-spin-container {
+        background: #ffffff;
+        display: flex;
+      }
+    }
+    .secondPageHeader {
+      padding: 0 16px;
+      background-color: #ffffff;
+      .headerRight {
+        .okr-settings {
+          cursor: pointer;
+          // width: 72px;
+          // height: 32px;
+          width: 36px;
+          height: 32px;
+          line-height: 32px;
+          border-radius: 4px;
+          margin-left: 24px;
+          text-align: center;
+          border: 1px solid #b1b1b1;
+
+          // background: #f7f8fa;
+          .settes {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-top: -4px;
+            // margin-right: 4px;
+            background: url(../../../../../assets/images/okrList/okr_hearder_seting.svg) no-repeat center;
+            background-size: cover;
+          }
+        }
+        .menu_time_list li a .ant-tag {
+          color: #3949ab;
+          border: 1px solid #3949ab;
+        }
+        .periodFilter .periodFilter_more {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  // }
+  //   }
+  // }
+  //处理okr列表展示
+  .okrLeftSmall {
+    width: 56px;
+    // margin-right: 8px;
+    background-color: white;
+    justify-content: center;
+    padding: 10px 0px;
+    height: 100%;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+    & > .ant-menu-submenu-title {
+      height: 100% !important;
+      width: 100%;
+      padding: 0;
+      & > .ant-menu-submenu-arrow {
+        display: none;
+      }
+    }
+    .okrLeft_logo {
+      width: 40px;
+      height: 40px;
+      line-height: 33px;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      opacity: 1;
+      margin: auto;
+      margin-bottom: 15px;
+      position: relative;
+      .active {
+        width: 13px;
+        height: 13px;
+        background: url(../../../../../assets/images/okrList/list_check.svg) no-repeat;
+        position: absolute;
+        bottom: -2px;
+        left: 27px;
+      }
+    }
+  }
+  //处理宽详情列表
+  .okr_list_detail {
+    background-color: white;
+    width: 354px;
+    height: 100%;
+    float: left;
+    border-radius: 8px 0px 0px 8px;
+
+    // padding: 10px 0px;
+    h5 {
+      color: #9a9aa2;
+      font-size: 12px;
+      font-weight: 400;
+      margin-top: 3px;
+      padding: 0px 10px;
+    }
+    .okr_item_title {
+      align-items: center;
+      margin-top: 10px;
+      padding: 0px 10px;
+      h2 {
+        font-size: 16px;
+        color: #191f25;
+        font-weight: bold;
+      }
+      .okr_item_icon {
+        & > span {
+          width: 12px;
+          height: 14px;
+          margin-left: 13px;
+        }
+        .add {
+          cursor: pointer;
+          margin-left: 0px;
+          background: url(../../../../../assets/images/common/add-hover.png) no-repeat center;
+        }
+        .select {
+          // background: url(../../../../../assets/images/workplan/filter.png) no-repeat center;
+          // background-size: cover;
+          width: auto;
+          .plan_subbt {
+            width: 13px;
+            overflow: hidden;
+            background-color: white;
+            line-height: 12px;
+            margin: 0;
+            padding: 0;
+            height: 14px;
+          }
+        }
+        .settes {
+          cursor: pointer;
+          width: 13px;
+          background: url(../../../../../assets/images/task/schtasks/sz.svg) no-repeat center;
+          background-size: cover;
+        }
+        .mode {
+          cursor: pointer;
+          width: 12px;
+          height: 13px;
+          background: url(../../../../../assets/images/task/schtasks/mode.png) no-repeat center;
+          background-size: cover;
+          &:hover {
+            background: url(../../../../../assets/images/task/schtasks/mode_h.png) no-repeat center;
+            background-size: cover;
+          }
+        }
+      }
+    }
+    .taskTypeOkrTag {
+      width: 100%;
+      border-bottom: 1px solid #e7e7e9;
+      margin-top: 10px;
+      padding: 0px 10px;
+      padding-left: 3px;
+      .taskTypeTagItem {
+        height: auto;
+        border: none;
+        background-color: inherit;
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 0px;
+        position: relative;
+        padding-left: 24px;
+        padding-right: 0;
+        color: #191f25;
+        font-size: 13px;
+        &.active {
+          color: #3949ab;
+          font-weight: bold;
+          &::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #3949ab;
+            border-radius: 1px;
+            position: absolute;
+            top: 27.5px;
+          }
+        }
+        .red_count {
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          background: @color_red;
+          color: @color_w;
+          border-radius: 50%;
+          text-align: center;
+          font-size: @font_size;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:first-child {
+          padding-left: 8px;
+        }
+      }
+      .taskTypeTab {
+        flex: 1;
+        align-items: center;
+        justify-content: flex-end;
+        color: #70707a;
+        cursor: pointer;
+        .change-icon {
+          background-image: url(../../../../../assets/images/task/change_icon.png);
+          width: 8px;
+          height: 11px;
+          vertical-align: middle;
+          margin-left: 8px;
+        }
+      }
+    }
+    .period-box {
+      .all-period-btn {
+        height: 28px;
+        line-height: 28px;
+        margin-top: 11px;
+        margin-left: 8px;
+      }
+    }
+    .time_filter {
+      margin: 14px 8px 5px 0px;
+      height: 28px;
+      border-radius: 0px 4px 4px 0px;
+      line-height: 28px;
+      color: #70707a;
+      padding-left: 6px;
+      // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+      border: 1px solid #dfdfdf;
+      border-left: 0px;
+      background: url(../../../../../assets/images/okrList/okr_select.png) no-repeat 95% center #f7f8fa;
+      margin-top: 16px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    // &::-webkit-scrollbar-thumb {
+    //   height: 238px;
+    // }
+  }
+  .okr_detail_main {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 4px !important;
+      height: 238px !important;
+      //   position: absolute;
+      //   z-index: 5;
+    }
+    // 隐藏滚动条
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      display: none;
+      background-color: #d3d9f8;
+    }
+
+    // &:hover ::-webkit-scrollbar-track,
+    // &:hover ::-webkit-scrollbar-thumb {
+    //   visibility: initial;
+    // }
+    .show_none_data_container {
+      img {
+        width: 100%;
+      }
+    }
+
+    .ant-table {
+      width: 100%;
+      .ant-table-body {
+        // overflow: auto !important;
+      }
+      .ant-table-cell {
+        padding: 0 4px;
+        border-right: 0 !important;
+        display: flex;
+        .ant-table-row-indent,
+        .treeTableIcon {
+          float: inherit !important;
+        }
+        &.treeTableChild .cell-content {
+          max-width: calc(100% - 70px);
+        }
+      }
+    }
+    .ant-table-thead {
+      display: none;
+    }
+    .cell-content {
+      width: 100%;
+      max-width: calc(100% - 20px);
+    }
+    .okr_detail_item {
+      width: 100%;
+      align-items: center;
+      // border-bottom: 1px solid #e7e7e9;
+      padding: 14px 0px;
+      cursor: pointer;
+      padding-right: 0px;
+      display: inline-block;
+      &.finished {
+        color: @color_9a !important;
+        .taskName {
+          text-decoration: line-through;
+          color: @color_9a !important;
+        }
+      }
+      .okr_detail_title {
+        font-weight: 400;
+        font-size: 14px;
+        align-items: center;
+        h4 {
+          color: #191f25;
+          font-size: 14px;
+          max-width: calc(100% - 30px);
+          .taskName {
+            max-width: calc(100% - 24px);
+          }
+
+          .ant-tag {
+            display: inline-block;
+            padding: 0 2px;
+            margin-left: 4px;
+            line-height: 14px;
+          }
+        }
+        .row_progress_input {
+          & > span {
+            vertical-align: text-top;
+            // color: @color_gray;
+            font-size: 12px;
+            color: #ccc;
+          }
+        }
+      }
+      .okr_detail_tags {
+        align-items: center;
+        margin-top: 3px;
+
+        .ant-tag {
+          margin-right: 0px;
+        }
+        .rootingtask {
+          &::after {
+            content: '|';
+            padding-left: 8px;
+            padding-right: 4px;
+            color: #acacb3;
+          }
+        }
+        & > span {
+          font-size: 12px;
+          color: #9a9aa2;
+          display: inline-block;
+          // padding-left: 20px;
+        }
+        .org {
+          // padding-left: 4px;
+          // &::after {
+          //   content: '|';
+          //   padding-left: 8px;
+          //   padding-right: 8px;
+          // }
+          // background: url(../../../../../assets/images/okrList/list_org.png) no-repeat left center;
+        }
+        .depart {
+          padding-left: 4px;
+          // background: url(../../../../../assets/images/okrList/list_org.png) no-repeat left center;
+          // &::before {
+          //   content: '|';
+          //   padding-right: 8px;
+          // }
+          &::after {
+            content: '|';
+            padding-left: 8px;
+            padding-right: 8px;
+          }
+        }
+        .person {
+          // padding-left: 4px;
+          // padding-left: 20px !important;
+          // padding-right: 2px !important;
+          // background: url(../../../../../assets/images/okrList/list_per.png) no-repeat left center;
+          // &::before {
+          //   content: '|';
+          //   padding-right: 8px;
+          // }
+          &::after {
+            content: '|';
+            padding-left: 8px;
+            padding-right: 8px;
+          }
+        }
+
+        .myTaskRoleBox,
+        .taskTypeLabel,
+        .person {
+          // background-color: #f3f3f4;
+          border-radius: 4px;
+          // padding: 0 2px;
+          &::before {
+            margin-right: 0px;
+          }
+        }
+        .taskTypeLabel {
+          margin-right: 6px;
+          &::before {
+            margin-bottom: 0;
+          }
+        }
+
+        .taskPriTag {
+          line-height: 15px;
+          .taskPriTagIcon {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+    .okr_detail_item.active {
+      background: #f6faff;
+      border-left: 3px solid #4285f4;
+    }
+    .specail-show-type {
+      width: 32px;
+      font-size: 12px;
+      height: 16px;
+      line-height: 16px;
+      font-weight: 400;
+      position: relative;
+      top: 2px;
+      margin-right: 4px;
+      &.isTask,
+      &.isDraft {
+        color: #70707a !important;
+        background-color: #f3f3f4 !important;
+      }
+      &.isKR {
+        border-radius: 8px;
+        width: 30px;
+        height: 16px;
+        line-height: 16px;
+        position: relative;
+        top: -1px;
+        font-size: 11px;
+        & + .taskName {
+          position: relative;
+          top: -2px;
+        }
+      }
+    }
+  }
+
+  // 上一版本样式控制 list_detail_main
+  // .list_detail_main {
+  //   // float: left;
+  //   // width: calc(100% - 280px);
+  //   flex: 1;
+  //   height: 100%;
+  //   background-color: #f5f7fb;
+  //   overflow: auto;
+  //   .icon_part_page {
+  //     display: none !important;
+  //   }
+  //   .fourQuadrant {
+  //     position: relative;
+  //     padding: 0;
+  //     height: 100%;
+  //     .taskTagListBox {
+  //       display: none;
+  //     }
+  //     .add_okr_dif {
+  //       display: inline-block;
+  //     }
+  //     .quadrant-part {
+  //       margin-top: 0px;
+  //       height: calc(50% - 9px);
+  //       margin-left: 0px;
+  //       width: calc(50% - 4px);
+  //     }
+  //     .part-now-status,
+  //     .part-next-status {
+  //       margin-left: 8px;
+  //     }
+  //     .part-next-week,
+  //     .part-next-status {
+  //       margin-top: 4px;
+  //       height: 50%;
+  //     }
+  //   }
+  //   .headerRight {
+  //     padding-left: 8px;
+  //     padding-right: 16px;
+  //     height: 32px;
+  //     line-height: 32px;
+  //   }
+  //   & > .ant-spin-nested-loading {
+  //     width: 100%;
+  //     padding: 8px;
+  //     height: calc(100% - 32px);
+  //     padding-bottom: 0px;
+  //   }
+  //   .breaking_distribute {
+  //     display: inline-block;
+  //     width: auto;
+  //     padding: 0 10px;
+  //     height: 32px;
+  //     line-height: 30px;
+  //     text-align: center;
+  //     border: 1px solid @color_primary;
+  //     border-radius: 4px;
+  //     color: @color_primary;
+  //     cursor: pointer;
+  //     transition: all 0.1s linear;
+
+  //     margin-right: 4px;
+  //   }
+  //   .distribute_plan_mian {
+  //     align-items: center;
+  //     float: left;
+  //     width: auto;
+  //     padding: 0 10px;
+  //     height: 32px;
+  //     line-height: 32px;
+  //     text-align: center;
+  //     background: @color_primary;
+  //     border-radius: 4px;
+  //     color: white;
+  //     cursor: pointer;
+  //     font-weight: bold;
+  //     margin-top: 0px;
+  //     margin-right: 15px;
+  //   }
+  //   .planAccomplish.plan_subbt {
+  //     background: inherit;
+  //   }
+  //   .toMapview {
+  //     color: #70707a;
+  //     cursor: pointer;
+  //     float: right;
+  //     margin-right: 24px;
+  //     display: flex;
+  //     align-items: center;
+  //     i.dq_Mapview {
+  //       margin-right: 3px;
+  //       width: 14px;
+  //       height: 12px;
+  //       background: url(../.../../../../../../assets/images/okrList/to_view.png) no-repeat;
+  //     }
+  //     i.sxx_Mapview {
+  //       margin-right: 3px;
+  //       width: 14px;
+  //       height: 14px;
+  //       background: url(../.../../../../../../assets/images/okrList/to_view_1.png) no-repeat;
+  //     }
+  //     &:hover {
+  //       color: #4285f4;
+  //       i.dq_Mapview {
+  //         background: url(../.../../../../../../assets/images/okrList/to_view_h.png) no-repeat;
+  //       }
+  //       i.sxx_Mapview {
+  //         background: url(../.../../../../../../assets/images/okrList/to_view_1h.png) no-repeat;
+  //       }
+  //     }
+  //   }
+  //   .toSingleWin {
+  //     color: #70707a;
+  //     cursor: pointer;
+  //     float: right;
+  //     display: flex;
+  //     align-items: center;
+  //     i {
+  //       margin-right: 3px;
+  //       width: 14px;
+  //       height: 12px;
+  //       background: url(../.../../../../../../assets/images/okrList/to_Win.png) no-repeat;
+  //     }
+  //     &:hover {
+  //       color: #4285f4;
+  //       i {
+  //         background: url(../.../../../../../../assets/images/okrList/to_Win_h.png) no-repeat;
+  //       }
+  //     }
+  //   }
+  // }
+  .okrLeftCon.removeEditTree {
+    width: 0;
+    margin-right: 0;
+    padding: 0;
+    transition: all 0s ease-out;
+    -webkit-transition: all 0s ease-out;
+    .orgBotScroll {
+      padding-left: 0px;
+    }
+  }
+  // .okrLeftCon {
+  //   transition: all 2s ease-in;
+  //   /* Safari and Chrome */
+  //   -webkit-transition: all 2s ease-in;
+  // }
+  .okrLeftCon.addEditTree {
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.16);
+    transition: all 0.05s ease-in;
+    /* Safari and Chrome */
+    top: 0;
+    -webkit-transition: all 0.05s ease-in;
+    width: 305px;
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    .org_fold_icon {
+      display: none;
+    }
+  }
+}
+.okrQuadrantModal {
+  position: absolute;
+  top: 0 !important;
+  right: 0px;
+  margin: unset !important;
+  overflow: hidden;
+  padding-right: 0px !important;
+  background-color: #f5f7fb !important;
+}
+.okrLeftsubMenu {
+  height: 100%;
+  .ant-menu-vertical.ant-menu-sub {
+    max-height: calc(100vh - 33px);
+    height: calc(100vh - 33px);
+  }
+  .okrLeftCon {
+    .org_my {
+      height: 35px;
+      line-height: 35px;
+      padding-left: 16px;
+      margin-top: 25px;
+      cursor: pointer;
+    }
+    .org_my.on {
+      font-weight: bold;
+      color: #4285f4;
+    }
+    .org_menu_search {
+      width: 85%;
+      margin-top: 20px;
+      margin-left: 12px;
+    }
+  }
+}
+.fourQuadrant {
+  .show_input_list {
+    display: inherit !important;
+    position: relative;
+    .okr_evolve_box {
+      position: absolute;
+      top: 1px;
+      opacity: 0;
+      left: 0;
+      width: 98px;
+    }
+    span {
+      padding: 0 5px;
+      margin-top: 2px;
+      min-width: 46px;
+      text-align: center;
+      border: 1px solid transparent;
+      i {
+        display: inline-block;
+        width: 14px;
+        height: 12px;
+        background: url(../../../../../assets/images/taskReport/heart_full.png) no-repeat center;
+        background-size: contain;
+        margin-right: 2px;
+      }
+      & > .status_icon {
+        padding: 0;
+        border: 1px solid #4285f4;
+        min-width: 0px;
+        .status_icon_color {
+          min-width: 0px;
+          padding: 0;
+        }
+      }
+    }
+    span.show_input_name {
+      color: #9a9aa2;
+      position: absolute;
+      top: -16px;
+      display: none;
+    }
+    &:hover span.name_blod_blue {
+      border: 1px solid #e7e7e9;
+      border-radius: 4px;
+    }
+    .ant-input {
+      width: 100%;
+      height: 28px;
+      border: 1px solid #4285f4;
+      opacity: 1;
+      border-radius: 4px;
+      position: absolute;
+      left: -2px;
+      top: -4px;
+    }
+    &:last-child .ant-input {
+      left: -12px;
+    }
+  }
+}
+
+.okrListTable .ant-table.ant-table-bordered > .ant-table-container {
+  border: none;
+}
+
+// 英文版本
+.app-layout.enUS {
+  .okrQuadrantModal .okr_list_detail {
+    width: 290px;
+  }
+  // .list_detail_main {
+  //   width: calc(100% - 290px);
+  // }
+}
+// okr 状态指标ui
+.okr_detail_tagList {
+  max-width: calc(100% - 56px);
+  .tages {
+    position: relative;
+    top: 3px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 4px;
+    padding: 0 4px;
+    margin-left: 10px;
+    max-width: 50%;
+    font-size: 12px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+// 工作报告详情ui重置
+
+.relation_list_okr {
+  .tit_time {
+    max-width: calc(100% - 160px);
+    .okr_detail_tagList {
+      width: 100%;
+      max-width: initial;
+      .tages {
+        top: -3px;
+        width: initial;
+        max-width: 30%;
+      }
+    }
+  }
+}
+//okr页面详情
+.secondPageContainer.okrContainer {
+  & ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  & ::-webkit-scrollbar-thumb {
+    background-color: #d3d9f8;
+    border-radius: 4px;
+  }
+  & ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+  }
+  padding: 0;
+  .okrLeftCon {
+    margin-right: 0;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 0;
+    .search_navigation {
+      height: 64px;
+    }
+  }
+}
+.okrPageNav {
+  .secondPageHeader {
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    .headerLeft {
+      // width: 100%;
+      align-items: center;
+      // margin-left: 12px;
+      .okrperiod {
+        margin-left: 12px;
+      }
+      .periodFilter .periodFilter_more {
+        margin-left: 16px;
+      }
+      .org_fold_icon.open {
+        margin-right: 12px;
+      }
+      .main_tit_name .title_txt {
+        font-size: 14px;
+        color: #232323;
+        // width: 60px;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .headerRight {
+      // width: 80%;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .workPlanListNav {
+      & > li {
+        width: 94px;
+        height: 32px;
+        font-size: 12px;
+        color: #6b6b6b;
+        background: #ffffff;
+        margin-right: 0;
+        border-top: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
+        border-right: 1px solid #dfdfdf;
+        border-radius: 0;
+        box-sizing: border-box;
+        padding: 0;
+        &.active {
+          color: #6b6b6b;
+          background: #f7f8fd;
+          border-bottom: 1px solid #dfdfdf;
+        }
+      }
+      li:first-child {
+        border-left: 1px solid #dfdfdf;
+      }
+    }
+    .search_add_box {
+      margin-left: 24px;
+      .ant-input-affix-wrapper {
+        width: 208px;
+      }
+      align-items: center;
+      .search_input {
+      }
+      .search-icon-t-btn {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        cursor: pointer;
+        background: url(../.../../../../../../assets/images/okrList/okr_hearder_search.svg) no-repeat;
+      }
+      // .add_btn {
+      //   width: 52px;
+      //   height: 48px;
+      //   background: url(../.../../../../../../assets/images/okrList/okr_hearder_add.svg) no-repeat center;
+      //   background-size: cover;
+      // }
+    }
+    .add_btn {
+      width: 36px;
+      height: 32px;
+      background: url(../.../../../../../../assets/images/okrList/okr_hearder_add_1.svg) no-repeat center;
+      background-size: cover;
+      margin-left: 24px;
+    }
+    .model_menu {
+      margin-left: 24px;
+      & li {
+        width: 36px;
+        height: 32px;
+        border-top: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
+        border-left: 1px solid #dfdfdf;
+        background: #ffffff;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.model_active {
+          background: #f7f8fd;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      li:first-child {
+        background-image: url(../.../../../../../../assets/images/common/list_icon.svg);
+        &.model_active,
+        &:hover {
+          background-image: url(../.../../../../../../assets/images/common/list_icon_h.svg);
+        }
+      }
+      li:nth-child(2) {
+        background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_card.svg);
+        &.model_active,
+        &:hover {
+          background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_card_h.svg);
+        }
+      }
+      li:nth-child(3) {
+        background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_detail.svg);
+        border-right: 1px solid #dfdfdf;
+        &.model_active,
+        &:hover {
+          background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_detail_h.svg);
+        }
+      }
+    }
+    .filter_box {
+      width: 62px;
+      height: 32px;
+      color: #232323;
+      border: 1px solid #dfdfdf;
+      border-radius: 4px;
+      margin-left: 24px;
+      cursor: pointer;
+      .filter_txt {
+        margin-right: 6px;
+      }
+    }
+  }
+}
+// 头部筛选
+.filter_content {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px 0px rgba(93, 113, 179, 0.21);
+  width: 408px;
+  padding: 20px 20px;
+  border-radius: 14px;
+  .title {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #232323;
+    font-size: 14px;
+  }
+  .filter_menu {
+    margin-bottom: 24px;
+  }
+  .filter_item {
+    padding: 6px 0;
+    background-color: #f6f6f6;
+    text-align: center;
+    color: #6b6b6b;
+    margin-right: 16px;
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
+    font-size: 14px;
+    .grayTxt {
+      font-size: 12px;
+      color: #b1b1b1;
+    }
+    &.active {
+      background-color: #ebeeff;
+      border: 1px solid #3949ab;
+      color: #3949ab;
+      cursor: pointer;
+    }
+    &:hover {
+      background-color: #ebeeff;
+      cursor: pointer;
+    }
+    &.w80 {
+      width: 80px;
+    }
+    &.w112 {
+      width: 112px;
+    }
+  }
+  .reset_btn {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid #f1f1f1;
+    .reset_btn_box {
+      width: 79px;
+      height: 36px;
+      border: 1px solid #dfdfdf;
+      border-radius: 4px;
+      cursor: pointer;
+      .reset_icon {
+        height: 12px;
+        width: 12px;
+        margin-right: 6px;
+        background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_reset.svg);
+      }
+      .reset_txt {
+        color: #6b6b6b;
+        display: inline-block;
+      }
+      &:hover {
+        border: 1px solid #dfdfdf;
+        .reset_icon {
+          background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_reset_hover.svg);
+        }
+        .reset_txt {
+          color: #b1b1b1;
+        }
+      }
+      &:active {
+        border: 1px solid #3949ab;
+        .reset_icon {
+          background-image: url(../.../../../../../../assets/images/okrList/okr_hearder_reset_h.svg) !important;
+        }
+        .reset_txt {
+          color: #3949ab !important;
+        }
+      }
+    }
+  }
+}
+//组织架构
+.okrContainer .okrLeftCon {
+  .org_my.on {
+    color: #3949ab !important;
+    font-weight: 400 !important;
+    background: #f5f6ff !important;
+  }
+  .org_my:hover {
+    background: #f5f6ff;
+  }
+  .orgBotScroll {
+    padding-left: 0;
+    .baseOrgTree.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected,
+    .baseOrgTree.ant-tree .ant-tree-treenode.ant-tree-treenode-selected {
+      width: 100%;
+      background: #f5f6ff;
+      color: #3949ab;
+      font-weight: 400;
+    }
+  }
+}
+.ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  right: 3px;
+}
+@media screen and (max-width: 1416px) {
+  .okr_list_detail {
+    width: 280px !important;
+    // .cell-content {
+    //   max-width: calc(100% - 20px);
+    // }
+    .okr_detail_tagList {
+      max-width: 60px;
+      .tages {
+        max-width: 100%;
+        &:nth-child(2) {
+          display: none !important;
+        }
+      }
+    }
+  }
+  .search_add_box {
+    margin-left: 5px !important;
+    .ant-input-affix-wrapper {
+      width: 180px;
+    }
+  }
+  // .filter_box {
+  //   margin-left: 5px !important;
+  //   .filter_txt {
+  //     margin-right: 2px !important;
+  //   }
+  // }
+  .model_menu.ml10 {
+    margin-left: 10px !important;
+  }
+  // .model_menu.ml0 {
+  //   margin-left: 0px !important;
+  // }
+  .okrQuadrantModal .workPlanRightCon .secondPageHeader .headerLeft .periodFilter .periodFilter_more {
+    margin-left: 2px !important;
+  }
+  .okrQuadrantModal
+    .workPlanRightCon
+    .secondPageHeader
+    .headerLeft
+    .periodFilter
+    .periodFilter
+    .periodFilter_content {
+    margin-right: 0;
+  }
+  // .okrQuadrantModal .workPlanRightCon .secondPageHeader .headerRight .okr-settings {
+  //   margin-left: 3px !important;
+  // }
+  // .secondPageContainer.okrContainer .okrLeftCon {
+  //   width: 240px;
+  // }
+}

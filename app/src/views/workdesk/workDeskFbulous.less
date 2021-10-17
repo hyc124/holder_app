@@ -1,0 +1,125 @@
+@import '~@/src/styles/_var.less';
+.thumbsUp_small_wrap {
+  .redItem {
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #ea4335;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      position: absolute;
+      top: 13px;
+      left: -10px;
+    }
+  }
+}
+.thumbs-detaile-modal {
+  .example {
+    text-align: center;
+    // background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    margin: 20px 0;
+  }
+  .readState {
+    background: #e9f2ff;
+    .thumWhite {
+      background: white !important;
+    }
+  }
+  .thumWhite {
+    background: white;
+  }
+  .r_modal {
+    height: 511px;
+    overflow: auto;
+    li {
+      padding: 0;
+    }
+  }
+  .ant-pagination-item-container {
+    width: 21px !important;
+  }
+  .thum_pagination {
+    text-align: center;
+    border-top: 1px solid #e8eaec;
+    padding-top: 12px;
+  }
+  .show_fabulous_item {
+    width: 100%;
+    padding-left: 24px;
+    padding-top: 18px;
+    padding-bottom: 12px;
+    padding-right: 24px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    &:hover {
+      background: #f5f7fb;
+      .item_title {
+        background: white;
+      }
+    }
+    .item_info {
+      display: flex;
+      margin-bottom: 12px;
+    }
+    .fabulousIcon {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 2px;
+      margin-left: 8px;
+      background: url('../../../../assets/images/workdesk/hold_hanlde_fabulous3_icon.png') no-repeat center;
+    }
+    .fabulousTime {
+      color: #70707a;
+    }
+    .item_title {
+      height: 49px;
+      background: #e9f2ffad;
+      padding-right: 12px;
+      padding-left: 12px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    .item_msg {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3px;
+      color: #70707a;
+    }
+    .sourceTime {
+      padding-left: 6px;
+    }
+    .headImg {
+      position: relative;
+    }
+    .redSign {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: rgba(234, 67, 53, 1);
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+//参加会议框
+.join_meet_modal {
+  h5 {
+    color: #757575;
+    margin-bottom: 11px;
+    font-size: 14px;
+  }
+}
+.menu_ant_drop {
+  max-height: 142px;
+  overflow: auto;
+}

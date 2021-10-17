@@ -1,0 +1,57 @@
+.meet_query_box {
+  .ant-pagination {
+    padding: 24px;
+    justify-content: center;
+    .ant-pagination-item-container {
+      width: 30px;
+    }
+  }
+  .meetQueryCont {
+    overflow: hidden !important;
+  }
+  .meet_process_list {
+    margin-top: 10px;
+    height: 400px;
+    margin-bottom: 10px;
+    height: calc(100% - 120px);
+    overflow: auto;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      border-bottom: 1px solid #e5e5e5;
+      .name_and_status {
+        display: flex;
+        align-items: center;
+        .dont_sure {
+          background-color: #ffeed6;
+          color: #ff9a09;
+          min-width: 60px;
+          padding: 0 6px;
+          border-radius: 9px;
+          text-align: center;
+          margin-left: 5px;
+        }
+      }
+      .right_leave_box {
+        button {
+          width: 72px;
+          height: 32px;
+          border: 0;
+          background-color: #f0f0f0;
+          border-radius: 4px;
+          color: #757575;
+          cursor: pointer;
+          &:hover {
+            background-color: #edf7ff;
+          }
+        }
+      }
+      .act_tips {
+        color: var(--baseColor, #4285f4);
+        margin-right: 10px;
+      }
+    }
+  }
+}

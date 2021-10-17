@@ -1,0 +1,78 @@
+.window {
+  border: 1px solid #888;
+  background: #fff;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.3);
+}
+
+.window > .t {
+  margin: 0;
+  padding: 0.3em;
+  border-bottom: 1px solid #888;
+  background: #ccc;
+}
+
+.window > .c {
+  padding: 0.3em;
+  min-height: 15em;
+}
+
+.option_footer_btns {
+  position: absolute;
+  bottom: 0;
+  /* right: 0; */
+  /* left: 200px; */
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  /* margin-left: 185px;*/
+}
+
+.dock {
+  display: inline-block;
+  /* margin: 0.3em; */
+  /* width: 5em; */
+  /* height: 2.4em; */
+  /* line-height: 2.4em; */
+  /* text-align: center; */
+  color: #fff;
+  margin-top: 0;
+  /* background: rgba(0, 0, 0, 0.6); */
+  /* cursor: pointer;*/
+}
+
+.dock:first-child {
+  margin-right: 0;
+  color: #cdd2d8;
+  /* margin-left: 105px; */
+  position: relative;
+  top: 0;
+  left: calc(100% - 58px);
+}
+
+// .folded {
+//   background: rgba(0, 0, 0, 0.3);
+// }
+
+.option_footer_btns > span:last-child {
+  color: #69c;
+}
+
+#w0_window {
+  position: absolute;
+  /* left: 5%; */
+  right: 10px;
+  top: 54px;
+  width: 350px;
+  z-index: 1000;
+  height: 100%;
+}
+
+canvas {
+  position: absolute;
+  z-index: -1;
+  // width: 350px;
+  // background: #bbc7c7;
+  // height: 100%;
+  // right: 0;
+}

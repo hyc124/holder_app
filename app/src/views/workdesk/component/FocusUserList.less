@@ -1,0 +1,54 @@
+@import '~@/src/styles/_var.less';
+.foucu-user-list {
+  height: 100%;
+  overflow: hidden;
+  .ant-menu-horizontal {
+    border: 0;
+    .ant-menu-item-selected,
+    .ant-menu-item-active {
+      border: 0;
+      overflow: hidden;
+    }
+    .ant-menu-item {
+      border: 0;
+    }
+  }
+  .focus-user-content {
+    overflow: auto;
+    padding: 7px;
+    flex-flow: row;
+    flex-wrap: wrap;
+    .user-item {
+      position: relative;
+      width: 82px;
+      height: 94px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 35px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 7px 0 rgba(170, 170, 170, 0.6);
+      background: url(../../../../../assets/images/workdesk/follow_item_icon.png) no-repeat right 6px top 8px;
+      &.noneClick {
+        cursor: default;
+        background: url(../../../../../assets/images/workdesk/follow_item_disable_icon.png) no-repeat right 6px
+          top 8px;
+        &:hover {
+          box-shadow: 0 0 7px 0 rgba(170, 170, 170, 0.6);
+        }
+      }
+      &:hover {
+        box-shadow: 0px 0px 7px 0px rgba(66, 133, 244, 0.7);
+        .del-item-icon {
+          display: block;
+        }
+      }
+      .show-user {
+        display: block;
+        width: 100%;
+        padding: 0 6px;
+        text-align: center;
+        color: @color_gray;
+      }
+    }
+  }
+}

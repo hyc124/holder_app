@@ -1,0 +1,191 @@
+.app_wrap {
+  width: 100%;
+  padding: 0 30px;
+  background: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  .app_wrap_center {
+    flex: 1;
+    height: calc(100% - 231px);
+    .ant-tabs-top {
+      height: 100%;
+      .ant-tabs-content-holder {
+        overflow: auto;
+      }
+    }
+    .ant-tabs-nav-wrap {
+      background: #ffffff;
+      color: #70707a;
+      font-size: 14px;
+      padding: 28px 0 10px 20px;
+    }
+    .app_wrap_content {
+      height: 100%;
+      overflow: auto;
+      padding: 1px 0 0 1px;
+      // .app_item + .app_item {
+      //   margin-left: 24px;
+      // }
+      .app_item {
+        width: 276px;
+        float: left;
+        height: 85px;
+        margin-bottom: 30px;
+        margin-right: 24px;
+        padding: 16px 18px;
+        background: #ffffff;
+        border: 1px solid #d7d7d9;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+        position: relative;
+        overflow: hidden;
+        .app_item_l {
+          margin-right: 15px;
+          -webkit-transition: 0.4s;
+          -o-transition: 0.4s;
+          transition: 0.4s;
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        .app_item_r {
+          display: flex;
+          flex-flow: column;
+          max-width: 180px;
+          .app_name {
+            color: #191f25;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .app_msg {
+            color: #70707a;
+            font-size: 12px;
+            max-width: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+        }
+        &:hover {
+          box-shadow: 0px 2px 9px 1px #191f253d;
+          .app_item_l {
+            transform: scale(1.1);
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+          }
+          .line_b,
+          .line_t {
+            width: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+          }
+          .line_r,
+          .line_l {
+            height: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+          }
+          .app_msg {
+            text-shadow: 0 0 #191f25;
+          }
+        }
+        .line_b,
+        .line_t {
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background: #4285f4;
+          bottom: 0;
+          -webkit-transition: 0.4s;
+          -o-transition: 0.4s;
+          transition: 0.4s;
+        }
+        .line_r,
+        .line_l {
+          position: absolute;
+          width: 2px;
+          height: 0;
+          background: #4285f4;
+          right: 0;
+          -webkit-transition: 0.4s;
+          -o-transition: 0.4s;
+          transition: 0.4s;
+        }
+        .line_t {
+          top: 0;
+        }
+        .line_b_l {
+          left: 50%;
+        }
+        .line_b_r {
+          right: 50%;
+        }
+        .line_l {
+          left: 0;
+        }
+        .line_r_t {
+          top: 50%;
+        }
+        .line_r_b {
+          bottom: 50%;
+        }
+        .example {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #c2cade17;
+        }
+      }
+    }
+    .ant-tabs-tab {
+      padding: 2px 0;
+    }
+    .ant-tabs-tab-active {
+      .ant-tabs-tab-btn {
+        font-weight: bold;
+      }
+    }
+  }
+  .app_wrap_top {
+    color: #ffffff;
+    font-size: 38px;
+    font-family: HYYaKuHeiW;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    height: 231px;
+    line-height: 231px;
+    background: url('../../../../assets/images/my-app/banner.png') no-repeat;
+    background-size: 100% 100%;
+  }
+
+  @media screen and (max-width: 1400px) {
+    .app_wrap_top {
+      background: url('../../../../assets/images/my-app/banner.png') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}

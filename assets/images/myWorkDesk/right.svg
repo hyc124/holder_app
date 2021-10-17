@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="36px" viewBox="0 0 40 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>一级分类左</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 40 0 40 36 0 36"></polygon>
+    </defs>
+    <g id="----·项目V5.2.9（8.12）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4沟通收起-mac1334" transform="translate(-166.000000, -20.000000)">
+            <g id="一级分类" transform="translate(133.000000, 42.000000) scale(1, -1) translate(-133.000000, -42.000000) translate(60.000000, 20.000000)">
+                <g id="一级分类右" transform="translate(126.000000, 26.000000) scale(-1, 1) translate(-126.000000, -26.000000) translate(106.000000, 8.000000)">
+                    <g id="一级分类左">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="蒙版"></g>
+                        <path d="M0,0 L40,0 L40,36 L33.7142857,36 C25.9822992,36 19.7142857,29.7319865 19.7142857,22 L19.7142857,12 C19.7142857,5.372583 14.3417027,8.04949779e-14 7.71428571,0 L0,0 L0,0 Z" id="一级分类-左" fill="#F7F8FD" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

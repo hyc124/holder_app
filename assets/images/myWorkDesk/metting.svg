@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>会议</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="28.458639%" y1="0%" x2="78.2711499%" y2="80.1460001%" id="linearGradient-1">
+            <stop stop-color="#7AE5FF" offset="0%"></stop>
+            <stop stop-color="#38D4E9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="28" height="28" rx="10"></rect>
+        <filter x="-35.7%" y="-28.6%" width="171.4%" height="171.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.333333333   0 0 0 0 0.74256993   0 0 0 0 1  0 0 0 0.31908326 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M6.81946035,0.046375 C3.25612927,0.4370625 0.388352243,3.416 0.038021162,7.081375 C-0.144593703,8.990625 0.340676567,10.7751875 1.27716305,12.224625 L1.27716305,14.875 C1.27716305,15.3584375 1.65814278,15.75 2.12851441,15.75 L7.45456846,15.75 C11.6751428,15.75 15.2601833,12.333125 15.3231833,7.99575 C15.3874604,3.5914375 11.9326766,0 7.66229819,0 C7.38433197,0 7.10338603,0.0153125 6.81946035,0.046375 Z M7.875,12.6 C10.4845454,12.6 12.6,10.4845454 12.6,7.875 C12.6,5.26545456 10.4845454,3.15 7.875,3.15 C5.26545456,3.15 3.15,5.26545456 3.15,7.875 C3.15,10.4845454 5.26545456,12.6 7.875,12.6 Z" id="path-4"></path>
+        <filter x="-45.7%" y="-31.7%" width="191.4%" height="188.9%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.241282625   0 0 0 0 0.805007156   0 0 0 0 0.892040308  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="----·项目V5.2.9（8.12）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3工作台-windows1334" transform="translate(-1140.000000, -27.000000)">
+            <g id="顶部" transform="translate(60.000000, 20.000000)">
+                <g id="会议-2" transform="translate(1080.000000, 7.000000)">
+                    <g id="会议" transform="translate(6.000000, 4.000000)">
+                        <g id="编组-7备份-5">
+                            <g id="矩形备份-42">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            </g>
+                        </g>
+                        <g id="编组-18" transform="translate(6.125000, 6.125000)">
+                            <g id="Fill-9" opacity="0.921356005">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                            </g>
+                            <circle id="椭圆形" fill="#FFFFFF" transform="translate(7.875000, 7.875000) rotate(-360.000000) translate(-7.875000, -7.875000) " cx="7.875" cy="7.875" r="2.625"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

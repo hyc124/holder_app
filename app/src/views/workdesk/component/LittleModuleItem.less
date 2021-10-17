@@ -1,0 +1,205 @@
+@import '~@/src/styles/_var.less';
+/*三套模板主题切换*/
+.sky_blue .moduleSetItem .moduleSetTitle {
+  background-color: #d1e2fa;
+}
+.sky_blue .moduleSetItem .moduleSetTitle .edit_modal_box {
+  background-color: #d1e2fa;
+}
+.sky_blue .moduleSetItem .moduleSetTitle .edit_modal_box > input {
+  color: #4285f4;
+}
+.sky_blue .moduleSetItem .moduleNoneItem {
+  border: 1px dashed @color_blue;
+}
+.sky_blue .moduleSetItem {
+  background-color: #e9f2ff;
+}
+.sky_blue .moduleSetItem .moduleNameBox {
+  color: #4285f4;
+}
+
+.light_green .moduleSetItem .moduleSetTitle {
+  background-color: #cdead5;
+}
+.light_green .moduleSetItem .moduleSetTitle .edit_modal_box {
+  background-color: #cdead5;
+}
+.light_green .moduleSetItem .moduleSetTitle .edit_modal_box > input {
+  color: #34a853;
+}
+.light_green .moduleSetItem .moduleNoneItem {
+  border: 1px dashed @color_green;
+}
+.light_green .moduleSetItem {
+  background-color: #e5f7e8;
+}
+.light_green .moduleSetItem .moduleNameBox {
+  color: #34a853;
+}
+.deep_yellow .moduleSetItem .moduleSetTitle {
+  background-color: #fcecc5;
+}
+.deep_yellow .moduleSetItem .moduleSetTitle .edit_modal_box {
+  background-color: #fcecc5;
+}
+.deep_yellow .moduleSetItem .moduleSetTitle .edit_modal_box > input {
+  color: #ffaa00;
+}
+.deep_yellow .moduleSetItem .moduleNoneItem {
+  border: 1px dashed @color_yellow;
+}
+.deep_yellow .moduleSetItem {
+  background-color: #fff6e1;
+}
+.deep_yellow .moduleSetItem .moduleNameBox {
+  color: #ffaa00;
+}
+.edit_input {
+  width: 100%;
+  height: 22px;
+  background: white;
+  border-radius: 2px;
+  line-height: 22px;
+  padding-left: 4px;
+  outline: none;
+}
+.module-set-box {
+  height: 100%;
+  & > div {
+    // max-width: 284px;
+    padding-left: 24px;
+    .moduleSetItem {
+      width: 270px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      // margin-right: 20px;
+      position: relative;
+      &:hover > .del-item-icon {
+        display: block;
+      }
+      &:hover > .moduleSetTitle > .change_item {
+        display: inline-block;
+      }
+      &:hover > .moduleSetTitle > .edit_item {
+        display: inline-block;
+      }
+      .moduleSetTitle {
+        height: 28px;
+        line-height: 28px;
+        padding: 0 12px;
+        color: @color_white;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        position: relative;
+        .moduleNameBox {
+          display: inline-block;
+          & > span.moduleName {
+            display: inline-block;
+            width: 100%;
+            outline: none;
+            font-size: 14px;
+          }
+          & > i {
+            display: none;
+          }
+        }
+        .edit_item {
+          display: none;
+          width: 12px;
+          height: 12px;
+          background: url(../../../../../assets/images/workdesk/edit_name_b.png) no-repeat center;
+          vertical-align: middle;
+          margin-top: -3px;
+          margin-left: 6px;
+          cursor: pointer;
+        }
+        .change_item {
+          display: none;
+          width: 14px;
+          height: 10px;
+          background: url(../../../../../assets/images/workdesk/change-icon.svg) no-repeat center;
+          vertical-align: middle;
+          margin-top: -3px;
+          margin-left: 6px;
+          cursor: pointer;
+          position: absolute;
+          right: 35px;
+          top: 12px;
+          &:hover {
+            background: url(../../../../../assets/images/workdesk/change-icon-hover.svg) no-repeat center;
+          }
+        }
+        .move_item {
+          float: right;
+          width: 14px;
+          height: 7px;
+          cursor: move;
+          margin-top: 10px;
+          background: url(../../../../../assets/images/workdesk/move_icon.svg) no-repeat center;
+        }
+        .edit_modal_box {
+          height: 28px;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          padding: 3px 6px;
+          & > input {
+            height: 22px;
+            width: 230px;
+          }
+          & > .edit_icon {
+            margin-left: 4px;
+            display: inline-block;
+            width: 14px;
+            height: 10px;
+            background: url(../../../../../assets/images/workdesk/sure_icon.svg) no-repeat center;
+            &:hover {
+              background: url(../../../../../assets/images/workdesk/sure_icon_active.svg) no-repeat center;
+            }
+          }
+        }
+      }
+      .moduleSetContent {
+        display: grid;
+        grid-template-columns: 82px 82px;
+        grid-template-rows: 28px 28px;
+        grid-gap: 18px 24px;
+        padding: 20px 36px 18px 36px;
+        .moduleItem {
+          width: 82px;
+          line-height: 28px;
+          height: 28px;
+          text-align: center;
+          background: @color_white;
+          // border: 1px solid rgba(215, 215, 217, 1);
+          border-radius: 4px;
+          color: @color_gray;
+          position: relative;
+          cursor: move;
+          user-select: none;
+          &:hover > .del-item-icon {
+            display: block;
+          }
+        }
+        .moduleNoneItem {
+          width: 82px;
+          line-height: 28px;
+          height: 28px;
+          text-align: center;
+          border-radius: 4px;
+        }
+      }
+      .modalSetScreen {
+        display: flex;
+        justify-content: space-between;
+      }
+      &.throughScreen {
+        width: 100%;
+      }
+    }
+  }
+}

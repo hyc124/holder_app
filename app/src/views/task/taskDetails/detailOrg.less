@@ -1,0 +1,56 @@
+@import '~@/src/styles/_var.less';
+// =================子任务组织架构=============//
+.childOrgContainer {
+  min-width: 300px;
+  max-width: 384px;
+  flex: 0.23;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  .chidlOrgTable {
+    overflow: auto;
+  }
+  .childInfoTop {
+    margin: 16px 0;
+    padding-left: 16px;
+    color: #9a9aa2;
+    font-size: 12px;
+  }
+  .ant-table-tbody > tr > td.ant-table-cell {
+    height: auto;
+    border-bottom: 1px solid #e8eaec;
+  }
+  .ant-table-thead > tr > th {
+    padding: 0 12px;
+    height: 32px;
+    font-weight: bold;
+    color: @color_gray;
+
+    border-bottom: 1px solid #e8eaec;
+  }
+  .ant-table-tbody {
+    td {
+      padding: 0 12px;
+      //   选中
+      &.active {
+        border-left: 3px solid #4285f4;
+        background: #f6faff !important;
+        .boardTaskName .taskNameSpan {
+          color: #4285f4;
+        }
+      }
+      .cellCont {
+        &.active {
+          .boardTaskName .taskNameSpan {
+            color: #4285f4;
+          }
+          .wideBar {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

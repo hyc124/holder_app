@@ -1,0 +1,100 @@
+@import '~@/src/styles/_var.less';
+
+.download-history-container {
+  width: 100%;
+  height: 100%;
+  .downloadList-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    .downloadHead {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .downloadList_container {
+      flex: 1;
+      overflow: auto;
+      padding: 0 15px;
+      margin-bottom: 10px;
+      .download_list_item {
+        color: @color_5c;
+        margin-bottom: 6px;
+        .list_title {
+          margin-bottom: 5px;
+        }
+        .list_item {
+          width: 100%;
+          height: 70px;
+          border: 1px solid @color_e7;
+          box-sizing: content-box;
+          position: relative;
+          &:hover {
+            background-color: @color_fa;
+            & > .close_nowlist {
+              display: block;
+              cursor: pointer;
+            }
+          }
+          .close_nowlist {
+            width: 16px;
+            height: 16px;
+            background: url(../../../../assets/images/common/delete-chat.png) no-repeat center;
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+          }
+          .left_iconfile {
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            float: left;
+            border-right: 1px solid @color_e7;
+            & > img {
+              margin-top: -4px;
+              vertical-align: middle;
+            }
+          }
+          .right_detail {
+            width: calc(100% - 70px);
+            height: 100%;
+            float: left;
+            padding: 10px 15px 10px 20px;
+            .right_left_box {
+              width: calc(100% - 60px);
+              height: 100%;
+              float: left;
+              display: flex;
+              flex-flow: column;
+              align-items: flex-start;
+              justify-content: center;
+              & > button {
+                height: 25px;
+                padding: 0;
+              }
+            }
+            .right_btn_box {
+              width: 60px;
+              height: 100%;
+              float: left;
+              text-align: right;
+              line-height: 48px;
+              .cancel_download {
+                color: @color_blue;
+                cursor: pointer;
+              }
+              .failed_download {
+                color: @color_red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

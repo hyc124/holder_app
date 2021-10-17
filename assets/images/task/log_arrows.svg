@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="10px" viewBox="0 0 22 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>进度箭头</title>
+    <desc>Created with Sketch.</desc>
+    <g id="----·OKR--V5.2.8(8.12)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="OKR宽详情--KR详情备份" transform="translate(-620.000000, -350.000000)" stroke="#4EDEF2">
+            <g id="编组-13" transform="translate(380.000000, 234.000000)">
+                <g id="编组-20" transform="translate(240.000000, 116.000000)">
+                    <g id="进度箭头" transform="translate(1.000000, 1.000000)">
+                        <line x1="9.09494702e-13" y1="3.84679937" x2="19.6666893" y2="3.84679937" id="路径-6"></line>
+                        <polyline id="路径-8" stroke-linejoin="round" points="16.5755858 7.69359874 19.9644768 3.84679937 16.5755858 -9.09494702e-13"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>审批-选中</title>
+    <desc>Created with Sketch.</desc>
+    <g id="----·侧边栏优化" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="侧边栏补充" transform="translate(-382.000000, -397.000000)" fill="#FFFFFF">
+            <g id="审批-2备份-2" transform="translate(382.000000, 397.000000)">
+                <g id="审批" transform="translate(4.000000, 4.000000)">
+                    <path d="M10,0 C12.7614237,0 15,2.23857625 15,5 C15,6.63618194 14.214097,8.08880638 12.999189,9.00097523 L16,9 C18.209139,9 20,10.790861 20,13 C20,15.209139 18.209139,17 16,17 L4,17 C1.790861,17 2.705415e-16,15.209139 0,13 C-2.705415e-16,10.790861 1.790861,9 4,9 L7.00081101,9.00097523 C5.78590304,8.08880638 5,6.63618194 5,5 C5,2.23857625 7.23857625,0 10,0 Z" id="形状结合"></path>
+                    <rect id="矩形" x="1" y="19" width="18" height="2" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

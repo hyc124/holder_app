@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22.001" viewBox="0 0 22 22.001">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #fbbc05;
+      }
+
+      .cls-3 {
+        fill: #4285f4;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="组_7717" data-name="组 7717" transform="translate(-83 -167)">
+    <g id="矩形_3025" data-name="矩形 3025" class="cls-1" transform="translate(83 167)">
+      <rect class="cls-4" width="22" height="22"/>
+      <rect class="cls-5" x="0.5" y="0.5" width="21" height="21"/>
+    </g>
+    <g id="组_7709" data-name="组 7709" transform="translate(18.174 52.299)">
+      <rect id="矩形_3051" data-name="矩形 3051" class="cls-2" width="14" height="2" rx="1" transform="translate(68.728 134.702)"/>
+      <path id="路径_3063" data-name="路径 3063" class="cls-3" d="M81.622,126.295h-2.45v-.011c-.018,0-.033.011-.051.011a.8.8,0,0,1-.8-.8.787.787,0,0,1,.381-.665,5.5,5.5,0,1,0-5.941,0,.787.787,0,0,1,.381.665.8.8,0,0,1-.8.8c-.01,0-.018-.006-.028-.006v.006H70.03a3.2,3.2,0,1,0,0,6.407H81.622a3.2,3.2,0,1,0,0-6.407Z"/>
+    </g>
+  </g>
+</svg>

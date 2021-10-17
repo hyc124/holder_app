@@ -1,0 +1,103 @@
+@import '~@/src/styles/_var.less';
+.appSetUpModal {
+  pre {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .ant-modal-content {
+    background-size: contain;
+    // background-image: url(../../../../../../assets/images/userInfo/rocket_bg.png);
+  }
+  .ant-modal-body {
+    padding: 0;
+  }
+  .appSetAside {
+    width: 140px;
+    background-color: #f7f8fd;
+    .app_set_nav {
+      height: 44px;
+      line-height: 44px;
+      padding: 0 0 0 24px;
+      font-size: 14px;
+      color: #232323;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+      }
+      // 基本设置
+      &.baseInfo {
+        &::before {
+          background-image: url(../../../../../../assets/images/userInfo/base_set.svg);
+        }
+      }
+      // 账号设置
+      &.accountSet {
+        &::before {
+          background-image: url(../../../../../../assets/images/userInfo/account_set.svg);
+        }
+      }
+      // 登录轨迹
+      &.loginLog {
+        &::before {
+          background-image: url(../../../../../../assets/images/userInfo/login_log.svg);
+        }
+      }
+      //   关于掌控者
+      &.aboutApp {
+        &::before {
+          background-image: url(../../../../../../assets/images/userInfo/about_app.svg);
+        }
+      }
+      // hover效果
+      &:hover,
+      &.active {
+        background-color: #f2f4ff;
+        color: @color_primary;
+        // 基本设置
+        &.baseInfo {
+          &::before {
+            background-image: url(../../../../../../assets/images/userInfo/base_set_h.svg);
+          }
+        }
+        // 账号设置
+        &.accountSet {
+          &::before {
+            background-image: url(../../../../../../assets/images/userInfo/account_set_h.svg);
+          }
+        }
+        // 登录轨迹
+        &.loginLog {
+          &::before {
+            background-image: url(../../../../../../assets/images/userInfo/login_log_h.svg);
+          }
+        }
+        &.aboutApp:not(.upgrade) {
+          &::before {
+            background-image: url(../../../../../../assets/images/userInfo/about_app_h.svg);
+          }
+        }
+      }
+      &.upgrade::before {
+        background-image: url(../../../../../../assets/images/userInfo/app_upgrade.svg);
+      }
+    }
+  }
+  // .appSetMain {
+  //   padding: 24px 24px 0 24px;
+  // }
+}

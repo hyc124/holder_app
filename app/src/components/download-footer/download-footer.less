@@ -1,0 +1,138 @@
+@import '~@/src/styles/_var.less';
+
+.filedownload_container {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999999;
+  padding: 5px 20px 5px 0;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  .file_item_list {
+    flex: 1;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+    & > .file_item {
+      width: 280px;
+      max-width: 280px;
+      min-width: 280px;
+      float: left;
+      height: 100%;
+      line-height: 40px;
+      font-size: 12px;
+      padding-left: 10px;
+      color: #808080;
+      border-right: 1px solid @color_cc;
+      display: flex;
+      align-items: center;
+      .file-progress {
+        .file-icon {
+          width: 18px;
+          height: 20px;
+        }
+      }
+      .file_name_box {
+        flex: 1;
+        line-height: 20px;
+        display: flex;
+        flex-flow: column;
+        margin-left: 10px;
+        max-width: 190px;
+        & > span.file_name {
+          display: flex;
+          & > em {
+            font-style: normal;
+            &.file-name {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+      .look_up {
+        border: 0;
+        background-color: transparent;
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  .look_all_file {
+    margin-left: 35px;
+    background-color: transparent;
+  }
+  .close_download_footer {
+    border: 0;
+    margin-left: 15px;
+    background-color: transparent;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.look_file_menu {
+  width: 158px;
+}
+.ant-dropdown.downloadMenu{
+  z-index: 99999
+}
+
+/*下载附件效果*/
+.download_iconfile {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: 10px;
+  bottom: 150px;
+  z-index: 99999;
+  background: url(../../../../assets/images/common/download_iconfile.png) no-repeat center;
+  display: none;
+}
+.download_iconfile.changeAni {
+  display: block;
+  opacity: 0.8;
+  animation: moveIcon 1s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes moveIcon {
+  from {
+    opacity: 0.8;
+    bottom: 150px;
+  }
+  to {
+    opacity: 0;
+    bottom: 50px;
+  }
+}
+
+.none-file-modal {
+  .ant-modal-header {
+    border: 0;
+  }
+  .ant-modal-footer {
+    text-align: center;
+    border: 0;
+    .open-folder {
+      background-color: @color_red;
+      color: @color_white;
+      border-color: @color_red;
+      &:hover,
+      &:active,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+}

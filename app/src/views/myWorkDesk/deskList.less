@@ -1,0 +1,229 @@
+@import '~@/src/styles/_var.less';
+.workDeskModuleItem {
+  // 任务筛选
+  .search_box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: auto;
+    position: absolute;
+    background: #ffffff;
+    width: 100%;
+    padding-right: 22px;
+    top: 0px;
+    z-index: 9;
+    .seach_icon {
+      width: 68px;
+      height: 32px;
+      border: 1px solid #d7d7d9;
+      line-height: 32px;
+      margin-right: 10px;
+      display: flex;
+      text-align: center;
+      border-radius: 6px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      & > i {
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+        display: inline-block;
+        background: url(../../../../assets/images/workdesk/shaixuan_icon.svg) no-repeat center;
+        &:hover {
+          background: url(../../../../assets/images/workdesk/shaixuan_icon_active.svg) no-repeat center;
+        }
+      }
+    }
+    .file_btn {
+      display: flex;
+      span {
+        color: #999999;
+        cursor: pointer;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        & > i {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          margin-right: 5px;
+        }
+        &:first-child i {
+          background: url(../../../../assets/images/task/schtasks/on_file_normal.png) no-repeat center;
+        }
+        &:last-child i {
+          background: url(../../../../assets/images/task/schtasks/freeze.png) no-repeat center;
+        }
+        &:nth-child(2) i {
+          background: url(../../../../assets/images/task/schtasks/under.png) no-repeat center;
+        }
+        &:hover {
+          color: #4285f4;
+          &:first-child i {
+            background: url(../../../../assets/images/task/file_blue.png) no-repeat center;
+          }
+          &:nth-child(2) i {
+            background: url(../../../../assets/images/task/schtasks/under-h.png) no-repeat center;
+          }
+        }
+      }
+    }
+  }
+
+  //   ============台账===================//
+  .report_table {
+    height: 100%;
+    overflow: auto;
+    padding: 12px 0;
+    .report_class_name {
+      display: inline-block;
+      padding-right: 16px;
+      height: 28px;
+      font-size: 12px;
+      color: #70707a;
+      background: rgba(231, 231, 233, 0.5);
+      line-height: 28px;
+      padding-left: 14px;
+      margin-bottom: 6px;
+      font-weight: 400;
+      position: relative;
+      overflow: hidden;
+      white-space: normal;
+      text-overflow: ellipsis;
+      cursor: default;
+      &::before,
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -10px;
+        border-width: 0 10px 14px;
+        border-style: solid;
+        border-color: transparent transparent #ffffff;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        transform: rotate(180deg);
+        top: 14px;
+      }
+    }
+    .report_item_icon {
+      width: 36px;
+      height: 36px;
+      position: relative;
+      > img {
+        width: 100%;
+      }
+      .report_label {
+        width: 28px;
+        height: 20px;
+        text-align: center;
+        border-radius: 10px;
+        position: absolute;
+        top: -9px;
+        right: -16px;
+      }
+      .color_yellow {
+        color: #ffaa00;
+        background: #fff6e1;
+        border: 1px solid #ffaa00;
+      }
+      .color_blue {
+        color: #4285f4;
+        background: #e9f2ff;
+        border: 1px solid #4285f4;
+      }
+    }
+    .report_class_content {
+      overflow: hidden;
+      padding: 0 10px;
+      .report_table_ul_item {
+        float: left;
+        width: 95px;
+        height: 102px;
+        border-radius: 8px;
+        margin-right: 25px;
+        margin-bottom: 6px;
+        padding: 10px 12px;
+        cursor: pointer;
+        .report_item_icon_3,
+        .report_item_icon_2,
+        .report_item_icon_1,
+        .report_item_icon_0 {
+          width: 42px;
+          height: 50px;
+          min-height: 50px;
+          margin-bottom: 8px;
+          margin-top: 12px;
+        }
+        .report_item_icon_3 {
+          background: url('../../../../assets/images/workdesk/report/report_table_icon_3.png') no-repeat center;
+        }
+        .report_item_icon_2 {
+          background: url('../../../../assets/images/workdesk/report/report_table_icon_2.png') no-repeat center;
+        }
+        .report_item_icon_1 {
+          background: url('../../../../assets/images/workdesk/report/report_table_icon_1.png') no-repeat center;
+        }
+        .report_item_icon_0 {
+          background: url('../../../../assets/images/workdesk/report/report_table_icon_0.png') no-repeat center;
+        }
+        &:hover {
+          background-color: @color_bluelight;
+        }
+        .report_table_ul_item_loading > .ant-spin-container {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+        }
+        .report_item_name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          word-break: break-all;
+        }
+      }
+    }
+    .follow_add {
+      float: left;
+      width: 95px;
+      padding: 10px 0;
+      text-align: center;
+      .report_add_icon {
+        background: url(../../../../assets/images/workdesk/pushlishCon_h.png) no-repeat center;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        background-color: #f5f5f5;
+        padding: 18px;
+        border-radius: 50%;
+        background-color: #f5f7fb;
+      }
+      .report_add_text {
+        position: relative;
+        top: -5px;
+        color: #4285f4;
+      }
+    }
+  }
+}
+.module_tab_list{
+  display: inline-block !important;
+}
+// 全屏模式下列表ui
+.desk-container {
+  .fullScreen {
+    .module-content {
+      // 高级筛选ui重置
+      .search_box {
+        top: 0;
+      }
+    }
+  }
+}

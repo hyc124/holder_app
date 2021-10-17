@@ -1,0 +1,50 @@
+.autoUpdaterModal {
+  .ant-modal-close-x {
+    visibility: hidden;
+  }
+  .ant-modal-body {
+    height: 150px;
+    text-align: center;
+  }
+  .download-div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .download-finish {
+    text-align: center;
+  }
+  .btn_group {
+    text-align: center;
+    .btn {
+      margin: 0 20px;
+    }
+    .resetBtn {
+      border: 0;
+      background-color: #4285f4;
+      color: white;
+      &.disable {
+        background-color: #e8eaec;
+        color: #212224;
+        cursor: default;
+      }
+    }
+  }
+  .ant-progress-inner {
+    height: 12px;
+  }
+}
+
+// ======升级失败情况的下载弹框=========//
+.downloadUpdaterModal {
+  .ant-modal-close-x {
+    visibility: hidden;
+  }
+  .btn_group {
+    text-align: right;
+  }
+  .downOnUpdate {
+    margin-left: 20px;
+  }
+}

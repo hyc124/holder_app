@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>缩小</title>
+    <desc>Created with Sketch.</desc>
+    <g id="5.沟通/公告------------------------V5.3.1(8.12)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="规则展示说明" transform="translate(-353.000000, -1415.000000)">
+            <g id="缩小备份-4" transform="translate(353.000000, 1415.000000)">
+                <circle id="椭圆形" stroke="#545454" cx="7" cy="7" r="6.5"></circle>
+                <line x1="4.52490254" y1="7" x2="9.52490254" y2="7" id="路径-9" stroke="#545454" stroke-linecap="round"></line>
+                <path d="M11.251629,11.2781367 C11.4251954,11.1045703 11.6946198,11.0852852 11.8894879,11.2202812 L11.9587358,11.2781367 L15.5865591,14.8409452 C15.7818212,15.0362074 15.7818212,15.3527898 15.5865591,15.548052 C15.4129927,15.7216183 15.1435683,15.7409035 14.9487002,15.6059074 L14.8794523,15.548052 L11.251629,11.9852434 C11.0563669,11.7899813 11.0563669,11.4733988 11.251629,11.2781367 Z" id="路径-20" fill="#545454" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="10px" viewBox="0 0 12 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>关闭沟通备份</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="850" height="620" rx="8"></rect>
+        <filter x="-1.9%" y="-2.3%" width="103.8%" height="105.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.36633282   0 0 0 0 0.441466752   0 0 0 0 0.701596467  0 0 0 0.21 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="----·OKR--V5.2.8(8.12)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="创建目标-打分标准" transform="translate(-792.000000, -399.000000)">
+            <rect fill="#EFF1FF" x="0" y="0" width="1334" height="840"></rect>
+            <g id="编组-17" transform="translate(316.000000, 72.000000)">
+                <g id="编组-4">
+                    <rect id="顶部备份-4" fill="#FFFFFF" x="0" y="200" width="1002" height="552" rx="8"></rect>
+                    <rect id="矩形备份-7" fill="#F7F8FD" x="26" y="326" width="960" height="100" rx="10"></rect>
+                </g>
+            </g>
+            <rect id="矩形" fill="#000000" opacity="0.400000006" x="0" y="0" width="1334" height="840"></rect>
+            <g id="编组-29" transform="translate(242.000000, 110.000000)">
+                <g id="编组-26">
+                    <g id="矩形">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="矩形备份-4" fill="#F5F6FF" x="24" y="276" width="550" height="36" rx="4"></rect>
+                    <g id="编组-29备份-8" transform="translate(550.000000, 289.000000)" stroke="#545454" stroke-linecap="round">
+                        <path d="M10,9 L2,1 M2,9 L10,1" id="关闭沟通备份"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

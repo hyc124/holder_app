@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #70707a;
+      }
+    </style>
+  </defs>
+  <g id="组_1511" data-name="组 1511" transform="translate(136.099 -535.125) rotate(90)">
+    <circle id="椭圆_232" data-name="椭圆 232" class="cls-1" cx="1.25" cy="1.25" r="1.25" transform="translate(535.125 127.849)"/>
+    <circle id="椭圆_233" data-name="椭圆 233" class="cls-1" cx="1.25" cy="1.25" r="1.25" transform="translate(535.125 122.099)"/>
+    <circle id="椭圆_234" data-name="椭圆 234" class="cls-1" cx="1.25" cy="1.25" r="1.25" transform="translate(535.125 133.599)"/>
+    <circle id="椭圆_235" data-name="椭圆 235" class="cls-1" cx="1.25" cy="1.25" r="1.25" transform="translate(540.625 127.849)"/>
+    <circle id="椭圆_236" data-name="椭圆 236" class="cls-1" cx="1.25" cy="1.25" r="1.25" transform="translate(540.625 122.099)"/>
+    <circle id="椭圆_237" data-name="椭圆 237" class="cls-1" cx="1.25" cy="1.25" r="1.25" transform="translate(540.625 133.599)"/>
+  </g>
+</svg>

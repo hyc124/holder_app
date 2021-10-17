@@ -1,0 +1,87 @@
+.okrPeriodBasicSetSec {
+  // 头部
+  .basicSetHeader {
+    padding: 12px 0;
+    .header_cont {
+      color: #70707a;
+    }
+    .set_period_btn {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 14px;
+      background: #4285f4;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  // =====表格=====
+  .tableBox {
+    height: calc(100% - 128px);
+  }
+  .okrPeriodBasicSetTable {
+    font-size: 14px;
+    .ant-table-thead .ant-table-cell {
+      padding: 7px 16px;
+      color: #70707a;
+      background-color: #f7f8fa;
+      border: none;
+    }
+    .ant-table-tbody .ant-table-cell {
+      padding: 14px 16px;
+      color: #191f25;
+      border-bottom: 1px solid #e7e7e9;
+    }
+
+    .ant-table,
+    .ant-table-container {
+      height: 100%;
+    }
+    .operateBtns {
+      .operateBtn {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        &::before {
+          content: ' ';
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          margin-right: 6px;
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        &:hover {
+          color: #4285f4;
+        }
+      }
+      .remove_btn {
+        margin-right: 22px;
+        &::before {
+          background-image: url(../../../../../assets/images/workplan/OKR/remove_def.png);
+        }
+        &:hover {
+          &::before {
+            background-image: url(../../../../../assets/images/workplan/OKR/remove_h.png);
+          }
+        }
+      }
+      .invalid_btn {
+        ::before {
+          background-image: url(../../../../../assets/images/workplan/OKR/invalid_def.png);
+        }
+        &:hover {
+          &::before {
+            background-image: url(../../../../../assets/images/workplan/OKR/invalid_h.png);
+          }
+        }
+      }
+    }
+  }
+  // ======分页========//
+  .basicSetFooter {
+    text-align: center;
+    margin: 20px 0;
+  }
+}

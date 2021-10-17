@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>收起全屏</title>
+    <desc>Created with Sketch.</desc>
+    <g id="OKR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="宽详情" transform="translate(-732.000000, -156.000000)" stroke="#545454">
+            <g id="收起全屏-2备份" transform="translate(733.000000, 157.000000)">
+                <g id="收起全屏">
+                    <path d="M14,8.78162104 L14,12 C14,13.1045695 13.1045695,14 12,14 L2,14 C0.8954305,14 0,13.1045695 0,12 L0,2 C0,0.8954305 0.8954305,0 2,0 L5.02220128,0" id="路径" stroke-linecap="round"></path>
+                    <rect id="矩形" x="7.5" y="1.5" width="7" height="5" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,311 @@
+.okr-report-details {
+  height: 750px;
+  top: 50% !important;
+  margin-top: -375px !important;
+  #okr_top_title {
+    height: 100%;
+  }
+  .okr_top_title {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    padding: 0px 16px;
+    margin-bottom: 16px;
+    background-color: white;
+    .work-share {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 16px;
+      background: url(../../../../../assets/images/workReport/share_btn.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      cursor: pointer;
+      &:hover {
+        background: url(../../../../../assets/images/workReport/share_hover.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .remind_edit {
+      display: inline-block;
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      margin-right: 16px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-image: url(../../../../../assets/images/okrDetail/remind.png);
+      &:hover {
+        background-image: url(../../../../../assets/images/okrDetail/remind_h.png);
+      }
+      &.not_allow {
+        background-image: url(../../../../../assets/images/okrDetail/no_remind.png);
+        &:hover {
+          background-image: url(../../../../../assets/images/okrDetail/no_remind_h.png);
+        }
+      }
+    }
+    .work-print {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url(../../../../../assets/images/workReport/work_print.png) no-repeat center;
+      vertical-align: middle;
+      background-size: contain;
+      cursor: pointer;
+      margin-right: 16px;
+      &:hover {
+        background: url(../../../../../assets/images/workReport/work-print-hover.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .work-derive {
+      display: inline-block;
+      width: 16px;
+      height: 15px;
+      background: url(../../../../../assets/images/okrDetail/dwonlod.png) no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-right: 5px;
+      &:hover {
+        background: url(../../../../../assets/images/okrDetail/dwonlod_h.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .header_content {
+      margin-top: 8px;
+      width: calc(100% - 117px);
+      .right_con {
+        margin-left: 20px;
+      }
+      .name_flag {
+        margin-right: 12px;
+        width: 42px;
+        height: 42px;
+        background-image: url(../../../../../assets/images/okrDetail/name_flag.png);
+        display: inline-block;
+      }
+      .Krname_flag {
+        margin-right: 12px;
+        width: 42px;
+        height: 42px;
+        color: #4285f4;
+        background: #e9f2ff;
+        font-size: 18px;
+        border-radius: 21px;
+        font-style: normal;
+        text-align: center;
+        line-height: 42px;
+        vertical-align: text-bottom;
+      }
+      .taskNameBox {
+        color: #171a1d;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+      .persionInfoRow {
+        .persionInfo_icon {
+          width: 14px;
+          height: 12px;
+          background: url(../../../../../assets/images/okrDetail/okr-org.png) left center no-repeat;
+          background-size: contain;
+          margin-right: 3px;
+        }
+        .persionInfoItem {
+          cursor: pointer;
+          min-width: 31px;
+        }
+        .time_filter {
+          background: url(../../../../../assets/images/okrDetail/okr-date.png) left center no-repeat;
+          background-size: 14px;
+          padding-left: 17px;
+          min-width: max-content;
+        }
+        .verLine14 {
+          width: 1px;
+          height: 14px;
+          margin: 0 12px;
+          background: #d7d7d9;
+        }
+        .liableRow {
+          min-width: max-content;
+          cursor: pointer;
+          .oa-avatar {
+            min-width: auto;
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+      .grade_box {
+        .grade_num {
+          color: #4285f4;
+          font-size: 32px;
+          font-weight: bold;
+        }
+        .grade_txt {
+          color: #70707a;
+          font-size: 12px;
+        }
+        .grade_num_inp {
+          width: 50px;
+        }
+      }
+    }
+  }
+  .ant-modal-content {
+    height: 750px;
+    .ant-modal-header {
+      padding: 13px 24px;
+      .ant-modal-title {
+        color: #191f25;
+      }
+    }
+    .ant-modal-body {
+      overflow: hidden;
+      height: calc(100% - 49px);
+      padding: 0px;
+      background-color: #f5f7fb;
+      .okr-modal-main {
+        height: calc(100% - 102px);
+        overflow: auto;
+        background-color: #f5f7fb;
+        padding: 0px 16px;
+        .okr-modal-cont {
+          background-color: white;
+          padding: 14px 12px 10px 16px;
+          .get_onelevel_total {
+            color: #191f25;
+            font-size: 14px;
+            width: 812px;
+            padding-left: 16px;
+            margin-left: -16px;
+            border-bottom: 1px solid #e7e7e9;
+            padding-bottom: 12px;
+          }
+          .get_onelevel_content {
+            border: none;
+
+            .task-info {
+              padding: 0;
+            }
+            .commentMessage_box {
+              box-shadow: none;
+            }
+            .comment_text_input {
+              .commentMessage_box {
+                border-bottom: 1px solid #e7e7e9;
+              }
+              & > .comment_box_wrap {
+                border-bottom: 1px solid #e7e7e9;
+                margin: 12px 0px 0px 0px;
+              }
+              &.cont-data {
+                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.08);
+                & > .ant-input {
+                  margin: 16px 12px !important;
+                  width: calc(100% - 32px);
+                }
+                .comment_box_wrap {
+                  border-bottom: none;
+                  margin-top: 2px;
+                }
+              }
+            }
+          }
+
+          .process_normal_content:first-child {
+            .get_onelevel_content {
+              padding-top: 10px;
+            }
+          }
+        }
+      }
+      #printDataBox {
+        padding: 24px;
+      }
+    }
+
+    #printDataBox {
+      .set_comment_box {
+        .opinion-area {
+          .view_cont {
+            pre {
+              display: initial !important;
+            }
+          }
+        }
+      }
+    }
+    .commentBox {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 24px;
+      align-items: center;
+      .inpVal {
+        flex: 1;
+        width: 1%;
+        height: 32px;
+        line-height: 32px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(230, 230, 230, 1);
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(204, 204, 204, 1);
+        padding: 0 17px;
+        cursor: pointer;
+      }
+      .editorBox {
+        width: 100%;
+        .btn_box {
+          text-align: right;
+        }
+      }
+      .note-editing-area {
+        img {
+          max-width: 200px;
+        }
+      }
+      .sendBtn {
+        width: 70px;
+        height: 32px;
+        color: #fff !important;
+        background-color: var(--baseColor, #4285f4);
+        border-radius: 4px;
+        text-align: center;
+        margin: 0 10px;
+      }
+      .support_icon_byId {
+        width: 42px;
+        height: 42px;
+        // margin: 7px 12px 0 2px;
+        cursor: pointer;
+        // margin-top: -12px;
+        background: url(../../../../../assets/images/workReport/praise.png) no-repeat center center;
+        background-size: 18px 18px;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/praise_h.png) no-repeat center center;
+          background-size: 18px 18px;
+        }
+      }
+      .support_not {
+        background: url(../../../../../assets/images/workReport/praise.png) no-repeat center center;
+        background-size: 18px 18px;
+      }
+
+      .support_is {
+        background: url(../../../../../assets/images/workReport/praise_h.png) no-repeat center center;
+        background-size: 18px 18px;
+      }
+    }
+  }
+}

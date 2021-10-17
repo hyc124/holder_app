@@ -1,0 +1,79 @@
+.reporterSettingModal {
+  .formContent {
+    max-height: 480px;
+    overflow-y: auto;
+  }
+  .addMember {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 48px;
+    .deffetImg {
+      width: 32px;
+      height: 32px;
+      background: url('../../../../../assets/images/workReport/addMember.png');
+    }
+    .addMember_content {
+      display: flex;
+      flex-wrap: wrap;
+      .reportUser1 {
+        display: flex;
+        flex-direction: column;
+        width: 32px;
+        margin-right: 12px;
+        position: relative;
+        &:hover {
+          .user-del-btn {
+            display: block;
+          }
+        }
+        .user-del-btn {
+          display: none;
+          position: absolute;
+          top: -6px;
+          right: -7px;
+          cursor: pointer;
+          width: 12px !important;
+          height: 12px !important;
+          background: url(../../../../../assets/images/workReport/delete-menber.png) no-repeat;
+          float: right;
+        }
+      }
+    }
+  }
+  .tips {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .tips-text {
+      margin-bottom: 20px;
+    }
+    .tips-button {
+      margin-right: 20px;
+    }
+  }
+  .receiveUser_style {
+    display: flex;
+    flex-direction: column;
+  }
+  .ant-form-item {
+    margin-bottom: 20px;
+    .ant-form-item-label {
+      font-size: 14px;
+      padding: 0 0 6px;
+      line-height: initial;
+      color: #191f25;
+    }
+    .ant-form-item-label > label {
+      height: auto;
+    }
+  }
+  .from_button {
+    position: absolute;
+    bottom: 0;
+    right: 24px;
+    /deep/.cancel_button {
+      margin-right: 16px !important;
+    }
+  }
+}

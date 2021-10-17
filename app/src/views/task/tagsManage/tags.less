@@ -1,0 +1,190 @@
+@import '~@/src/styles/_var.less';
+.none {
+  display: none;
+}
+.tags-contaier {
+  display: flex;
+}
+.card-title {
+  font-size: 14px;
+  color: #191f25;
+  position: relative;
+  .tip {
+    color: #70707a;
+  }
+  .tag-manage-do {
+    color: #3949ab;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+  }
+}
+.manage_tag_Model {
+  .ant-modal-content {
+    height: 100%;
+    .ant-modal-body {
+      height: calc(100% - 108px);
+      overflow-y: auto;
+    }
+  }
+}
+.card-container {
+  width: 802px;
+  // height: 200px;
+  border: 1px dashed rgba(215, 215, 217, 1);
+  opacity: 1;
+  border-radius: 6px;
+  margin: 12px 0 24px 0;
+  font-size: 12px;
+  .secend-box {
+    margin: 12px 16px 0 16px;
+    .secend-title {
+      color: #191f25;
+    }
+    .secend-tip {
+      color: #70707a;
+    }
+  }
+  .card-content {
+    position: relative;
+    min-height: 280px;
+    max-height: 300px;
+    margin: 0px 16px;
+    color: #191f25;
+    overflow-y: auto;
+    .ant-tabs-nav {
+      margin-bottom: 0 !important;
+    }
+    .tag-style {
+      padding: 6px 15px;
+      margin: 16px 16px 0 0;
+      background: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(215, 215, 217, 1);
+      border-radius: 14px;
+      position: relative;
+
+      &:hover {
+        color: #3949ab;
+        border: 1px dashed #3949ab;
+        box-shadow: 0px 0px 6px rgba(66, 133, 244, 0.5);
+        .del-icon {
+          cursor: pointer;
+          width: 14px;
+          height: 14px;
+          display: inline-block;
+          background-image: url(../../../../../assets/images/common/del_member_icon.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    .ban {
+      color: #e7e7e9;
+      border-color: #e7e7e9;
+    }
+    .tabs-custom {
+      .ant-tabs-tabpane {
+        min-height: 200px;
+      }
+    }
+  }
+  .one-content {
+    min-height: 150px;
+  }
+}
+.customModal {
+  width: 400px !important;
+  .ant-modal-body {
+    padding: 18px 24px 24px 24px !important;
+  }
+  .editor-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .add-tag-box {
+    position: relative;
+  }
+
+  .del-icon,
+  .editor-icon {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-image: url(../../../../../assets/images/common/delete_2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 18px;
+    right: 0px;
+    &:hover {
+      background-image: url(../../../../../assets/images/common/delete-over.png);
+    }
+  }
+  .editor-icon {
+    background-image: url(../../../../../assets/images/common/edit-black-old.png);
+    &:hover {
+      background-image: url(../../../../../assets/images/common/edit-blue.png);
+    }
+  }
+  .editor-del-icon {
+    top: 9px !important;
+  }
+  .add-tag {
+    cursor: pointer;
+    font-size: 14px;
+    color: #3949ab;
+    position: absolute;
+    right: 20px;
+    top: 83px;
+    z-index: 9999;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .add-tag-ipt {
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+  .editor-tag-box {
+    margin: 10px 0;
+    .editor-del-icon {
+      right: 20px;
+    }
+  }
+  // .ant-input {
+  //   width: 90% !important;
+  // }
+  .tag-name {
+    position: relative;
+    cursor: pointer;
+    width: 90%;
+    min-height: 18px;
+    &:hover {
+      color: #3949ab;
+      .icon-show {
+        display: block;
+      }
+    }
+    .editor-icon {
+      // display: none;
+      position: absolute;
+      right: 30px;
+      top: 0 !important;
+    }
+    .del-icon {
+      top: 0 !important;
+    }
+    .icon-none {
+      display: none;
+    }
+  }
+}
+.custom-container {
+  height: 300px;
+  overflow-y: auto;
+}

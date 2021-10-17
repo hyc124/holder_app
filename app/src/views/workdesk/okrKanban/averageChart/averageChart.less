@@ -1,0 +1,121 @@
+@import '~@/src/styles/_var.less';
+// -----------------------折线图less---------------------------------
+.charts_box {
+  background: #f6faff;
+  margin-left: 8px;
+  width: calc(20% - 20px);
+  min-width: calc(260px - 20px);
+  height: 150px;
+  padding: 10px 5px 10px 10px;
+  box-sizing: border-box;
+  .header_text {
+    color: #191f25;
+    font-size: 14px;
+    font-weight: 400;
+    height: 22px;
+  }
+  // #mainEchart {
+  //   width: calc(150px - 24px);
+  //   height: calc(260px - 24px);
+  // }
+  .charts_content {
+    width: 100% !important;
+    height: 100% !important;
+    //  height: calc(150px - 20px),
+  }
+}
+
+// -----------------------折线图详情less---------------------------------
+// .charts_box.average {
+//   margin-left: 8px;
+// }
+.chart_detail_box {
+  width: 400px;
+  height: auto;
+  max-height: 460px;
+  background: #ffffff;
+  padding: 20px 15px;
+  position: absolute;
+  top: 220px;
+  z-index: 100;
+  overflow-y: auto;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  .title_box {
+    align-items: center;
+    .user_name_box {
+      .user_name_title {
+        color: #171a1d;
+        font-size: 14px;
+      }
+      .user_date {
+        color: #757678;
+      }
+    }
+  }
+  .content_box {
+    .content_left {
+      width: 65%;
+    }
+    height: 32px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: #fbfaf6;
+    margin-top: 15px;
+    padding: 0 10px;
+    .okr-icon {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: text-bottom;
+      background-image: url(../../../../../../assets/images/task/detail_o.png);
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: center;
+      &.kr {
+        background-image: url(../../../../../../assets/images/task/detail_kr.png);
+        background-size: 20px;
+      }
+    }
+    .okr_title_text {
+      color: #c2a56a;
+      font-size: 14px;
+      width: 90%;
+    }
+    .okr_right_box {
+      i {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: url(../../../../../../assets/images/taskReport/heart_full.png) no-repeat center;
+        background-size: 12px;
+        margin-right: 3px;
+      }
+      .right_change_icon {
+        margin: 0 10px;
+        color: #9a9aa2;
+        width: 16px;
+        background: url(../../../../../../assets/images/workReport/process_small.png) no-repeat center;
+        background-size: contain;
+        line-height: 17px;
+      }
+    }
+  }
+  .okr_descipt {
+    color: #45474a;
+    .okr_descipt_title {
+      color: #70707a;
+    }
+  }
+}
+.charts_box.average {
+  //进度均值详情定位
+  .chart_detail_box {
+    left: calc(100% - 40% - 360px + 350px);
+  }
+}
+.noDataText {
+  text-align: center;
+  color: #ccc;
+}

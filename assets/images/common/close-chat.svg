@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>向下收起</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="16"></rect>
+    </defs>
+    <g id="4.数据中心/沟通全局" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="7沟通展开" transform="translate(-1298.000000, -18.000000)">
+            <g id="个人中心" transform="translate(1062.000000, 0.000000)">
+                <g id="向下收起" transform="translate(244.000000, 26.000000) scale(1, -1) translate(-244.000000, -26.000000) translate(236.000000, 18.000000)">
+                    <g>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="蒙版"></g>
+                        <g mask="url(#mask-2)" stroke="#545454" stroke-linecap="round">
+                            <g transform="translate(1.000000, -2.000000)">
+                                <path d="M13.2222222,12.071531 L13.2222222,15.1111111 C13.2222222,16.1543156 12.3765379,17 11.3333333,17 L1.88888889,17 C0.845684361,17 0,16.1543156 0,15.1111111 L0,5.66666667 C0,4.62346214 0.845684361,3.77777778 1.88888889,3.77777778 L4.74319009,3.77777778" id="路径"></path>
+                                <path d="M9.31133947,2.83058932 L5.15846931,7.28399733 L9.33122594,11.1751558 M5.63796646,7.17661684 L14.5022968,6.95770368" id="形状结合" stroke-linejoin="round" transform="translate(9.830383, 7.002873) scale(-1, 1) rotate(47.000000) translate(-9.830383, -7.002873) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

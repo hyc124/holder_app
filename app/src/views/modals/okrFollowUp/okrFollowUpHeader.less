@@ -1,0 +1,25 @@
+.okrFollowUpHeader {
+  .bot_line {
+    width: calc(100% - 34px);
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 17px;
+  }
+  .okrRiskFollowUp {
+    li {
+      padding: 14px 17px;
+      position: relative;
+      font-size: 16px;
+      color: #70707a;
+      font-weight: normal;
+      cursor: pointer;
+      &.active {
+        color: #4285f4;
+        .bot_line {
+          background-color: #4285f4;
+        }
+      }
+    }
+  }
+}

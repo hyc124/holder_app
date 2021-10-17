@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="350px" height="66px" viewBox="0 0 350 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形备份 19</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="348" height="64" rx="32"></rect>
+        <filter x="-3.7%" y="-17.2%" width="107.5%" height="140.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.932036911   0 0 0 0 0.932036911   0 0 0 0 0.932036911  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-4" x="0" y="0" width="348" height="64" rx="32"></rect>
+    </defs>
+    <g id="----·工作台全局+项目V5.2.9（8.12）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="彩虹屁备份" transform="translate(-1.000000, -23.000000)">
+            <g id="编组-14" transform="translate(1.000000, 23.000000)">
+                <g id="编组-13" transform="translate(1.000000, 1.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="矩形备份-19">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                        <use fill-opacity="0.5" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <ellipse id="椭圆形" stroke="#979797" fill="#EEF0FF" mask="url(#mask-2)" cx="281.5" cy="-7" rx="47" ry="38.5"></ellipse>
+                    <ellipse id="椭圆形" stroke="#979797" fill="#E1E6FF" mask="url(#mask-2)" transform="translate(43.000000, 72.000000) scale(1, -1) translate(-43.000000, -72.000000) " cx="43" cy="72" rx="40.5" ry="31.5"></ellipse>
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <use id="矩形备份-19" fill-opacity="0" fill="#FFFFFF" xlink:href="#path-4"></use>
+                    <rect id="矩形备份-19" stroke="#DEECFE" x="-0.5" y="-0.5" width="349" height="65" rx="32"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

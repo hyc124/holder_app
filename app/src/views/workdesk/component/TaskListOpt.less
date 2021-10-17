@@ -1,0 +1,99 @@
+.task_transfer_modal {
+  .transferTaskPop-title {
+    & > p {
+      font-size: 12px;
+      & > span {
+        color: rgba(153, 153, 153, 1);
+      }
+    }
+  }
+  .ant-modal-body {
+    overflow-y: auto;
+  }
+  .transfer-task-content {
+    .removeTaskCont {
+      .selectUser {
+        display: inline-block;
+        cursor: pointer;
+        width: 22px;
+        height: 20px;
+        background: url('../../../../../assets/images/task/add_peo_def.png') center no-repeat;
+        &:hover {
+          background: url('../../../../../assets/images/task/add_peo_blue.png') center no-repeat;
+        }
+      }
+      .select_user_list {
+        height: 48px;
+        max-width: 335px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+        padding-top: 4px;
+        .item_user {
+          display: inline-block;
+          font-size: 12px;
+          color: rgba(117, 117, 117, 1);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100px;
+          margin: 0 auto;
+          margin-left: 10px;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+.module_title {
+  color: #525252;
+  font-weight: bold;
+  font-size: 16px;
+}
+.ant-modal-title {
+  text-align: left;
+}
+.right_btn_box {
+  padding: 8px 0;
+  .ant-menu-vertical > .ant-menu-item > img {
+    height: 14px;
+    width: 14px;
+  }
+  .ant-divider {
+    margin: 4px 0;
+  }
+}
+.taskOptSubMenu {
+  .ant-menu-item {
+    height: 30px;
+    line-height: 30px;
+  }
+}
+.taskOptSubMenuTit {
+  &.ant-menu-submenu-vertical > .ant-menu-submenu-title {
+    height: 30px;
+    line-height: 30px;
+  }
+}
+.taskOptMenuItem {
+  &.ant-menu-item > img {
+    height: 14px;
+    width: 14px;
+  }
+}
+.visiblehide {
+  visibility: hidden;
+}
+.base-dropdown {
+  .ant-menu-item,
+  .ant-menu-submenu-title {
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 16px !important;
+    &:hover {
+      background: #f6faff;
+    }
+  }
+}

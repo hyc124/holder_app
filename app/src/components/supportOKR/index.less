@@ -1,0 +1,287 @@
+@import '~@/src/styles/_var.less';
+@import '~@/src/styles/task-com.less';
+.suppotModal {
+  .ant-modal-title {
+    text-align: center;
+  }
+  table {
+    padding: 0 19px; //调大之后又滚动条
+  }
+  .anticon-search {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-image: url(../../../../assets/images/task/earch-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    svg {
+      display: none;
+    }
+  }
+  .ant-modal-header {
+    padding: 12px 24px;
+  }
+  .ant-modal-footer {
+    .ant-btn {
+      width: 72px;
+    }
+  }
+  .ant-input-search {
+    width: 246px;
+  }
+  .hide {
+    display: none !important;
+  }
+  color: #70707a;
+  font-size: 12px;
+  .ant-modal-body {
+    height: 520px;
+    padding: 0px;
+  }
+  .suppotContent {
+    height: 100%;
+    display: flex;
+  }
+  .suppotLeft {
+    width: 279px;
+    overflow: hidden;
+    height: 100%;
+    border-right: 1px solid #d7d7d9;
+    &:hover {
+      overflow: auto;
+    }
+    .orgSearchContent {
+      margin-top: 10px;
+      ul li {
+        height: 28px;
+        line-height: 28px;
+        padding: 0px 5px;
+        overflow: hidden;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+        border-radius: 4px;
+        max-width: 100%;
+        &:hover {
+          color: #4285f4;
+          background: #edf7ff;
+        }
+      }
+      ul li.active {
+        color: #4285f4;
+        background: #edf7ff;
+      }
+    }
+    .org_my_active {
+      color: #4285f4;
+      font-weight: bold;
+    }
+    .orgSearchList {
+      margin-top: 20px;
+      margin-left: 12px;
+      margin-right: 16px;
+    }
+    .suppotMecon {
+      cursor: pointer;
+      margin-top: 4px;
+      height: 44px;
+      line-height: 44px;
+      margin-bottom: 4px;
+      &:hover {
+        background: #f5f5f5;
+      }
+    }
+    .org_my_icon {
+      margin-left: 16px;
+    }
+  }
+  // 筛选
+  .support_taskfilter {
+    margin-top: 7px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: flex;
+    padding: 3px 3px;
+    justify-content: space-around;
+    border-bottom: 1px solid #e7e7e9;
+    .more_type_btn {
+      flex-shrink: 0;
+      height: 28px;
+      line-height: 28px;
+      color: #70707a;
+      margin-left: 0px;
+      cursor: pointer;
+      border-radius: 16px;
+      background: transparent;
+      padding: 0;
+      .tri_down_icon {
+        margin-left: 4px;
+      }
+    }
+    .toptipicon.tipicon {
+      display: none;
+    }
+    .toptipicon2.tipicon {
+      display: none;
+    }
+    .taskTypeOutTag {
+      margin-top: 2px;
+    }
+    .tri_down_icon {
+      width: 11px;
+      height: 5px;
+      margin-left: 10px;
+      margin-bottom: 3px;
+      background-image: url(../../../../assets/images/workplan/tri_down.svg);
+      background-size: auto;
+    }
+    .taskTypeTagItem {
+      border: none;
+      padding: 0px;
+      min-width: initial;
+      margin-right: 12px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .taskTypeTagItem.active {
+      color: #3949ab;
+      border: none;
+      background: transparent;
+      .tick {
+        display: none;
+      }
+    }
+    .taskTypeTagItem.active::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #3949ab;
+      border-radius: 1px;
+      position: absolute;
+      top: 36.5px;
+    }
+  }
+  .support-table-list {
+    width: 570px;
+    height: 454px;
+    overflow: auto;
+    .noExpandable .ant-table-row-expand-icon {
+      visibility: hidden;
+      display: none;
+    }
+    .ant-table-cell {
+      padding-left: 0px;
+      .ant-radio-wrapper {
+        margin-right: -20px;
+        float: left;
+      }
+    }
+    .text-ellipsis {
+      padding-top: 1px;
+      font-size: 14px;
+      max-width: 300px;
+    }
+    tr {
+      td {
+        padding: 12px;
+      }
+      &:hover {
+        td {
+          background-color: #f6faff;
+        }
+      }
+    }
+    .finishedTask {
+      color: #9a9aa2;
+      text-decoration: line-through;
+    }
+    .arrow_leaf {
+      width: 0px;
+      margin-top: 8px;
+    }
+    .item_top {
+      display: flex;
+      align-items: center;
+      .boardTaskLabel {
+        width: 16px;
+        height: 16px;
+        margin-right: 3px;
+      }
+      .tag-list {
+        margin-left: 4px;
+      }
+    }
+    .okr_flag {
+      width: 24px;
+      height: 18px;
+      background: #e9f2ff;
+      opacity: 1;
+      border-radius: 14px;
+      color: #4285f4;
+      margin-right: 6px;
+      text-align: center;
+    }
+    .plan_cci {
+      margin-left: 5px;
+    }
+    .plan_cci_confidence {
+      // display: inline-block;
+      width: 40px;
+      height: 19px;
+      background-color: rgba(205, 234, 213, 1);
+      border-radius: 8px;
+      text-align: center;
+      line-height: 18px;
+      color: #34a853;
+    }
+    .comUserHead {
+      float: left;
+      margin-top: 6px;
+    }
+    .plan_cont_bot {
+      margin-top: 6px;
+      color: #70707a;
+      margin-left: 30px;
+    }
+    .plan_time {
+      margin-right: 14px;
+      margin-left: 5px;
+    }
+    .remain_time {
+      display: inline-block;
+      .remain_time_num {
+        color: @color_primary;
+      }
+    }
+  }
+  .okrSearchList {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    .org_menu_search {
+      margin: 2px;
+      float: right;
+      margin-right: 16px;
+      width: 200px;
+    }
+    .plan_subbt {
+      float: right;
+      margin-top: 2px;
+      margin-right: 24px;
+    }
+  }
+  .toptipicon2-box {
+    position: absolute;
+    z-index: 5;
+    right: 11px;
+    top: -7px;
+  }
+  .taskTypeTagItem {
+    margin-right: 3px;
+  }
+  .task-type-tag-surrport {
+    padding-left: 0;
+  }
+}

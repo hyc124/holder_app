@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <!-- <meta  http-equiv="Content-Security-Policy" content="frame-src *"/> -->
+    <!-- <meta  http-equiv="Content-Security-policy-Report-Only" content="default-src 'none'"/> -->
+    <title></title>
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+    <!-- <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=2.0&ak=y2do3fH7vocWIbBC76UPkNwO035fWG28"
+    ></script> -->
+    <script type="text/javascript">
+      // 按需引入百度地图：沟通处
+      if (window.location.hash.indexOf('chatwin') != -1) {
+        document.write(
+          '<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=y2do3fH7vocWIbBC76UPkNwO035fWG28"><\/script>'
+        )
+      }
+    </script>
+  </head>
+
+  <body style="overflow:hidden;" class="overHide">
+    <div id="app"></div>
+  </body>
+
+  <script type="text/javascript" src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+  <script>
+    if (window.location.hash.indexOf('chatwin') != -1) {
+      window.BMap = BMap
+    }
+
+    console.log('hash----------', window.location.hash)
+    const goalgTitle = '掌控者'
+    //更新title
+    if (
+      'onhashchange' in window &&
+      (typeof document.documentMode === 'undefined' || document.documentMode == 8)
+    ) {
+      // 浏览器支持onhashchange事件
+      window.onhashchange = hashChangeFire // TODO，对应新的hash执行的操作函数
+    } else {
+      // 不支持则用定时器检测的办法
+      setInterval(function() {
+        var ischanged = isHashChanged() // TODO，检测hash值或其中某一段是否更改的函数
+        if (ischanged) {
+          hashChangeFire() // TODO，对应新的hash执行的操作函数
+        }
+      }, 150)
+    }
+    const routeMaps = {
+      login: goalgTitle + '-登录',
+      workdesk: goalgTitle + '-工作台',
+      workPlan: goalgTitle + '-工作规划',
+      OKR: goalgTitle + '-OKR',
+      taskManage: goalgTitle + '-任务管理',
+      approval: '审批管理',
+      announce: goalgTitle + '-公告',
+      myapp: goalgTitle + '-我的应用',
+      'cloud-disk': goalgTitle + '-企业文档',
+      chatwind: '沟通',
+      systemnoticeinfo: '系统消息',
+      ApprovalOnlyDetail: '审批详情',
+      ApprovalExecute: '发起审批',
+    }
+    function hashChangeFire() {
+      const routeKey = window.location.hash.split('/')[1]
+      document.title = routeMaps[routeKey] || goalgTitle
+    }
+  </script>
+</html>

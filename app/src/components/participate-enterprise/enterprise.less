@@ -1,0 +1,121 @@
+.EnterpriseModal {
+  .ant-modal-body {
+    height: 493px;
+    padding: 0 20px;
+    .enterpriseContent {
+      display: flex;
+      height: 100%;
+      .member-choose-left,
+      .member-choose-right {
+        width: 50%;
+        padding-top: 20px;
+        height: 490px;
+        overflow: auto;
+      }
+      .searchVerify {
+        color: red;
+        display: block;
+      }
+      .searchVerify.hide {
+        display: none;
+      }
+      .member-choose-left {
+        padding-right: 20px;
+        border-right: 1px solid #e5e5e5;
+        .searchBox {
+          display: flex;
+          .ant-input-group-wrapper {
+            margin-right: 20px;
+          }
+          .ant-input-group-addon {
+            background: transparent;
+            border: none;
+            position: absolute;
+            right: 13px;
+            top: 5px;
+            z-index: 99;
+          }
+          .ant-input {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+          .del {
+            cursor: pointer;
+            width: 14px;
+            height: 14px;
+            background-image: url(../../../../assets/images/workplan/del.png);
+            margin-top: 3px;
+            background-size: cover;
+          }
+        }
+        .searchList {
+          margin-top: 10px;
+          height: 430px;
+          overflow: auto;
+          padding-right: 5px;
+          .noseartext {
+            text-align: center;
+            height: 300px;
+            line-height: 300px;
+          }
+          li {
+            align-items: center;
+            margin-bottom: 10px;
+            width: 100%;
+            overflow: hidden;
+            .text,
+            .avatars {
+              float: left;
+              .ant-avatar.noPortrait {
+                background: url('../../../../assets//images/task/cmy-normal.png');
+              }
+              .ant-avatar {
+                background-color: #4285f4;
+              }
+            }
+            .select {
+              float: right;
+            }
+            .statustext {
+              color: #9a9aa2;
+              margin-right: 3px;
+            }
+            .text {
+              margin-left: 5px;
+              .red {
+                color: red;
+              }
+              p {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+      .member-choose-right {
+        padding-left: 20px;
+        .selectCmy {
+          li {
+            align-items: center;
+            margin-bottom: 10px;
+            width: 100%;
+            overflow: hidden;
+            .text,
+            .avatars {
+              float: left;
+            }
+            .select {
+              float: right;
+            }
+            .text {
+              margin-left: 5px;
+              p {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

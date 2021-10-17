@@ -1,0 +1,54 @@
+@import '~@/src/styles/_var.less';
+@import '~@/src/views/chatwin/styles/ChatMsgEditor.less';
+.commentEditorBox {
+  display: flex;
+  flex-direction: column;
+  &.mark_edit_container .commentMsgEditor {
+    overflow-x: hidden;
+  }
+  .commentMsgEditor {
+    width: 99%;
+    height: 52px;
+    outline: none;
+    overflow: auto;
+    flex: 1;
+    img {
+      max-width: 40px;
+    }
+    &.fxAnswer {
+      min-height: initial;
+    }
+  } //样式影响1
+  .handle-btn-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    right: 0;
+  }
+  .send_msg_btn {
+    margin-left: 12px;
+  }
+
+  .msg-handle-btn,
+  .msg-handle-btn.ant-btn:empty {
+    visibility: visible;
+    border: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 4px;
+  }
+  .file_icon {
+    background-image: url(../../../../../assets/images/chatWin/fj.png);
+    &:hover {
+      background-image: url(../../../../../assets/images/chatWin/fj_hover.png);
+    }
+  }
+  .face_emoji {
+    background-image: url(../../../../../assets/images/chatWin/emoji.png);
+    &:hover {
+      background-image: url(../../../../../assets/images/chatWin/emoji_hover.png);
+    }
+  }
+}

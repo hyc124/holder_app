@@ -1,0 +1,1489 @@
+@import '~react-resizable/css/styles.css';
+@import '~@/src/styles/_var.less';
+@import '~@/src/styles/org-tree.less';
+@import '~@/src/styles/task-com.less';
+
+// 列拖动
+//
+.react-resizable {
+  position: relative;
+  background-clip: padding-box;
+}
+.react-resizable-handle {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize;
+  z-index: 1;
+}
+
+.taskTableColDragBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 90%;
+  cursor: e-resize;
+  z-index: 8;
+  background: @color_primary;
+}
+// 右侧内容loading
+.rightConLoading {
+  width: calc(100% - 280px);
+}
+
+.visible0 {
+  visibility: hidden;
+}
+.visible1 {
+  visibility: visible;
+}
+// 任务链
+// .taskManageListTable .treeTableIcon {
+//   height: 30px;
+// }
+.taskManageListTable {
+  .ant-table-thead > tr > th {
+    padding: 0 12px;
+    height: 32px;
+    font-weight: bold;
+    color: @color_gray;
+    border-bottom: 1px solid #e8eaec;
+  }
+
+  .ant-table-body {
+    overflow: hidden !important;
+    &:hover {
+      overflow: overlay !important;
+    }
+    .ant-table-tbody > tr > td.ant-table-cell {
+      height: auto;
+      // border-bottom: 1px solid #e8eaec;
+    }
+    .ant-table-tbody {
+      td {
+        padding: 0 12px;
+      }
+    }
+
+    .dragPreview {
+      // display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .tagBoxCell {
+    .table_task_type {
+      padding: 0;
+    }
+  }
+}
+.secondPageContainer {
+  .baseOrgTree.ant-tree {
+    .org_my {
+      height: 48px;
+      line-height: 48px;
+      padding-left: 12px;
+    }
+    .ant-tree-node-content-wrapper {
+      padding-right: 12px;
+    }
+  }
+}
+
+.taskManageContainer {
+  padding: 0 !important;
+  .orgLeftCon {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+    .pageLeftHeader {
+      border: none;
+      .org_fold_icon {
+        position: absolute;
+        top: 21px;
+        right: 16px;
+        z-index: 600;
+        background-size: 14px;
+      }
+      .posLeft {
+        right: 23px;
+      }
+    }
+    //左侧组织架构
+    .pageLeftCon {
+      height: 100%;
+      background: #fff;
+      .org_my_active,
+      .ant-tree-treenode-selected {
+        background: #f6faff;
+      }
+
+      .search_navigation {
+        &.patternHide {
+          .content_box {
+            padding-right: 0;
+            margin-right: -10px;
+            .navig {
+              margin-right: 0;
+            }
+          }
+        }
+        .search_navigation_box .navig {
+          margin-right: 16px;
+        }
+      }
+      .leftOrgTree {
+        overflow: hidden;
+        &:hover {
+          overflow: overlay;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #d3d9f8;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: #d3d9f8;
+        }
+        &::-webkit-scrollbar-thumb:active {
+          background: #d3d9f8;
+        }
+
+        .baseOrgTree {
+          background: #fff;
+          width: 100%;
+          .ant-tree-treenode {
+            height: 48px;
+            line-height: 48px !important;
+            padding-top: 0;
+            padding-bottom: 0;
+            .ant-tree-switcher {
+              line-height: 48px;
+            }
+            .ant-tree-node-content-wrapper {
+              height: 100%;
+              .org_tree_text {
+                max-width: 151px;
+              }
+            }
+          }
+        }
+
+        // 修改组织架构名字过长ui
+        .ant-tree-node-content-wrapper {
+          .ant-tree-title {
+            width: 100%;
+            // position: relative;
+            .row_left {
+              .org_tree_text {
+                width: auto !important;
+              }
+            }
+          }
+        }
+      }
+      .org_menu_search {
+        width: calc(100% - 52px);
+        margin: 24px 10px 0 10px;
+        height: 32px;
+        line-height: 32px;
+        &:hover {
+          border: 1px solid #b1b1b1;
+        }
+      }
+      // 搜索图标
+      .search_navigation_box {
+        .navig {
+          margin-right: 19px;
+        }
+      }
+      // 款详情模式下组织架构隐藏情况下，隐藏创建任务+盯住部门icon
+      .row_right {
+        // position: absolute;
+        position: fixed;
+        z-index: -111;
+        display: none;
+        width: 94px;
+        // display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        // 钉住部门，一直显示
+        // &.isStareed {
+        //   display: inline-flex;
+        //   z-index: 999 !important;
+        //   left: 230px;
+        //   .create_task_icon {
+        //     display: none;
+        //   }
+        // }
+      }
+
+      // &.width_model {
+      //   .row_right {
+      //     &.isStareed {
+      //       display: none;
+      //     }
+      //   }
+      // }
+    }
+    &.wideMode {
+      width: 60px;
+      overflow: visible;
+      position: relative;
+      .pageLeftCon {
+        // width: 305px;
+        width: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // left: -300px;
+        z-index: 1000;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.16);
+      }
+      .org_fold_icon {
+        display: none;
+      }
+    }
+    &.tableModel {
+      .pageLeftCon {
+        width: 100% !important;
+      }
+    }
+  }
+  .orgRightCon {
+    border-radius: 0 !important;
+    background: #f7f8fa !important;
+  }
+  // 优先级、时长设置按钮
+  .toptipicon {
+    position: relative;
+    left: -3px;
+    top: -9px;
+  }
+
+  .nav_subbt {
+    background: inherit;
+
+    .change-icon {
+      background-image: url(../../../../assets/images/task/change_icon.png);
+      width: 8px;
+      height: 11px;
+      vertical-align: middle;
+
+      margin-left: 8px;
+    }
+    &.change-mode:hover {
+      background: initial;
+    }
+  }
+  .nav_subbt .list_set_icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    background-image: url(../../../../assets/images/task/set_d.svg) !important;
+  }
+  .nav_subbt:hover .list_set_icon {
+    background-image: url(../../../../assets/images/task/set_d_h.svg) !important;
+  }
+  .baseInput.w_auto {
+    width: auto;
+  }
+  .task-change-mode-box .nav_subbt {
+    background: inherit;
+    &.more_type_btn {
+      background: #f7f8fa;
+    }
+  }
+  .secondPageMenuNav {
+    .tri_down_icon.mleft {
+      margin-bottom: 1px;
+    }
+    .taskSearch {
+      width: 248px;
+      &:focus {
+        box-shadow: none;
+      }
+      &:hover {
+        border: 1px solid #4285f4;
+      }
+      .anticon-menu:hover,
+      .anticon-search:hover {
+        color: #4285f4;
+      }
+    }
+  }
+  .task-change-mode-box,
+  .secondPageMenuNav {
+    padding: 0 16px;
+  }
+
+  .secondPageNavTop {
+    position: relative;
+    .org_fold_icon {
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      z-index: 600;
+    }
+    .search-box {
+      position: relative;
+      .toptipicon2-box {
+        width: 12px;
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        top: -7px;
+      }
+      .cancel-search {
+        margin-left: 12px;
+        cursor: pointer;
+        &:hover {
+          color: #4285f4;
+        }
+      }
+    }
+    .headerLeft {
+      .taskTypeOutTag {
+        .taskTypeTagItem {
+          height: auto;
+          border: none;
+          background-color: inherit;
+          margin-right: 0;
+          min-width: auto;
+          margin-bottom: 0px;
+          position: relative;
+          padding-right: 0;
+          .img_icon {
+            display: none;
+          }
+          &.active::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #f2f4ff;
+            border-radius: 1px;
+            position: absolute;
+            top: 27.5px;
+          }
+          &.no-content-active {
+            &.active::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    // 款详情模式 头部导航 ui 重置
+    &.width_header {
+      .w_100 {
+        width: 100%;
+      }
+      .task-change-mode-box {
+        height: 44px;
+        align-items: flex-end;
+        padding-bottom: 0px;
+        .taskTypeTagItem {
+          margin-bottom: 8px;
+        }
+        .change-mode {
+          padding-left: 8px;
+          padding-right: 0px;
+          margin-bottom: -5px;
+          margin-right: -2px;
+        }
+      }
+      .secondPageMenuNav {
+        flex-wrap: wrap;
+        padding: 0;
+        height: 44px;
+        border-bottom: 1px solid #e7e7e9;
+        justify-content: flex-start;
+        .org_fold_icon {
+          width: 14px;
+          height: 14px;
+          position: initial;
+          margin: 0 0 -10px 16px;
+          margin-right: 5px;
+        }
+        .headerLeft {
+          position: relative;
+          z-index: 100;
+          width: 70%;
+          padding-left: 10px;
+          .more_type_btn {
+            // padding-left: 10px;
+            border-radius: 0;
+            margin-left: 0;
+          }
+          .taskTypeOutTag {
+            font-size: 13px;
+            &.active {
+              font-weight: bold;
+            }
+          }
+        }
+        .headerRight {
+          // min-width: 300px;
+          flex: 1;
+          height: 38px;
+          align-items: center;
+          padding-right: 12px;
+          .search-box {
+            width: calc(100% - 24px);
+            position: absolute;
+            left: 17px;
+            top: 16px;
+            .toptipicon2-box {
+              right: 34px;
+            }
+            .taskSearch {
+              max-width: 100% !important;
+              width: 84%;
+            }
+          }
+          .widthBtn {
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+          }
+
+          .widthSearchBtn,
+          .table_settings_btn,
+          .widthCreateTaskBtn {
+            position: relative;
+            top: 13px;
+            padding-right: 0;
+            padding-left: 4px;
+          }
+          .widthSearchBtn {
+            background-image: url(../../../../assets/images/task/earch-icon.svg);
+          }
+          .widthCreateTaskBtn {
+            width: 16px;
+            height: 16px;
+            left: -10px;
+            background-image: url(../../../../assets/images/taskDetail/add_cross_blue.png);
+          }
+          .change-mode {
+            background-color: inherit;
+            margin-bottom: -10px;
+          }
+        }
+
+        .table_settings_btn {
+          background: inherit;
+          margin-left: 1px;
+          z-index: 1000;
+          .list_set_icon {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+      .oneSecondPageMenuNav {
+        border-bottom: none;
+        // &.my_task {
+        //   height: 64px;
+        // }
+        .headerLeft {
+          padding-left: 18px;
+          display: flex;
+          align-items: center;
+        }
+        .headerRight {
+          .widthCreateTaskBtn,
+          .table_settings_btn {
+            top: 9px !important;
+          }
+          .widthSearchBtn {
+            right: 3px;
+            top: 9px;
+            margin: 0 4px;
+          }
+        }
+        .task-change-mode-box {
+          padding-bottom: 4px;
+          padding-top: 2px;
+        }
+      }
+      .twosecondPageMenuNav {
+        margin-top: -19px;
+      }
+      .h_auto {
+        height: auto !important;
+      }
+      .search-box {
+        z-index: 999;
+      }
+      .toptipicon {
+        left: 7px;
+      }
+      .toptipicon2-box {
+        top: -3px;
+      }
+      // 组织架构所选信息展示
+      .now_belong {
+        width: 100%;
+        margin: 12px 0 0 0;
+        font-weight: bold;
+        color: #191f25;
+        font-size: 16px;
+        display: flex;
+        align-items: baseline;
+      }
+
+      .parent_belong {
+        width: 100%;
+        height: 18px;
+        margin: 0;
+        padding-left: 18px;
+        color: #9a9aa2;
+        font-size: 12px;
+        position: relative;
+        top: -10px;
+      }
+    }
+    &.table_header {
+      width: 100% !important;
+      .secondPageMenuNav {
+        align-items: flex-end;
+        border-bottom: 1px solid #e7e7e9;
+        font-size: 16px;
+        line-height: 32px;
+        height: auto;
+        padding-bottom: 10px;
+        padding-top: 6px;
+      }
+      .task-change-mode-box {
+        margin-bottom: 14px;
+        padding-left: 24px;
+      }
+      .change-mode {
+        padding-right: 0;
+        margin-top: 14px;
+      }
+      .org_fold_icon {
+        position: initial;
+        margin: 0 12px 5px 2px;
+      }
+      .taskTypeTagItem {
+        height: 32px;
+        margin-right: 12px;
+        margin-bottom: 0;
+      }
+      .more_type_btn {
+        background: #f7f8fa;
+        height: 32px;
+        line-height: 32px;
+
+        &:hover {
+          background-color: #e9f2ff;
+        }
+      }
+      .taskSearch {
+        width: 213px;
+      }
+      .menu_btn {
+        line-height: 32px;
+        height: 32px;
+        margin-right: 16px;
+      }
+      .headerLeft {
+        .taskTypeOutTag {
+          .taskTypeTagItem {
+            margin-right: 42px;
+            &.active::after {
+              width: 65px;
+              top: 37.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu_btn {
+    font-size: 14px;
+    margin: 0 0 0 16px;
+  }
+  .table_settings_btn {
+    background: #f7f8fa;
+    margin-left: 16px;
+    // height: 32px;
+    font-size: 14px;
+  }
+  .width-create-task-btn {
+    position: absolute;
+    left: 0px;
+    bottom: 4px;
+  }
+  // ::-webkit-scrollbar-track {
+  //   background-color: #e7e7e9;
+  // }
+  // 滚动条颜色
+  ::-webkit-scrollbar-thumb {
+    background-color: #e7e7e9;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #e7e7e9;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #e7e7e9;
+  }
+}
+
+.taskManageListContainer {
+  margin: 8px;
+  flex: 1;
+  height: calc(100% - 72px);
+  background-color: #fff;
+  // border-top: 1px solid #e7e7e9;
+  border-radius: 8px;
+  overflow: hidden;
+  // overflow: auto;
+  // 宽详情
+  .ant-tag {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    line-height: 16px;
+    border-radius: 2px;
+  }
+  // 宽详情样式
+  &.wide_detail {
+    .ant-table-body {
+      overflow-x: hidden !important;
+      // tr:nth-child(2){
+      //   border-top: none;
+      // }
+    }
+    .contLeft .taskListStatusBox {
+      .myTaskRoleBox {
+        display: none;
+      }
+      .Task_text {
+        display: none;
+      }
+    }
+    .ant-table-thead {
+      display: none;
+    }
+    td.taskNameTd {
+      border-right: 1px solid #e8eaec;
+      .myTaskRoleBox {
+        line-height: 22px;
+      }
+      .treeTableIcon {
+        margin-top: 18px;
+      }
+      .taskTagTxt {
+        font-size: 12px;
+      }
+    }
+    .ant-table.ant-table-bordered > .ant-table-container {
+      border-color: white;
+    }
+    .taskManageListTable .ant-table-body .ant-table-tbody > tr > td.ant-table-cell {
+      border-bottom: none;
+    }
+    //款详情下： 标签等icon隐藏
+    .boardTaskName {
+      .taskTypeLabel {
+        &::before {
+          display: none;
+        }
+        margin-right: 0;
+        // &::after {
+        //   content: '';
+        //   display: inline-block;
+        //   width: 1px;
+        //   height: 12px;
+        //   background-color: #70707a;
+        // }
+      }
+      .myTaskRoleBox {
+        &::before {
+          display: none;
+        }
+      }
+      .taskTagListBox {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  // 表格模式 ui重置
+  &.table_detail {
+    .cellCont {
+      padding: 5px 0 3px 0;
+      .boardTaskName {
+        flex-wrap: nowrap;
+        .taskListTagBox {
+          display: none;
+        }
+        .myTaskRoleBox::before {
+          margin-right: 8px;
+          vertical-align: top;
+        }
+      }
+    }
+    .taskNameTd {
+      .treeTableIcon {
+        margin-top: 11px;
+      }
+      .taskOptBtnGroup  {
+        height: 41px;
+        line-height: 41px;
+      }
+    }
+    .task-list .ant-table-tbody .ant-table-row:hover,
+    .task-list .ant-table-tbody .ant-table-row.active,
+    .task-list .ant-table-tbody .ant-table-row:hover > td,
+    .task-list .ant-table-tbody .ant-table-row.active > td {
+      border-radius: 0;
+    }
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid #e8eaec;
+    }
+  }
+  .ant-table-tbody > tr > td:nth-of-type(1) {
+    border-right: 1px solid #e8eaec;
+  }
+  // ================头部===============//
+  /* =========表头设置========== */
+  .theadSetBox {
+    width: 28px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #fafafa;
+    border: 1px solid #d7d7d9;
+    border-radius: 0px 4px 0px 0px;
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thead_set_icon {
+    width: 13px;
+    height: 12px;
+    background-image: url(../../../../assets/images/task/set_head.png);
+  }
+  .theadSetBox:hover {
+    background-color: #e9f2ff;
+  }
+  .theadSetBox:hover .thead_set_icon {
+    background-image: url(../../../../assets/images/task/set_head_blue.png);
+  }
+  .attentionFlag {
+    z-index: -1;
+  }
+  .width100 {
+    width: 100%;
+  }
+
+  .taskListTable {
+    .ant-table,
+    .ant-table-container {
+      height: 100%;
+    }
+  }
+}
+
+// ***************************任务列表****************************//
+
+.hidescroll {
+  overflow-x: hidden !important;
+}
+
+.taskListTable {
+  // ***********表头**********//
+  .ant-table.ant-table-bordered > .ant-table-container {
+    font-size: 14px;
+  }
+  .ant-table-thead > tr > th {
+    font-weight: 500;
+  }
+  th .taskFlexTh {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+  }
+  .thSortBox {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .th_sort_btn {
+    width: 10px;
+    height: 12px;
+    background-size: 5px 12px;
+  }
+  .th_sort_up {
+    background-image: url(../../../../assets/images/task/half_up.png);
+  }
+  .th_sort_up:hover,
+  .th_sort_up.active {
+    background-image: url(../../../../assets/images/task/half_up_blue.png);
+  }
+  .th_sort_down {
+    background-image: url(../../../../assets/images/task/half_down.png);
+  }
+  .th_sort_down:hover,
+  .th_sort_down.active {
+    background-image: url(../../../../assets/images/task/half_down_blue.png);
+  }
+  // *********单元格内容******//
+  /* ==========标记========== */
+
+  .taskPriTag {
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    line-height: 18px;
+    position: relative;
+    margin-right: 5px;
+  }
+
+  .taskPriTagIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .pri_tag_del {
+    display: none;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    background-image: url(../../../../assets/images/common/del_black.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -8px;
+    top: -5px;
+  }
+  .taskPriTag:hover .pri_tag_del {
+    display: inline-block;
+  }
+
+  .taskUserTd:hover {
+    .add_user_box {
+      display: inline-block;
+    }
+  }
+  // .ant-table-tbody .ant-table-row:hover .taskOptBtnGroup {
+  //   opacity: 1;
+  // }
+  .treeTableIcon {
+    margin-top: 16px;
+  }
+  .cellCont {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 12px 0;
+    min-height: 40px;
+    .taskNameRow {
+      width: 100%;
+      .contLeft,
+      .taskListNameBox {
+        max-width: 100%;
+      }
+    }
+    .add_user_box {
+      text-align: left;
+      display: none;
+      .add_user_icon {
+        width: 22px;
+        height: 20px;
+        background-image: url(../../../../assets/images/task//add_peo_def.png);
+        cursor: pointer;
+      }
+      .add_user_icon:hover {
+        background-image: url(../../../../assets/images/task//add_peo_blue.png);
+      }
+    }
+    // 星级
+    .cellStarDiv .star {
+      width: 14px;
+      height: 14px;
+      margin: 0 2px;
+      display: inline-block;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../../../../assets/images/common/star-un.png);
+      cursor: pointer;
+    }
+    .cellStarDiv .star.active {
+      background-image: url(../../../../assets/images/common/star.png);
+    }
+    .starCustom {
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      color: white;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+  // 已完成状态
+  .cellCont.finished {
+    color: #9a9aa2;
+  }
+  .cellCont.finished .boardTaskName .taskNameSpan {
+    text-decoration: line-through;
+    color: #9a9aa2;
+  }
+
+  /* 星级设置 */
+  .star_set_btn {
+    width: 15px;
+    height: 15px;
+    background-image: url(../../../../assets/images/task/set_d.png);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 10;
+    transform: translate(0, -50%);
+    background-color: white;
+    cursor: pointer;
+  }
+  .star_set_btn:not(.disable) {
+    display: none;
+  }
+  .star_set_btn:hover {
+    background-image: url(../../../../assets/images/task/set-h.png);
+  }
+  .taskPriTd:hover .star_set_btn {
+    display: inline-block;
+    background-color: #e9f2ff;
+  }
+
+  tr:hover {
+    cursor: pointer;
+  }
+  // 拖动行
+  tr.drop-over-downward td {
+    border-bottom: 2px dashed #1890ff;
+    cursor: 'move';
+  }
+  tr.drop-over-upward td {
+    border-top: 2px dashed #1890ff;
+    cursor: 'move';
+  }
+  // 拖动标签到任务名列
+  tr.drop-over-bg td,
+  td.drop-over-bg {
+    background: #e9f2ff;
+    cursor: 'move';
+  }
+  // 宽详情选中
+  td {
+    // .taskListTable td.taskNameTd {
+    .boardTaskName {
+      width: 100%;
+      // height: 38px;
+      position: relative;
+    }
+    .taskListStatusBox {
+      margin-left: 8px;
+    }
+    .taskNameRow {
+      width: 100%;
+      .contLeft {
+        display: inline-flex;
+        overflow: hidden;
+      }
+    }
+    .taskOptBtnGroup {
+      flex-shrink: 0;
+      // position: static;
+      min-width: 100px !important;
+      // background-color: white;
+      margin-top: 0px;
+      // height: 20px;
+      opacity: 1;
+      width: auto;
+      height: 69px;
+      line-height: 69px;
+      text-align: right;
+      background: linear-gradient(272deg, #ffffff 0%, #ffffff 84%, rgba(247, 248, 253, 0) 100%);
+      position: absolute;
+      top: -12px;
+      right: 0;
+      > span {
+        width: 20px;
+        height: 20px;
+        padding: 4px;
+        &:hover {
+          background-color: #f2f4ff;
+        }
+      }
+    }
+    .taskOptBtnGroup:not(.disHover) {
+      display: none;
+    }
+    &:not(.noHover):hover {
+      .task_name_edit_icon {
+        display: inline-block;
+      }
+      .taskListStatusBox {
+        display: none;
+      }
+      .taskOptBtnGroup {
+        // background-color: #f6faff;
+        display: inline-block;
+      }
+    }
+    // }
+    &:hover {
+      background: #f7f8fd;
+      .taskOptBtnGroup {
+        background: linear-gradient(272deg, #f7f8fd 0%, #f7f8fd 84%, rgba(247, 248, 253, 0) 100%);
+      }
+    }
+    &.wide_active {
+      // border-left: 4px solid #3949ab;
+      background: #f5f6ff !important;
+      .taskOptBtnGroup {
+        background: linear-gradient(272deg, #f5f6ff 0%, #f5f6ff 84%, rgba(247, 248, 253, 0) 100%);
+      }
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 100%;
+        background: #3949ab;
+        border-radius: 0px 100px 100px 0px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .boardTaskName .taskNameSpan {
+        color: #3949ab;
+      }
+    }
+    .cellCont {
+      .wideBar {
+        display: none;
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #3949ab;
+      }
+      &.wide_active {
+        .boardTaskName .taskNameSpan {
+          color: #3949ab;
+        }
+        .wideBar {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.taskListTable .boardTaskName {
+  width: 100%;
+  position: relative;
+  padding-left: 0px;
+  margin-left: 0;
+  overflow: visible;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.taskListTable .boardTaskName .taskNameSpan {
+  font-size: 14px;
+  padding-right: 4px;
+  overflow: hidden;
+  max-width: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: inline-block;
+  color: #5c5c5c;
+  color: #191f25;
+}
+
+.taskListTable .taskNameSpan:hover {
+  color: @color_primary;
+}
+.taskLiberName.my_ellipsis:hover {
+  color: @color_primary;
+  cursor: pointer;
+}
+/* 修改任务名输入框 */
+.taskListNameInp {
+  width: 100%;
+  height: 38px;
+  padding-left: 5px;
+  background: white;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.boardTaskName .task_name_edit_icon {
+  width: 16px;
+  height: 18px;
+  vertical-align: middle;
+  background-image: url(../../../../assets/images/common/edit_icon.svg);
+  background-size: auto;
+  cursor: pointer;
+  display: none;
+  &:hover {
+    background-image: url(../../../../assets/images/common/edit_icon_h.svg);
+  }
+}
+.boardTaskName .task_name_edit_icon.absolute {
+  position: absolute;
+  right: 134px;
+  top: 0;
+  height: 30px;
+  background-color: white;
+}
+
+// 任务名列
+.taskListNameBox,
+.taskListStatusBox {
+  display: inline-flex;
+}
+.taskListNameBox {
+  flex: 1;
+  overflow: hidden;
+  height: 21px;
+}
+
+.taskListTable .taskListTagBox {
+  width: 100%;
+  margin-top: 2px;
+}
+.taskListTable .taskListTagBox .taskTypeLabel {
+  font-size: 12px;
+  padding: 0;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+.wide_detail .taskListTable .taskNameTd .taskListTagBox .taskTypeLabel {
+  line-height: 22px;
+}
+// 标签
+.pri_tag_del {
+  display: none;
+  cursor: pointer;
+  width: 13px;
+  height: 13px;
+  background-image: url(../../../../assets/images/common/del-item-icon-normal.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: -8px;
+  top: -5px;
+}
+.taskPriTag:hover .pri_tag_del {
+  display: inline-block;
+}
+
+/* =======任务-负责人人名右键菜单===== */
+.taskUserMenu {
+  width: 170px;
+  border: 1px solid #e8e8e8;
+  background: white;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 4px 0;
+}
+.taskListTable .taskUserMenu {
+  display: none;
+}
+.taskUserMenu > li {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 40px;
+  cursor: pointer;
+}
+.taskUserMenu > li:hover {
+  background: #f5f7fb;
+}
+/* 领导责任编辑 */
+.taskUserMenu .taskUserMenuItem {
+  background: url(../../../../assets/images/task/edit-black.png) no-repeat 13px center #fff;
+}
+/* 领导责任沟通 */
+.taskUserMenu .taskChatShowBtn {
+  background: url(../../../../assets/images//task/chat.png) no-repeat 13px center #fff;
+}
+
+.taskUserMenu .taskUserMenuItem:hover {
+  background: url(../../../../assets/images/task/edit-blue.png) no-repeat 13px center #fff;
+}
+.taskUserMenu > li.taskChatShowBtn:hover {
+  background: url(../../../../assets/images/task/chat_blue.png) no-repeat 13px center #fff;
+}
+
+/* 汇报沟通...统计 */
+.taskListUserItem {
+  display: flex;
+  .taskUserNameBox {
+    // flex: 1;
+  }
+  .taskMiddleLabel {
+    cursor: pointer;
+    border-radius: 2px;
+    margin: 0 2px 5px 0;
+    width: 65px;
+    text-align: center;
+    &:hover {
+      background: #e1eeff;
+    }
+  }
+  .taskUserCountBox {
+    margin-left: 4px;
+  }
+}
+
+.limitWith {
+  width: 100%;
+  // .taskUserNameBox,
+  .taskUserName {
+    width: 100%;
+  }
+}
+
+// .taskUserCountBox {
+//   margin-top: 5px;
+// }
+.taskCountLabel {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.taskListUserItem .taskCountLabel {
+  margin: 0px 10px 0 0;
+}
+.taskCountLabel.none {
+  display: none;
+}
+.taskCountLabel.last {
+  margin-right: 0;
+}
+
+.taskCountLabel .count_icon {
+  width: 12px;
+  height: 14px;
+  background-size: contain;
+  vertical-align: middle;
+  position: relative;
+  // top: -2px;
+}
+.taskCountLabel .count_txt {
+  margin-left: 8px;
+}
+.taskCountLabel.redDot::after {
+  display: inline-block;
+  border-radius: 50%;
+  border: 3px solid #df5464;
+  content: '';
+  position: absolute;
+}
+.taskCountLabel:hover .count_txt {
+  color: @color_primary;
+}
+/* 汇报 */
+.count_rep_icon {
+  background-image: url(../../../../assets/images/task/report-black.png);
+}
+.taskCountLabel:hover .count_rep_icon {
+  background-image: url(../../../../assets/images/task/report_blue.png);
+}
+/* 问题 */
+.count_plan_icon {
+  background-image: url(../../../../assets/images/task/problem.png);
+}
+.taskCountLabel:hover .count_plan_icon {
+  background-image: url(../../../../assets/images/task/problem_blue.png);
+}
+/* 备注 */
+.count_remark_icon {
+  background-image: url(../../../../assets/images/task/remark.png);
+}
+.taskCountLabel:hover .count_remark_icon {
+  background-image: url(../../../../assets/images/task/remark_blue.png);
+}
+
+/* 事务 */
+.count_affairs_icon {
+  background-image: url(../../../../assets/images/task/affair.png);
+}
+.taskCountLabel:hover .count_affairs_icon {
+  background-image: url(../../../../assets/images/task/affair_blue.png);
+}
+/* 附件 */
+.count_files_icon {
+  width: 14px;
+  height: 14px;
+  background-image: url(../../../../assets/images/task/file.png);
+  background-size: 14px;
+}
+.taskCountLabel:hover .count_files_icon {
+  background-image: url(../../../../assets/images/task/file-h.png);
+  background-size: 14px;
+}
+/* 任务监管 */
+.list_trash_check {
+  width: 12px;
+  height: 12px;
+  background: url(../../../../assets/images/task/trash_check.png) no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.list_trash_check:hover {
+  background: url(../../../../assets/images/task/trash_check_h.png) no-repeat;
+}
+
+.forceDot .force_plan_icon {
+  background-image: url(../../../../assets/images/task/reporting-hs.png);
+}
+.forceRedDot .force_plan_icon {
+  background-image: url(../../../../assets/images/task/reporting-red.png);
+}
+
+/* ==============新增子任务=========== */
+
+.taskListTable .addChildTaskTr td.taskNameTd {
+  .addChildTaskInp {
+    width: calc(100% - 4px);
+    margin: 0 auto;
+    height: 100%;
+    padding-left: 5px;
+    padding-right: 92px;
+    background: white;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    outline: none;
+    border: none;
+  }
+  .create_task_btn_box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90px;
+    padding: 0;
+    // height: 48px;
+    // line-height: 48px;
+  }
+  .create_task_btn_box > div {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .create_task_btn_box > .sure_create_btn {
+    background: url(../../../../assets/images/task/sure_create.png) no-repeat;
+    &:hover {
+      background: url(../../../../assets/images/task/sure_create_h.png) no-repeat;
+    }
+  }
+  .create_task_btn_box > .cancel_create_btn {
+    background: url(../../../../assets/images/task/cancel_create.png) no-repeat;
+    &:hover {
+      background: url(../../../../assets/images/task/cancel_create_h.png) no-repeat;
+    }
+  }
+}
+//右键添加列表阴影
+.add-active {
+  background: #f6faff;
+}
+
+// **************任务拖动放置*******************//
+.leftOrgTree.ant-tree .ant-tree-treenode {
+  position: relative;
+  padding-left: 10px;
+}
+
+.taskDropRow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.pageLeftNarrowCon {
+  width: 64px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  .orgNarrowItem {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 28px;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .active {
+      width: 16px;
+      height: 16px;
+      background: url(../../../../assets/images/okrList/list_check.svg) no-repeat;
+      position: absolute;
+      bottom: -3px;
+      left: 26px;
+      z-index: 5;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+// 媒体查询器
+@media screen and (max-width: 1350px) {
+  .secondPageMenuNav {
+    height: 40px;
+  }
+  .taskWideDetail {
+    height: calc(100% + 80px);
+    top: -80px;
+  }
+  .task-change-mode-box {
+    .taskTypeOutTag {
+      .taskTypeTagItem {
+        min-width: 78px;
+        margin-right: 8px;
+      }
+    }
+  }
+}

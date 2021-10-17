@@ -1,0 +1,275 @@
+@import '~@/src/styles/_var.less';
+
+.chat-setting-container {
+  width: 680px;
+  background-color: @color_f5;
+  box-shadow: none;
+  margin: 20px;
+
+  .setting_show_box {
+    box-shadow: 0px 0px 6px 0px rgba(2, 52, 134, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    .setting_item:not(:first-child) {
+      border-top: 1px solid @color_e7;
+    }
+  }
+  .setting_item {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    min-height: 62px;
+    background-color: @color_white;
+    position: relative;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    .uploadIcon {
+      display: none;
+      position: absolute;
+      left: 20px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      z-index: 9999999999;
+      background: rgba(0, 0, 0) url(../../../../../assets/images/chatWin/updateimg-h.png) no-repeat center;
+      &:hover {
+        display: block;
+      }
+    }
+    .oa-avatar:hover + .uploadIcon {
+      display: block;
+    }
+    .subject-name {
+      height: 30px;
+      line-height: 30px;
+      background-color: transparent;
+      border-radius: 4px;
+      border: 1px solid @color_e7;
+      margin-right: 16px;
+      color: @color_dark;
+      font-weight: bold;
+    }
+    .subject-name[disabled] {
+      border: 0;
+    }
+    .editIcon {
+      cursor: pointer;
+      color: #4285f4;
+      i {
+        width: 14px;
+        height: 14px;
+        background-image: url(../../../../../assets/images/annouce/edit_h.png);
+        vertical-align: -3px;
+        margin-right: 5px;
+      }
+    }
+    .left_txt {
+      flex: 1;
+      font-size: 14px;
+      color: @color_gray;
+      p {
+        margin-bottom: 2px;
+        color: @color_dark;
+      }
+    }
+  }
+  .setting_middle_title {
+    font-size: 12px;
+    margin: 32px 0 12px 0;
+    color: @color_gray;
+  }
+  .setting_button_group {
+    margin-top: 24px;
+    button {
+      width: 78px;
+      height: 32px;
+      text-align: center;
+      line-height: 30px;
+      border: 1px solid @color_red;
+      border-radius: 4px;
+      padding: 0;
+      color: @color_red;
+      margin-right: 20px;
+      font-size: 12px;
+      &:hover {
+        background-color: @color_redlight;
+      }
+    }
+  }
+}
+
+.chatMemberList {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 100%;
+  .formArea {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    .inviteNew {
+      line-height: 18px;
+      padding-left: 26px;
+      background-size: 22px 20px;
+      background-repeat: no-repeat;
+      transition: none;
+      background-color: transparent;
+      background-image: url(../../../../../assets/images/common/add_peo_def.png);
+      &:hover {
+        color: @color_blue;
+        background-image: url(../../../../../assets/images/common/add_peo_blue.png);
+      }
+    }
+  }
+  .search-form {
+    width: 244px;
+    border-radius: 16px;
+    background-color: @color_f5;
+    border: 0;
+    .ant-input {
+      border: none;
+    }
+    .ant-input-group {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .ant-input-search-button {
+      border: none !important;
+      border-color: #f5f7fb !important;
+      background: #f5f7fb !important;
+    }
+    .ant-input:focus {
+      box-shadow: none;
+    }
+  }
+  .search-form > input {
+    background-color: transparent;
+  }
+  .inviteAgin {
+    cursor: pointer;
+    line-height: 16px;
+    padding-left: 20px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    transition: none;
+    background-color: transparent;
+    background-image: url(../../../../../assets/images/chatWin/envelop_def.png);
+    &:hover {
+      color: @color_blue;
+      background-image: url(../../../../../assets/images/chatWin/envelop_hover.png);
+    }
+  }
+  .group_owner,
+  .group_manager {
+    width: 28px;
+    height: 16px;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+    margin-left: 8px;
+    color: #4285f4;
+    border-radius: 8px;
+    background-color: #e9f2ff;
+  }
+  .group_manager {
+    width: 38px;
+    color: #34a853;
+    background-color: #e5f7e8;
+  }
+  .group_owner_handle {
+    cursor: pointer;
+    background: url(../../../../../assets/images/chatWin/manager.svg) no-repeat;
+    padding-left: 18px;
+    &:hover {
+      color: @color_blue;
+      background: url(../../../../../assets/images/chatWin/manager_h.svg) no-repeat;
+    }
+  }
+  .group_manager_handle {
+    cursor: pointer;
+    background: url(../../../../../assets/images/chatWin/manager_c.svg) no-repeat;
+    padding-left: 18px;
+    &:hover {
+      color: @color_blue;
+      background: url(../../../../../assets/images/chatWin/manager_c_h.svg) no-repeat;
+    }
+  }
+  .member_rc {
+    margin-left: 10px;
+    cursor: pointer;
+    background: url(../../../../../assets/images/chatWin/rc_member.svg) no-repeat;
+    padding-left: 18px;
+    &:hover {
+      color: @color_blue;
+      background: url(../../../../../assets/images/chatWin/rc_member_h.svg) no-repeat;
+    }
+  }
+  .ant-table-container {
+    .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+      border-color: none;
+      border-width: 0;
+      color: @color_dark;
+      opacity: 1;
+    }
+    .ant-select-focused.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      border-color: none;
+      border-width: 0;
+      outline: 0;
+      box-shadow: none;
+      color: @color_dark;
+      opacity: 1;
+    }
+  }
+
+  .ant-select-arrow {
+    right: 12px;
+  }
+  .memberStatus {
+    .ant-select-selector,
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      background-color: transparent;
+    }
+    .ant-select-selection-item {
+      &::after {
+        vertical-align: 2px;
+      }
+    }
+  }
+
+  .tableContent,
+  .ant-spin-nested-loading,
+  .ant-spin-container,
+  .ant-table {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    tr:nth-child(odd) {
+      background: #fff !important;
+    }
+    td {
+      padding: 0 16px;
+      height: 39px;
+    }
+    th {
+      padding: 2px 16px;
+      vertical-align: 2px;
+    }
+  }
+
+  .ant-table-empty {
+    .ant-table-body,
+    .ant-table-container,
+    table {
+      height: 100%;
+      overflow: hidden !important;
+      td {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+@import '~@/src/styles/_var.less';
+// **********组织架构树基础样式**************//
+.baseOrgTree.ant-tree .ant-tree-treenode {
+  width: 100%;
+  display: flex;
+  padding-left: 11px;
+  // color: #5c5c5c;
+  //
+  color: #191f25;
+  height: 44px;
+  padding-top: 3px;
+}
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper,
+.baseOrgTree.ant-tree .ant-tree-switcher {
+  line-height: 36px;
+  height: 36px;
+  margin-right: 12px;
+}
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper {
+  display: inline-flex;
+  padding: 0 16px 0 0;
+  flex: 1;
+}
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected,
+.baseOrgTree.ant-tree .ant-tree-treenode.ant-tree-treenode-selected {
+  width: 100%;
+  background: none;
+  color: @color_primary;
+  font-weight: bold;
+}
+.baseOrgTree.ant-tree .ant-tree-treenode:hover,
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper:hover {
+  background: #f7f8fd;
+}
+// .baseOrgTree.ant-tree.gradient .ant-tree-node-content-wrapper:hover .org_tree_text {
+//   max-width: 160px;
+// }
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper:hover {
+  background: transparent;
+}
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper .ant-tree-iconEle {
+  line-height: inherit;
+}
+
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper .ant-tree-title {
+  flex: 1;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.baseOrgTree.ant-tree .org_tree_row {
+  width: 100%;
+}
+// 我的规划/任务
+.org_my_icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  background-image: url(../../../assets/images/workplan/org_my.png);
+}
+.org_my_active .org_my_icon,
+.org_my_icon.active {
+  background-image: url(../../../assets/images/workplan/org_my_h.png);
+}
+.baseOrgTree.ant-tree .nameLeftIcon {
+  width: 14px;
+  height: 14px;
+}
+.baseOrgTree.ant-tree .nameLeftIcon.root {
+  width: 14px;
+  height: 14px;
+  background-image: url(../../../assets/images/workplan/org_root.png);
+  position: relative;
+  top: 2px;
+}
+.baseOrgTree.ant-tree .nameLeftIcon.child {
+  width: 12px;
+  height: 8px;
+  background-image: url(../../../assets/images/workplan/tree_child.png);
+}
+
+// 不显示切换节点
+.baseOrgTree.switch_null.ant-tree.ant-tree-directory .ant-tree-treenode .ant-tree-switcher {
+  display: none !important;
+}
+.baseOrgTree.ant-tree .ant-tree-treenode.drag-over > [draggable] {
+  background-color: transparent;
+  color: #5c5c5c;
+}
+// DirectoryTree 目录树
+.baseOrgTree.ant-tree.ant-tree-directory .ant-tree-treenode-selected:hover::before,
+.baseOrgTree.ant-tree.ant-tree-directory .ant-tree-treenode-selected::before {
+  background: none;
+  color: @color_primary;
+}
+.baseOrgTree.ant-tree.ant-tree-directory
+  .ant-tree-treenode
+  .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  color: @color_primary;
+}
+.baseOrgTree .org_tree_row > .row_right {
+  display: inline-flex;
+  align-items: center;
+}
+// 组织架构右侧展开折叠按钮
+.baseOrgTree .tree_rig_switch {
+  width: 20px;
+  height: 20px;
+  background-size: 10px 5px;
+  background-image: url(../../../assets/images/workplan/tri_up.png);
+  transition: all 0.2s linear;
+}
+.baseOrgTree.ant-tree .ant-tree-node-content-wrapper-close .tree_rig_switch {
+  transform: rotate(180deg);
+}
+// ==选中效果===//
+.baseOrgTree.ant-tree .ant-tree-treenode-selected .nameLeftIcon.root {
+  background-image: url(../../../assets/images/workplan/org_root_h.png);
+}
+.baseOrgTree.ant-tree .ant-tree-treenode-selected .nameLeftIcon.child {
+  background-image: url(../../../assets/images/workplan/tree_child_h.png);
+}
+.baseOrgTree.ant-tree .ant-tree-treenode-selected .tree_rig_switch {
+  background-image: url(../../../assets/images/workplan/tri_up_h.png);
+}
+
+// 钉住按钮
+.baseOrgTree .org_stare_icon {
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../../../assets/images/task/org_stare_icon.svg);
+}
+.baseOrgTree .org_stare_icon:not(.stared) {
+  display: none;
+}
+.baseOrgTree .org_stare_icon:hover {
+  width: 14px;
+  height: 14px;
+  background-image: url(../../../assets/images/task/org_stare_icon_h.svg);
+}
+.baseOrgTree .org_stare_icon.stared {
+  background-image: url(../../../assets/images/task/stared_h.svg);
+}
+.baseOrgTree .org_stare_icon.stared:hover {
+  background-image: url(../../../assets/images/task/stared_h.svg);
+}
+
+// 创建任务按钮
+.baseOrgTree .row_right {
+  position: fixed;
+  z-index: -9999;
+  .create_task_icon {
+    width: 14px;
+    height: 14px;
+    background-image: url(../../../assets/images/task/add_icon.svg);
+    margin-right: 10px;
+    // display: flex;
+    // display: none;
+  }
+}
+
+.baseOrgTree .create_task_icon:hover {
+  background-image: url(../../../assets/images/task/add_icon_h.svg);
+}
+
+.baseOrgTree.ant-tree .ant-tree-treenode:hover .org_stare_icon {
+  display: inline-block;
+}
+
+// 组织架构接收拖动节点时的背景
+.baseOrgTree.ant-tree .ant-tree-treenode.drop-over-bg {
+  background: #e9f2ff;
+}
+.baseOrgTree.ant-tree {
+  // 自动撑起最大宽度
+  &.fix_content {
+    display: table;
+    width: fit-content;
+    // .ant-tree-treenode {
+    //   position: relative;
+    // }
+    .row_left {
+      width: auto;
+      margin-right: 10px;
+      .org_tree_count_text {
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+  .org_tree_count_text {
+    width: auto;
+  }
+}
+
+// 脑图 组织架构列表ui
+.plan-list-org {
+  &.baseOrgTree.ant-tree {
+    .ant-tree-node-content-wrapper,
+    .ant-tree-switcher {
+      margin-right: 0;
+    }
+    .ant-tree-treenode-selected {
+      .home_icon {
+        background-image: url(../../../assets/images/workplan/plan_home_h.png);
+      }
+    }
+    .create_plan_icon {
+      background-image: url(../../../assets/images/taskDetail/add_cross_blue.png);
+    }
+    .handle_more_icon {
+      background-image: url(../../../assets/images/taskOpt/more-vert-grey.svg);
+    }
+    .row_right {
+      display: none;
+      // display: inline-flex;
+      position: relative;
+      z-index: -1;
+      .img_icon {
+        width: 14px;
+        height: 14px;
+      }
+      .create_plan_icon,
+      .handle_more_icon {
+        display: inline-block;
+      }
+    }
+
+    // }
+  }
+  .ant-tree-treenode:hover .row_right {
+    display: inline-flex;
+    z-index: 1;
+  }
+}

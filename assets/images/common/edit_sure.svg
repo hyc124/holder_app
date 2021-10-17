@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>编组备份 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.66015 5.33985 0.66015 5.33985 5.99965 0 5.99965"></polygon>
+        <polygon id="path-3" points="0.96015 0.9601 8.99965 0.9601 8.99965 9 0.96015 9"></polygon>
+    </defs>
+    <g id="----·OKR--V5.2.8(8.12)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="OKR宽详情" transform="translate(-1290.000000, -532.000000)">
+            <rect fill="#EFF1FF" x="0" y="0" width="1334" height="840"></rect>
+            <rect id="矩形" fill="#000000" opacity="0.400000006" x="0" y="0" width="1334" height="840"></rect>
+            <rect id="矩形" fill="#FFFFFF" x="80" y="0" width="1254" height="840"></rect>
+            <rect id="矩形" stroke="#B1B1B1" fill="#FFFFFF" x="1090.5" y="522.5" width="219" height="31" rx="4"></rect>
+            <g id="编组-13" transform="translate(1290.000000, 532.000000)">
+                <g id="编组备份-6" transform="translate(0.000000, 1.000000)">
+                    <g id="编组" transform="translate(0.000000, 3.040540)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M4.1716,5.7994 L0.2006,1.8284 C-0.0674,1.5614 -0.0674,1.1284 0.2006,0.8604 C0.4676,0.5934 0.9016,0.5934 1.1686,0.8604 L5.1396,4.8314 C5.4066,5.0984 5.4066,5.5324 5.1396,5.7994 C4.8726,6.0664 4.4386,6.0664 4.1716,5.7994" id="Fill-1" fill="#3949AB" mask="url(#mask-2)"></path>
+                    </g>
+                    <g id="编组" transform="translate(3.000000, 0.040540)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Clip-4"></g>
+                        <path d="M1.1604,7.8311 L7.8304,1.1611 C8.0984,0.8931 8.5314,0.8931 8.7994,1.1611 C9.0664,1.4281 9.0664,1.8611 8.7994,2.1281 L2.1284,8.7991 C1.8614,9.0671 1.4274,9.0671 1.1604,8.7991 C0.8934,8.5321 0.8934,8.0981 1.1604,7.8311" id="Fill-3" fill="#3949AB" mask="url(#mask-4)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

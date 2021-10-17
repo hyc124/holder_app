@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.018" height="8" viewBox="0 0 5.018 8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #70707a;
+      }
+    </style>
+  </defs>
+  <path id="右箭头" class="cls-1" d="M503.375,232.776l-1.018-1.018-2.982,2.982-2.982-2.982-1.018,1.018,4,4Z" transform="translate(-231.758 503.375) rotate(-90)"/>
+</svg>

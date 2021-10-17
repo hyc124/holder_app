@@ -1,0 +1,347 @@
+.taskDetailHeader.OKRDetailHeader {
+  padding-top: 0;
+  padding-bottom: 0;
+  position: relative;
+  // box-shadow: 0px 0px 3px 0px rgba(2, 52, 134, 0.2);
+  // &::after {
+  //   content: '';
+  //   display: block;
+  //   width: 100%;
+  //   height: 1px;
+  //   background-color: #e7e7e9;
+  //   position: absolute;
+  //   bottom: 48px;
+  //   left: 0;
+  // }
+  .headerTopCont {
+    margin-top: 12px;
+    margin-bottom: -2px;
+  }
+  .header-content {
+    margin: 0;
+    padding: 16px 0;
+  }
+  .header_content {
+    margin-bottom: 12px;
+    .left_con {
+      overflow: auto;
+    }
+    .right_con {
+      margin-left: 12px;
+    }
+    .name_flag {
+      margin-right: 12px;
+      width: 38px;
+      height: 38px;
+      background-image: url(../../../../../assets/images/workplan/OKR/aim_new.png);
+    }
+    .Krname_flag {
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+      color: #fff;
+      background: #3949ab;
+      font-size: 18px;
+      border-radius: 10px;
+      font-style: normal;
+      text-align: center;
+      line-height: 24px;
+    }
+    .persionInfoRow {
+      .editHoverBlue:hover {
+        color: #3949ab;
+        background: #f5f7fb;
+        // padding: 0 4px;
+      }
+      margin-top: 6px;
+      .persionInfoItem {
+        cursor: pointer;
+      }
+      .backgroundf {
+        // display: inline-block;
+        // height: 20px;
+        // line-height: 20px;
+        background: #f5f7fb;
+        padding: 0 4px;
+      }
+      .verLine14 {
+        width: 1px;
+        height: 14px;
+        margin: 0 12px;
+        background: #d7d7d9;
+      }
+      .liableRow {
+        flex-shrink: 0;
+        cursor: pointer;
+        .oa-avatar {
+          min-width: auto;
+          width: 24px;
+          height: 24px;
+        }
+      }
+      // 信心指数
+      .kr_heart_box {
+        .heard_heart {
+          li {
+            background: url(../../../../../assets/images/taskReport/heart_border.png) no-repeat center 12px;
+            background-size: 16px;
+            text-align: center;
+            width: 16px;
+          }
+          .ant-rate-star-first,
+          .ant-rate-star-second {
+            color: white;
+          }
+          .ant-rate-star-half .ant-rate-star-first,
+          .ant-rate-star-full .ant-rate-star-second {
+            color: #ffaa00;
+          }
+        }
+        .heartVal {
+          color: #70707a;
+          margin-left: 8px;
+        }
+      }
+    }
+    .grade_box {
+      .grade_num {
+        color: #3949ab;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .grade_txt {
+        color: #70707a;
+        font-size: 12px;
+      }
+      .grade_num_inp {
+        width: 50px;
+      }
+    }
+  }
+  .taskDescriptionShow.okrDescription {
+    margin-bottom: 8px;
+    margin-top: -9px;
+  }
+  .taskNameBox {
+    margin-top: 0;
+  }
+
+  // =======操作按钮===========//
+  .headerOptBox {
+    margin: 0 -24px;
+    padding: 8px 0px;
+    // border-top: 1px solid ;
+    .tab_change_ul {
+      li {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        line-height: 32px;
+        padding: 0px 12px;
+        border-left: 1px solid #d7d7d9;
+        background-color: #f5f5f6;
+        color: #70707a;
+        cursor: pointer;
+        &:nth-of-type(1) {
+          border-left: 0;
+          border-radius: 4px 0 0 4px;
+        }
+        &:last-of-type {
+          border-radius: 0 4px 4px 0;
+        }
+        .btn_txt {
+          margin-left: 6px;
+        }
+        &.to_four_quadrant {
+          .btn_icon {
+            width: 14px;
+            height: 14px;
+            background-image: url(../../../../../assets/images/okrList/okr_hearder_card.svg);
+          }
+        }
+        &.to_map_view {
+          .btn_icon {
+            width: 14px;
+            height: 12px;
+            background-image: url(../../../../../assets/images/okrList/to_view.svg);
+          }
+        }
+        &.to_detail {
+          .btn_icon {
+            width: 13px;
+            height: 14px;
+            background-image: url(../../../../../assets/images/okrList/to_detail.svg);
+          }
+        }
+        &:hover,
+        &.active {
+          color: #3949ab;
+          &.to_four_quadrant {
+            .btn_icon {
+              // background-image: url(../../../../../assets/images/okrList/to_view_1h.png);
+              background-image: url(../../../../../assets/images/okrList/okr_hearder_card_h.svg);
+            }
+          }
+          &.to_map_view {
+            .btn_icon {
+              background-image: url(../../../../../assets/images/okrList/to_view_h.svg);
+            }
+          }
+          &.to_detail {
+            .btn_icon {
+              background-image: url(../../../../../assets/images/okrList/to_detail_new_h.svg);
+            }
+          }
+        }
+      }
+    }
+    .left_con {
+      .handleBtn {
+        display: flex;
+        align-items: center;
+        line-height: 32px;
+        padding: 0px 12px;
+        border-radius: 4px;
+        background-color: #f5f5f6;
+        color: #70707a;
+        cursor: pointer;
+        .btn_txt {
+          margin-left: 6px;
+        }
+        &:hover {
+          color: #3949ab;
+        }
+      }
+      .another_win {
+        height: 32px;
+        margin-left: 16px;
+        .another_win_icon {
+          width: 16px;
+          height: 16px;
+          background-image: url(../../../../../assets/images/okrList/tv.svg);
+        }
+        &:hover {
+          .another_win_icon {
+            background-image: url(../../../../../assets/images/okrList/tv.svg);
+          }
+        }
+      }
+    }
+    .right_con {
+      .opt_btn {
+        height: 28px;
+        line-height: 28px;
+        margin-left: 12px;
+        font-size: 12px;
+        &.bgStyle {
+          padding: 0 14px;
+          background: #3949ab;
+          border-radius: 4px;
+          color: white;
+          &:hover {
+            background-color: rgba(57, 73, 171, 0.7) !important;
+          }
+          &:active {
+            background-color: rgba(57, 73, 171, 1);
+          }
+        }
+        &.borderStyle {
+          padding: 0 14px;
+          border: 1px solid #b1b1b1;
+          border-radius: 4px;
+          color: #414141;
+          &:hover {
+            background-color: rgba(177, 177, 177, 0.1);
+          }
+          &:active {
+            background-color: rgba(177, 177, 177, 0.2);
+          }
+        }
+        &.relateTask {
+          padding-left: 12px;
+        }
+        &:nth-of-type(0) {
+          margin-left: 0;
+        }
+        .planAccomplish::before {
+          display: none;
+        }
+        &.add_task_btn {
+          border: 1px solid #3949ab;
+          border-radius: 4px;
+          margin-left: 20px;
+          padding: 0 14px;
+          color: #3949ab;
+        }
+        &.addchild_btn {
+          margin: 0 0 0 20px;
+        }
+      }
+      // 添加进展
+      .progress_rep_Btn {
+        &::before {
+          width: 0;
+          height: 0;
+          // background-image: url(../../../../../assets/images/okrDetail/edit_white.png);
+        }
+      }
+      // 派发按钮
+      .select_distribute {
+        &::before {
+          display: none;
+        }
+      }
+      // 选择派发
+      .distribute_to {
+        &::before {
+          // margin-right: 4px;
+          width: 0;
+          height: 0;
+          // background-image: url(../../../../../assets/images/okrDetail/distri_blue.png);
+        }
+      }
+      // 筛选
+      .okr_filter {
+        &::before {
+          width: 12px;
+          height: 14px;
+          margin-right: 6px;
+          vertical-align: sub;
+          background-image: url(../../../../../assets/images/okrList/filter.svg);
+        }
+        &:hover {
+          color: #3949ab;
+          &::before {
+            background-image: url(../../../../../assets/images/okrList/filter_h.svg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.OKRDetailContent {
+  // ======最小屏幕适应=======//
+  &.okrDetailMinSreen {
+    max-width: 100%;
+    .taskDetailHeader.OKRDetailHeader {
+      .headerOptBox {
+        .tab_change_ul li,
+        .another_win {
+          .btn_txt {
+            display: none;
+          }
+        }
+        .right_con .okr_auto_btn::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .taskDetailMid .processCont .detail_tabs {
+    height: calc(100% - 10px);
+  }
+  .taskDetailHeader.OKRDetailHeader .headerOptBox {
+    margin: 0;
+  }
+}

@@ -1,0 +1,1836 @@
+@import '~@/src/styles/_var.less';
+
+/**
+ * OKR四象限界面展示
+ */
+.fourQuadrant {
+  .add_okr_dif {
+    display: none;
+  }
+  width: 100%;
+  height: calc(100% - 54px);
+  left: 0;
+  top: 0;
+  position: relative;
+  padding: 7px;
+  // overflow: hidden;
+  overflow: auto;
+  background-color: #f5f7fb;
+  .quadrantBordData .ant-table-tbody .ant-table-row:hover,
+  .quadrantBordData .ant-table-tbody .ant-table-row.active {
+    background-color: #e9f2ff;
+    & > td {
+      background-color: transparent;
+      .show_input_name {
+        display: inline-block;
+      }
+    }
+  }
+
+  .selectRow {
+    opacity: 0.6;
+    .ant-table-selection-column label.ant-checkbox-wrapper-disabled {
+      display: none;
+    }
+  }
+  .quadrant-header-btn {
+    & > i {
+      background: url(../../../../assets/images/workplan/OKR/add_shen.png) no-repeat center;
+      background-size: 12px;
+    }
+    i.quadrant-header-select {
+      background: url(../../../../assets/images/okrList/okr_select.png) no-repeat center;
+    }
+    &:hover,
+    &.active {
+      i.quadrant-header-select {
+        background: url(../../../../assets/images/okrList/okr_select.png) no-repeat center;
+        background-size: 12px;
+      }
+      & > i {
+        background: url(../../../../assets/images/common/add-hover.png) no-repeat center;
+      }
+    }
+    &.active {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .quadrant-btn-send {
+    i {
+      background: url(../../../../assets/images/workplan/OKR/dropdown-pf.png) no-repeat center;
+    }
+    &:hover {
+      span {
+        color: #4285f4;
+      }
+      i {
+        background: url(../../../../assets/images/workplan/OKR/dropdown-ph.png) no-repeat center;
+      }
+    }
+  }
+  .quadrant-relate-btn {
+    i {
+      margin-right: 4px;
+      background: url(../../../../assets/images/workplan/OKR/relates.png) no-repeat center;
+    }
+    &:hover,
+    &.active {
+      span {
+        color: #4285f4;
+      }
+      i {
+        background: url(../../../../assets/images/workplan/OKR/relates_h.png) no-repeat center;
+      }
+    }
+  }
+  .quadrant-btn-add {
+    i {
+      background: url(../../../../assets/images/workplan/OKR/add_shen.png) no-repeat center;
+      background-size: 12px;
+    }
+    &:hover,
+    &.active {
+      span {
+        color: #4285f4;
+      }
+      i {
+        background: url(../../../../assets/images/common/add-hover.png) no-repeat center;
+        background-size: 12px;
+      }
+    }
+  }
+  .ant-tabs-content {
+    height: 100%;
+    .ant-spin-nested-loading {
+      height: 100%;
+      .ant-spin-container {
+        height: 100%;
+        .quadrantBordData {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .ant-tabs-top > div > .ant-tabs-nav::before {
+    border: none;
+  }
+  .name_Colum {
+    width: 100%;
+    height: 20px;
+    display: flex;
+  }
+
+  .table_text_right.finishedTask {
+    color: #9a9aa2 !important;
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  .quadrant-part {
+    min-width: 520px;
+    min-height: 418px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 6px 0px rgba(2, 52, 134, 0.2);
+    border-radius: 4px;
+    margin-left: 8px;
+    margin-top: 8px;
+    // width: calc(50% - 24px);
+    width: calc(50% - 12px);
+    height: calc(50% - 27px);
+    display: inline-block;
+    padding: 0px;
+    overflow: hidden;
+    &:hover {
+      .icon_part_page {
+        display: inline-block;
+      }
+    }
+    .task-list {
+      overflow: auto;
+      overflow-x: hidden;
+      table {
+        border-collapse: collapse;
+        margin-top: 5px;
+      }
+      // 拖动行
+      tr.drop-over-downward {
+        border-bottom: 2px solid #1890ff;
+        td:first-child {
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            bottom: -7px;
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border: 2px solid #4285f4;
+            border-radius: 50%;
+            opacity: 1;
+          }
+        }
+        &.add_Kr_Event {
+          border-bottom: none;
+          .add_kr_ObjectLing {
+            border-top: 2px solid #1890ff;
+          }
+          td:first-child {
+            &::before {
+              bottom: 26px;
+            }
+          }
+        }
+      }
+      tr.drop-over-upward {
+        border-top: 2px solid #1890ff;
+        td:first-child {
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: -7px;
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border: 2px solid #4285f4;
+            border-radius: 50%;
+            opacity: 1;
+          }
+        }
+      }
+      .kr_dis_control {
+        .table_text_right .show_input_list:first-child {
+          display: none !important;
+        }
+        .okrOptBtnGroup {
+          display: none;
+        }
+        .part_okr_content {
+          .part-person-kr {
+            display: none;
+          }
+        }
+        &:hover,
+        &.active {
+          background-color: #f4f4f5;
+        }
+      }
+      // 拖动标签到任务名列
+      // tr.drop-over-bg {
+      //   background: #f4f4f5;
+      //   cursor: 'move';
+      // }
+      .part_name_input {
+        width: calc(100% + 193px);
+        position: absolute;
+        left: 14px;
+        display: flex;
+        align-items: center;
+        z-index: 8;
+        .ant-input {
+          display: flex;
+          padding: 4px 11px;
+          padding-right: 58px;
+          flex: 1;
+        }
+      }
+      .part-text-main {
+        display: inline-block;
+      }
+      .part-text-content {
+        display: flex;
+        height: auto;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+      }
+      .part-text-okr {
+        max-width: calc(100% - 90px);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
+        vertical-align: -6px;
+        margin-right: 8px;
+        white-space: normal;
+      }
+    }
+
+    .ant-tabs-nav-more {
+      display: none;
+    }
+    .none_data_btn > button {
+      color: #4285f4;
+      background: url(../../../../assets/images/common/add-hover.png) no-repeat 10px 10px;
+      min-width: 96px;
+      display: inline-block;
+      vertical-align: middle;
+      height: 32px;
+      text-align: left;
+      line-height: 32px;
+      padding: 0px;
+      padding-left: 21px;
+      font-size: 14px;
+      border-radius: 16px;
+      border: 1px solid #4285f4;
+      cursor: pointer;
+      span {
+        margin-left: 6px;
+        padding-right: 12px;
+        width: auto;
+      }
+      &:focus {
+        outline: 0px;
+      }
+    }
+    .none_data_btn > button:disabled {
+      border: 1px solid #d7d7d9;
+      color: #d7d7d9;
+      &:hover {
+        background: url(../../../../assets/images/common/add-disable.png) no-repeat 10px 10px #fff;
+      }
+      background: url(../../../../assets/images/common/add-disable.png) no-repeat 10px 10px #fff;
+    }
+    .none_data_btn {
+      text-align: center;
+      margin-top: 10px;
+      &:focus {
+        outline: 0px;
+      }
+    }
+    .none_data_totaser {
+      width: 190px;
+      height: 88px;
+      font-size: 12px;
+      color: white;
+      background: rgba(66, 133, 244, 1);
+      box-shadow: 0px 2px 9px 1px rgba(17, 78, 220, 0.34);
+      border-radius: 4px;
+      position: absolute;
+      top: -31px;
+      padding: 26px 14px 12px 0px;
+      left: 116px;
+      text-align: right;
+      button {
+        width: 46px;
+        height: 20px;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 4px;
+        color: #4285f4;
+        border: none;
+      }
+      p {
+        text-align: left;
+        padding-left: 15px;
+      }
+      .angle {
+        margin-top: -23px;
+        margin-left: -18px;
+        transform: rotate(-119deg);
+        font-size: 22px;
+        font-weight: 500;
+        color: #4285f4;
+        height: 10px;
+        position: absolute;
+      }
+    }
+    .module-btn-display {
+      flex: 1;
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      &:hover {
+        .quadrant-header-btn.noshow,
+        .quadrant-relate-btn.noshow {
+          display: inline-block;
+        }
+      }
+    }
+
+    .icon_part_page {
+      float: right;
+      padding-left: 20px;
+      height: 22px;
+      line-height: 22px;
+      margin-top: -1px;
+      background: url(../../../../assets/images/workplan/OKR/max_part.png) no-repeat left 3px;
+      background-size: 14px;
+      cursor: pointer;
+      color: #70707a;
+      font-size: 12px;
+      display: none;
+      &:hover {
+        color: #4285f4;
+        background: url(../../../../assets/images/workplan/OKR/max_part_h.png) no-repeat left 3px;
+      }
+    }
+
+    .icon_part_page.maxpage {
+      background: url(../../../../assets/images/workplan/OKR/min_part.png) no-repeat left center;
+      background-size: 14px;
+      &:hover {
+        color: #4285f4;
+        background: url(../../../../assets/images/workplan/OKR/min_part_h.png) no-repeat left center;
+      }
+    }
+    .okr_icon {
+      vertical-align: middle;
+      display: inline-block;
+      width: 21px;
+      height: 25px;
+      margin-right: 3px;
+    }
+
+    .quadrant-header-btn,
+    .quadrant-header-okr,
+    .quadrant-relate-btn {
+      float: right;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: normal;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      border: none;
+      padding-right: 0px;
+      color: #70707a;
+      line-height: normal;
+      height: 16px;
+      box-shadow: none;
+      &.creat_task_btn {
+        font-size: 14px;
+      }
+      &:hover,
+      &.active {
+        color: #4285f4;
+      }
+      &:focus {
+        outline: none;
+      }
+      i {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin-right: 3px;
+      }
+      .oa_none_data_container {
+        .none_data_img {
+          margin-bottom: 0px;
+        }
+        .none_data_word {
+          color: #9a9aa2;
+          font-size: 12px;
+          margin: 13px 0px;
+        }
+      }
+      .boardListTbody tr:hover {
+        background: rgba(233, 242, 255, 0.8) !important;
+      }
+      .moduleItemBox {
+        padding: 0;
+      }
+    }
+    .quadrant-header {
+      height: 52px;
+      border-bottom: 1px solid #e7e7e9;
+      padding: 0px 14px;
+      justify-content: space-between;
+      .quadrant-header-okr:hover .quadrant-btn-right {
+        background: url(../../../../assets/images/workplan/arrow-right-small.png) no-repeat center 4px;
+      }
+      .quadrant-header-okr .quadrant-btn-right {
+        margin-left: 7px;
+        margin-right: 0px;
+        background: url(../../../../assets/images/workplan/icon-tag-right.png) no-repeat center 4px;
+      }
+    }
+  }
+  .quadrant-part.maxpage {
+    width: calc(100% - 16px);
+    height: calc(100% - 45px);
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    z-index: 1;
+    .task-list .okrOptBtnGroup {
+      right: 459px;
+      z-index: 1;
+    }
+  }
+  .table_text_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 16px !important;
+    height: -webkit-fill-available !important;
+  }
+}
+// 表格数据内容
+.part_okr_content {
+  min-height: 46px;
+  display: flex;
+  padding: 14px 0px;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0px;
+  .task-part-text {
+    display: flex;
+    min-width: calc(100% - 384px);
+    max-width: calc(100% - 16px);
+    flex: 1;
+    align-items: center;
+    flex-flow: column;
+    .ant-tag {
+      height: 16px;
+      width: auto;
+      line-height: 15px;
+      text-align: center;
+      padding: 0 2px;
+    }
+  }
+  .part-person-kr {
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+    & > div {
+      float: left;
+      margin-left: 32px;
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+    .eidt_Kr {
+      position: relative;
+      margin-top: 4px;
+    }
+    .okr_message {
+      margin-top: 3px;
+      min-width: 138px;
+      width: auto; //英文171 139-中
+      text-align: right;
+      display: none;
+      margin-left: 2px;
+    }
+    .ant-input {
+      padding: 4px 8px;
+      max-width: 49px;
+      width: auto;
+    }
+    .eidt_Kr_Process {
+      position: absolute;
+      width: 350px;
+      position: absolute;
+      left: 0px;
+      top: 22px;
+      height: 29px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 2px 6px 0px rgba(111, 111, 111, 0.6);
+      border-radius: 8px;
+      z-index: 99;
+    }
+
+    // 设置O的样式
+    .node_portrait_main {
+      color: #757575;
+      margin-top: 0px;
+      position: relative;
+      .edit_portrait {
+        display: none;
+      }
+      &:hover {
+        .edit_portrait {
+          display: inline-block;
+          background: url(../../../../assets/images/workplan/OKR/portrait-eidt.png) no-repeat;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          bottom: -3px;
+          left: -7px;
+          cursor: pointer;
+        }
+      }
+    }
+    // 归属样式
+    .okr_affiliation.getblue {
+      color: #4285f4;
+    }
+    .okr_affiliation {
+      margin-right: 26px;
+      display: inline-block;
+      width: 81px;
+      padding: 0px 6px;
+      color: #9a9aa2;
+      text-align: center;
+      font-size: 12px;
+      height: 18px;
+      line-height: 17px;
+      margin-top: 4px;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: bottom;
+      margin-left: 10px;
+      // &:hover {
+      //   box-shadow: 0px 0px 6px 0px rgba(22, 88, 197, 0.5);
+      // }
+      .nodeaffiliation {
+        width: 14px;
+        height: 14px;
+        background: url(../../../../assets/images/task/task-1.png) no-repeat center;
+        background-size: 14px;
+        margin-right: 4px;
+        vertical-align: -2px;
+      }
+    }
+  }
+}
+
+.part_okr_content.finishedTask {
+  span.part-text-okr {
+    background: url(../../../../assets/images/workplan/OKR/dui.png) no-repeat left center;
+    background-size: 16px;
+    padding-left: 20px;
+  }
+  color: #9a9aa2 !important;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.okrQuadrantModal {
+  .quadrant-part {
+    height: 418px;
+  }
+}
+.fourQuadrant .part-now-status .quadrant-display {
+  font-weight: bold;
+  color: #9a9aa2;
+  font-size: 12px;
+  & > span {
+    float: left;
+  }
+}
+
+.quadrant-status-messsage {
+  display: inline-block;
+  margin-top: 2px;
+}
+// 设置O的样式===end
+.fourQuadrant .more_linkman {
+  .left_box span {
+    vertical-align: top;
+  }
+  .left_box {
+    height: 39px;
+  }
+}
+
+.quarTableList {
+  position: relative;
+  table-layout: fixed;
+  margin-top: 0;
+  .task-list-content .padr4 {
+    margin-right: 5px;
+    padding-left: 4px;
+    max-width: 70%;
+  }
+}
+
+.fourQuadrant .part-now-status {
+  overflow: inherit;
+  vertical-align: top;
+  display: inline-flex;
+  flex-direction: column;
+  .ant-tabs-content-holder {
+    flex: 1;
+    height: calc(100% - 168px);
+  }
+  .quadrant-header-title h3 {
+    background: url(../../../../assets/images/workplan/status-n.png) no-repeat left center;
+  }
+  .quadrant-create {
+    .module-btn-display {
+      padding-left: 24px;
+      padding-right: 16px;
+      padding-bottom: 0px;
+      display: inline-block;
+      width: 100%;
+      margin-top: 8px;
+      button {
+        font-size: 12px;
+      }
+    }
+  }
+  .quadrant-header {
+    border-bottom: none;
+  }
+}
+
+.fourQuadrant .quadrant-header-title {
+  float: left;
+  margin-right: 18px;
+  h3 {
+    font-size: 14px;
+    color: #191f25;
+    font-family: 'Microsoft YaHei', 'Segoe UI', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    background: url(../../../../assets/images/workplan/week-d.png) no-repeat left center;
+    padding-left: 25px;
+    background-size: contain !important;
+  }
+  h5 {
+    color: #9a9aa2;
+    margin: 0;
+    font-size: 11px;
+    font-family: Microsoft YaHei !important;
+    line-height: 1;
+    margin-left: 25px;
+    height: 11px;
+  }
+}
+// 状态指标
+.fourQuadrant .part-next-status {
+  .quadrant-header-title h3 {
+    background: url(../../../../assets/images/workplan/status-d.png) no-repeat left center;
+  }
+}
+.fourQuadrant .part-next-week {
+  .quadrant-header-title h3 {
+    background: url(../../../../assets/images/workplan/next-d.png) no-repeat left center;
+  }
+}
+.part-now-week-content,
+.part-next-week-content,
+.part-next-status-content {
+  text-align: right;
+  height: 100%;
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.fourQuadrant .ant-tabs-content-holder {
+  height: calc(100% - 54px);
+}
+.part-now-status-content {
+  text-align: right;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  .oa_none_data_container {
+    justify-content: flex-start;
+    height: auto;
+  }
+  .tag_edit_btn_icon {
+    width: auto;
+  }
+  .quadrantBordData .task-list-content .board_padr4_content {
+    width: 100%;
+  }
+  .add_kr_ObjectLing {
+    cursor: pointer;
+    width: calc(100% + 249px);
+    height: 32px;
+    line-height: 32px;
+    background: #f8f8f8;
+    border-radius: 0px 0px 4px;
+    color: #9a9aa2;
+    padding-left: 15px;
+    font-size: 14px;
+    margin-left: 1px;
+    & > i {
+      background: url(../../../../assets/images/workplan/OKR/add_shen.png) no-repeat center;
+      width: 12px;
+      height: 12px;
+      margin-right: 6px;
+    }
+  }
+}
+
+/* 状态指标 */
+/* 新增标签部分 */
+.part-next-status-content {
+  overflow: hidden;
+  height: 100%;
+  padding: 0px 16px;
+}
+
+.part-next-status-content .newTagContent {
+  max-height: 100%;
+  position: relative;
+}
+
+.part-next-status-content .newTagContent .show_box {
+  width: calc(100% - 44px);
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.part-next-status-content .newTagContent .tag_color_dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.part-next-status-content .newTagContent .tag_color_choose {
+  width: 68px;
+  height: 32px;
+  border: 1px solid #e7e7e9;
+  border-radius: 4px;
+  margin-right: 12px;
+  position: relative;
+  background: url(../../../../assets/images/workplan/tri_down.svg) no-repeat 38px center transparent;
+  background-size: 11px 5px;
+  &:hover {
+    background: url(../../../../assets/images/workplan/tri_down_h.svg) no-repeat 38px center transparent;
+    background-size: 10px 5px;
+  }
+}
+.part-next-status-content .newTagContent .tag_color_circle {
+  width: 15px;
+  height: 32px;
+  border-radius: 32px 0 0 32px;
+  float: left;
+}
+
+.part-next-status-content .newTagContent .tag_color_tage {
+  vertical-align: top;
+  line-height: 30px;
+  height: 32px;
+  float: left;
+  max-width: calc(100% - 47px);
+  position: relative;
+}
+
+.part-next-status-content .newTagContent .tag_color_img {
+  height: 32px;
+  width: 32px;
+  background-size: 32px;
+  display: inline-block;
+}
+
+.part-next-status-content .newTagContent .tag_txt {
+  flex: 1;
+  padding-right: 0px;
+  width: 100%;
+}
+
+.part-next-status-content .newTagContent .tag_btn_box {
+  width: 44px;
+  text-align: right;
+  display: none;
+  vertical-align: 10px;
+  position: absolute;
+  right: -73px;
+  top: 2px;
+}
+
+.part-next-status-content .newTagContent .tag_item {
+  height: 32px;
+  cursor: pointer;
+  margin-top: 18px !important;
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+.part-next-status-content .newTagContent .tag_item:hover .tag_btn_box {
+  display: inline-block;
+}
+
+.part-next-status-content .newTagContent .tag_edit_btn {
+  width: 14px;
+  height: 14px;
+  background: url(../../../../assets/images/common/edit-black-old.png) no-repeat;
+  cursor: pointer;
+  background-size: 14px;
+}
+
+.part-next-status-content .newTagContent .tag_edit_btn:hover {
+  background: url(../../../../assets/images/common/edit-blue.png) no-repeat;
+  background-size: 14px;
+}
+
+.part-next-status-content .newTagContent .tag_del_btn {
+  margin-left: 12px;
+  width: 14px;
+  height: 16px;
+  background: url(../../../../assets/images/workplan/tag_delete.png) no-repeat;
+  cursor: pointer;
+  background-size: 11px;
+}
+
+.part-next-status-content .newTagContent .tag_del_btn:hover {
+  background: url(../../../../assets/images/workplan/tag_delete_h.png) no-repeat;
+  background-size: 11px;
+}
+
+/* 标签编辑 */
+.part-next-status-content .newTagContent .edit_box .tag_color_dot {
+  position: absolute;
+  left: 9px;
+  top: 10px;
+}
+
+.part-next-status-content .newTagContent .tag_edit_inp {
+  width: 87%;
+  height: 32px;
+  padding-left: 9px;
+  border: 1px solid #d7d7d9;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #4285f4;
+}
+
+.quadrant-part .tag_edit_btn_icon .tag_edit_cancel {
+  width: 12px;
+  height: 12px;
+  background-image: url(../../../../assets/images/common/edit_cancel.png);
+  cursor: pointer;
+}
+
+.quadrant-part .tag_edit_btn_icon .tag_edit_sure {
+  margin-left: 12px;
+  width: 15px;
+  height: 10px;
+  background-image: url(../../../../assets/images/common/edit_sure.png);
+  cursor: pointer;
+}
+
+.part-next-status-content .newTagContent .edit_box {
+  margin-right: -15px;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  background-color: white;
+}
+
+.quadrant-part .tag_edit_btn_icon {
+  display: inline-block;
+  width: 50px;
+  margin: auto;
+  margin-left: 12px;
+  text-align: right;
+}
+
+/* 选择标签颜色小弹框 */
+
+.tag_color_list {
+  border: 1px solid rgba(237, 237, 237, 1);
+  text-align: center;
+  z-index: 9;
+  padding: 4px 0px;
+  width: 67px;
+  height: 100px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.tag_color_list .ant-dropdown-menu-item {
+  padding: 0px;
+  padding-left: 10px;
+}
+.tag_color_list p {
+  text-align: left;
+  height: 22px;
+  width: 100%;
+  margin-bottom: 0px;
+  line-height: 22px;
+  background-repeat: no-repeat;
+  background-position: 40px center;
+}
+
+.tag_color_list p:hover {
+  background-color: #e9f2ff;
+}
+
+.tag_color_list .tag_color_item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tag_color_list .priorityColor_5 {
+  background-color: #4285f4;
+}
+
+.tag_color_list .priorityColor_3 {
+  background-color: #34a853;
+}
+
+.tag_color_list .priorityColor_2 {
+  background-color: #fbbc05;
+}
+
+.tag_color_list .priorityColor_1 {
+  background-color: #ea4335;
+}
+/* 数据处理样式 */
+.quadrantBordData .boardTaskBox {
+  overflow: visible;
+  margin-left: 18px;
+}
+.quadrantBordData .task-list-content {
+  padding-left: 8px;
+  position: relative;
+
+  .text-ellipsis {
+    font-size: 14px;
+    color: #191f25;
+    margin-right: 5px;
+  }
+}
+
+.quadrantBordData .ant-progress-circle .ant-progress-text {
+  color: @color_blue;
+}
+
+.quadrantBordData .task-list-content label {
+  vertical-align: 12px;
+}
+
+.quadrantBordData .task-list-content .node_portrait {
+  vertical-align: 17px;
+}
+
+.quadrantBordData table.treetable tr span.indenter {
+  height: 100% !important;
+  text-align: center;
+  width: 16px;
+}
+
+.quadrantBordData .treetable tr:not(.treeParentTr) span.indenter {
+  background-position: 22px center;
+}
+
+.quadrantBordData tr .taskCheckBox {
+  width: 22px;
+}
+
+.quadrantBordData .task-list-content .board-task-mid {
+  width: calc(100% - 48px);
+}
+
+.quadrantBordData .task-list-content .icon_task > span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.quadrantBordData .task-list-content .board_padr4_content {
+  position: absolute;
+  left: 45px;
+  top: 5px;
+  width: 100%;
+}
+
+.quadrantBordData .boardListTable tr td.tableTreeTd {
+  width: 100%;
+  padding: 0;
+}
+
+.quadrantBordData .task-list-content .board_padr4_input {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px;
+  border: 1px solid #d7d7d9;
+  border-radius: 4px;
+  width: calc(100% - 80px);
+}
+
+.quadrantBordData .task-list-content .board_padr4_input:focus {
+  border: 1px solid #4285f4;
+}
+
+.specail-show-type {
+  color: #3949ab !important;
+  display: inline-block;
+  text-align: center;
+  min-width: 24px;
+  line-height: 24px;
+  height: 24px;
+  background: #ecedff;
+  border-radius: 10px;
+  margin-right: 8px;
+  font-size: 12px;
+}
+.specail-show-task {
+  color: #70707a !important;
+  display: inline-block;
+  text-align: center;
+  min-width: 32px;
+  padding: 0 5px;
+  line-height: 18px;
+  height: 18px;
+  background-color: rgba(231, 233, 233, 0.5);
+  border-radius: 9px;
+  margin-right: 8px;
+  font-size: 12px;
+  // &.getblue {
+  //   background: #4285f4;
+  //   color: white !important;
+  // }
+  &.isKR {
+    background-color: rgb(233, 242, 255);
+    color: rgb(66, 133, 244) !important;
+  }
+}
+.specail-show-obj {
+  width: 28px;
+  height: 18px;
+  display: inline-block;
+  border-radius: 8px 0px;
+  color: white !important;
+  background: #4788f4;
+  line-height: 18px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* 协同图标 */
+.specail-show-coor {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../../assets/images/workplan/OKR/cooper_def.png);
+  background-repeat: no-repeat !important;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.specail-show-isdialogue {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../../../assets/images/workplan/OKR/cooper_blue.png);
+  background-repeat: no-repeat !important;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+// .specail-show-themes {
+//   background: url(../../../../assets/images/workplan/OKR/dialogue.png) no-repeat;
+//   width: 16px;
+//   height: 16px;
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin: 3px;
+// }
+
+/* 信心指数 */
+.confidence {
+  width: 40px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 18px;
+  color: #4285f4;
+  height: 18px;
+  background: #f4f6fa;
+  border-radius: 20px;
+}
+.fourQuadrant #okr-range-max-box {
+  width: 350px;
+  left: 61px;
+}
+
+.quadrantBordData .boardListTable .optOutIconBox {
+  right: 36px;
+  padding-right: 16px;
+}
+.boardListTable .optMoreBtnBox {
+  width: 14px;
+}
+.fourQuadrant .progressTd .okr_right_Box:hover .process_edit_okr {
+  display: block;
+}
+
+.fourQuadrant .quadrantBordData .progressTd .okr_right_Box {
+  position: relative;
+}
+
+.fourQuadrant .quadrantBordData .progressTd .process_edit_okr {
+  top: 0px;
+}
+
+/* 右键按钮
+ */
+.fourQuadrant .taskRightMenu .send_opt_icon_div .addextraList .opt_icon_div > a {
+  display: none;
+}
+
+.fourQuadrant .taskRightMenu .send_opt_icon_div .addIconextraList .opt_icon_div > a {
+  display: inline-block;
+}
+
+/* .boardListTbody tr.special_type_btn:hover {
+    background: #fafafa !important;
+ } */
+.fourQuadrant .boardListTable .opt_icon_div > a.icon_xq {
+  //   background: url(../../image/common/OKR/dropdown-xq.png) no-repeat;
+  height: 14px;
+}
+.fourQuadrant .taskRightMenu .node-add-computer {
+  background-color: white;
+  width: 168px;
+  border: 1px solid #ececec !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+.fourQuadrant .taskRightMenu .node-add-icon {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+/* 图标 */
+.fourQuadrant .node-add-icon i.icon-select,
+.node-add-computer .node-add-icon i.icon-select {
+  border: 1px solid var(--baseColor, #4285f4);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: #e9f5ff;
+}
+
+.fourQuadrant .addextraList .node-add-okr-task a {
+  color: #757575;
+}
+.fourQuadrant .addextraList .node-add-okr-task.node-add-sharePlan {
+  position: absolute;
+  right: -127px;
+  border: 1px solid #ececec !important;
+  top: 160px;
+  color: #757575;
+  text-align: left;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.fourQuadrant .addextraList .node-add-okr-task.node-add-nodes {
+  position: absolute;
+  right: -107px;
+  border: 1px solid #ececec !important;
+  top: -1px;
+  color: #757575;
+  text-align: left;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.fourQuadrant .addextraList ul {
+  margin-top: -7px;
+}
+.fourQuadrant .addextraList .node-add-icon {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.fourQuadrant .addextraList .node-add-okr-task p {
+  width: 105px;
+  height: 32px;
+  line-height: 32px;
+  margin: 0;
+  cursor: pointer;
+  padding-left: 34px !important;
+}
+.fourQuadrant .addextraList .node-add-sharePlan p {
+  padding-left: 17px !important;
+}
+.fourQuadrant .addextraList .node-add-okr-task p:hover {
+  color: var(--baseColor, #4285f4) !important;
+  background-color: #e9f5ff;
+  width: 128px;
+}
+.fourQuadrant .addextraList .node-add-okr-task.node-add-computer p:hover {
+  color: #70707a !important;
+  background-color: white;
+}
+.fourQuadrant .addextraList .node-add-computer li {
+  height: 24px;
+  padding-left: 11px;
+}
+.fourQuadrant .addextraList .node-add-okr-task.node-add-computer p {
+  height: 27px;
+  padding-left: 16px !important;
+}
+.fourQuadrant .meetings_okrMain {
+  position: absolute;
+  width: 400px;
+  height: 192px;
+  overflow: auto;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 14px 0px rgba(131, 131, 131, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 99;
+  color: #70707a;
+  font-size: 12px;
+}
+.fourQuadrant .item_meetings_okr {
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.fourQuadrant .item_meetings_okr h6 {
+  float: left;
+  margin: 0px;
+}
+.fourQuadrant .meetings_okrMain .noneData {
+  padding-top: 18px;
+}
+
+.fourQuadrant .okr_meetings {
+  width: 18px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.fourQuadrant .okr_okrfiles {
+  width: 19px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 3px;
+}
+
+.fourQuadrant .okr_themes {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 3px;
+}
+
+.quadrantBordData {
+  height: 100%;
+  .ant-table-tbody {
+    .ant-table-cell {
+      min-height: 46px;
+      padding: 0px !important;
+    }
+    .table_text_right {
+      min-height: 52px !important;
+    }
+    .add_Kr_Event .table_text_right {
+      min-height: 52px !important;
+      height: auto !important;
+    }
+    .add_task_Event .table_text_right {
+      height: auto !important;
+      min-height: 72px !important;
+    }
+    .add_object_kr {
+      &:hover {
+        background-color: white !important;
+      }
+    }
+    .ant-table-selection-column {
+      text-align: right;
+    }
+  }
+  .row_progress.active {
+    .show_progress {
+      display: inline-block;
+      .ant-input {
+        display: inline-block;
+      }
+    }
+    .ant-progress {
+      display: none;
+    }
+  }
+
+  .row_progress {
+    display: inline-block;
+    text-align: center;
+    margin-left: 16px;
+    background-color: inherit;
+    align-items: center;
+    margin-right: 12px;
+    // float: right;
+    .ant-progress-text {
+      color: #191f25;
+    }
+    .show_progress {
+      border-radius: 50%;
+      display: none;
+      width: 32px;
+      height: 32px;
+      background: url(../../../../assets/images/workplan/process_edit.png) no-repeat center #d7d7d9;
+      vertical-align: middle;
+    }
+    .ant-input {
+      width: 20px;
+      height: 20px;
+      display: none;
+      line-height: 20px;
+      margin-left: 2px;
+      margin-top: 6px;
+      padding: 0;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+    &:hover {
+      .ant-progress {
+        display: none;
+      }
+      .show_progress {
+        display: inline-block;
+        &:hover {
+          background: url(../../../../assets/images/workplan/process_edit_h.png) no-repeat center #d7d7d9;
+        }
+      }
+    }
+    &:visited {
+      .ant-input {
+        display: inline-block;
+      }
+    }
+  }
+  .row_progress.notEdit {
+    &:hover {
+      .ant-progress {
+        display: inline-block;
+      }
+      .show_progress {
+        display: none;
+      }
+    }
+  }
+  .task-list {
+    .okrOptBtnGroup {
+      min-width: 44px;
+      right: calc(100% + 465px);
+      top: 0px;
+      line-height: 69px;
+      z-index: 0;
+      background-color: #e9f2ff !important;
+      span {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  .ant-table-row {
+    .taskTypeLabel {
+      display: flex;
+      align-items: center;
+      min-width: 54px;
+      height: 18px;
+      line-height: 18px;
+      padding: 0 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: @color_9a;
+      margin-right: 10px;
+    }
+    .taskTypeLabel::before {
+      content: '';
+      display: flex;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 16px;
+      height: 14px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2px;
+      margin-right: 2px;
+    }
+    .taskTypeLabel.boardMb::before {
+      background-image: url(../../../../assets/images/common/target.png);
+    }
+    .taskTypeLabel.boardLs::before {
+      background-image: url(../../../../assets/images/common/temp.png);
+    }
+    .taskTypeLabel.boardZn::before {
+      background-image: url(../../../../assets/images/common/fun.png);
+    }
+    .taskTypeLabel.boardXm::before {
+      background-image: url(../../../../assets/images/common/project.png);
+    }
+  }
+  &:hover {
+    .taskTypeLabel {
+      display: none;
+    }
+  }
+}
+
+.fourQuadrant .optBtnMoreList .opt_icon_div > .profile-text {
+  margin-left: 0px;
+}
+
+.fourQuadrant .okr_mess_line {
+  width: 1px;
+  height: 12px;
+  background: #707070;
+  opacity: 1;
+  float: right;
+  margin: 0 8px;
+}
+.quarTableList td.progressTd {
+  min-width: 32px;
+}
+
+.task_day {
+  display: inline-block;
+  width: auto;
+  font-size: 12px;
+  i {
+    width: 14px;
+    height: 14px;
+    background: url(../../../../assets/images/task/clock.png) no-repeat center;
+    background-size: 14px;
+    margin-right: 6px;
+    vertical-align: -2px;
+  }
+  .okr_four_time {
+    font-style: normal;
+    margin: 0px 5px;
+    padding: 0;
+    max-width: 34px;
+    .ant-picker-input > input {
+      cursor: pointer;
+      text-align: center;
+      &::-webkit-input-placeholder {
+        color: #212224;
+      }
+      &::-moz-placeholder {
+        color: #212224;
+      }
+    }
+    .ant-picker-suffix {
+      display: none;
+    }
+  }
+  .task_days.getblue {
+    color: @color_blue;
+    margin: 0 5px;
+  }
+}
+
+.timeInput {
+  pointer-events: inherit;
+}
+.fourQuadrant .quadrant-part .quadrant-header-btn > span {
+  display: inline-block;
+  vertical-align: 2px;
+  font-size: 14px;
+}
+.fourQuadrant .quadrant-part.part-now-week .module-btn-display .icon_part_page {
+  font-size: 12px;
+}
+
+.fourQuadrant .quadrant-part .quadrant-send-btn {
+  margin-right: 24px;
+}
+
+.fourQuadrant .task-list .ant-table-row-indent + .ant-table-row-expand-icon {
+  margin-right: 0px;
+  margin-left: 7px;
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+  &::before {
+    top: 6px;
+    left: 6px;
+  }
+}
+.fourQuadrant .task-list .add_task_Event .ant-table-row-indent + .ant-table-row-expand-icon {
+  margin-top: 50px;
+}
+.quadrantBordData .ant-table-tbody .ant-table-row:hover {
+  .ant-table-row-indent + .ant-table-row-expand-icon {
+    &:hover {
+      background-color: #e9f2ff;
+    }
+  }
+}
+.fourQuadrant .show_none_data_container {
+  width: 100%;
+  height: 160px;
+  .text_name {
+    margin-top: 16px;
+  }
+}
+.taskPlanMenu {
+  background: white;
+  border: 1px solid rgba(231, 231, 233, 1);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  z-index: 99;
+  padding: 9px 0px;
+  .opt_icon_div {
+    padding: 0;
+    margin: 0 !important;
+    height: 28px !important;
+    line-height: 28px !important;
+    opacity: 1;
+  }
+  .opt_icon_div .myMenuItem {
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+    border-radius: 2px;
+    text-align: left;
+    color: #212224;
+    padding: 0px;
+  }
+
+  .ant-menu-submenu-vertical .ant-menu-submenu-title {
+    height: 28px !important;
+    line-height: 28px !important;
+  }
+  .ant-menu > .ant-menu-item-divider {
+    margin: 1px auto;
+    width: calc(100% - 32px);
+  }
+}
+.opt_icon_div.ant-menu-item-disabled {
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 1500px) {
+  // 表格数据内容
+  .work_okr_mind_content,
+  .work_plan_mind_content {
+    .quadrant-part:not(.maxpage) {
+      .name_Colum {
+        display: none;
+      }
+      .part_okr_content {
+        flex-flow: column;
+        align-items: flex-start !important;
+        .task-part-text {
+          min-width: 100% !important;
+          display: flex;
+          margin-bottom: 2px;
+        }
+        .part-person-kr {
+          & > div {
+            float: left !important;
+          }
+          .node_portrait_main {
+            margin-left: 0px;
+          }
+          .okr_affiliation {
+            margin-right: 0;
+            margin-left: 10px;
+            width: auto;
+          }
+          .okr_message {
+            display: flex;
+          }
+        }
+      }
+      .part_relate_task {
+        .node_portrait_chose,
+        .part_relate_line {
+          display: inherit;
+        }
+        .part_relate_line {
+          border-left: 1px solid #d7d7d9;
+          height: 12px;
+          padding-left: 20px;
+        }
+      }
+      .name_percent {
+        display: inherit;
+        position: relative;
+        margin-left: 13px;
+        .name_class_name {
+          padding: 0 5px;
+          border: 1px solid transparent;
+          &:hover {
+            border: 1px solid #e7e7e9;
+            border-radius: 4px;
+          }
+        }
+        .ant-input {
+          max-width: 100px;
+          width: 100%;
+          height: 28px;
+          border: 1px solid #4285f4;
+          opacity: 1;
+          border-radius: 4px;
+          position: absolute;
+          left: -1px;
+          top: -4px;
+        }
+      }
+      .table_text_right .okr_message {
+        display: inline-block;
+      }
+      .late_task_sum {
+        display: none;
+      }
+      .okrOptBtnGroup {
+        right: 251px !important;
+      }
+      // .show_input_list {
+      //   display: none !important;
+      // }
+      .okr_text_Box {
+        // .row_progress {
+        //   display: inline-block !important;
+        // }
+        .node_portrait_chose {
+          display: none !important;
+        }
+        .okr_task_name {
+          max-width: calc(100% - 60px);
+        }
+      }
+      .table_text_right {
+        height: 86px !important;
+        .row_progress {
+          display: flex;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}
+// 支撑数据处理
+.standContentBox {
+  width: 850px !important;
+  height: 620px;
+  .ant-modal-header {
+    border-bottom: 1px solid #e7e7e9;
+  }
+  .ant-modal-content {
+    height: 100%;
+    .ant-modal-body {
+      height: calc(100% - 120px);
+      padding-bottom: 15px;
+      padding-top: 0px;
+      overflow: auto;
+      .row_progress {
+        &:hover {
+          .ant-progress-circle {
+            display: inline-block;
+          }
+        }
+      }
+      .ant-table-tbody .ant-table-cell {
+        padding: 0;
+      }
+      .noExpandable .ant-table-row-expand-icon {
+        visibility: hidden;
+      }
+      .eidt_Kr {
+        position: relative;
+      }
+      .tag-list {
+        display: flex;
+        align-items: center;
+        .ant-tag {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // width: 18px;
+          width: auto;
+          height: 18px;
+          margin: 0 3px;
+          padding: 0 2px;
+          border: 0;
+          border-radius: 2px;
+        }
+      }
+      .okr_flag {
+        width: 28px;
+        height: 18px;
+        line-height: 18px;
+        margin-right: 8px;
+        text-align: center;
+        display: inline-block;
+        color: white;
+        background: @color_primary;
+        border-radius: 9px;
+      }
+      .okr_flag.okr_kr {
+        background: rgba(205, 234, 213, 1);
+        color: #34a853;
+      }
+      .ant-table-selection-column {
+        padding: 0;
+      }
+    }
+  }
+}
+//拖动KR样式
+.drag-obj {
+  td {
+    width: 100% !important;
+    &.table_text_right {
+      width: 150px !important;
+    }
+    &.okrOptBtn_td {
+      display: none;
+    }
+  }
+  .okrOptBtnGroup {
+    display: none;
+  }
+  .add_kr_ObjectLing {
+    display: none;
+  }
+  .part_okr_content {
+    .part-person-kr {
+      display: none;
+    }
+    .task-part-text {
+      align-items: flex-start;
+      .part-text-okr {
+        max-width: calc(100% - 90px);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
+        vertical-align: -6px;
+        margin-right: 8px;
+        white-space: normal;
+      }
+      .part-text-content {
+        display: flex;
+        height: auto;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
+  .table_text_right {
+    .show_input_list:first-child {
+      display: none;
+    }
+  }
+  .show_input_list {
+    display: inherit;
+    position: relative;
+    span {
+      padding: 0 5px;
+      margin-top: 2px;
+      min-width: 46px;
+      text-align: center;
+      border: 1px solid transparent;
+      &.show_input_name {
+        color: #9a9aa2;
+        position: absolute;
+        top: -16px;
+      }
+    }
+  }
+}

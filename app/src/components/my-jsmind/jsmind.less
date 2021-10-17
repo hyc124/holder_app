@@ -1,0 +1,79 @@
+.oaJsMind {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  .jsmind-inner {
+    overflow: visible;
+  }
+  jmnodes {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    top: 0;
+    left: 0;
+  }
+  jmexpander.jia {
+    background: url(../../../../assets/images/workplan/OKR/expanders.png) no-repeat;
+    background-size: cover;
+    color: transparent !important;
+    width: 14px;
+    height: 14px;
+    border: 0px;
+    &:hover {
+      background: url(../../../../assets/images/workplan/OKR/expanders-h.png) no-repeat;
+      background-size: cover;
+      color: transparent !important;
+      width: 14px;
+      height: 14px;
+      border: 0px;
+    }
+  }
+  jmexpander.jian {
+    background: url(../../../../assets/images/workplan/OKR/expandersjian.png) no-repeat;
+    background-size: cover;
+    color: transparent !important;
+    width: 14px;
+    height: 14px;
+    border: 0px;
+    &:hover {
+      background: url(../../../../assets/images/workplan/OKR/expandersjian-h.png) no-repeat;
+      background-size: cover;
+      color: transparent !important;
+      width: 14px;
+      height: 14px;
+      border: 0px;
+    }
+  }
+  jmnode {
+    cursor: default;
+    width: 240px;
+    height: 110px;
+    height: auto;
+    overflow: initial;
+    color: #808080;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 0px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    border: none;
+    font: 13px/1 Verdana, Arial, Helvetica, sans-serif;
+    &:hover {
+      background-color: #e9f2ff;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.16);
+      color: #808080;
+    }
+    .root {
+      width: 240px;
+      color: white;
+      background-color: white;
+      border: 4px solid white;
+      padding: 5px 35px;
+      font-weight: initial;
+    }
+    .selected {
+      background-color: #e9f2ff;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.16);
+      color: #808080;
+    }
+  }
+}

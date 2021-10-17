@@ -1,0 +1,1756 @@
+.report-modal-content-box.ant-modal {
+  width: 100% !important;
+  height: 100%;
+  // padding: 0 80px;
+  padding-left: 32px;
+  margin-right: 0;
+  padding-bottom: 0;
+  top: 0;
+  position: static !important;
+  .ant-modal-header {
+    padding-bottom: 0px;
+    .report_type {
+      div {
+        display: inline-block;
+        padding: 0 8px;
+        padding-bottom: 16px;
+        cursor: pointer;
+      }
+      div.active {
+        border-bottom: 2px solid #4285f4;
+        color: #4285f4;
+      }
+      .work_report {
+        margin-right: 24px;
+      }
+      .okr_report {
+        margin-left: 24px;
+      }
+    }
+  }
+  .ant-modal-body {
+    height: calc(100% - 74px);
+    .report-modal-cont-box {
+      height: 100%;
+      .task_report_table {
+        height: 100%;
+        .list_box {
+          height: calc(100% - 60px);
+          .list_table {
+            height: 100%;
+            // overflow: auto;
+            .ant-table-fixed-header,
+            .ant-table-container {
+              height: 100%;
+            }
+            .ant-progress .ant-progress-text {
+              display: none !important;
+            }
+            .task_report_red {
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 8px;
+              height: 8px;
+              background: rgba(235, 89, 89, 1);
+              border-radius: 50%;
+              display: inline-block;
+            }
+            .task_report_ccc {
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 8px;
+              height: 8px;
+              background: #9a9aa2;
+              border-radius: 50%;
+              display: inline-block;
+            }
+            .liable-user-list {
+              overflow: hidden;
+              .liable-user-item {
+                display: inline-block;
+                .oa-avatar > span {
+                  opacity: 1 !important;
+                  transform: scale(1) translateX(-50%);
+                }
+              }
+              .re_avater {
+                margin-right: 0 !important;
+              }
+            }
+            .list_table_name_item {
+              display: flex;
+              align-items: center;
+              .list_table_name {
+                width: 100%;
+                .icon-tag {
+                  width: 16px;
+                  height: 16px;
+                  margin: 0 10px;
+                  background: url(../../../../../assets/images/taskReport/icon-tag.png) no-repeat center;
+                }
+              }
+              .list_table_icon {
+                .oname_flag {
+                  margin-right: 12px;
+                  width: 32px;
+                  height: 32px;
+                  background-size: 100%;
+                  background-image: url(../../../../../assets/images/okrDetail/name_flag.png);
+                }
+                .krname_flag {
+                  margin-right: 12px;
+                  width: 32px;
+                  height: 32px;
+                  color: #4285f4;
+                  background: #e9f2ff;
+                  font-size: 16px;
+                  border-radius: 21px;
+                  font-style: normal;
+                  text-align: center;
+                  line-height: 32px;
+                }
+              }
+            }
+            // 进度/状态
+            .liable_progress_list {
+              display: flex;
+              align-items: center;
+              .liable_progress_left {
+                min-width: 60px;
+                display: flex;
+                align-items: center;
+                .progress_dott {
+                  display: inline-block;
+                  width: 8px;
+                  height: 8px;
+                  margin-right: 3px;
+                  border-radius: 50%;
+                }
+              }
+              .percent {
+                display: inline-block;
+                margin-left: 5px;
+                color: #4285f4;
+              }
+              .heart_kr {
+                margin-left: 20px;
+                color: #70707a;
+                i {
+                  display: inline-block;
+                  width: 14px;
+                  height: 12px;
+                  background: url(../../../../../assets/images/taskReport/heart_full.png) no-repeat center;
+                  background-size: 12px;
+                  margin-right: 3px;
+                }
+              }
+            }
+            .ant-table-pagination.ant-pagination {
+              bottom: 20px;
+              .ant-pagination-item-link {
+                min-width: 32px;
+              }
+            }
+          }
+          .list_table_bottom {
+            margin-top: 6px;
+            color: #9a9aa2;
+            span {
+              margin-right: 12px;
+            }
+            .list_table_bottom_person {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              margin-right: 4px;
+              background: url(../../../../../assets/images/taskReport/person.png) no-repeat center
+                rgba(231, 231, 233, 1);
+            }
+            .list_table_bottom_msg {
+              width: 16px;
+              border-radius: 50%;
+              height: 16px;
+              margin-right: 4px;
+              background: url(../../../../../assets/images/taskReport/message.png) no-repeat center
+                rgba(231, 231, 233, 1);
+              position: relative;
+              i {
+                position: absolute;
+                right: 0;
+                top: -2px;
+                width: 6px;
+                height: 6px;
+                background: rgba(235, 89, 89, 1);
+                border-radius: 50%;
+                display: inline-block;
+              }
+              &:hover {
+                background: url(../../../../../assets/images/taskReport/message_h.png) no-repeat center
+                  rgba(231, 231, 233, 1);
+              }
+            }
+            .list_table_edit {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              margin-right: 4px;
+              background: url(../../../../../assets/images/taskReport/edit_report.png) no-repeat center
+                rgba(231, 231, 233, 1);
+              background-size: 64%;
+              &:hover {
+                background: url(../../../../../assets/images/taskReport/edit_report_h.png) no-repeat center
+                  rgba(231, 231, 233, 1);
+                background-size: 64%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu_tab {
+    display: flex;
+    justify-content: space-between;
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+      z-index: 1;
+      color: #4285f4;
+      background: #ffffff;
+      border-color: #e7e7e9;
+    }
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+      background-color: transparent;
+    }
+    .active {
+      color: #4285f4;
+    }
+    .reportListSetBox {
+      text-align: right;
+      .ant-radio-button-wrapper {
+        margin-left: 16px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 14px;
+        background: #f7f8fa;
+        border: none;
+        color: #70707a;
+        position: relative;
+        .selcet_type {
+          background: url(../../../../../assets/images/workplan/filter.png) no-repeat center;
+          width: 16px;
+          height: 18px;
+          display: inline-block;
+          margin-right: 4px;
+          vertical-align: -4px;
+          background-size: 15px;
+        }
+        &:hover {
+          color: #4285f4;
+          .selcet_type {
+            background: url(../../../../../assets/images/workplan/filter_h.png) no-repeat center;
+          }
+        }
+        .filter.png &::before {
+          background-color: transparent;
+        }
+        &::before {
+          background-color: transparent;
+        }
+      }
+      .filterBtn {
+        padding-left: 27px;
+        background: url(../../../../../assets/images/workReport/filter-g.png) 12px center no-repeat #f7f8fa;
+        background-size: 12px !important;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/filter-b.png) 12px center no-repeat #e9f2ff !important;
+          background-size: 12px !important;
+        }
+      }
+      .writeBtn {
+        padding-left: 27px;
+        background: url(../../../../../assets/images/workReport/xiebaogao.png) 12px center no-repeat #f7f8fa;
+        background-size: 12px !important;
+        background-color: #4285f4;
+        color: #fff;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/xiebaogao.png) 12px center no-repeat #e9f2ff !important;
+          background-size: 12px !important;
+        }
+      }
+      .setBtn {
+        padding-left: 27px;
+        background: url(../../../../../assets/images/workReport/setWoke-g.png) 12px center no-repeat #f7f8fa;
+        background-size: 12px !important;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/setWorkHover.png) 12px center no-repeat
+            #e9f2ff !important;
+          background-size: 12px !important;
+        }
+      }
+    }
+  }
+  .ant-modal-content {
+    height: 100%;
+    .list_box {
+      margin-top: 20px;
+      .list_table {
+        span {
+          vertical-align: middle;
+          &.icon-tag {
+            width: 16px;
+            height: 16px;
+            margin: 0 10px;
+            background: url(../../../../../assets/images/taskReport/icon-tag.png) no-repeat center;
+          }
+        }
+        .ant-avatar {
+          background: #4285f4;
+        }
+        .ant-table-tbody {
+          tr {
+            cursor: pointer;
+          }
+        }
+        .ant-table-thead > tr > th,
+        .ant-table-tbody > tr > td,
+        .ant-table tfoot > tr > th,
+        .ant-table tfoot > tr > td {
+          position: relative;
+          padding: 15px 16px;
+          overflow-wrap: break-word;
+        }
+        .ant-table-thead > tr > th {
+          padding: 9px 16px;
+          border-bottom: none;
+        }
+        .list_content_box {
+          display: flex;
+          flex-direction: column;
+          .list_content {
+            display: flex;
+            align-items: center;
+            .cont-tit {
+              width: 60px;
+            }
+            .cont {
+              // width: 1%;
+              // flex: 1;
+              max-width: 400px;
+              margin-bottom: 0;
+              font-size: 12px;
+              vertical-align: middle;
+              color: #191f25;
+              font-size: 12px;
+            }
+          }
+        }
+        .reportUser-box {
+          display: flex;
+          align-items: center;
+
+          .reportUser {
+            // margin-left: 8px;
+            max-width: 4em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 32px;
+            margin-right: 12px;
+            position: relative;
+            &:hover {
+              .user-del-btn {
+                display: block;
+              }
+            }
+          }
+        }
+        .redDot {
+          width: 6px;
+          height: 6px;
+          background: rgba(234, 67, 53, 1);
+          border-radius: 50%;
+          opacity: 1;
+          margin-right: 4px;
+        }
+        .whiteDot {
+          width: 6px;
+          height: 6px;
+          background: #fff;
+          border-radius: 50%;
+          opacity: 1;
+          margin-right: 4px;
+        }
+        .commentNum {
+          padding-left: 14px;
+          background: url(../../../../../assets/images/workReport/comm-g.png) no-repeat left center;
+          background-size: 10px;
+          cursor: pointer;
+          &:hover {
+            background: url(../../../../../assets/images/workReport/comm-b.png) no-repeat left center;
+            background-size: 10px;
+          }
+        }
+        .report_type {
+          width: 16px;
+          height: 16px;
+          margin-right: 4px;
+        }
+        .day_report {
+          background: url(../../../../../assets/images/workReport/day.png) no-repeat center center;
+          background-size: 16px;
+        }
+        .week_report {
+          background: url(../../../../../assets/images/workReport/week.png) no-repeat center center;
+          background-size: 16px;
+        }
+        .mon_report {
+          background: url(../../../../../assets/images/workReport/mon.png) no-repeat center center;
+          background-size: 16px;
+        }
+        .qua_report {
+          background: url(../../../../../assets/images/workReport/qua.png) no-repeat center center;
+          background-size: 16px;
+        }
+        .year_report {
+          background: url(../../../../../assets/images/workReport/year.png) no-repeat center center;
+          background-size: 16px;
+        }
+        .ind_report {
+          background: url(../../../../../assets/images/workReport/ind.png) no-repeat center center;
+          background-size: 16px;
+        }
+        .ant-table-pagination.ant-pagination {
+          position: fixed;
+          bottom: 40px;
+          margin: auto;
+          text-align: center;
+          left: 0;
+          right: 0;
+          .ant-pagination-item-link {
+            min-width: 32px;
+          }
+        }
+        .show_none_data_container {
+          margin-top: 20%;
+        }
+      }
+    }
+    .workReportScreen {
+      width: 332px;
+      overflow: auto;
+      background: white;
+      box-shadow: 0px 0px 8px 0px rgba(9, 9, 9, 0.2);
+      border-radius: 8px;
+      border: 1px solid rgba(237, 237, 237, 1);
+      /* overflow: auto; */
+      color: #757575;
+      font-size: 12px;
+      position: absolute;
+      right: 0;
+      top: 120px;
+      z-index: 999;
+      .filtersBottom {
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        border-top: 1px solid #ededed;
+        border-radius: 8px 8px 0px 0px;
+        padding: 10px 8px 0;
+        text-align: left;
+        .filter-reset-box {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          cursor: pointer;
+          width: 93px;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 15px;
+          text-align: center;
+          .filter-reset-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            color: #757575;
+            background-size: cover;
+            background-position: center;
+            background-image: url(../../../../../assets/images/common/reset_normal.png);
+            margin-right: 5px;
+            margin-bottom: 2px;
+            // &:hover {
+            //   color: #4285f4;
+            //   background-repeat: no-repeat;
+            //   background-image: url(../../../../../assets/images/common/reset_hover.png);
+            // }
+          }
+        }
+        .filter-reset-box:hover .filter-reset-text {
+          color: #4285f4;
+        }
+        .filter-reset-box:hover .filter-reset-icon {
+          color: #4285f4;
+          background-repeat: no-repeat;
+          background-image: url(../../../../../assets/images/common/reset_hover.png);
+        }
+      }
+      .filtersCon {
+        height: inherit !important;
+        padding-bottom: 20px;
+        overflow: visible;
+        max-height: 456px;
+        .filterTitle {
+          display: inline-block;
+          padding: 10px 12px 0 12px;
+          font-size: 14px;
+          font-weight: bold;
+          color: #191f25;
+        }
+        .filterLine {
+          height: 1px;
+          margin: 0 12px;
+          border-bottom: 1px solid #e7e7e9;
+        }
+        .filterSearchBox {
+          // position: relative;
+          display: flex;
+          margin: 5px 12px 15px;
+          text-align: center;
+          // padding: 0 8px;
+          height: 32px;
+          border-radius: 16px;
+          background-color: #f7f8fa;
+          .filterSearchVal {
+            /* width: 309px; */
+            width: 100%;
+            outline: none;
+            transition: width 0.8s;
+            font-size: 12px;
+            padding: 6px 8px 6px 0;
+            height: 32px;
+            border: none;
+            padding-right: 35px;
+            background-color: #f7f8fa;
+          }
+          .searchIcon {
+            // position: absolute;
+            // left: 0;
+            // top: -3px;
+            position: static !important;
+            transition: left 0.8s;
+            display: block;
+            width: 28px;
+            height: 28px;
+            background: url(../../../../../assets/images/workReport/search.png) no-repeat center 9px;
+            background-size: 17px 17px;
+            cursor: pointer;
+          }
+        }
+        .filtersItem {
+          .filters-item-tit {
+            height: 28px;
+            line-height: 28px;
+            padding: 0 12px;
+            background-color: #f5f5f5;
+            text-align: left;
+            position: relative;
+            span {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+          .filters-item-con {
+            padding: 5px 8px 15px;
+            position: relative;
+            .filter-status-small {
+              overflow: hidden;
+              padding: 0px 0px;
+              margin: 0px 0px;
+              list-style: none;
+              display: inline-block;
+              border-radius: 4px;
+              padding-top: 7px;
+              border: none;
+              li {
+                position: relative;
+                width: 94px !important;
+                height: 30px !important;
+                line-height: 30px !important;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-left: 18px;
+                padding-right: 18px;
+                border-radius: 15px;
+                float: left;
+                text-align: center;
+                cursor: pointer;
+                background: rgba(240, 240, 240, 1);
+                border-radius: 15px;
+                border: 1px solid rgba(240, 240, 240, 1);
+                color: #757575;
+                margin: 0 4px 9px;
+                &:hover {
+                  background: rgba(237, 247, 255, 1);
+                }
+              }
+              .active {
+                background: rgba(237, 247, 255, 1);
+                border: 1px solid var(--baseColor, #4285f4);
+                color: #4285f4;
+                &::after {
+                  position: absolute;
+                  left: 6px;
+                  top: 50%;
+                  margin-top: -4px;
+                  content: '';
+                  background: url(../../../../../assets/images/workReport/ckd-03.png) no-repeat left center;
+                  background-size: 12px;
+                  display: block;
+                  width: 12px;
+                  height: 8px;
+                }
+              }
+            }
+            .isReadActive {
+              background: rgba(237, 247, 255, 1);
+              border: 1px solid var(--baseColor, #4285f4);
+              color: #4285f4;
+            }
+            .ant-picker-range {
+              width: calc(100% - 10px);
+              height: 32px;
+              margin-left: 7px !important;
+            }
+            .ant-picker {
+              padding: 6px 10px;
+            }
+            .ant-picker-input > input {
+              text-align: center;
+            }
+          }
+          .filter-status-classify {
+            width: 100%;
+            padding-left: 7px;
+            padding-right: 7px;
+            margin-top: 3px;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            li {
+              width: 140px;
+              height: 30px;
+              line-height: 30px;
+              background: rgba(240, 240, 240, 1);
+              border-radius: 15px;
+              border: 1px solid rgba(240, 240, 240, 1);
+              text-align: center;
+              cursor: pointer;
+              position: relative;
+              margin-right: 10px;
+              &:hover {
+                background: #edf7ff;
+              }
+            }
+            .active {
+              background: rgba(237, 247, 255, 1);
+              border: 1px solid var(--baseColor, #4285f4);
+              color: #4285f4;
+              &::after {
+                position: absolute;
+                left: 6px;
+                top: 50%;
+                margin-top: -4px;
+                content: '';
+                background: url(../../../../../assets/images/workReport/ckd-03.png) no-repeat left center;
+                background-size: 12px;
+                display: block;
+                width: 12px;
+                height: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.report-details-pop {
+  position: relative;
+  height: 750px;
+  .top_title_box {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    .work-share {
+      display: inline-block;
+      width: 14px;
+      height: 16px;
+      background: url(../../../../../assets/images/workReport/share_btn.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      cursor: pointer;
+      &:hover {
+        background: url(../../../../../assets/images/workReport/share_hover.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .report_edit {
+      display: inline-block;
+      vertical-align: middle;
+      width: 14px;
+      height: 14px;
+      margin: 0 16px;
+      margin-right: 0;
+      cursor: pointer;
+      background-size: contain;
+      background-image: url(../../../../../assets/images/workReport/rep_edit.png);
+      &:hover {
+        background-image: url(../../../../../assets/images/workReport/report_blue.png);
+      }
+    }
+    .work-print {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url(../../../../../assets/images/workReport/work_print.png) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      cursor: pointer;
+      margin: 0 16px;
+      &:hover {
+        background: url(../../../../../assets/images/workReport/work-print-hover.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    .work-derive {
+      display: inline-block;
+      width: 15px;
+      height: 16px;
+      background: url(../../../../../assets/images/workReport/work_drive.png) no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+      vertical-align: middle;
+      margin-right: 5px;
+      &:hover {
+        background: url(../../../../../assets/images/workReport/work_derive_hover.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+  .ant-modal-content {
+    height: 750px;
+    .ant-modal-body {
+      overflow: auto;
+      height: calc(100% - 55px);
+      padding: 0 0 92px;
+      #printDataBox {
+        padding: 24px;
+      }
+    }
+    .report-type-title {
+      justify-content: space-between;
+      align-items: center;
+      .fleft {
+        span {
+          font-size: 16px;
+        }
+        .report-icon-type {
+          background: url(../../../../../assets/images/workReport/com.png) no-repeat left center;
+          background-size: 14px 14px;
+          padding-left: 21px;
+        }
+      }
+
+      .report-person-name,
+      .report-time {
+        color: var(--baseColor, #4285f4) !important;
+      }
+    }
+    .report_head {
+      // margin-top: 6px;
+      .detail-head-icon {
+        width: 14px;
+        height: 14px;
+      }
+      .detail-title-name {
+        display: inline-block;
+        color: #191f25;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 4px;
+      }
+    }
+    .report-content-box {
+      border-bottom: none;
+      padding: 0;
+      margin-top: 12px;
+      .relation_list_model {
+        margin-top: 10px;
+        .workreport-title {
+          padding: 10px 0px 0;
+          color: #191f25;
+        }
+        .workreport-detail-item {
+          display: inline-block;
+          width: 100%;
+          .workreport-title {
+            color: #191f25;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+          }
+          .workreport-content {
+            color: #808080;
+            margin-bottom: 0;
+            padding: 0;
+            white-space: normal;
+            overflow-x: hidden;
+            background: none;
+            border: none;
+            p {
+              margin-left: inherit !important;
+              text-indent: inherit !important;
+            }
+          }
+          .preview_img_box > img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        .work_report_show_relation {
+          .relation_list_new {
+            margin-top: 12px;
+            background: rgba(250, 250, 250, 1);
+            position: relative;
+            border-radius: 4px;
+            cursor: pointer;
+            .relation_top_cont {
+              display: flex;
+              align-items: center;
+              padding: 10px 12px;
+              position: relative;
+              span.ant-avatar {
+                margin-right: 8px;
+              }
+              .relation_right_box {
+                flex: 1;
+                width: 100%;
+                .cell_line {
+                  padding: 0 12px;
+                  margin-top: -2px;
+                }
+                .relation_status {
+                  margin-top: 4px;
+                  display: flex;
+                  span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: rgba(153, 153, 153, 1);
+                  }
+                  .status_gray {
+                    text-align: center;
+                    color: #70707a !important;
+                    margin-right: 18px;
+                  }
+
+                  .status_blue {
+                    text-align: center;
+                    color: #4285f4 !important;
+                    margin-right: 18px;
+                  }
+
+                  .status_green {
+                    text-align: center;
+                    color: #34a853 !important;
+                    margin-right: 18px;
+                  }
+
+                  .status_red {
+                    text-align: center;
+                    color: #ea4335 !important;
+                    margin-right: 18px;
+                  }
+
+                  .status_yellow {
+                    text-align: center;
+                    color: #fbbc05 !important;
+                    margin-right: 18px;
+                  }
+                  .tit_time {
+                    margin-left: 0;
+                    color: #808080;
+                    display: inline-block;
+                    margin-top: 0;
+                  }
+                }
+                .relation_progoess {
+                  display: flex;
+                  align-items: center;
+                  .progress_icon {
+                    width: 24px;
+                    height: 8px;
+                    background: url(../../../../../assets/images/workReport/process_small.png) no-repeat left
+                      center;
+                    margin: 0 8px;
+                  }
+                  .progress_last {
+                    color: #4285f4;
+                  }
+                }
+                .heart_kr {
+                  color: #70707a;
+                  i {
+                    display: inline-block;
+                    width: 14px;
+                    height: 12px;
+                    background: url(../../../../../assets/images/taskReport/heart_full.png) no-repeat center;
+                    background-size: 12px;
+                    margin-right: 3px;
+                  }
+                }
+              }
+            }
+            .relation_report_box,
+            .relation_remark_box {
+              border-top: 1px dotted rgba(231, 231, 233, 1);
+              padding: 10px 18px;
+              .add-task-report,
+              .add-approval-remark {
+                display: flex;
+                /* align-items: center; */
+                align-items: baseline;
+                .tits {
+                  margin-right: 10px;
+                }
+                .cont {
+                  width: 1%;
+                  flex: 1;
+                  word-break: break-word;
+                }
+              }
+            }
+            .relation_report_file {
+              display: flex;
+              align-items: baseline;
+              padding: 2px 18px;
+              span.detail-attach-title {
+                /* display: inline-block; */
+                width: 30px;
+                min-width: 30px;
+                font-size: 14px;
+                color: #191f25;
+                font-weight: bold;
+              }
+              .relation_reportFiles {
+                overflow: hidden;
+                flex: 1;
+                margin-left: 2px;
+                li {
+                  padding: 4px;
+                  display: block;
+                  width: 100%;
+                  height: auto;
+                  text-align: left;
+                  border: none;
+                  margin-bottom: 10px !important;
+                  background: #fafafa;
+                  line-height: 40px;
+                  cursor: pointer;
+                  position: relative;
+                  &:hover {
+                    background: #e9f2ff;
+                  }
+                  img {
+                    width: 40px;
+                    height: 40px;
+                    /* border: 1px solid #ccc; */
+                    margin: 0 3px;
+                    padding: 3px;
+                    border-radius: 4px;
+                  }
+                  .download_icon {
+                    display: none;
+                    width: 18px;
+                    height: 18px;
+                    right: 10px;
+                    top: 50%;
+                    margin-top: -9px;
+                    background: url(../../../../../assets/images/workReport/download_file.png) no-repeat center;
+                    background-size: 12px 14px;
+                    bottom: 0;
+                  }
+                  .get_fileName {
+                    max-width: calc(100% - 100px);
+                    line-height: 20px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: rgba(92, 92, 92, 1);
+                    word-break: break-all;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                  }
+                  .get_fileExt {
+                    color: rgba(92, 92, 92, 1);
+                    display: inline-block;
+                    vertical-align: bottom;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .set_report_file {
+      .detail-attach-item {
+        display: flex;
+        align-items: baseline;
+      }
+      span.detail-attach-title {
+        /* display: inline-block; */
+        width: 30px;
+        min-width: 30px;
+        font-size: 14px;
+        color: #191f25;
+        font-weight: bold;
+      }
+      .reportFiles {
+        overflow: hidden;
+        flex: 1;
+        margin-left: 2px;
+        li {
+          padding: 4px;
+          display: block;
+          width: 100%;
+          height: auto;
+          text-align: left;
+          border: none;
+          margin-bottom: 10px !important;
+          background: #fafafa;
+          line-height: 40px;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            background: #e9f2ff;
+          }
+          .get_fileName {
+            max-width: calc(100% - 100px);
+            line-height: 20px;
+            vertical-align: middle;
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 400;
+            color: #5c5c5c;
+            word-break: break-all;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    .set_report_per {
+      margin-top: 16px;
+      padding-top: 24px;
+      position: relative;
+      // border-top: 1px solid rgba(231, 231, 233, 1);
+      .isRead_per_box {
+        display: flex;
+        .active {
+          color: var(--baseColor, #191f25);
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .isRead_per_tit {
+          // max-width: 50px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+        .isRead_per_cont {
+          flex: 1;
+          .listItem {
+            span {
+              font-size: 14px;
+              color: #70707a;
+            }
+          }
+        }
+      }
+      .report_pop_box {
+        // display: none;
+        position: absolute;
+        width: 196px;
+        height: 337px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(215, 215, 217, 1);
+        box-shadow: 0px 1px 6px 0px rgba(193, 193, 193, 0.35);
+        border-radius: 4px;
+        /* top: -337px; */
+        top: -168px;
+        left: 52px;
+        z-index: 100;
+        .reportUsersList,
+        .copyUsersList,
+        .set_group_projName {
+          max-height: 276px;
+          overflow: auto;
+          .avatarName {
+            max-width: calc(100% - 44px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: middle;
+            width: 100%;
+            display: inline-block;
+          }
+          .ant-avatar {
+            img {
+              object-fit: scale-down;
+            }
+          }
+        }
+        .readStatusTab {
+          display: flex;
+          .ant-tabs-nav-list {
+            width: 99%;
+            .ant-tabs-tab {
+              flex: 1;
+              margin: 0;
+              .ant-tabs-tab-btn {
+                margin: auto;
+              }
+            }
+          }
+        }
+
+        .report_nav ul {
+          display: flex;
+          align-items: center;
+          ul li {
+            text-align: center;
+            flex: 1;
+
+            &:hover {
+              background: rgba(245, 247, 251, 1);
+            }
+          }
+        }
+        .detail-attach-names,
+        .set_group_projName {
+          li {
+            padding: 0px 20px;
+            .unreadList {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .avatarBox {
+                max-width: calc(100% - 48px);
+                display: flex;
+                align-items: center;
+                .avatarName {
+                  max-width: calc(100% - 32px);
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  width: 100%;
+                }
+              }
+            }
+            .listItem {
+              margin-bottom: 10px;
+              .rec_icon {
+                background: url(../../../../../assets/images/workReport/rec-g.png) no-repeat left center;
+                background-size: 12px;
+                padding-left: 20px;
+                color: #70707a;
+
+                &:hover {
+                  background: url(../../../../../assets/images/workReport/rec-b.png) no-repeat left center;
+                  background-size: 12px;
+                  color: #4285f4;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .set_comment_box {
+      margin-top: 10px;
+      // background: #f6faff;
+      .set_support_box {
+        display: flex;
+        padding: 8px 12px 0;
+        .support_icon {
+          width: 16px;
+          height: 16px;
+          background: url(../../../../../assets/images/workReport/sup.png) no-repeat left center;
+          background-size: cover;
+          margin-right: 10px;
+          margin-top: 8px;
+        }
+        .support_list {
+          width: 1%;
+          flex: 1;
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              margin-right: 17px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+      .opinion-area {
+        padding: 10px 8px 10px 18px;
+        .provide-edit-view {
+          overflow: hidden;
+          padding: 10px 8px 10px 18px;
+        }
+        .reload_more_view {
+          margin-bottom: 10px;
+          text-align: center;
+          cursor: pointer;
+          color: #5c5c5c;
+        }
+        .view_box_new {
+          // display: flex;
+          margin-bottom: 16px;
+          .view_time {
+            margin-bottom: 0;
+            color: #70707a;
+          }
+          // .view_name,
+          // .callUser span {
+          //   color: #4285f4;
+          // }
+          .content_row {
+            position: relative;
+            margin-bottom: 2px;
+          }
+          .view_cont_box {
+            flex: 1;
+            display: flex;
+            flex-flow: column;
+          }
+          .view_cont {
+            font-size: 12px;
+            font-family: 'Microsoft YaHei';
+            font-weight: 400;
+            color: rgba(112, 112, 122, 1);
+            line-height: 18px;
+            flex: 1;
+            width: 100%;
+            position: relative;
+            .chatAt {
+              background: none;
+            }
+            .u_name {
+              position: absolute;
+              left: 0;
+            }
+            .times {
+              font-style: normal;
+              margin-left: 20px;
+              color: rgba(112, 112, 122, 1);
+            }
+            .user-cont {
+              white-space: normal;
+              cursor: pointer;
+              vertical-align: top;
+              margin-top: 2px;
+              p {
+                margin-bottom: 4px;
+                color: #191f25;
+              }
+            }
+          }
+          pre {
+            display: inherit;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+          }
+          .view_child_cont {
+            background: #fafafa;
+            opacity: 0.81;
+            border-radius: 4px;
+            padding: 14px 16px;
+            margin-top: 4px;
+            .child_item {
+              margin-bottom: 10px;
+              .view_time {
+                margin-bottom: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+    #printDataBox {
+      .set_comment_box {
+        .opinion-area {
+          .view_cont {
+            pre {
+              display: initial !important;
+            }
+          }
+        }
+      }
+    }
+    .commentBox {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 24px;
+      align-items: center;
+      z-index: 10;
+      .newFileWrap {
+        overflow: auto;
+        max-height: 80px;
+      }
+      .commentMsgEditor {
+        width: 100%;
+      }
+      .inpVal {
+        flex: 1;
+        width: 1%;
+        height: 32px;
+        line-height: 32px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(230, 230, 230, 1);
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(204, 204, 204, 1);
+        padding: 0 17px;
+        cursor: pointer;
+      }
+      .editorBox {
+        width: 100%;
+        border: 1px solid #4285f4;
+        // padding-bottom: 12px;
+        position: relative;
+        border-radius: 4px;
+        .btn_box {
+          text-align: right;
+          position: absolute;
+          bottom: 12px;
+          right: 0;
+        }
+      }
+      .note-editing-area {
+        img {
+          max-width: 200px;
+        }
+      }
+      .sendBtn {
+        width: 70px;
+        height: 32px;
+        color: #fff !important;
+        background-color: var(--baseColor, #4285f4);
+        border-radius: 4px;
+        text-align: center;
+        margin: 0 10px;
+      }
+      .support_icon_byId {
+        width: 42px;
+        height: 42px;
+        // margin: 7px 12px 0 2px;
+        cursor: pointer;
+        // margin-top: -12px;
+        background: url(../../../../../assets/images/workReport/praise.png) no-repeat center center;
+        background-size: 18px 18px;
+        &:hover {
+          background: url(../../../../../assets/images/workReport/praise_h.png) no-repeat center center;
+          background-size: 18px 18px;
+        }
+      }
+      .support_not {
+        background: url(../../../../../assets/images/workReport/praise.png) no-repeat center center;
+        background-size: 18px 18px;
+      }
+
+      .support_is {
+        background: url(../../../../../assets/images/workReport/praise_h.png) no-repeat center center;
+        background-size: 18px 18px;
+      }
+    }
+  }
+  .ant-modal-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    .pb_120 {
+      padding-bottom: 120px !important;
+    }
+    #printDataBox {
+      width: 100%;
+      //* flex: 1; */
+      /* height: 1%; */
+      // overflow: auto;
+      flex-grow: 1;
+    }
+    .commentBox {
+      flex: 0 0 auto;
+    }
+  }
+  .msg-send {
+    background: transparent !important;
+  }
+
+  .handel_btn {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: calc(50% - 20px);
+    cursor: pointer;
+    transition: all ease 0.3s;
+  }
+  .handel_prev {
+    left: -74px;
+    background: url('../../../../../assets/images/workReport/left_icon.svg') no-repeat;
+    background-size: 42px 42px;
+    &:hover {
+      background: url('../../../../../assets/images/workReport/left_icon_h.svg') no-repeat;
+      background-size: 42px 42px;
+      transition: all ease 0.3s;
+    }
+  }
+  .handel_next {
+    right: -74px;
+    background: url('../../../../../assets/images/workReport/right_icon.svg') no-repeat;
+    background-size: 42px 42px;
+    &:hover {
+      background: url('../../../../../assets/images/workReport/right_icon_h.svg') no-repeat;
+      background-size: 42px 42px;
+      transition: all ease 0.3s;
+    }
+  }
+  .handelDisable {
+    opacity: 0.4;
+    cursor: no-drop;
+  }
+}
+.report_share_pop {
+  .shareRoomList {
+    li {
+      padding-right: 20px;
+      margin-bottom: 30px;
+      margin-right: 8px;
+    }
+  }
+}
+.report_set_pop {
+  width: 850px !important;
+  height: 620px !important;
+  overflow: hidden;
+  .ant-modal-content {
+    height: 100%;
+    .ant-modal-body {
+      padding: 24px 0;
+      height: calc(100% - 136px);
+      overflow: hidden;
+      .tits {
+        padding: 0 24px;
+      }
+      .setList {
+        height: calc(100% - 24px);
+        overflow: auto;
+        padding: 0 24px;
+        margin-top: 20px;
+        li {
+          margin-bottom: 20px;
+          display: flex;
+          .tit {
+            width: 127px;
+            margin-top: 2px;
+            min-height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            color: #70707a;
+            font-weight: bold;
+          }
+          .cont {
+            display: flex;
+            flex: 1;
+            .c_tit {
+              margin-right: 10px;
+              color: #9a9aa2;
+            }
+          }
+          .custom {
+            width: 1%;
+            flex: 1;
+            .month_style_box {
+              position: relative;
+              height: 32px;
+              display: inline-block;
+              margin-left: 10px;
+              border: 1px solid rgba(215, 215, 217, 1);
+              border-radius: 2px;
+              width: 100%;
+            }
+            .month_style {
+              position: absolute;
+              top: 26px;
+              left: 0;
+              display: flex;
+              flex-wrap: wrap;
+              width: 230px;
+              height: 195px !important;
+              background: rgba(255, 255, 255, 1);
+              box-shadow: 0px 0px 6px 0px rgba(92, 92, 92, 0.3);
+              border-radius: 4px;
+              padding: 12px 12px 0px;
+              z-index: 5;
+              border-bottom: 1px solid #e6e2e2;
+              text-align: center;
+              align-items: center;
+              &.hide {
+                display: none;
+              }
+              li {
+                width: 22px;
+                height: 22px;
+                border-radius: 4px;
+                font-size: 12px;
+                line-height: 20px;
+                margin-right: 3px;
+                cursor: pointer;
+                margin-bottom: 12x !important;
+                transition: all 0.2s linear;
+                color: rgba(25, 31, 37, 1);
+                border: 1px solid transparent;
+                text-align: center;
+                &:hover,
+                &.active {
+                  background: rgba(233, 242, 255, 1);
+                  border: 1px solid rgba(66, 133, 244, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .ant-modal-footer {
+    padding: 24px;
+    .modalFooter {
+      display: flex;
+      justify-content: space-between;
+      .report_remind_hint {
+        display: flex;
+        align-items: center;
+        .report_hint_type {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.lottieBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.more_linkman .left_box {
+  float: left;
+  margin-right: 5px;
+}
+
+.more_linkman .left_box span {
+  background-image: url(../../../../../assets/images/workplan/OKR/organization.png) !important;
+  background-repeat: no-repeat !important;
+  background-position: 8px 7px !important;
+}
+.more_linkman .left_box span {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #4788f4;
+  color: white;
+  text-align: center;
+  line-height: 34px;
+  font-size: 12px;
+}
+.more_linkman {
+  padding-left: 18px;
+  height: 50px;
+  padding-top: 5px;
+  color: #70707a;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.more_linkman:hover {
+  background: #f5f7fb;
+}
+
+.more_linkman .right_box {
+  line-height: 40px;
+}
+
+//常用联系人
+.portrait_okrMain {
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 14px 0px rgba(131, 131, 131, 0.2);
+  border-radius: 8px;
+  z-index: 99;
+  width: 176px;
+  top: 20px;
+  left: 20px;
+
+  .okr_linkman {
+    overflow: auto;
+    height: initial !important;
+    max-height: 185px;
+    line-height: initial;
+    height: initial;
+    background: initial;
+    padding-left: initial !important;
+  }
+
+  .okr_linkman ul li {
+    width: 100%;
+    display: inline-block;
+    padding-left: 18px;
+    float: left;
+    line-height: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .okr_linkman ul li:hover {
+    background: #f5f7fb;
+  }
+
+  .okr_linkman ul li .left_box,
+  .more_linkman .left_box {
+    float: left;
+    margin-right: 5px;
+  }
+
+  .more_linkman .left_box span {
+    background-image: url(../../../../../assets/images/workplan/OKR/organization.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: 8px 7px !important;
+  }
+
+  .okr_linkman ul li .right_box {
+    float: left;
+    color: #191f25;
+  }
+
+  .okr_linkman ul li .left_box span,
+  .more_linkman .left_box span {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #4788f4;
+    color: white;
+    text-align: center;
+    line-height: 34px;
+    font-size: 12px;
+  }
+
+  .okr_linkman ul li .right_box span:first-child {
+    display: block;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .okr_linkman ul li .right_box span:last-child {
+    color: #70707a;
+  }
+
+  .more_linkman {
+    padding-left: 18px;
+    height: 50px;
+    padding-top: 5px;
+    color: #70707a;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .more_linkman:hover {
+    background: #f5f7fb;
+  }
+
+  .more_linkman .right_box {
+    line-height: 40px;
+  }
+}
+
+.portrait_okrMain h5 {
+  height: 28px;
+  line-height: 28px;
+  padding-left: 18px;
+  background: #f5f5f5;
+  color: #757575;
+  font-size: 12px;
+  margin: 0px;
+  text-align: left;
+}
+
+.portrait_okrMain h5:first-child {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.sendCommenteditorBox {
+  .msg-send {
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px 18px;
+    max-height: 433px;
+    min-height: 155px;
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    .file_icon {
+      visibility: visible;
+      border: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 4px;
+      background-image: url(../../../../../assets/images/chatWin/fj.png);
+
+      &:hover {
+        background-image: url(../../../../../assets/images/chatWin/fj_hover.png);
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+/* 附件列表 */
+.taskFilesList {
+  > .file_item {
+    margin: 17px 13px 2px 6px;
+    border-bottom: 1px dashed #e5e5e5;
+    color: #5c5c5c;
+    float: left;
+    padding-bottom: 12px;
+    width: 98%;
+    &:nth-of-type(1) {
+      margin-top: 0;
+    }
+    .fjzl{
+      width: 100%;
+    }
+  }
+
+  .task-file-title {
+    float: left;
+    width: 100%;
+    padding: 0 4px;
+    margin: 5px 0;
+  }
+
+  .file-resource-info {
+    width: 310px;
+    float: left;
+  }
+
+  .file-upload-date {
+    float: right;
+  }
+
+  .task-file-info .file-avatar {
+    float: left;
+    margin-left: 9px;
+    margin-right: 8px;
+    margin-top: 11px;
+    width: 33px;
+    height: 36px;
+  }
+
+  .task-file-info > div {
+    float: left;
+    height: 100%;
+    padding-top: 13px;
+    width: 330px;
+  }
+
+  .task-file-info > div > p {
+    margin: 1px 0px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .task-file-info {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    height: 59px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    cursor: pointer;
+    .file-download {
+      float: right;
+      margin-top: 20px;
+      margin-right: 20px;
+      background-color: transparent;
+      border: none;
+      width: 16px;
+      height: 15px;
+      background-image: url(../../../../../assets/images/task/file_download.png);
+      display: none;
+      &:hover {
+        background-image: url(../../../../../assets/images/task/file_download_h.png);
+      }
+    }
+    &:hover {
+      .file-download {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+.force-report {
+  width: 880px !important;
+  .ant-modal-body {
+    height: 500px;
+    .force-row {
+      display: flex;
+      align-items: end;
+      margin-bottom: 18px;
+      position: relative;
+      font-size: 14px;
+      &.isrequre::before {
+        content: '*';
+        display: inline-block;
+        color: #ea4335;
+        font-size: 14px;
+        position: absolute;
+      }
+      .force-text {
+        width: 110px;
+        margin-left: 8px;
+        font-weight: bold;
+      }
+      .gren-color {
+        color: #70707a;
+        font-weight: 400;
+      }
+      .times {
+        margin-left: 10px;
+      }
+      .staff-icon {
+        display: inline-block;
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+        background: url('../../../../assets/images/workReport/report_people.png') center no-repeat;
+        vertical-align: bottom;
+        float: left;
+        background-size: cover;
+        align-self: flex-start;
+        position: relative;
+        top: 4px;
+
+        &:hover {
+          background: url('../../../../assets/images/workReport/report_people_h.png') center no-repeat;
+          background-size: cover;
+        }
+      }
+      .staff-object {
+        width: calc(100% - 26px);
+        float: left;
+        margin-top: -4px;
+        margin-left: 12px;
+        span {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-wrap: initial;
+          word-break: break-all;
+          display: inline-block;
+          height: 28px;
+
+          background: #f0f0f0;
+          border-radius: 4px;
+          padding: 0px 8px;
+          text-align: center;
+          vertical-align: text-top;
+          margin-right: 12px;
+          cursor: pointer;
+          position: relative;
+          line-height: 28px;
+          padding-right: 22px;
+          margin-bottom: 12px;
+        }
+        span .del_icon {
+          cursor: pointer;
+          display: inline-block;
+          padding-right: 14px;
+        }
+        .del_icon {
+          cursor: pointer;
+          width: 10px;
+          height: 10px;
+          background-image: url(../../../../assets/images/workReport/report_clear.png);
+          position: absolute;
+          top: 10px;
+          right: 4px;
+          &:hover {
+            background-image: url(../../../../assets/images/workReport/report_clear_h.png);
+          }
+        }
+      }
+      .timePeriod {
+        .hint_text,
+        .hint_text {
+          float: left;
+        }
+        ul {
+          margin-top: 10px;
+          max-width: 400px;
+        }
+        ul li {
+          float: left;
+          width: 24px;
+          height: 24px;
+          text-align: center;
+          line-height: 24px;
+          background: rgba(231, 231, 233, 1);
+          border-radius: 4px;
+          color: #70707a;
+          margin-left: 8px;
+          cursor: pointer;
+          margin-bottom: 8px !important;
+          border: 1px solid transparent;
+          &:hover {
+            color: #4285f4;
+            border: 1px solid #4285f4;
+          }
+        }
+        ul li.on {
+          color: white;
+          background: #4285f4;
+        }
+      }
+    }
+    //强制汇报详情
+    .forces-detail {
+      .constraint_li {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        color: #70707a;
+        .constraint_task_title {
+          overflow: hidden;
+        }
+      }
+      .constraint_content {
+        margin-left: 3px;
+      }
+      .constraint_content_time {
+        margin-bottom: 0px;
+      }
+      .constraint_task {
+        height: 60px !important;
+        background: rgba(245, 247, 251, 1);
+        color: #70707a;
+        padding: 7px 10px;
+      }
+      .constraint_task_name {
+        color: #191f25;
+      }
+      .mr {
+        float: right;
+      }
+      .ml {
+        float: left;
+      }
+      .constraint_task_eidt i {
+        color: #4285f4;
+        font-style: normal;
+        margin-left: 24px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.force-items {
+  position: relative;
+  input,
+  .ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+  .ant-checkbox-group {
+    font-size: 14px !important;
+  }
+  .ant-select-selector,
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: 36px;
+    position: relative;
+    top: -2px;
+  }
+  .nowtip {
+    position: absolute;
+    top: 7px;
+    right: 106px;
+  }
+  &.selpeople {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 80px);
+  }
+  .week-set {
+    display: flex;
+    align-items: center;
+    .hint_text {
+      float: none !important;
+    }
+  }
+}

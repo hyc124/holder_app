@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>编组 2备份 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="任务管理" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="任务管理---描述上移" transform="translate(-76.000000, -20.000000)">
+            <rect fill="#F4F5FC" x="0" y="0" width="1334" height="1431"></rect>
+            <rect id="顶部" fill="#FFFFFF" x="60" y="0" width="1274" height="840"></rect>
+            <g id="编组-33" transform="translate(76.000000, 20.000000)" stroke="#6C6C6C" stroke-linecap="round" stroke-linejoin="round">
+                <g id="编组-2备份-4" transform="translate(7.500000, 8.000000) scale(-1, 1) translate(-7.500000, -8.000000) translate(0.000000, 2.000000)">
+                    <line x1="0.535714286" y1="-7.09154957e-15" x2="0.535714286" y2="12" id="路径-10" transform="translate(0.535714, 6.000000) scale(-1, 1) translate(-0.535714, -6.000000) "></line>
+                    <path d="M9.81091527,8.8817842e-16 L3.75,5.65685425 L9.81091527,11.3137085 M3.75,5.65685425 L14.4642857,5.65685425" id="形状结合" transform="translate(9.107143, 5.656854) scale(-1, 1) translate(-9.107143, -5.656854) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

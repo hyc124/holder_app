@@ -1,0 +1,387 @@
+@import '~@/src/styles/_var.less';
+.file_task_modal {
+  position: absolute;
+  height: calc(100% - 50px);
+  width: calc(100% - 54px);
+  /* height: 100%; */
+  background-color: white;
+  /* padding: 15px 15px 0px 15px; */
+  /* margin-left: 16px; */
+  z-index: 9;
+  .file_task_modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .f_title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #757575;
+    }
+    .close_icon {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  .range_time_box {
+    margin: 20px 0;
+    .ant-picker-range {
+      margin-left: 0;
+    }
+  }
+  .file_table_list {
+    height: calc(100% - 396px);
+    .ant-table {
+      padding-bottom: 20px;
+    }
+  }
+  .statistics_Info {
+    display: flex;
+    justify-content: center;
+    .temp_item {
+      width: 19%;
+      height: 130px;
+      border-left: 1px dashed #eaeaea;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      &:first-child {
+        border-left: none;
+      }
+      .p-img {
+        width: 98px;
+        height: 98px;
+        line-height: 98px;
+        text-align: center;
+        background-size: contain;
+        font-size: 30px;
+        background: url('../../../../../../assets/images/task//circle_03.png') no-repeat center;
+        color: rgba(72, 160, 220, 1);
+        em {
+          font-size: 12px;
+          color: rgba(164, 164, 164, 1);
+          font-style: normal;
+        }
+      }
+      .p-text {
+        font-size: 12px;
+        color: rgba(164, 164, 164, 1);
+        margin-top: 12px;
+      }
+    }
+    .item_11 .p-img {
+      color: rgba(72, 160, 220, 1);
+    }
+
+    .item_12 .p-img {
+      color: rgba(68, 183, 174, 1);
+    }
+
+    .item_13 .p-img {
+      color: rgba(233, 170, 108, 1);
+    }
+  }
+  .file_task_table {
+    height: 100%;
+    .ant_table_item {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      .ant_table_l {
+        display: flex;
+        align-items: center;
+        .ant-tag {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          margin: 0 3px;
+          padding: 0;
+        }
+        .tag-y {
+          border-radius: 4px;
+          color: #ea4335;
+          border-color: #ea4335;
+        }
+        .tag-list {
+          display: flex;
+          .taskMiddleLabel {
+            margin: 0 3px;
+          }
+        }
+        .padr4 {
+          padding-right: 4px;
+          padding-left: 6px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          vertical-align: middle;
+          display: inline-block;
+          color: #191f25;
+          font-size: 14px;
+        }
+      }
+    }
+    .finishedTask {
+      .padr4 {
+        text-decoration: line-through;
+        color: #cccccc !important;
+      }
+      .taskMiddle_time {
+        color: #cccccc;
+      }
+    }
+    .ant-table {
+      height: 100%;
+    }
+    .ant-pagination-item-link {
+      display: block;
+    }
+  }
+  .ant_search_input {
+    margin: 60px 0 20px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.down_task_modal {
+  position: absolute;
+  height: calc(100% - 50px);
+  width: calc(100% - 54px);
+  /* height: 100%; */
+  background-color: white;
+  /* padding: 15px 15px 0px 15px; */
+  /* margin-left: 16px; */
+  z-index: 9;
+  overflow: hidden;
+  .down_task_modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .d_title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #757575;
+    }
+    .close_icon {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  .head_content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 25px 0;
+    .head_content_jb {
+      height: 22px;
+      display: flex;
+      .subordinate-item {
+        display: block;
+        line-height: 22px;
+        color: #757575;
+        border-right: 1px solid rgba(204, 204, 204, 1);
+        padding: 0 33px;
+        &:last-child {
+          border-right: 0;
+        }
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+    .seach_icon {
+      width: 68px;
+      height: 32px;
+      border: 1px solid #d7d7d9;
+      line-height: 32px;
+      margin-right: 10px;
+      text-align: center;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+  .down_footer {
+    position: relative;
+    height: calc(100% - 178px);
+    display: flex;
+    .down_fotter_left {
+      width: 176px;
+      margin-right: 38px;
+    }
+    .down_fotter_right {
+      position: relative;
+      flex: 1;
+      .task_list_table {
+        height: calc(100% - 50px);
+        padding-bottom: 40px;
+      }
+      .finishedTask {
+        .common-task-name {
+          color: #cccccc !important;
+          text-decoration: line-through;
+        }
+      }
+      .common-task-item {
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+          cursor: pointer;
+          background-color: #f6faff;
+        }
+        .common-task-name {
+          font-size: 14px;
+          margin-right: 8px;
+          color: #191f25;
+        }
+        .common-task-l {
+          align-items: center;
+          .ant-tag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            margin: 0 3px;
+            padding: 0;
+            border: 0;
+            border-radius: 4px;
+          }
+          .tag-list {
+            display: flex;
+            align-items: center;
+          }
+        }
+        .common-task-r {
+          .ant-avatar {
+            margin-right: 10px;
+          }
+        }
+      }
+      td.ant-table-cell {
+        padding: 0;
+      }
+    }
+    .task_footer {
+      // position: absolute;
+      width: 100%;
+      // bottom: 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .noExpandable .ant-table-row-expand-icon {
+    visibility: hidden;
+  }
+  .ant-table-row-indent + .ant-table-row-expand-icon {
+    margin-top: 16px;
+  }
+  .ant-pagination-item-link {
+    display: block;
+  }
+}
+.foren_task_modal {
+  position: absolute;
+  height: calc(100% - 50px);
+  width: calc(100% - 54px);
+  /* height: 100%; */
+  background-color: white;
+  /* padding: 15px 15px 0px 15px; */
+  /* margin-left: 16px; */
+  z-index: 9;
+  overflow: hidden;
+  .foren_task_modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .f_title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #757575;
+    }
+    .close_icon {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  .ant_table_l {
+    display: flex;
+    align-items: center;
+    .ant-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      margin: 0 3px;
+      padding: 0;
+    }
+    .tag-y {
+      border-radius: 4px;
+      color: #ea4335;
+      border-color: #ea4335;
+    }
+    .tag-list {
+      display: flex;
+      .taskMiddleLabel {
+        margin: 0 3px;
+      }
+    }
+    .padr4 {
+      padding-right: 4px;
+      padding-left: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
+      display: inline-block;
+      color: #191f25;
+      font-size: 14px;
+    }
+  }
+  .finishedTask {
+    .padr4 {
+      text-decoration: line-through;
+      color: #cccccc !important;
+    }
+  }
+  .ant-table {
+    padding-bottom: 20px;
+  }
+  .search_box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 70px 0;
+    & > input {
+      margin-left: 15px;
+    }
+  }
+  .foren_table_list {
+    height: calc(100% - 220px);
+    .foren_task_table {
+      height: 100%;
+      .ant-table {
+        height: calc(100% - 50px);
+      }
+    }
+  }
+  .ant-pagination-item-link {
+    display: block;
+  }
+  .ant-table-cell {
+    cursor: pointer;
+  }
+}
+.opt_btn {
+  width: 170px;
+  .opt_btn_item {
+    &:hover {
+      background-color: #edf7ff;
+    }
+  }
+}

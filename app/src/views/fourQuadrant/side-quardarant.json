@@ -1,0 +1,37 @@
+{
+  "mainMenu": [
+    {
+      "key": "part-now-week",
+      "type": "1",
+      "title": "本周的任务",
+      "btname": "创建任务",
+      "noneName": "在这里创建本周的任务喔~",
+      "src": "assets/images/common/none_data.png"
+    },
+    {
+      "key": "part-now-status",
+      "href": "#/workPlan",
+      "title": "OKR当前的状态",
+      "type": "2",
+      "btname": "创建KR",
+      "noneName": "在这里创建关键结果哦~",
+      "src": "assets/images/common/none_data.png"
+    },
+    {
+      "key": "part-next-week",
+      "type": "3",
+      "title": "未来四周的任务",
+      "btname": "创建任务",
+      "noneName": "还没有未来四周的计划~",
+      "src": "assets/images/common/none_data.png"
+    },
+    {
+      "key": "part-next-status",
+      "type": "4",
+      "title": "状态指标",
+      "btname": "创建指标",
+      "noneName": "在这里创建本周的任务喔~",
+      "src": "assets/images/common/none_data.png"
+    }
+  ]
+}

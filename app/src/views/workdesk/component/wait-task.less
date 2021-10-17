@@ -1,0 +1,141 @@
+@import '~@/src/styles/_var.less';
+.wait_task_wrap {
+  height: 100%;
+  position: relative;
+  .wrapRelate {
+    height: calc(100% - 60px) !important;
+    overflow: auto;
+  }
+  .wait_task_list {
+    .common-task-item {
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      &:hover {
+        cursor: pointer;
+        background-color: #f6faff;
+      }
+
+      .ant-progress-inner {
+        height: 8px;
+        .ant-progress-bg {
+          height: 8px !important;
+        }
+      }
+      .common-task-name {
+        font-size: 14px;
+        margin-right: 3px;
+        color: #191f25;
+      }
+
+      .taskTypeLabel {
+        display: flex;
+        align-items: center;
+        min-width: 54px;
+        height: 18px;
+        line-height: 18px;
+        padding: 0 6px;
+        border-radius: 4px;
+        font-size: 12px;
+        color: @color_9a;
+      }
+      .taglarg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+      }
+      .tagboardMb {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-mb.svg);
+      }
+      .tagboardLs {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-ls.svg);
+      }
+      .tagboardZn {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-zn.svg);
+      }
+      .tagboardXm {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-xm.svg);
+      }
+      .taskTypeLabel::before {
+        content: '';
+        display: flex;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 16px;
+        height: 16px;
+        align-items: center;
+        justify-content: center;
+        // margin-bottom: 2px;
+        margin-right: 5px;
+      }
+      .taskTypeLabel.boardMb::before {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-mb.svg);
+      }
+      .taskTypeLabel.boardLs::before {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-ls.svg);
+      }
+      .taskTypeLabel.boardZn::before {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-zn.svg);
+      }
+      .taskTypeLabel.boardXm::before {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-xm.svg);
+      }
+      .taskTypeLabel.boardRw::before {
+        background-image: url(../../../../../assets/images/task/task-list-icon/tag-rw.svg);
+      }
+      .tag-list {
+        display: flex;
+        align-items: center;
+        .ant-tag {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          margin: 0 3px;
+          padding: 0;
+          border: 0;
+          border-radius: 4px;
+          &.long-tag {
+            width: auto;
+            border-radius: 4px;
+            padding: 0 8px;
+            color: @color_gray;
+          }
+        }
+      }
+      .boardTaskLabel {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+      .common-task-l {
+        align-items: center;
+      }
+      .common-task-r {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .common-task-l-sml {
+        flex-flow: column;
+        .item_top {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .wait_task_footer {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,127 @@
+//任务放大搜索框
+@import '~@/src/styles/_var.less';
+.search_down_menu {
+  width: 311px;
+  height: 487px;
+  background: rgba(255, 255, 255, 1);
+  padding: 16px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
+  .ant-divider-horizontal {
+    margin: 16px 0;
+  }
+  .ant-picker-range {
+    width: 100%;
+    margin-left: 0;
+  }
+  .search_input {
+    width: 100%;
+  }
+  .s_section {
+    .tit {
+      color: #191f25;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+    section {
+      & > .tag_span {
+        height: 28px;
+        min-width: 85px;
+        line-height: 28px;
+        text-align: center;
+        cursor: pointer;
+        background: #f7f9fb;
+        padding: 0 10px;
+        border-radius: 14px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #fdfbfb;
+      }
+    }
+
+    .search_section_top {
+      display: flex;
+      justify-content: space-between;
+      & > .tag_span {
+        min-width: 134px;
+        margin-right: 0;
+      }
+    }
+    .search_section_btm {
+      & > .tag_span {
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+    .search_opt {
+      .laragTag {
+        width: 100px;
+      }
+      .T1,
+      .T2 {
+        min-width: 134px;
+      }
+      .T2 {
+        margin-right: 0;
+      }
+      .T3,
+      .T4,
+      .T5,
+      .T6,
+      .T7,
+      .T8 {
+        margin-right: 0;
+      }
+      .T4,
+      .T7 {
+        margin: 0 10px;
+      }
+    }
+
+    .tagspanActive,
+    .tagspanActive1,
+    .tagspanActive2,
+    .tagspanActive3,
+    .tagspanActive4,
+    .tagspanActive5 {
+      background: rgba(233, 242, 255, 1) !important;
+      border-color: rgba(66, 133, 244, 1) !important;
+      border-radius: 14px;
+      color: rgba(66, 133, 244, 1) !important;
+    }
+    .tagrmActive,
+    .tagrmActive1,
+    .tagrmActive2,
+    .tagrmActive3,
+    .tagrmActive4,
+    .tagrmActive5 {
+      background: #f7f9fb !important;
+      color: #191f25 !important;
+      border-color: #fdfbfb !important;
+    }
+    .tag_shz_active {
+      background-color: rgba(255, 208, 180, 1) !important;
+      border: 1px solid #fbbc05;
+      color: #e8835c;
+      border-radius: 14px;
+    }
+
+    .tag_shz_rm_active,
+    .tag_yyc_rm_active {
+      background: #f7f9fb !important;
+      border: none !important;
+      color: #191f25 !important;
+    }
+    .tag_yyc_active {
+      background: rgba(250, 209, 206, 1) !important;
+      color: #f9556c;
+      border: 1px solid rgba(254, 202, 209, 0.7);
+      border-radius: 14px;
+    }
+  }
+}
+.searchHeight {
+  height: 427px !important;
+}

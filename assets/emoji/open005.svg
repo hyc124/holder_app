@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #369bfc;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_2482" data-name="矩形 2482" class="cls-1" width="22" height="22" transform="translate(569 255)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.494" y1="0.067" x2="0.506" y2="0.962" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#45a2fc"/>
+      <stop offset="1" stop-color="#2794fc"/>
+      <stop offset="1" stop-color="#accff7"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="-0.425" x2="0.5" y2="1.017" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.749" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="组_6721" data-name="组 6721" transform="translate(-569 -255)">
+    <g id="蒙版组_7" data-name="蒙版组 7" class="cls-2">
+      <rect id="矩形_2483" data-name="矩形 2483" class="cls-3" width="20" height="20" rx="4" transform="translate(570 256)"/>
+    </g>
+    <rect id="矩形_2484" data-name="矩形 2484" class="cls-4" width="18.182" height="8.725" rx="3" transform="translate(570.909 256)"/>
+    <g id="组_6716" data-name="组 6716" transform="translate(1295.174 -126.023)">
+      <rect id="矩形_2485" data-name="矩形 2485" class="cls-5" width="1.818" height="7.273" transform="translate(-715.091 392.023) rotate(90)"/>
+      <rect id="矩形_2486" data-name="矩形 2486" class="cls-5" width="1.818" height="7.273" transform="translate(-719.637 389.296)"/>
+      <rect id="矩形_2487" data-name="矩形 2487" class="cls-5" width="1.818" height="3.738" transform="translate(-709.7 387.477) rotate(90)"/>
+      <rect id="矩形_2488" data-name="矩形 2488" class="cls-5" width="1.818" height="5.248" transform="translate(-707.985 395.422) rotate(90)"/>
+      <rect id="矩形_2489" data-name="矩形 2489" class="cls-5" width="1.818" height="7.397" transform="translate(-709.7 396.568) rotate(180)"/>
+    </g>
+  </g>
+</svg>

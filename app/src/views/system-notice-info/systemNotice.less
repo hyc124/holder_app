@@ -1,0 +1,174 @@
+.system_notice_content {
+  width: 100%;
+  .system_content_nav {
+    width: 260px;
+    border-right: 1px solid #e7e7e9;
+    .ant-list-item {
+      border: none;
+      padding: 0;
+      height: 40px;
+      padding-left: 66px;
+      cursor: pointer;
+      &:hover {
+        background-color: #e9f2ff;
+        color: #4285f4;
+      }
+      .sys_notice_item {
+        em {
+          position: relative;
+          font-style: normal;
+          margin-left: 6px;
+        }
+        .hasSpot {
+          &::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #ff0000;
+            position: absolute;
+            top: 3px;
+            margin-left: 6px;
+          }
+        }
+      }
+    }
+    .ant-list-item:first-child {
+      background: url('../../../../assets/images/workdesk/all_cate.png') no-repeat center left 42px;
+    }
+    .ant-list-item:first-child:hover {
+      background: #e9f2ff url('../../../../assets/images/workdesk/all_cate.png') no-repeat center left 42px;
+    }
+    .ant-list-item:first-child.active {
+      background: #e9f2ff url('../../../../assets/images/workdesk/all_cate_h.png') no-repeat center left 42px;
+    }
+    .ant-list-item:last-child {
+      background: url('../../../../assets/images/workdesk/notice_cate.png') no-repeat center left 42px;
+    }
+    .ant-list-item:last-child:hover {
+      background: #e9f2ff url('../../../../assets/images/workdesk/notice_cate.png') no-repeat center left 42px;
+    }
+    .ant-list-item:last-child.active {
+      background: #e9f2ff url('../../../../assets/images/workdesk/notice_cate_h.png') no-repeat center left 42px;
+    }
+    .active {
+      border-right: 4px solid #4285f4;
+      background-color: #e9f2ff;
+      color: #4285f4;
+    }
+    .ant-list-bordered {
+      border: none;
+    }
+  }
+  .system_content_list {
+    padding: 24px;
+    width: calc(100% - 260px);
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    .sys_notice_header {
+      text-align: right;
+      min-height: 36px;
+      margin-bottom: 10px;
+    }
+    .ant_table_item {
+      position: relative;
+      .delBtn {
+        display: none;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 0;
+        top: 48%;
+        background: url('../../../../assets/images/common/delete-chat.png') no-repeat center;
+        &:hover {
+          background: url('../../../../assets/images/common/del-chat-h.png') no-repeat center;
+        }
+      }
+    }
+    .borderSolid {
+      border-radius: 4px;
+      border-right: 1px solid #e7e7e9;
+      border-top: 1px solid #e7e7e9;
+      border-left: 1px solid #e7e7e9;
+    }
+    .ant-table-thead {
+      .ant-table-cell {
+        background: #e7e7e9;
+        color: #191f25;
+      }
+    }
+    .ant-table-tbody {
+      tr {
+        cursor: pointer;
+        &:hover .delBtn {
+          display: block;
+        }
+      }
+      tr:hover td {
+        background-color: #e9f2ff;
+      }
+
+      tr:nth-child(even) {
+        background: #f7f8fa;
+      }
+      td {
+        padding: 12px 16px;
+      }
+      .title_name {
+        color: #191f25;
+      }
+      .from_name,
+      .notice_time {
+        color: #9a9aa2;
+      }
+      .hasMsg {
+        position: relative;
+        &::after {
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #ff0000;
+          position: absolute;
+          top: 6px;
+          left: -10px;
+        }
+      }
+    }
+    .ant-pagination {
+      text-align: center;
+      margin-top: 16px;
+    }
+    .footer_page {
+      position: absolute;
+      bottom: 24px;
+      width: calc(100% - 55px);
+    }
+    .sing_btn {
+      color: #4285f4;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 30%;
+      &:hover {
+        color: #2471f1;
+      }
+    }
+    .example {
+      text-align: center;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      padding: 30px 50px;
+      margin: 20px 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import '~@/src/styles/_var.less';
+.riskSection {
+  width: 340px;
+  // min-width: 318px;
+  // max-width: 340px;
+  height: 150px;
+  font-size: 12px;
+  text-align: center;
+  background-color: #f6faff;
+  // border: 1px solid @color_e7;
+  border-radius: 4px;
+  margin-left: 24px;
+  // margin-top: 20px;
+  margin-right: 8px;
+  padding: 16px 0;
+  justify-content: space-around !important;
+  .riskContainer {
+    cursor: pointer;
+    width: 80%;
+    .title {
+      color: @color_dark;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    // .right-box {
+    //   // max-width: calc(100% - 40px);
+    //   .body {
+    //     max-width: calc(100% - 80px);
+    //   }
+    // }
+    .body {
+      color: #ffaa00;
+      font-size: 28px;
+      font-weight: bold;
+      height: 30px;
+      line-height: 30px;
+    }
+    .footer {
+      .flabel {
+        color: @color_9a;
+      }
+      .addNum {
+        color: @color_red;
+        margin: 0 6px;
+      }
+
+      .reduceNum {
+        color: @color_green;
+      }
+    }
+
+    &.updeteBox {
+      .body {
+        color: @color_green;
+      }
+      // .addNum {
+      //   color: @color_dark;
+      // }
+    }
+  }
+  .cell-line {
+    width: 90%;
+    height: 1px;
+    background-color: @color_e7;
+    // margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .riskSection {
+    // min-width: 280px;
+    // max-width: 300px;
+    width: 230px;
+    .riskContainer {
+      width: 85%;
+      // .right-box {
+      //   // max-width: calc(100% - 80px);
+      //   .body {
+      //     max-width: calc(100% - 60px);
+      //   }
+      // }
+    }
+  }
+}

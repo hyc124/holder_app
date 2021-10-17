@@ -1,0 +1,151 @@
+@import '~@/src/styles/_var.less';
+@color_w: white;
+@color_b: #000000;
+@color_g: #e7e7e9;
+@color_A3: #a3a3a3;
+@color_E5: #e5f7e8;
+@color_F7: #f7f8fa;
+@color_43: #34a853;
+@color_70: #70707a;
+.okrDetailWindow {
+  width: 100%;
+  .okrDetailWindowContent {
+    width: 100%;
+    height: calc(100% - 56px);
+    padding: 16px;
+    background-color: #f5f7fb;
+    .taskDetailCont.OKRDetailContent {
+      overflow-x: hidden;
+    }
+    .fourQuadrant {
+      overflow: auto;
+    }
+  }
+  .childOrgContainer {
+    border-radius: 8px 0px 0px 8px;
+    position: relative;
+    margin-right: 4px !important;
+  }
+  .taskDetailCont.OKRDetailContent .detailBotContainer .fourQuadrant {
+    width: 100%;
+  }
+}
+
+//   头部标签
+.okrDetailWindowTitle header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background: white;
+  box-shadow: 2px -4px 6px 0px rgb(154, 154, 154);
+  position: relative;
+
+  .org_name {
+    max-width: 184px;
+    margin: 0px 14px 0 24px;
+    flex-shrink: 0;
+    font-size: 14px;
+    color: #191f25;
+  }
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    color: #70707a;
+    margin-top: 10px;
+    height: 46px;
+    white-space: nowrap;
+    max-width: calc(100% - 128px);
+    overflow: hidden;
+    position: relative;
+    .planTabBox {
+      ul {
+        overflow: hidden;
+        flex: 1;
+        height: 46px;
+      }
+      .planTabItem {
+        width: 100%;
+        min-width: 100px;
+        max-width: 280px;
+        height: 46px;
+        line-height: 46px;
+        padding-right: 10px;
+        padding-left: 16px;
+        margin-right: 4px;
+        text-align: center;
+        font-size: 12px;
+        background: white;
+        color: #70707a;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        border-bottom: none !important;
+        border-radius: 10px 10px 0px 0px;
+        .plan_tab_type {
+          height: 22px;
+          line-height: 22px;
+          margin: 0;
+        }
+        .plan_tab_type.none {
+          display: none;
+        }
+        &::before {
+          content: ' ';
+          border-left: 1px solid #9a9aa2;
+          display: inline-block;
+          height: 16px;
+          position: absolute;
+          top: 62%;
+          left: -1px;
+          margin-top: -13px;
+        }
+        .plan_name {
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-right: 10px;
+        }
+        .tab_del_icon {
+          width: 10px;
+          height: 10px;
+          background-image: url(../../../../assets/images/okrDetail/del_tab.png);
+          cursor: pointer;
+          visibility: hidden;
+          position: absolute;
+          right: 6px;
+          top: 18px;
+          &:hover {
+            background-image: url(../../../../assets/images/okrDetail/del_tab_h.png);
+          }
+        }
+        &.active,
+        &:hover {
+          border: 1px solid #d7d7d9;
+          color: #191f25;
+          &::before {
+            height: 0px !important;
+          }
+          &::after {
+            height: 0px !important;
+          }
+        }
+        &.active {
+          background: #f5f8ff;
+          + li::before {
+            height: 0px !important;
+          }
+        }
+        &:hover {
+          .tab_del_icon {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}

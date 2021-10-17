@@ -1,0 +1,200 @@
+@import '../../../styles/_var.less';
+
+.metting-add-modal-details-box,
+.meet_details_content_box {
+  .ant-modal-header {
+    .ant-modal-title {
+      text-align: left;
+      .ant-select-selector {
+        border: none;
+      }
+    }
+  }
+  .meet_details_box .meetDetailCont {
+    // height: calc(100% - 124px) !important;
+    overflow: auto !important;
+    padding: 0 24px !important;
+  }
+  .custom-row-selectRoom {
+    .title {
+      display: flex;
+      justify-content: space-between;
+      color: #191f25;
+      .tit {
+        cursor: pointer;
+        &:hover {
+          color: #4285f4;
+          cursor: pointer;
+        }
+      }
+      .start_user {
+        background: url(../../../../../assets/images/mettingManage/per.png) no-repeat left center;
+        background-size: 14px;
+        padding-left: 20px;
+      }
+    }
+  }
+  .detail-subject-container {
+    .del-confren-icon {
+      width: 12px;
+      height: 17px;
+      background: url(../../../../../assets/images/mettingManage/del_plan_normal.png) no-repeat;
+      cursor: pointer;
+      float: right;
+      margin-right: -25px;
+      margin-top: -90px;
+    }
+  }
+  .custom-row-fileBox {
+    .content {
+      position: relative;
+      padding-left: 0;
+      .newFileWrap {
+        padding-left: 32px;
+        .fileItem {
+          width: 180px;
+          height: 32px;
+          .ant-image {
+            width: 24px !important;
+            height: 24px !important;
+            img {
+              height: 24px !important;
+            }
+          }
+        }
+        .left_down_box {
+          width: 24px;
+          height: 24px;
+          .left_down_icon {
+            width: 12px;
+            height: 12px;
+            background-size: 12px 12px;
+          }
+        }
+      }
+      .detileFileWrap {
+        padding-left: 0;
+        .fileItem {
+          width: 100%;
+        }
+      }
+      .tit {
+        cursor: pointer;
+        &:hover {
+          color: #4285f4 !important;
+        }
+      }
+    }
+    .add_file_box {
+      button {
+        border: none;
+        margin: 12px 0;
+      }
+    }
+  }
+}
+
+.up_file_box {
+  .formIcon {
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+  }
+  .ant-btn {
+    background: none;
+    border: none;
+  }
+
+  span:first-child {
+    margin-right: 10px;
+  }
+  .require {
+    color: #ea4335;
+  }
+
+  .fileTitle {
+    button {
+      font-size: 12px;
+      color: @color_dark;
+      padding: 0;
+      border: 0;
+    }
+  }
+  .previewDetails {
+    color: #757575;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .previewDetails:hover {
+    color: @color_blue;
+  }
+  .ant-upload-list-picture {
+    > div {
+      width: 200px;
+      margin-right: 10px;
+      float: left;
+      > span {
+        width: 100%;
+      }
+      svg {
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+}
+
+.metting-add-secrecy-modal {
+  .selected-member-list {
+    width: 100%;
+    padding: 0 24px;
+    height: 100px;
+    overflow: auto;
+    display: flex;
+    .left-select-word {
+      width: 52px;
+      font-size: 12px;
+      color: #808080;
+      height: 20px;
+      line-height: 20px;
+      padding: 10px 0;
+    }
+    .meet-user-div {
+      overflow: auto;
+      width: 300px;
+      flex-wrap: wrap;
+      display: flex;
+      padding: 10px 0;
+      .user-div {
+        margin-right: 16px;
+        position: relative;
+        margin-bottom: 6px;
+        .common {
+          padding: 2px 10px;
+          background: #f9f9f9;
+          border-radius: 6px;
+        }
+        .delBtn {
+          display: none;
+          position: absolute;
+          cursor: pointer;
+          width: 12px !important;
+          height: 12px !important;
+          background: url(../../../../../assets/images/workReport/delete-menber.png) no-repeat;
+          top: -6px;
+          right: -10px;
+        }
+        &:hover .delBtn {
+          display: block;
+        }
+      }
+    }
+  }
+  .room-member-list {
+    display: block;
+    height: 365px;
+    width: 100%;
+    overflow: auto;
+    padding: 16px 20px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+}

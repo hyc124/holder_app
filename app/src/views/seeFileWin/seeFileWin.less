@@ -1,0 +1,132 @@
+@import '../../styles/_var.less';
+
+// 上传文件展示样式
+.upload-list-inline {
+  .ant-upload-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ant-upload-list-item {
+    height: 42px !important;
+    padding: 0 8px !important;
+    &:hover {
+      border: 1px solid @color_blue;
+      .remove-file-icon {
+        display: block;
+      }
+      .ant-upload-list-item-thumbnail {
+        background: url(../../../../assets/images/workReport/work_derive_hover.png) #dcdada no-repeat center;
+        width: 31px;
+        height: 31px;
+        border-radius: 50%;
+        img {
+          width: 0px;
+        }
+      }
+    }
+    .remove-file-icon {
+      display: none;
+      width: 12px;
+      height: 12px;
+      background: url(../../../../assets/images/chatWin/delete_file_h.png) no-repeat center;
+    }
+    .ant-upload-list-item-thumbnail {
+      width: 28px;
+      height: 32px;
+      line-height: 32px;
+      top: 4px;
+      & > * {
+        width: 100%;
+        height: 100%;
+        font-size: 26px;
+        & > svg {
+          margin-top: 3px;
+        }
+      }
+    }
+    .ant-upload-list-item-name {
+      padding-left: 0px;
+      margin-left: 0;
+      line-height: 40px;
+    }
+    .ant-upload-list-item-card-actions {
+      top: 11px;
+    }
+    .ant-upload-list-item-progress {
+      bottom: 0;
+      left: 0;
+      padding-left: 40px;
+    }
+  }
+  .ant-upload-list-item.ant-upload-list-item-done {
+    &:hover {
+      border: 1px solid @color_blue;
+      .remove-file-icon {
+        display: block;
+      }
+      .ant-upload-list-item-thumbnail {
+        background: none;
+        img {
+          width: 28px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+// 附件预览样式
+#m_excelWebRenderer_ewaCtl_headerDiv {
+  display: none;
+}
+#m_excelWebRenderer_ewaCtl_EWAStatusBar {
+  display: none;
+}
+.previewModal {
+  height: 95%;
+  padding: 0;
+  .ant-modal-content {
+    width: 100%;
+    height: 100%;
+  }
+  .ant-modal-body {
+    height: calc(100% - 55px);
+    overflow-y: auto;
+    padding: 0 0 0 24px;
+    .filePreviewContent {
+      height: 100%;
+      .notPreview {
+        padding-top: 20%;
+        width: 60%;
+        height: 80%;
+        font-size: @font_size;
+        color: #b3b3b3;
+        text-align: center;
+        line-height: 50px;
+        box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.3);
+        margin: 10% auto 0;
+      }
+    }
+    .fileInfoContent {
+      height: 100%;
+      box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      overflow-y: auto;
+      .fileInfoItem {
+        margin-top: 25px;
+        margin-left: 17px;
+        color: @color_5c;
+        font-size: @font_size;
+        span {
+          margin-left: 28px;
+        }
+      }
+    }
+  }
+}
+.PhotoView__Photo {
+  position: absolute;
+}
+#WACRibbonPanel {
+  display: none;
+}

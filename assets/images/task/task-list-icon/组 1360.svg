@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="组_1360" data-name="组 1360" transform="translate(-42.353 -339.39)">
+    <rect id="矩形_1546" data-name="矩形 1546" width="16" height="16" rx="8" transform="translate(42.353 339.39)" fill="#e5e5e7"/>
+    <g id="组_1359" data-name="组 1359">
+      <g id="椭圆_193" data-name="椭圆 193" transform="translate(46.424 342.39)" fill="none" stroke="#70707a" stroke-miterlimit="10" stroke-width="0.8">
+        <ellipse cx="3.929" cy="3.937" rx="3.929" ry="3.937" stroke="none"/>
+        <ellipse cx="3.929" cy="3.937" rx="3.529" ry="3.537" fill="none"/>
+      </g>
+      <g id="椭圆_194" data-name="椭圆 194" transform="translate(48.21 344.543)" fill="none" stroke="#70707a" stroke-miterlimit="10" stroke-width="0.8">
+        <ellipse cx="2.143" cy="2.147" rx="2.143" ry="2.147" stroke="none"/>
+        <ellipse cx="2.143" cy="2.147" rx="1.743" ry="1.747" fill="none"/>
+      </g>
+      <rect id="矩形_1547" data-name="矩形 1547" width="2.595" height="0.8" transform="translate(49.953 352.278) rotate(-90)" fill="#70707a"/>
+      <rect id="矩形_1548" data-name="矩形 1548" width="5.714" height="0.797" rx="0.399" transform="translate(47.496 351.593)" fill="#70707a"/>
+    </g>
+  </g>
+</svg>

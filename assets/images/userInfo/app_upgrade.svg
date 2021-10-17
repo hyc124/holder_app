@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <g id="PC端升级更新" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="更新图标" transform="translate(-34.000000, -744.000000)">
+            <g id="编组-2" transform="translate(34.000000, 744.000000)">
+                <g id="编组" transform="translate(2.297056, 2.000000)">
+                    <path d="M8,16 C12.418278,16 16,12.418278 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 Z" id="椭圆形" fill="#34C95C"></path>
+                    <rect id="矩形" fill="#FFFFFF" transform="translate(9.728483, 6.024129) rotate(-225.000000) translate(-9.728483, -6.024129) " x="9.11737213" y="3.02412859" width="1.22222222" height="6"></rect>
+                    <polygon id="矩形" fill="#FFFFFF" transform="translate(6.302944, 6.055556) rotate(-495.000000) translate(-6.302944, -6.055556) " points="5.70294373 3 6.90294373 3 6.90294373 9.11111111 5.70294373 9.11111111"></polygon>
+                    <rect id="矩形备份" fill="#FFFFFF" x="7.5" y="4.35261183" width="1" height="9"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

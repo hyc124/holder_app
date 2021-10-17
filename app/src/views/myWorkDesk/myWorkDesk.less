@@ -1,0 +1,186 @@
+.workDeskContainer {
+  width: 100%;
+  height: 100%;
+}
+.workDeskMainContainer {
+  height: calc(100% - 48px);
+}
+.workDeskModuleContent {
+  padding: 24px;
+  overflow: auto;
+  background-color: #f7f8fd;
+  position: relative;
+  // ====滚动条====//
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 5px;
+    border-radius: 2px;
+  }
+  // thumb：滑块
+  &::-webkit-scrollbar-thumb {
+    background: #e5e8f6 !important;
+    border-radius: 2px;
+  }
+  // 外层轨道
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+    background: transparent !important;
+  }
+  // 内层轨道
+  // &::-webkit-scrollbar-track-piece {
+  //   width: 10px;
+  //   background: transparent !important;
+  // }
+  .ant-table-body,
+  .ant-tabs-content-holder,
+  .todoListContaier .wait_task_list,
+  .check_task_container {
+    &::-webkit-scrollbar {
+      width: 4px !important;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #e5e8f6 !important;
+    }
+  }
+  // 全屏模块窗口
+  .full_screen {
+    .module-content {
+      height: 100% !important;
+    }
+  }
+}
+.workDeskChatAside {
+  width: 350px;
+  background: #ffffff;
+  transition: width 0.5s;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  .left_chat_list {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+    .chat_list_main {
+      position: relative;
+      .ant-list-footer {
+        padding: 0 !important;
+        .footer-content {
+          color: #ccc;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .chat_list_search {
+    padding: 0 10px 0;
+    .search_clear_wrap {
+      top: 0;
+    }
+    .chat-category-list {
+      top: 40px;
+    }
+    .ant-input-affix-wrapper {
+      height: 100%;
+    }
+    .anticon-search {
+      display: none;
+    }
+  }
+  .chatTitle {
+    color: #000;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 20px 15px 20px;
+  }
+  &.closePannel {
+    width: 0;
+    padding: 0;
+    transition: width 0.5s;
+  }
+  .closeBtn {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border: none;
+    box-shadow: none;
+    background-image: url(../../../../assets/images/common/close-chat.svg);
+    float: right;
+  }
+  .roomWrap {
+    width: 350px !important;
+    height: 100% !important;
+  }
+}
+
+//======================== 小屏幕模式下=============================//
+@media screen and (max-width: 1350px) {
+  // 沟通侧边栏
+  .workDeskChatAside {
+    width: 272px;
+    transition: width 0.5s;
+    &.closePannel {
+      width: 0;
+      padding: 0;
+      transition: width 0.5s;
+    }
+    .roomWrap {
+      width: 272px !important;
+      height: 100% !important;
+    }
+  }
+}
+
+//======================== da屏幕模式下=============================//
+@media screen and (min-width: 1920px) {
+  .workDeskModuleContent {
+    .columnProgress {
+      .ant_item_progress_wrap {
+        .time {
+          margin: 0 42px;
+        }
+      }
+    }
+  }
+  .full_screen {
+    .ant_item_progress_wrap {
+      .time {
+        margin: 0 42px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1334px) and (max-width: 1919px) {
+  .workDeskModuleContent {
+    .columnProgress {
+      .ant_item_progress_wrap {
+        .time {
+          margin: 0 20px;
+        }
+      }
+    }
+    .full_screen {
+      .ant_item_progress_wrap {
+        .time {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+}
+.half_screen:not(.full_screen) {
+  .columnProgress {
+    .ant_item_progress_wrap {
+      .time {
+        margin: 0 10px !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.follow_report_content {
+  height: 100%;
+  .ant-tabs,
+  .ant-tabs-content {
+    height: 100%;
+  }
+  .follow_left_pannel {
+    width: 50%;
+    border-right: 1px solid #e5e5e5;
+    .ant-tabs-tabpane {
+      display: flex;
+      flex-direction: column;
+    }
+    .ant-tree {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+  .follow_right_pannel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 13px 0 0 20px;
+    .rightShowTit {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    ul {
+      flex: 1;
+      overflow: auto;
+      li {
+        padding-right: 10px;
+        margin: 8px 0;
+        justify-content: space-between;
+        cursor: pointer;
+        &:nth-of-type(1) {
+          margin-top: 0;
+        }
+        .delete_icon {
+          display: block;
+          width: 16px;
+          height: 16px;
+          background-image: url(../../../../../assets/images/common/del_cir.png);
+        }
+      }
+    }
+  }
+  .org_menu_search {
+    margin-bottom: 10px !important;
+  }
+}
+.selectFollowReportModal {
+  color: #70707a;
+  .ant-modal-body {
+    height: 512px;
+  }
+}

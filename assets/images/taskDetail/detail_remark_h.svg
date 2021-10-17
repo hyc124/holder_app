@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>编组 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="OKR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="宽详情" transform="translate(-968.000000, -208.000000)">
+            <rect fill="#F7F8FA" x="0" y="0" width="1334" height="840"></rect>
+            <rect id="顶部备份-3" fill="#FFFFFF" x="308" y="64" width="1018" height="768" rx="8"></rect>
+            <g id="编组-6备份" transform="translate(968.000000, 208.000000)">
+                <g id="编组-4" transform="translate(2.000000, 1.000000)">
+                    <path d="M2.57142857,0 L9.42857143,0 C10.8487322,0 12,1.17525253 12,2.625 L12,11.375 C12,12.8247475 10.8487322,14 9.42857143,14 L2.57142857,14 C1.15126779,14 0,12.8247475 0,11.375 L0,2.625" id="矩形" stroke="#3949AB" stroke-linecap="round" transform="translate(6.000000, 7.000000) scale(-1, 1) translate(-6.000000, -7.000000) "></path>
+                    <rect id="矩形" fill="#3949AB" x="2" y="4" width="8" height="1" rx="0.5"></rect>
+                    <rect id="矩形备份-39" fill="#3949AB" x="2" y="8" width="4" height="1" rx="0.5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

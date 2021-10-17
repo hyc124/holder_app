@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>OKR</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="28.458639%" y1="0%" x2="81.2314737%" y2="89.7163118%" id="linearGradient-1">
+            <stop stop-color="#857AFF" offset="0%"></stop>
+            <stop stop-color="#0961D3" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="24" height="24" rx="10"></rect>
+        <filter x="-41.7%" y="-33.3%" width="183.3%" height="183.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.396078431   0 0 0 0 0.466666667   0 0 0 0 0.97254902  0 0 0 0.297394012 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="----·快捷创建OKR（8.12）" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="14沟通收起备份-4" transform="translate(-100.000000, -144.000000)">
+            <g id="OKR" transform="translate(100.000000, 144.000000)">
+                <g id="报告" transform="translate(7.789474, 9.052632)">
+                    <g id="编组-11"></g>
+                </g>
+                <g transform="translate(4.000000, 4.000000)">
+                    <g id="矩形备份-42">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M8.52726698,13.6291094 C9.47381693,13.0603543 10.5921249,13.0316035 11.882191,13.5428571 C12.9018258,14.0571429 13.8287666,14.8285714 15.4045659,14.8285714 C16.2115418,14.8285714 16.9091261,14.6599807 17.4973189,14.3227991 C17.8082326,14.1445804 18,13.8136078 18,13.4552375 L18,7.70543807 C17.9999776,7.37407961 17.7313585,7.10546051 17.4,7.10546051 C17.2949369,7.10546051 17.1917156,7.13304925 17.1006626,7.18546676 C15.7918681,7.93891445 14.3613579,7.82947315 12.8091317,6.85714286 C12.0675791,6.34285714 10.7698621,5.82857143 9.75022725,6.08571429 C9.26447649,6.19800781 8.79198361,6.3225609 8.3327486,6.45937356 C7.90884461,6.58566207 7.61826349,6.97543232 7.61826349,7.41774825 L7.61826349,13.1148507 C7.61830922,13.4461963 7.8869179,13.714805 8.21826349,13.714805 C8.32713208,13.714805 8.43394885,13.6851816 8.52726698,13.6291094 Z M6.64885853,18 C6.27808223,18 6,17.7428571 6,17.3142857 L6,6.6 C6,6.25714286 6.27808223,6 6.64885853,6 C7.01963484,6 7.29771706,6.25714286 7.29771706,6.6 L7.29771706,17.3142857 C7.39041114,17.7428571 7.11232892,18 6.64885853,18 Z" id="形状" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

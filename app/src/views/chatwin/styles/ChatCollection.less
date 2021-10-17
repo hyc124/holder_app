@@ -1,0 +1,129 @@
+@import '~@/src/styles/_var.less';
+
+.common-title {
+  padding: 10px 20px;
+  text-align: right;
+  border-bottom: 1px solid @color_e7;
+}
+.collection-input {
+  width: 244px;
+  border-radius: 16px;
+  background-color: @color_f5;
+  border: 0;
+  .ant-input {
+    border: none;
+  }
+  .ant-input-group {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .ant-input-search-button {
+    border: none !important;
+    border-color: #f5f7fb !important;
+    background: #f5f7fb !important;
+  }
+  .ant-input:focus {
+    box-shadow: none;
+  }
+}
+.collection-input > input {
+  background-color: transparent;
+}
+.collect-list {
+  margin-top: 12px;
+  overflow: overlay;
+}
+
+.collect-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 4px;
+  &:hover {
+    background-color: @color_bluelight;
+    cursor: pointer;
+    .collect-info .show_handle .right-info > button {
+      display: block;
+    }
+  }
+  .collect-info {
+    color: @color_5c;
+    font-size: 12px;
+    min-height: 42px;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-left: 8px;
+    .collect-title {
+      max-width: 588px;
+      img {
+        width: 42px;
+        height: 42px;
+      }
+    }
+    .show_handle {
+      display: flex;
+      & > span {
+        flex: 1;
+      }
+      .right-info {
+        & > button {
+          visibility: visible;
+          width: 18px;
+          height: 18px;
+          padding: 0;
+          border: 0;
+          display: none;
+        }
+        .send-btn {
+          background: url(../../../../../assets/images/chatWin/send_info.png) no-repeat center;
+          background-size: 16px;
+          &:hover {
+            background-image: url(../../../../../assets/images/chatWin/send_info_hover.png);
+          }
+        }
+        .collect-btn {
+          background: url(../../../../../assets/images/chatWin/shoucang-red.png) no-repeat center;
+          background-size: 14px;
+          margin: 0 12px;
+        }
+        .file-download {
+          width: 15px;
+          height: 17px;
+          background: url(../../../../../assets/images/task/file_download.png) no-repeat center;
+          margin: 0 12px;
+          &:hover {
+            background-image: url(../../../../../assets/images/task/file_download_h.png) no-repeat center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.file-avatar {
+  margin-right: 10px;
+  border-radius: 0;
+  background-color: @color_white;
+  img {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+//发送到群弹窗样式
+.collect-modal {
+  width: 380px;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  .ant-modal-header,
+  .ant-modal-footer {
+    border: 0;
+  }
+  .ant-modal-body {
+    text-align: center;
+    color: @color_gray;
+  }
+}

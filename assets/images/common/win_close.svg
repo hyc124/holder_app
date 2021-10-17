@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>系统关闭</title>
+    <desc>Created with Sketch.</desc>
+    <g id="5.沟通/公告------------------------V5.3.1(8.12)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="规则展示说明" transform="translate(-1393.000000, -1418.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1920" height="4944"></rect>
+            <path d="M113,1403 L1413,1403 L1413,1435 C1413,1439.41828 1409.41828,1443 1405,1443 L121,1443 C116.581722,1443 113,1439.41828 113,1435 L113,1403 L113,1403 Z" id="顶部备份-4" fill="#F0F1FA" transform="translate(763.000000, 1423.000000) scale(1, -1) translate(-763.000000, -1423.000000) "></path>
+            <path d="M1383,1403 L1405,1403 C1409.41828,1403 1413,1406.58172 1413,1411 L1413,1443 L1413,1443 L1383,1443 L1383,1403 Z" id="矩形备份-20" fill="#F0F1FA"></path>
+            <line x1="1393" y1="1423.5" x2="1403" y2="1423.5" id="路径-6备份-2" stroke="#545454" stroke-linecap="round" transform="translate(1398.000000, 1423.500000) rotate(-45.000000) translate(-1398.000000, -1423.500000) "></line>
+            <line x1="1393" y1="1423.5" x2="1403" y2="1423.5" id="路径-6备份-3" stroke="#545454" stroke-linecap="round" transform="translate(1398.000000, 1423.500000) rotate(45.000000) translate(-1398.000000, -1423.500000) "></line>
+        </g>
+    </g>
+</svg>

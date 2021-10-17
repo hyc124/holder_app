@@ -1,0 +1,1346 @@
+// 任务详情
+@import '~@/src/styles/_var.less';
+// color
+@color_w: white;
+@color_b: #000000;
+@color_g: #e7e7e9;
+@color_A3: #a3a3a3;
+
+.taskDetails.ant-modal {
+  width: calc(100% - 78px) !important;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-bottom: 0px;
+  overflow: hidden;
+
+  .ant-modal-content {
+    height: 100%;
+
+    .ant-modal-body {
+      height: calc(100% - 55px);
+      padding-bottom: 10px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}
+
+.taskDetails {
+  .process_manage_content {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    .process_manage_wrapper {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+
+      //任务详情
+      .processTaskDetailOpenCon {
+        color: #70707a;
+        flex: 1;
+        position: relative;
+        transition: all 0.2s linear;
+        min-width: 570px;
+        height: calc(100% - 23px);
+        margin: 3px 24px 0;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        max-width: 571px;
+        min-width: 571px;
+        height: 100%;
+        overflow: auto;
+
+        .taskProgressSec {
+          padding: 7px 20px;
+          min-height: 81px;
+          height: 92px;
+          background: #fafafa;
+
+          .detailTopUser {
+            width: 100%;
+            text-align: right;
+
+            .create_user {
+              color: #70707a;
+            }
+          }
+
+          .task_status_box {
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: -8px;
+
+            .status_icon {
+              width: 32px;
+              height: 32px;
+              background-image: url(../../../../../assets/images/task/task_nostart.png);
+              margin-right: 8px;
+            }
+
+            .status_txt {
+              color: #9a9aa2;
+              font-size: 16px;
+            }
+          }
+
+          .ant-picker-input > input {
+            cursor: pointer;
+          }
+
+          /* 未开始 */
+          .task_status_box.nostart .status_icon {
+            background-image: url(../../../../../assets/images/task/task_nostart.png);
+          }
+
+          .task_status_box.nostart .status_txt {
+            color: #9a9aa2;
+          }
+
+          /* 进行中 */
+          .task_status_box.going .status_icon {
+            background-image: url(../../../../../assets/images/task/task_going.png);
+          }
+
+          .task_status_box.going .status_txt {
+            color: #4285f4;
+          }
+
+          /* 延迟 */
+          .task_status_box.late .status_icon {
+            background-image: url(../../../../../assets/images/task/task_late.png);
+          }
+
+          .task_status_box.late .status_txt {
+            color: #ea4335;
+          }
+
+          /* 完成 */
+          .task_status_box.finish .status_icon {
+            background-image: url(../../../../../assets/images/task/task_finish.png);
+          }
+
+          .task_status_box.finish .status_txt {
+            color: #4285f4;
+          }
+
+          /* 审批 */
+          .task_status_box.approval .status_icon {
+            background-image: url(../../../../../assets/images/task/task_approval.png);
+          }
+
+          .task_status_box.approval .status_txt {
+            color: #fbbc05;
+          }
+
+          /* 冻结、归档 */
+          .task_status_box.freeze .status_icon {
+            background-image: url(../../../../../assets/images/task/task_freeze.png);
+          }
+
+          //进度
+          .progress_right {
+            width: 400px;
+
+            .progress_mid {
+              display: flex;
+              position: relative;
+
+              .ant-input-number-input {
+                padding: 0px;
+                text-align: center;
+              }
+
+              .ant-input-number {
+                top: 5px;
+              }
+
+              .ant-progress-text {
+                color: #70707a;
+              }
+
+              .ant-slider {
+                width: 100%;
+                margin: 10px 29px 10px 0;
+              }
+
+              .ant-input-number-handler-wrap {
+                display: none;
+              }
+
+              .ant-slider-rail {
+                height: 8px;
+                background: #e7e7e9 50% 50% repeat-x;
+              }
+
+              .ant-slider-track {
+                height: 8px;
+                background-color: #4285f1;
+              }
+
+              .ant-slider-handle {
+                width: 16px;
+                height: 16px;
+                margin-top: -4px;
+              }
+
+              .ant-slider-handle {
+                background: #ffffff;
+                border: 2px solid #4285f4;
+                box-shadow: 0px 0px 3px rgba(12, 78, 188, 0.8);
+                margin-top: -3px;
+              }
+
+              .percentbai {
+                color: #4285f4;
+                line-height: 30px;
+                margin-left: 5px;
+                margin-top: 5px;
+              }
+
+              .impersonality_process {
+                width: 8px;
+                height: 8px;
+                background: #d1e2fa;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 9;
+                top: 14px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        // 名称 循环 优先级 私密公开 标签
+        .taskNameSec {
+          padding: 14px 20px 16px 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          position: relative;
+
+          .sign_icon_box:hover .del_icon,
+          .attr_val:hover .del_icon {
+            display: block;
+          }
+
+          .attr_val {
+            position: relative;
+          }
+
+          .sign_icon {
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: super;
+
+            img {
+              vertical-align: baseline;
+            }
+          }
+
+          .del_icon {
+            display: none;
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            background-image: url(../../../../../assets/images/workplan/OKR/jian.png);
+            position: absolute;
+            right: -5px;
+            top: -3px;
+          }
+
+          .taskNameBox {
+            margin-right: 34px;
+            flex: 1;
+            max-height: 88px;
+            overflow: hidden;
+            height: 100%;
+            cursor: pointer;
+            font-size: 16px;
+
+            font-family: MicrosoftYaHei;
+            line-height: 21px;
+            color: #191f25;
+            opacity: 1;
+          }
+
+          .taskNameBox:hover .taskNameShow {
+            color: #4286f4;
+          }
+
+          .sel_tag_icon {
+            cursor: pointer;
+          }
+
+          .sel_tag_icon:hover {
+            background-image: url(../../../../../assets/images/task/sel_tag_h.png);
+          }
+
+          .tagSignShowBox {
+            width: 100%;
+            align-items: center;
+
+            .attrTagShowBox {
+              margin-right: 14px;
+
+              .attrTagItem {
+                height: 20px;
+                line-height: 20px;
+                padding: 0 8px;
+                margin-right: 8px;
+                font-size: 12px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+              }
+
+              .attrTagItem .cycle_icon {
+                width: 13px;
+                height: 10px;
+                background-image: url(../../../../../assets/images/task/cycle_blue.png);
+              }
+
+              .attrTagItem .star_icon {
+                width: 12px;
+                height: 12px;
+                background-image: url(../../../../../assets/images/task/pri_star.png);
+              }
+            }
+
+            .attrTagShowBox .setProp .prop_icon {
+              width: 12px;
+              height: 12px;
+              background-image: url(../../../../../assets/images/task/eye_green.png);
+            }
+
+            .attrTagShowBox .setProp.private .prop_icon {
+              width: 12px;
+              height: 12px;
+              background-image: url(../../../../../assets/images/task/eye_red.png);
+            }
+
+            .attrTagShowBox .setCycle {
+              border: 1px solid #4286f4;
+              color: #4286f4;
+            }
+
+            .attrTagShowBox .setPriority {
+              border: 1px solid #fbbc06;
+              color: #fbbc06;
+            }
+
+            .attrTagShowBox .setProp {
+              border: 1px solid #34a854;
+              color: #34a854;
+            }
+
+            .attrTagShowBox .setProp.private {
+              border: 1px solid #ea4436;
+              color: #ea4436;
+            }
+          }
+
+          .tagSignShowBox.margin_diff {
+            margin-bottom: -4px;
+            margin-top: 10px;
+          }
+
+          .attentionFlag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            .triangle_topleft {
+              display: inline-block;
+              width: 0;
+              height: 0;
+              border-top: 24px solid #e6e6e6;
+              border-right: 24px solid transparent;
+            }
+
+            .attentionIcon {
+              width: 12px;
+              height: 8px;
+              background-image: url(../../../../../assets/images/task/eye.png);
+              position: absolute;
+              left: 8px;
+              top: 4px;
+            }
+          }
+
+          .tagShowBox {
+            margin-top: -2px;
+            color: #9a9aa2;
+          }
+
+          .tagShowBox::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            margin-top: 2px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url(../../../../../assets/images/task//tag_list.png);
+          }
+
+          .sign_icon_box {
+            position: relative;
+            cursor: pointer;
+            margin-right: 5px;
+          }
+        }
+
+        //描述
+        .taskDescriptionSec {
+          padding: 14px 20px 16px 20px;
+
+          .taskDescriptionShow {
+            width: 100%;
+            margin: 0;
+            min-height: 50px;
+            max-height: 110px;
+            padding: 0 9px;
+            border: 1px solid #e7e7e7;
+            border-radius: 4px;
+            overflow: auto !important;
+            background-color: white;
+            color: #757575;
+            font-family: 'Microsoft YaHei';
+          }
+
+          .taskDescriptionShow:hover {
+            border: 1px solid #4285f4;
+            cursor: pointer;
+          }
+        }
+
+        //责任人 指派人 领导责任人 督办人
+        .taskSeveralAttrSec {
+          padding: 14px 20px 16px 20px;
+
+          .task-designated {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 23px;
+            padding: 2px 5px;
+            padding-right: 14px;
+
+            .designated-user {
+              margin-bottom: 0px;
+              color: #9a9aa2;
+
+              p {
+                margin: 0;
+              }
+
+              p.color-b {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 54px;
+              }
+            }
+          }
+
+          .task-designated:hover {
+            background: #e9f2ff;
+            cursor: pointer;
+          }
+
+          .default-head-b {
+            background-image: url(../../../../../assets/images/task/head-blue.png);
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+          }
+
+          .default-head-g {
+            background-image: url(../../../../../assets/images/task/head-green.png);
+            width: 32px;
+            height: 32px;
+            background-size: contain;
+          }
+        }
+
+        //基础信息及子任务
+        .taskDetailBasicNav {
+          .ant-tabs-tab-btn {
+            font-size: 16px;
+          }
+
+          padding: 14px 20px 16px 20px;
+
+          .taskFilesRow {
+            .ant-upload-list-picture > div {
+              width: 200px;
+              margin-right: 10px;
+              float: left;
+            }
+
+            .ant-btn {
+              border: none;
+              box-shadow: initial;
+              padding: inherit;
+              color: #212224;
+            }
+
+            .upload-list-inline .ant-upload-list-item {
+              width: 200px;
+            }
+          }
+
+          .childTaskHeader {
+            margin-bottom: 10px;
+            overflow: hidden;
+          }
+
+          .level_count_box {
+            float: left;
+
+            span {
+              color: #4285f4;
+            }
+          }
+
+          .add_child_btn {
+            float: right;
+            cursor: pointer;
+
+            em {
+              width: 14px;
+              height: 14px;
+              // background-image: url(../../assets/images/task/add_grey.png);
+              background-image: url(../../../../../assets/images/task/add_grey.png);
+              vertical-align: sub;
+              display: inline-block;
+              vertical-align: sub;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        .taskBasicSecBox {
+          .mdContentRow {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+
+            .leftTit {
+              width: auto;
+              margin-right: 18px;
+              flex-shrink: 0;
+
+              .tit_icon {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-repeat: no-repeat;
+                background-image: url(../../../../../assets/images/task//belong.svg);
+              }
+
+              .takeCompany-icon {
+                height: 14px;
+                background-repeat: no-repeat;
+                background-image: url(../../../../../assets/images/task//join_cmy.svg);
+              }
+
+              .taskSourceRow-icon {
+                height: 14px;
+                background-repeat: no-repeat;
+                background-image: url(../../../../../assets/images/task//task_source.svg);
+              }
+
+              .taskFilesRow-icon {
+                height: 14px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url(../../../../../assets/images/task//file.svg);
+              }
+            }
+
+            .rightWrite {
+              width: calc(100% - 32px);
+
+              span {
+                font-size: 14px;
+              }
+            }
+
+            .taskBelongBox {
+              width: 380px;
+              height: 32px;
+              line-height: 32px;
+              border: 1px solid #d7d7d9;
+              border-radius: 4px;
+              padding: 0 10px;
+              color: #70707a;
+              float: right;
+              margin-left: 8px;
+              cursor: pointer;
+
+              em {
+                width: 14px;
+                height: 14px;
+                background-image: url(../../../../../assets/images/task/add_grey.png);
+                vertical-align: sub;
+                display: inline-block;
+                vertical-align: sub;
+                margin-right: 5px;
+              }
+
+              .task_org_name {
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+
+            .takeCompany-text,
+            .source-text,
+            .taskFiles-text {
+              cursor: pointer;
+            }
+          }
+
+          .reportsRow {
+            span.reportset-icon {
+              background-size: cover;
+              height: 14px;
+              background-repeat: no-repeat;
+              background-image: url(../../../../../assets/images/workReport/report_set.png) !important;
+            }
+          }
+
+          .noevents {
+            .ant-upload-select-picture {
+              pointer-events: none;
+            }
+
+            .ant-upload-list-item-card-actions {
+              pointer-events: none;
+              opacity: 0;
+            }
+          }
+        }
+
+        //参与企业
+        .takeCompanyBox {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+
+            .joinCmyItem {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 6px 10px;
+              width: 48%;
+              height: 46px;
+              background: #f5f7fb;
+              border-radius: 4px;
+              margin-right: 6px;
+              margin-top: 10px !important;
+              position: relative;
+              cursor: pointer;
+
+              .ant-avatar.noPortrait {
+                background: url('../../../../../assets//images/task/cmy-normal.png');
+              }
+
+              .ant-avatar {
+                background-color: #4285f4;
+              }
+
+              .more_opt_icon {
+                width: 18px;
+                height: 18px;
+                padding: 14px 0;
+                background-size: 3px 18px;
+                background-position: 15px;
+                background-image: url(../../../../../assets/images/task/eidt.png);
+                cursor: pointer;
+              }
+
+              .more_opt_icon:hover {
+                background-image: url(../../../../../assets/images/task/eidt-h.png);
+              }
+
+              .joinCmyLeft {
+                display: flex;
+                align-items: center;
+                flex: 1;
+
+                .avatars {
+                  margin-right: 5px;
+                }
+
+                .text {
+                  flex: 1;
+                }
+
+                p {
+                  margin-bottom: 0px;
+                }
+
+                .cmy_info_name {
+                  flex: 1;
+                }
+
+                .cmy_info_name_box {
+                  flex: 1;
+                  display: flex;
+                }
+
+                /* 状态 */
+                /* 待确认 */
+                .join_cmy_status.wait {
+                  color: #fbbc05;
+                }
+
+                /* 已拒绝 */
+                .join_cmy_status.refuse {
+                  color: #ea4335;
+                }
+
+                /* 已加入 */
+                .join_cmy_status.joined {
+                  color: #34a853;
+                }
+
+                .join_cmy_status.wait {
+                  color: #fbbc05;
+                }
+              }
+
+              .joinCmyRig {
+                display: flex;
+
+                .del_cmy_icon {
+                  display: none;
+                  width: 14px;
+                  height: 14px;
+                  background-image: url(../../../../../assets/images/workReport/del.png);
+                  cursor: pointer;
+                }
+              }
+            }
+
+            .joinCmyItem:hover {
+              background: #e9f2ff;
+              cursor: pointer;
+            }
+
+            .joinCmyItem:hover .del_cmy_icon {
+              display: block;
+            }
+          }
+        }
+      }
+
+      //任务动态 任务协同
+      .process_right_child_box {
+        flex: 1;
+        min-width: 586px;
+        // height: calc(100% - 20px);
+        padding: 3px 22px 0 0;
+        background: rgba(255, 255, 255, 1);
+
+        & > div {
+          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+        }
+      }
+
+      .taskDynamic {
+        .ant-tabs-tab {
+          padding-left: 12px;
+          padding-right: 12px;
+          font-size: 16px;
+          margin-right: 15px;
+        }
+      }
+
+      //过程监管11
+      .taskSupervise {
+        overflow: auto;
+        max-height: 100%;
+        padding: 0px 20px;
+
+        .add_supervise {
+          cursor: pointer;
+          padding: 10px;
+
+          i {
+            background-image: url(../../../../../assets/images/common/add-normal.png);
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            vertical-align: inherit;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex.flex_wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex.space_between {
+    justify-content: space-between;
+  }
+
+  .baseGrayColor {
+    color: #9a9aa2;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .flex_shrink_0 {
+    flex-shrink: 0;
+  }
+
+  .color-b {
+    color: #191f25 !important;
+    font-size: 14px;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  // .taskFileList {
+  //   .newFileWrap {
+  //     display: block;
+  //     .fileItem {
+  //       width: calc(100% - 24px);
+  //       margin-bottom: 2px;
+  //     }
+  //   }
+  // }
+}
+
+//任务编辑
+.taskEditor {
+  .ant-modal-content {
+    width: 800px;
+  }
+}
+
+.disabled_bottom .ant-btn-primary {
+  opacity: 0.7;
+  background: #757575;
+  border: 1px solid #757575;
+}
+
+.disabled_bottom .ant-btn-primary:hover,
+.disabled_bottom .ant-btn-primary:focus {
+  opacity: 0.7;
+  background: #757575;
+  border: 1px solid #757575;
+}
+
+.optBtnMenu {
+  padding: 0;
+  padding: 4px 0;
+  min-width: 100px;
+  width: 110px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 0 4px #ccc;
+  background: white;
+}
+
+.optBtnMenu .optBtnItem {
+  padding: 0 10px;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #70707a;
+  cursor: pointer;
+}
+
+.optBtnMenu .optBtnItem.disable {
+  pointer-events: none;
+  color: #9a9aa2;
+  cursor: default;
+}
+
+//子任务tree
+.taskTree {
+  padding-left: 20px;
+
+  .names {
+    .icons {
+      display: inline-table;
+      width: 16px;
+      height: 16px;
+      vertical-align: super;
+      margin-left: 5px;
+      vertical-align: sub !important;
+    }
+  }
+
+  .ant-tree .ant-tree-switcher {
+    width: 9px;
+  }
+
+  .nameLeftIcon {
+    width: 14px;
+    height: 9px;
+    display: inline-block;
+    background-image: url(../../../../../assets/images/common/arrow_enter.png);
+    background-size: contain;
+    position: absolute;
+    left: -25px;
+    top: 7px;
+  }
+
+  .ant-tree .finishedTask {
+    color: #9a9aa2;
+    text-decoration: line-through;
+  }
+
+  .ant-tree .ant-tree-node-content-wrapper {
+    position: relative;
+  }
+
+  .ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+    background-color: #e8f4ff;
+    color: #4285f4;
+  }
+}
+
+.detailComment {
+  background-color: #ffffff;
+  margin: 0 50px;
+  .header_rig {
+    width: 100%;
+    margin-left: 10px;
+  }
+  .replyContent {
+    margin-left: 54px;
+    background-color: #fafafa;
+    border-radius: 2px;
+    padding: 0 10px;
+    border-radius: 4px;
+  }
+  .infoItemBox {
+    padding-bottom: 24px;
+  }
+  .infoItemBox {
+    .time {
+      color: #70707a;
+    }
+  }
+  .del {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-image: url(../../../../../assets/images/task/trash_can.png);
+  }
+  .info {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-image: url(../../../../../assets/images/task/info.png);
+  }
+  .task_theme_room {
+    .fileItem {
+      border: none;
+      width: 38px !important;
+      margin-right: 2px !important;
+      padding: 0 !important;
+
+      .fileName,
+      .downIcon {
+        display: none;
+      }
+
+      .ant-image {
+        width: 36px !important;
+      }
+
+      .ant-image-img {
+        height: 33px;
+      }
+    }
+  }
+}
+
+//检查项弹框
+.checkEntryModal {
+  width: 850px !important;
+
+  .ant-modal-body {
+    height: 580px;
+    overflow: auto;
+  }
+
+  .comment-content .task_theme_answer .send_theme_chat_box .theme-msg-send {
+    height: calc(100% - 135px);
+  }
+
+  .checkEntry-content .checkListMainItem .detailComment .infoItemBox {
+    padding: 5px 10px 0 10px;
+  }
+}
+
+// ====================详情操作按钮======================//
+.taskDetailHead {
+  margin-top: -5px;
+  margin-right: 10px;
+
+  .headerRig {
+    margin-right: 10px;
+  }
+}
+
+.detailIconBox {
+  display: inline-flex;
+
+  .detail-icon-box {
+    display: inline-block;
+    vertical-align: middle;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 3px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #757575;
+
+    > .img_icon {
+      display: block;
+      float: left;
+      margin-top: 10px;
+      width: 14px;
+      height: 14px;
+      margin-right: 3px;
+      margin-left: 3px;
+      background-size: auto 14px;
+    }
+
+    &.disable {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    // ====外层图标=====//
+    .report_icon {
+      background-image: url(../../../../../assets/images/task/detail_rep.png);
+    }
+
+    .assign_icon {
+      background-image: url(../../../../../assets/images/task/detail_assign.png);
+    }
+
+    .transfer_icon {
+      background-image: url(../../../../../assets/images/task/detail_transf.png);
+    }
+
+    .more_icon {
+      background-size: 18px 18px;
+      background-image: url(../../../../../assets/images/taskOpt/more-vert-grey.svg);
+
+      &:hover {
+        cursor: pointer;
+        background-color: inherit;
+        background-image: url(../../../../../assets/images/taskOpt/more-vert-h.svg);
+      }
+    }
+  }
+
+  .more_icon_box {
+    margin: 0;
+  }
+}
+
+.disabled_edit {
+  pointer-events: none;
+}
+
+/* 任务开启完成按钮 */
+.task_progress_status_btn_box .task_progress_status_btn {
+  width: 76px;
+  height: 32px;
+  border-radius: 16px;
+  line-height: 30px;
+  text-align: center;
+  padding: 0;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.task_detail_start_box {
+  .start_status_btn {
+    width: 76px;
+    height: 32px;
+    border-radius: 16px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 12px;
+  }
+
+  .start_status_btn.disable {
+    background-color: #e7e7e9;
+    color: #9a9aa2;
+    border: 1px solid #d7d7d9;
+    pointer-events: none;
+  }
+
+  .start_btn {
+    color: white;
+    margin-left: 8px;
+    background-color: #4285f4;
+    border: 1px solid #4285f4;
+  }
+
+  .finishTaskGreen {
+    color: #fff;
+    border: 1px solid #2292e2;
+    background-color: #4285f4;
+  }
+
+  .finishTaskGreen:hover {
+    background-color: #2471f1;
+    border: 1px solid #4285f4;
+  }
+
+  .finishTaskGrey {
+    color: #4285f4;
+    border: 1px solid #4285f4;
+  }
+
+  .finishTaskGrey:hover {
+    background-color: #e9f2ff;
+  }
+}
+
+// ====================详情提醒======================//
+.taskRemindBox {
+  color: #191f25;
+
+  .taskRemindTit {
+    margin-right: 18px;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.taskRemindSel {
+  width: 120px;
+  margin-right: 10px;
+  color: #757575;
+  font-weight: normal;
+}
+
+// 清空未写汇报窗口
+.my-tooptip-z-99999 {
+  z-index: 99999 !important;
+}
+
+.my-tooptip-width-auto {
+  max-width: 100% !important;
+}
+
+.my-tooltip-cus {
+  z-index: 1000;
+
+  .ant-tooltip-arrow-content {
+    display: none;
+  }
+
+  .ant-tooltip-inner {
+    color: #191f25 !important;
+    font-size: 14px;
+    background-color: #fff;
+
+    .del_icon {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background-image: url(../../../../../assets/images/workReport/report_clear.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-left: 7px;
+      cursor: pointer;
+
+      &:hover {
+        background-image: url(../../../../../assets/images/workReport/report_clear_h.png);
+      }
+    }
+
+    .tooltop-content {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 12px;
+    }
+  }
+}
+
+.my-red-tip {
+  background: #ea4335;
+  color: #fff;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 16px;
+  margin-right: 8px;
+}
+
+.reportDropdown {
+  width: 400px;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 15px 18px;
+  font-size: 14px;
+  color: #191f25;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+
+  .title {
+    font-weight: bold;
+  }
+
+  .list-content {
+    height: calc(100% - 30px);
+    overflow: auto;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-size: 14px;
+
+      .reportLabel {
+        display: flex;
+        color: #5d5d5d;
+      }
+
+      .people {
+        max-width: 210px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .number {
+        color: #4285f4;
+        margin-left: 4px;
+      }
+
+      .cell {
+        margin-right: 4px;
+      }
+
+      .clearReport {
+        cursor: pointer;
+        color: #4285f4;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+// 强制汇报列表
+.reportsList {
+  font-size: 14px;
+  color: #70707a;
+
+  .del_icon {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    background-image: url(../../../../../assets/images/workReport/report_clear.png);
+
+    &:hover {
+      background-image: url(../../../../../assets/images/workReport/report_clear_h.png);
+    }
+  }
+
+  .reportsItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      max-width: 82%;
+      background: #f7f8fa;
+      border-radius: 6px;
+      padding: 6px 8px;
+      margin-bottom: 11px;
+      position: relative;
+      cursor: pointer;
+      position: relative;
+      padding-right: 32px;
+
+      &:hover {
+        background: #e9f2ff;
+      }
+
+      &.redBg {
+        background: #fef3f2 !important;
+      }
+    }
+
+    .lookreport {
+      font-size: 14px;
+      color: #4285f4;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,381 @@
+@import '~@/src/styles/_var.less';
+.workDeskModuleItem {
+  // display: inline-flex;
+  width: 100%;
+  margin-bottom: 8px;
+  height: 450px;
+  background-color: white;
+  border-radius: 8px;
+  .desk_module_header {
+    padding: 0 32px;
+  }
+  .task-wrap-container {
+    height: inherit;
+    .contorl_page_pos {
+      text-align: center;
+      position: fixed;
+      bottom: 8px;
+      width: 100%;
+      background-color: white;
+      height: 45px;
+      padding-top: 7px;
+      z-index: 99;
+    }
+  }
+  .ant-tabs-content-holder {
+    height: calc(100% - 86px);
+    overflow: auto;
+    // margin-bottom: 30px;
+    flex: 0.98;
+    overflow: hidden;
+    padding: 0 8px;
+    &:hover {
+      overflow: overlay;
+      overflow-x: hidden;
+    }
+  }
+  .ant-tabs-content-holder {
+    padding: 0 24px;
+  }
+  .ant-tabs-content,
+  .module_tabpane_item {
+    height: 100%;
+  }
+  &.half_screen:not(.full_screen) {
+    width: calc(50% - 7px);
+  }
+  // 全屏
+  &.full_screen {
+    position: absolute;
+    top: 24px;
+    bottom: 24px;
+    left: 16px;
+    right: 24px;
+    z-index: 999;
+    width: calc(100% - 35px) !important;
+    height: calc(100% - 48px) !important;
+
+    .workDeskModuleTabs {
+      .ant-tabs-content-holder {
+        position: relative;
+      }
+    }
+  }
+  // =======模块标签======//
+  .workDeskModuleTabs {
+    height: 100%;
+    transform: translate(0, 0);
+    // =======模块头部=========//
+    .desk_module_header {
+      position: relative;
+      min-height: 47px;
+      // padding-top: 20px;
+      .desk_module_title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 14px;
+      }
+      .module_title_text {
+        height: 20px;
+        line-height: 20px;
+        color: #3949ab;
+        background-color: #dfe4ff;
+        font-weight: 500;
+      }
+      .module_title_iconL,
+      .module_title_iconR {
+        width: 18px;
+        height: 20px;
+      }
+
+      .module_title_iconL {
+        background-image: url(../../../../assets/images/workdesk/tag_left.png);
+      }
+      .module_title_iconR {
+        background-image: url(../../../../assets/images/workdesk/tag_right.png);
+      }
+      .ant-tabs-nav-operations-hidden {
+        display: none;
+      }
+    }
+    .module_tab_item {
+      color: #6b6b6b;
+      font-size: 12px;
+      position: relative;
+      padding-right: 20px;
+      .set-tag-icon {
+        width: 14px;
+        height: 13px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        display: none;
+        background-image: url(../../../../assets/images/myWorkDesk/hearder_seting.svg);
+        &:hover {
+          background-image: url(../../../../assets/images/myWorkDesk/hearder_seting_active.svg);
+        }
+      }
+      &:hover .set-tag-icon {
+        display: inline-block;
+      }
+    }
+    .ant-tabs-tab {
+      margin: 0;
+      // position: relative;
+      &:hover {
+        .module_tab_item {
+          color: #232323;
+        }
+      }
+      &.ant-tabs-tab-active {
+        .module_tab_item,
+        .ant-tabs-tab-btn {
+          color: #232323;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    // 标签活跃
+    &.ant-tabs-top > div > .ant-tabs-nav {
+      &::before {
+        border-bottom: 0;
+      }
+      // 下划线
+      .ant-tabs-ink-bar {
+        display: none;
+      }
+    }
+    //------头部操作按钮-------//
+    .module_handle_group {
+      .module_change_btn {
+        margin-right: 16px;
+        display: none;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+      // 放大模块
+      .module_enlarge_btn {
+        background-image: url('../../../../assets/images/common/enlarge-icon.svg');
+        &:hover {
+          background: url('../../../../assets/images/common/enlarge-active-icon.svg');
+        }
+      }
+      // 缩小模块
+      .module_lessen_btn {
+        background-image: url('../../../../assets/images/common/enlarge-screen-s.svg');
+        &:hover {
+          background: url('../../../../assets/images/common/enlarge-screen-s-h.svg');
+        }
+      }
+      // 更多按钮
+      .module_option_btn {
+        margin-right: 6px;
+        width: 10px;
+        height: 16px;
+        background-image: url(../../../../assets/images/workdesk/modal_item_option.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        cursor: pointer;
+        &:hover {
+          background-image: url('../../../../assets/images/workdesk/modal_item_option_active.svg');
+        }
+      }
+      // 时间筛选按钮
+      .week_date_btn {
+        margin-right: 16px;
+        width: 16px;
+        height: 16px;
+        background-image: url(../../../../assets/images/workdesk/week_date.svg);
+        cursor: pointer;
+        &:hover {
+          background-image: url(../../../../assets/images/workdesk/week_date_h.svg);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+        }
+      }
+      // 导入任务按钮
+      .import_btn {
+        margin-right: 16px;
+        display: none;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../../../assets/images/workdesk/import.png');
+        cursor: pointer;
+        background-size: cover;
+        &:hover {
+          background-image: url('../../../../assets/images/workdesk/import_h.png');
+        }
+      }
+    }
+  }
+  // workDeskModuleItem hover
+  &:hover {
+    .workDeskModuleTabs .module_handle_group {
+      .module_change_btn,
+      .import_btn {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+//======================== 小屏幕模式下=============================//
+@media screen and (max-width: 1350px) {
+  // 标签模块区
+  .workDeskMainContainer {
+    .workDeskModuleContent {
+      padding: 16px;
+      .desk_module_header {
+        padding: 0 16px;
+      }
+      .workDeskModuleItem {
+        margin-bottom: 8px;
+        .ant-tabs-content-holder {
+          padding: 0 8px;
+        }
+      }
+      // okr看板
+      // .okr_module_item {
+      //   padding: 0;
+      // }
+    }
+  }
+}
+.check_task_module {
+  .check_task_tips {
+    background-color: @color_yellowlight;
+    border: 1px solid @color_yellow;
+    line-height: 14px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    .ant-alert-icon {
+      top: 9.3px;
+    }
+    .ant-alert-close-icon {
+      top: 9.3px;
+      .anticon-close {
+        color: @color_dark;
+      }
+    }
+  }
+  .check_task_wrap {
+    height: 100%;
+    overflow: hidden;
+    &:hover {
+      overflow: overlay;
+    }
+    .check_task_container {
+      height: 100%;
+      overflow: hidden;
+      &:hover {
+        overflow: overlay;
+      }
+      .small_list_item {
+        position: relative;
+        padding-left: 18px !important;
+        margin-bottom: 10px;
+        .status_icon {
+          position: absolute;
+          left: -2px;
+          top: 2px;
+          height: 20px !important;
+        }
+      }
+      .ant-list-item {
+        height: 48px;
+        padding: 0;
+        padding-right: 10px;
+        font-size: 14px;
+        border-bottom: 0;
+        .status_icon {
+          display: inline-block;
+          width: 16px;
+          height: 100%;
+          &.finish-icon {
+            background: url(../../../../assets/images/common/finish_icon.png) no-repeat center;
+            margin: 0 2px;
+          }
+        }
+        .check_item_content {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+          color: @color_dark;
+          // max-width: 100%;
+          max-width: 90%;
+          .check_item {
+            font-size: 12px;
+            color: #9a9aa2;
+            padding-right: 24px;
+            em {
+              font-style: normal;
+              color: @color_blue;
+            }
+          }
+          .checklist_tit {
+            max-width: 90%;
+          }
+        }
+        .avatar_name {
+          font-size: 12px;
+          display: inline-block;
+          width: 49px;
+          padding-left: 5px;
+          // white-space: nowrap;
+          // overflow: hidden;
+        }
+      }
+      .finish {
+        color: #9a9aa2 !important;
+        // text-decoration: line-through;
+      }
+      .myTaskRoleBox {
+        display: inline-block;
+        margin-right: 20px;
+        color: #9a9aa2;
+        font-size: 12px;
+        flex-shrink: 0;
+        padding-left: 5px;
+      }
+      .myTaskRoleBox::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        vertical-align: sub;
+      }
+
+      .myTaskRoleBox.my_execute::before {
+        background-image: url(../../../../assets/images/task/my_execute.png);
+      }
+
+      .myTaskRoleBox.my_assign::before {
+        background-image: url(../../../../assets/images/task/my_assign.png);
+      }
+
+      .myTaskRoleBox.my_leader::before {
+        background-image: url(../../../../assets/images/task/my_leader.png);
+      }
+
+      .myTaskRoleBox.my_supervise::before {
+        background-image: url(../../../../assets/images/task/my_supervise.png);
+      }
+      .check_footer {
+        position: absolute;
+        bottom: 0;
+        background: #fff;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+      }
+    }
+  }
+}

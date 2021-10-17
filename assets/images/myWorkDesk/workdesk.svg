@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>工作台</title>
+    <desc>Created with Sketch.</desc>
+    <g id="----·侧边栏优化" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="侧边栏补充" transform="translate(-93.000000, -137.000000)">
+            <g id="工作台-2" transform="translate(93.000000, 137.000000)">
+                <g id="工作台" transform="translate(5.000000, 5.000000)">
+                    <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="18" height="14" rx="2"></rect>
+                    <rect id="矩形" fill="#FFFFFF" x="2" y="16" width="14" height="2" rx="1"></rect>
+                    <line x1="9.5" y1="10" x2="9.5" y2="4" id="路径-12" stroke="#29304B" stroke-width="1.4" stroke-linecap="round"></line>
+                    <line x1="13.5" y1="10" x2="13.5" y2="7" id="路径-12备份" stroke="#29304B" stroke-width="1.4" stroke-linecap="round"></line>
+                    <line x1="5.5" y1="10" x2="5.5" y2="7" id="路径-12" stroke="#29304B" stroke-width="1.4" stroke-linecap="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

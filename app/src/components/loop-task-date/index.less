@@ -1,0 +1,97 @@
+.loopTaskDate {
+  width: 400px !important;
+  .ant-modal-content {
+    border-radius: 8px;
+    .ant-modal-body {
+      height: 380px;
+      .loopTaskcontent {
+        .loop-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          .loops-times {
+            margin-left: 10px;
+          }
+          .frequency {
+            margin-right: 30px;
+          }
+          .times {
+            width: 162px;
+            padding-left: 5px;
+            margin-left: 7px;
+          }
+          .add-loop-data {
+            .ml-50 {
+              margin-right: 5px;
+            }
+            .customtype {
+              margin-left: 10px;
+            }
+            .month-data {
+              ul span {
+                width: 47px;
+                height: 20px;
+                display: inline-block;
+                border: 1px solid rgba(230, 230, 230, 1);
+                color: #e6e6e6;
+                text-align: center;
+                line-height: 19px;
+                border-radius: 3px;
+                margin-right: 2px;
+                margin-top: 5px;
+                cursor: pointer;
+                transition: all 0.2s linear;
+              }
+              ul span.on {
+                background: #3799e0;
+                color: white;
+              }
+              ul span:hover {
+                background: #3799e0;
+                color: white;
+              }
+            }
+            .month-data.quarter-data {
+              ul span {
+                padding: 0 5px;
+                width: initial;
+                margin-left: 2px;
+              }
+            }
+            ul {
+              li {
+                float: left;
+                width: 22px;
+                height: 22px;
+                border: 1px solid rgba(230, 230, 230, 1);
+                border-radius: 4px;
+                color: #e6e6e6;
+                font-size: 12px;
+                text-align: center;
+                line-height: 20px;
+                margin-right: 3px;
+                cursor: pointer;
+                margin-bottom: 2px !important;
+                transition: all 0.2s linear;
+              }
+              li.on {
+                background: #3799e0;
+                color: white;
+              }
+              li:hover {
+                background: #3799e0;
+                color: white;
+              }
+            }
+          }
+        }
+        .loop-row.loops-renewal {
+          display: inline-block;
+          .loops-content {
+            margin-left: 54px;
+          }
+        }
+      }
+    }
+  }
+}

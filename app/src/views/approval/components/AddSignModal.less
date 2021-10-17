@@ -1,0 +1,174 @@
+@import '~@/src/styles/_var.less';
+
+.add-sign-modal {
+  padding: 0;
+  .ant-modal-body {
+    height: 512px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .sign-title {
+      width: 100%;
+      height: 40px;
+      padding-left: 16px;
+      border-bottom: 1px solid @color_e5;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: @color_gray;
+      font-weight: bold;
+    }
+    .sign-left-box {
+      width: 396px;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      .top-conner {
+        flex: 1;
+        overflow: hidden;
+        border: 1px solid @color_e5;
+        border-radius: 4px;
+        .ant-tabs-top {
+          height: 100%;
+          .ant-tabs-nav {
+            padding-left: 16px;
+            margin-bottom: 0;
+          }
+          .ant-tabs-content-holder {
+            padding: 10px 16px;
+            overflow: auto;
+            .show_list_ul {
+              & > li {
+                height: 28px;
+                line-height: 28px;
+                margin-bottom: 6px;
+                color: @color_5c;
+                & > a {
+                  color: inherit;
+                  text-decoration: none;
+                  padding: 0 5px;
+                  &.active {
+                    background-color: @color_bluelight;
+                    color: @color_blue;
+                  }
+                }
+                &:hover {
+                  color: @color_blue;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+      .bottom-conner {
+        height: 200px;
+        border: 1px solid @color_e5;
+        border-radius: 4px;
+        margin-top: 12px;
+        display: flex;
+        flex-flow: column;
+        .user-list {
+          flex: 1;
+          padding: 10px 16px;
+          overflow: overlay;
+          &.noneData {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > span {
+              color: @color_cc;
+            }
+          }
+          .ant-radio-wrapper {
+            display: block;
+            margin-bottom: 18px;
+          }
+        }
+      }
+    }
+    .approval-select-add {
+      width: 26px;
+      height: 26px;
+      background: url(../../../../../assets/images/approval/sure_add_user.png) no-repeat center;
+      &:hover {
+        background-color: @color_e5;
+        cursor: pointer;
+      }
+    }
+    .sign-right-box {
+      width: 355px;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      .search_user_input_box {
+        width: 100%;
+        height: 32px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: center;
+        .select_input_type {
+          width: 70px;
+          margin-left: 8px;
+        }
+      }
+      .bottom-select-list {
+        flex: 1;
+        border: 1px solid @color_e5;
+        border-radius: 4px;
+        display: flex;
+        flex-flow: column;
+        .selected-user-list {
+          flex: 1;
+          overflow: overlay;
+          & > .selected-user-item {
+            height: 36px;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            .showUser {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              & > span {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                &.show_name {
+                  flex: 1;
+                  line-height: 20px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                &.org_icon {
+                  background: url(../../../../../assets/images/common/org_icon.png) no-repeat center;
+                }
+                &.user_icon {
+                  background: url(../../../../../assets/images/common/member-icon.png) no-repeat center;
+                }
+              }
+            }
+            .del_icon {
+              display: none;
+              width: 16px;
+              height: 16px;
+              background: url(../../../../../assets/images/common/del_member_icon.png) no-repeat center;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            &:hover {
+              background-color: @color_f5;
+              .del_icon {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,235 @@
+@import '../../styles/_var.less';
+
+.authManageContent {
+  height: 100%;
+  margin: 20px;
+  flex: 1;
+  .ant-tabs {
+    height: 100%;
+    .ant-tabs-content {
+      height: 100%;
+      .ant-tabs-tabpane {
+        height: 100%;
+      }
+    }
+  }
+
+  // 权限申请
+  .authHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .tips {
+      margin-left: 10px;
+      flex: 1;
+    }
+    .authRecord {
+      padding: 6px 10px;
+      text-align: center;
+      border: 1px solid #d7d7d9;
+      color: #70707a;
+      border-radius: 4px;
+      i {
+        width: 16px;
+        height: 18px;
+        vertical-align: -4px;
+        margin-right: 5px;
+        background: url('.../../../../../../assets/images/company/lic_log.png') no-repeat;
+      }
+    }
+    .authRecord:hover {
+      color: @color_blue;
+      i {
+        background: url('.../../../../../../assets/images/company/lic_log_h.png') no-repeat;
+      }
+    }
+  }
+  .authContent {
+    height: calc(100% - 130px);
+    overflow-y: auto;
+    margin-bottom: 15px;
+    td {
+      border: 1px solid @color_e7;
+      border-bottom: 0;
+      text-align: center;
+
+      &.authModule {
+        color: @color_dark;
+        font-weight: bold;
+        width: 90px;
+      }
+      .authCheckContent {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid @color_e7;
+        .detailItems {
+          width: 150px;
+          height: 100%;
+          padding: 7px 7px 7px 12px;
+          // border-right: 1px solid @color_e7;
+        }
+        .permissItem {
+          flex: 1;
+          border-left: 1px solid @color_e7;
+          padding: 7px 0 7px 12px;
+          label {
+            float: left;
+            text-align: left;
+            min-width: 117px;
+            margin: 5px 30px 5px 0;
+            color: @color_dark;
+            .ant-checkbox-disabled + span {
+              color: @color_dark;
+            }
+          }
+          .toolTisValue {
+            float: left;
+          }
+          .dataRanges {
+            color: #70707a;
+            cursor: pointer;
+            margin-left: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: -4px;
+            max-width: 480px;
+            i {
+              width: 16px;
+              height: 16px;
+              vertical-align: middle;
+              vertical-align: -4px;
+              background: url('.../../../../../../assets/images/company/set.png') no-repeat;
+            }
+            &:hover {
+              color: @color_blue;
+              i {
+                background: url('.../../../../../../assets/images/company/set_h.png') no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .submitBtn {
+    float: right;
+    color: @color_white;
+    background-color: @color_blue;
+  }
+
+  // 权限申请记录
+  .applyRecordContent {
+    display: flex;
+    flex-flow: column;
+    height: calc(100% - 40px);
+    .formArea {
+      margin-bottom: 20px;
+      display: flex;
+    }
+    .tableContent,
+    .ant-spin-nested-loading,
+    .ant-spin-container {
+      display: flex;
+      flex-flow: column;
+      flex: 1;
+    }
+    .ant-table {
+      flex: 1;
+      font-size: 14px;
+      font-size: 12px;
+      color: @color_dark;
+      table {
+        height: 100%;
+        table-layout: auto !important;
+        thead {
+          > tr:first-child th:last-child {
+            padding: 7px 0;
+          }
+        }
+      }
+      .ant-table-row {
+        cursor: pointer;
+        td {
+          padding: 14px 12px;
+        }
+      }
+    }
+    .ant-table-empty {
+      .ant-table-body,
+      .ant-table-container,
+      table {
+        height: 100%;
+        overflow: hidden !important;
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+// 设置数据范围弹窗
+.dataRangContent {
+  .tabItem {
+    clear: both;
+    font-size: 14px;
+    color: @color_gray;
+    margin-bottom: 30px;
+    display: flex;
+    > span {
+      &:first-child {
+        min-width: 115px;
+      }
+      span {
+        margin-bottom: 5px;
+      }
+    }
+    .rangDataBox {
+      font-size: @font_size;
+      > div {
+        float: left;
+        position: relative;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        span.text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-wrap: initial;
+          word-break: break-all;
+          display: inline-block;
+          color: #757575;
+          max-width: 200px !important;
+          height: 20px;
+          background: rgba(245, 245, 245, 1);
+          border-radius: 4px;
+          text-align: center;
+          line-height: 20px;
+          padding: 0 12px;
+        }
+        .delIcon {
+          display: none;
+          position: absolute;
+          right: -5px;
+          top: -5px;
+          font-size: 12px;
+        }
+      }
+      > div:hover .delIcon {
+        display: block;
+      }
+    }
+  }
+  .rangDataItem {
+    cursor: pointer;
+    font-size: 12px;
+    color: @color_75;
+    margin-right: 12px;
+    background: @color_f0;
+    border-radius: 4px;
+    text-align: center;
+    padding: 2px 12px;
+  }
+}

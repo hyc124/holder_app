@@ -1,0 +1,341 @@
+@import '~@/src/styles/_var.less';
+@import '~@/src/styles/org-tree.less';
+
+// 组织架构单选样式
+.orgRadio .ant-tree-checkbox-inner {
+  border-radius: 100px;
+  background: transparent !important;
+}
+.ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+  background-color: none;
+}
+.orgRadio .ant-tree-checkbox-checked .ant-tree-checkbox-inner::after {
+  border: 0;
+  transform: rotate(0deg) scale(1) translate(-50%, -50%);
+  left: 50%;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+  background: #4285f4;
+}
+.orgRadio .ant-tree-checkbox-wrapper:hover .ant-tree-checkbox-inner,
+.orgRadio .ant-tree-checkbox:hover .ant-tree-checkbox-inner,
+.orgRadio .ant-tree-checkbox-input:focus + .ant-tree-checkbox-inner {
+  border-color: transparent;
+}
+
+.orgRadio .ant-tree-checkbox-checked::after {
+  border-radius: 50%;
+}
+
+// *************弹框*********//
+.createGroupChat {
+  padding: 20px 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  .defaultAvatar {
+    width: 17px;
+    height: 15px;
+  }
+
+  .ant-input-affix-wrapper .ant-input-suffix {
+    color: #9a9aa2;
+  }
+
+  .ant-form-item-no-colon {
+    color: #191f25;
+    font-size: 14px;
+  }
+  .groupMember {
+    flex: 1 1 auto;
+    overflow: hidden;
+    margin-bottom: 0;
+
+    .ant-form-item-control,
+    .ant-form-item-control-input-content,
+    .ant-form-item-control-input {
+      height: 100%;
+      .orgBodyLeft {
+        overflow: auto;
+      }
+    }
+  }
+
+  .orgBody {
+    border: 1px solid #d7d7d9;
+    border-radius: 4px;
+  }
+}
+.selectMemberOrgModal {
+  color: @color_gray;
+  font-size: 12px;
+  .ant-modal-title {
+    text-align: center;
+  }
+  .ant-modal-body {
+    height: 512px;
+    padding: 0 20px;
+  }
+  .orgBody,
+  .orgBodyLeft,
+  .orgBodyRight,
+  .orgTypeSelCon,
+  .orgShowConOut {
+    height: 100%;
+  }
+  // .orgBodyLeft,
+  .orgBodyRight {
+    width: 50%;
+    padding: 16px;
+  }
+  .orgBodyLeft {
+    padding-right: 20px;
+    // border-right: 1px solid @color_e5;
+    display: flex;
+    flex-flow: column;
+    width: 422px;
+    border-right: 1px solid #e5e5e5;
+    padding-top: 20px;
+    .orgTopCon {
+      // overflow-y: auto;
+      // overflow-x: hidden;
+      height: 50%;
+    }
+    .orgBotCon {
+      border-top: 1px solid #e7e7e9;
+      margin: 0 -20px;
+      padding: 0 20px;
+      height: 50%;
+      .orgBotHeader {
+        padding: 8px 0;
+        .bot_tit {
+          margin: 0;
+          color: #333;
+          font-weight: bold;
+        }
+        .bot_sub_tit {
+          margin: 0;
+          color: @color_gray;
+          font-size: 10px;
+        }
+      }
+      .orgBotList {
+        overflow: auto;
+        > li {
+          margin: 5px 0;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  .orgBodyLeft .backOrgBtn {
+    margin-bottom: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .orgBodyLeft .backOrgBtn:hover {
+    color: @color_primary;
+  }
+  .orgShowCon {
+    overflow-y: auto;
+    margin-right: -20px;
+    padding-right: 20px;
+
+    .ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+      background-color: #fff;
+    }
+  }
+  .companyList {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100%;
+    margin-right: -20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .company_top {
+    color: @color_gray;
+    height: 34px;
+    line-height: 32px;
+    // margin-top: 20px;
+    // margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 20px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 11px;
+    background-image: url(../../../../assets/images/workplan/tri_down.svg);
+  }
+  .company_top .cmy_avatar {
+    margin-right: 14px;
+  }
+  .orgTypeList {
+    margin-left: 9px;
+  }
+  .orgTypeList > li {
+    height: 36px;
+    line-height: 36px;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+  .orgTypeList > li > .leaf_icon {
+    width: 14px;
+    height: 9px;
+    margin-right: 14px;
+    background-size: 14px 9px;
+    background-image: url(../../../../assets/images/common/org_type_leaf.png);
+  }
+  .orgTypeList > li:hover {
+    background-color: @color_bluelight;
+    cursor: pointer;
+  }
+  // 头像
+  .showHead {
+    margin-right: 10px;
+    background-color: @color_primary;
+  }
+  // ====================常用联系人====================//
+  .orgShowCon .contactsList > li {
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+
+  .orgShowCon .contactsList > li .user_icon {
+    width: 16px;
+    height: 20px;
+    margin-right: 10px;
+    background-image: url(../../../../assets/images/common/member-icon.png);
+  }
+
+  //头像
+  .org_tree_row {
+    .user_head {
+      margin-right: 8px;
+      background-color: @color_primary;
+    }
+  }
+
+  // =================右侧数据===================//
+  .orgBodyRight .rigShowTit {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .orgBodyRight .rigSelectData {
+    overflow-y: auto;
+    margin: 0 -20px;
+    padding: 0 20px;
+
+    .refresh_icon {
+      color: #70707a;
+      margin-left: 5px;
+      &:hover {
+        color: #4285f4;
+      }
+    }
+  }
+
+  .orgBodyRight .rigSelectData > li {
+    margin: 8px 0;
+    cursor: pointer;
+    &:nth-of-type(1) {
+      margin-top: 0;
+    }
+  }
+  .orgBodyRight .rigSelectData > li .del_icon {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../../../assets/images/common/del_cir.png);
+  }
+  .selMemberOrgSearch {
+    background-color: white;
+    // width: 390px;
+    height: calc(100% - 42px);
+    border-radius: 4px;
+    font-size: 12px;
+    color: #757575;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    .searchHeader {
+      height: 34px;
+      width: 383px;
+      justify-content: center;
+      border-bottom: 1px solid @color_e7;
+    }
+    .searchHeader li {
+      height: 34px;
+      line-height: 34px;
+      padding: 0 8px;
+      margin: 0 75px;
+      cursor: pointer;
+    }
+    .searchHeader li.active {
+      border-bottom: 2px solid @color_primary;
+      color: @color_primary;
+    }
+    .searchList {
+      padding: 10px;
+      height: 100%;
+      // flex: 1;
+      overflow: auto;
+      .searchItem {
+        margin: 5px 0;
+        .right_cont {
+          margin-left: 5px;
+          overflow: hidden;
+          .user_info,
+          .belong_info {
+            margin-bottom: 0;
+          }
+          .user_info {
+            font-size: 14px;
+            color: @color_dark;
+          }
+          .belong_info {
+            width: 100%;
+          }
+        }
+      }
+      .searchItem:hover {
+        background-color: #f5f7fb;
+      }
+      .search_nodata {
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: #f6faff;
+      }
+    }
+    .searchTit {
+      height: 20px;
+      line-height: 20px;
+      padding: 0 16px;
+      background-color: @color_bg_gray;
+      color: @color_gray;
+    }
+
+    &.drop {
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+      .searchHeader {
+        display: block;
+      }
+    }
+  }
+}
+// ========搜索============//
+.searchContOut {
+  padding: 0 2px;
+  > .baseSearch {
+    margin-bottom: 10px;
+    background: #f7f8fa;
+    border: none;
+  }
+}
